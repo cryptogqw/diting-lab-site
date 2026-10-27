@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>谛听 Diting Lab</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function () {
+  var langs = ["zh", "ja", "en"], pick = null;
+  try { pick = localStorage.getItem("diting-lang"); } catch (e) {}
+  if (langs.indexOf(pick) < 0) {
+    var nav = (navigator.languages || [navigator.language || "en"]).join(",").toLowerCase();
+    pick = /(^|,)ja/.test(nav) ? "ja" : /(^|,)zh/.test(nav) ? "zh" : "en";
+  }
+  location.replace(pick + "/index.html");
+})();
+</script>
+</head>
+<body>
+<main class="wrap chooser">
+  <h1><img src="assets/favicon.svg" alt="" width="40" height="40"> 谛听 Diting Lab</h1>
+  <ul>
+<li><a href="zh/index.html" lang="zh-Hans">中文</a></li><li><a href="ja/index.html" lang="ja">日本語</a></li><li><a href="en/index.html" lang="en">English</a></li>  </ul>
+</main>
+</body>
+</html>
