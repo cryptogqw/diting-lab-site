@@ -150,6 +150,34 @@ main { padding-top: 24px; padding-bottom: 48px; }
 .chooser ul { list-style: none; padding: 0; display: flex; gap: 12px; justify-content: center; }
 .chooser a { border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px; }
 
+/* 论文粗评（D-29）：只标出 4–5 星的「值得关注」 */
+:root { --star: #b7791f; --pick-soft: #fbf3e2; }
+@media (prefers-color-scheme: dark) { :root { --star: #f2c14e; --pick-soft: #2d2616; } }
+.stars { color: var(--star); letter-spacing: .04em; font-size: .9rem; white-space: nowrap; }
+.stars-sm { color: var(--star); font-weight: 700; font-size: .78rem; }
+.pick-badge { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; color: var(--star);
+              background: var(--pick-soft); border-radius: 999px; padding: 1px 10px 1px 8px; margin-bottom: 4px; }
+.item.notable { border-color: color-mix(in srgb, var(--star) 45%, var(--line)); }
+.tag-code { background: var(--accent-soft); color: var(--accent); }
+.why { color: var(--ink); }
+.label-why { color: var(--star); background: var(--pick-soft); }
+.picks { background: var(--surface); border: 1px solid color-mix(in srgb, var(--star) 45%, var(--line));
+         border-radius: var(--radius); padding: 14px 18px 8px; margin-bottom: 16px; }
+.picks .block-head h2 { font-size: 1.15rem; }
+.pick-list { list-style: none; margin: 0; padding: 0; }
+.pick { padding: 10px 0; border-top: 1px solid var(--line); }
+.pick:first-child { border-top: 0; }
+.pick .orig { font-weight: 600; line-height: 1.45; overflow-wrap: anywhere; }
+.pick .orig a { color: var(--ink); }
+.pick .orig a:hover { color: var(--accent); }
+.pick .note { color: var(--note); font-size: .92rem; margin-top: 2px; }
+.pick .why { font-size: .9rem; margin-top: 4px; }
+.stars-note { color: var(--muted); font-size: .8rem; margin: 6px 0 4px; }
+.filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-bottom: 4px; }
+.filter-row .filter { flex: 1 1 260px; margin-bottom: 0; }
+.only-notable { font-size: .88rem; color: var(--muted); white-space: nowrap; cursor: pointer; }
+.only-notable input { accent-color: var(--star); vertical-align: -2px; }
+
 /* 电脑：列表页左侧固定栏（板块/辖区 + 日期目录），右侧内容 */
 @media (min-width: 1024px) {
   .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 36px; align-items: start; }
