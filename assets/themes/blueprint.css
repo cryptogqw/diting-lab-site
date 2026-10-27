@@ -1,0 +1,104 @@
+/* Blueprint：工程蓝图。蓝底网格纸、白色细线与虚线、图号与尺寸线、等宽标注和手写批注。 */
+:root {
+  color-scheme: dark;
+  --bg: #0f4c8a;
+  --surface: rgba(9, 46, 92, .62);
+  --surface-2: #0b3a6e;
+  --ink: #f2f8ff;
+  --muted: #b3cdeb;
+  --line: rgba(255, 255, 255, .6);
+  --line-soft: rgba(255, 255, 255, .24);
+  --accent: #ffffff;
+  --accent-soft: rgba(255, 255, 255, .12);
+  --legal: #ffd166;
+  --legal-soft: rgba(255, 209, 102, .16);
+  --paper: #b8f2e6;
+  --paper-soft: rgba(184, 242, 230, .14);
+  --note: #dcefff;
+  --star: #ffd166;
+  --pick-soft: rgba(255, 209, 102, .14);
+  --radius: 0px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans", "Noto Sans CJK SC", sans-serif;
+  --mono: "Space Mono", ui-monospace, Menlo, "PingFang SC", "Hiragino Sans", monospace;
+  --hand: "Architects Daughter", "Space Mono", cursive;
+}
+:lang(ja) { font-family: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }
+body { font-family: var(--font); background-color: var(--bg);
+       background-image:
+         linear-gradient(rgba(255, 255, 255, .14) 1px, transparent 1px),
+         linear-gradient(90deg, rgba(255, 255, 255, .14) 1px, transparent 1px),
+         linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px),
+         linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+       background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-attachment: fixed; }
+a { color: #fff; }
+
+/* 页眉 */
+.site-header { background: rgba(11, 58, 110, .94); border-bottom: 1px solid var(--line); }
+.brand-cn { font-family: var(--mono); font-weight: 700; }
+.brand-en { font-family: var(--hand); color: var(--muted); font-size: 1rem; font-weight: 400; }
+.main-nav a { font-family: var(--mono); color: var(--muted); text-transform: uppercase; font-size: .82rem; border-bottom-color: transparent; }
+.main-nav a:hover { color: #fff; }
+.main-nav a[aria-current] { color: #fff; border-bottom: 1px dashed #fff; }
+.lang-switch a { font-family: var(--mono); border-radius: 0; border: 1px dashed transparent; color: var(--muted); }
+.lang-switch a[aria-current] { border-color: #fff; color: #fff; background: transparent; }
+
+/* 首页：图纸标题栏 */
+main.wrap { padding-top: 30px; }
+.hero { position: relative; max-width: none; padding: 34px 32px 34px; border: 2px solid #fff; outline: 1px solid rgba(255, 255, 255, .45);
+        outline-offset: 6px; background: rgba(11, 58, 110, .5); }
+.hero::before { content: "DWG NO. DL-2026  ·  REV A  ·  SCALE 1:1"; position: absolute; top: -11px; left: 22px; background: var(--bg);
+                padding: 0 8px; font-family: var(--mono); font-size: .7rem; color: var(--muted); letter-spacing: .08em; }
+.hero::after { content: "FIG. 1"; position: absolute; right: 18px; bottom: 10px; font-family: var(--hand); color: var(--muted); }
+.hero .eyebrow { margin: 0; font-family: var(--hand); color: #ffd166; font-size: 1.08rem; }
+.hero h1 { font-family: var(--mono); font-weight: 700; font-size: clamp(1.9rem, 4.8vw, 3.4rem); color: #fff; letter-spacing: -.01em;
+           line-height: 1.15; margin: 10px 0 14px; }
+.hero .hero-intro { color: var(--muted); max-width: 800px; }
+.hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 24px; border: 1px solid var(--line); }
+.hero-stats .stat { flex-direction: column-reverse; align-items: flex-start; gap: 0; padding: 10px 14px; border-left: 1px dashed var(--line); }
+.hero-stats .stat:first-child { border-left: 0; }
+.hero-stats dt { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.hero-stats dd { font-family: var(--mono); font-size: 1.75rem; font-weight: 700; color: #fff; }
+
+/* 区块：尺寸线式标题、图号角标 */
+.block { margin-top: 40px; }
+.block > .block-head { position: relative; border-bottom: 1px solid #fff; padding-bottom: 6px; margin-bottom: 18px; }
+.block > .block-head::after { content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 9px;
+                              border-left: 1px solid #fff; border-right: 1px solid #fff; }
+.block > .block-head h2 { font-family: var(--mono); text-transform: uppercase; letter-spacing: .1em; font-size: 1rem; color: #fff; margin: 0; }
+.more { font-family: var(--mono); color: #fff; font-size: .82rem; text-decoration: underline dashed; text-underline-offset: 4px; }
+.count { font-family: var(--mono); color: var(--muted); }
+.section-grid { counter-reset: fig; gap: 26px 18px; }
+.section-card { position: relative; counter-increment: fig; background: var(--surface); border: 1px solid var(--line); border-radius: 0; }
+.section-card::after { content: "FIG. " counter(fig); position: absolute; top: -11px; right: 12px; background: var(--bg); padding: 0 6px;
+                       font-family: var(--hand); color: var(--muted); font-size: .85rem; }
+.section-card h3 a, .section-card h2 a { color: #fff; font-family: var(--mono); font-weight: 700; }
+.compact { border-top: 1px dashed var(--line-soft); }
+.compact .orig a, .item .orig a, .pick .orig a { color: #fff; }
+.compact .note { color: var(--note); }
+.meta { font-family: var(--mono); color: var(--muted); }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 0; }
+.item.notable { border-color: #ffd166; }
+.label { font-family: var(--mono); border-radius: 0; background: transparent; color: #ffd166; border: 1px solid rgba(255, 209, 102, .6); }
+.tag { border-radius: 0; font-family: var(--mono); }
+.chips a { border-radius: 0; background: transparent; border: 1px dashed var(--line); color: var(--muted); font-family: var(--mono); }
+.chips a[aria-current] { border-style: solid; border-color: #fff; color: #fff; background: rgba(255, 255, 255, .1); }
+.filter { border-radius: 0; background: rgba(0, 0, 0, .15); border: 1px solid var(--line); color: #fff; font-family: var(--mono); }
+.filter::placeholder { color: var(--muted); }
+.filter:focus { outline: none; border-color: #fff; }
+.day-head { font-family: var(--mono); color: #fff; border-bottom: 1px dashed var(--line); text-transform: uppercase; font-size: .85rem; }
+.page-title { font-family: var(--mono); color: #fff; }
+.picks { background: rgba(255, 209, 102, .08); border: 1px solid #ffd166; border-radius: 0; }
+.picks .block-head h2 { font-family: var(--hand); color: #ffd166; font-size: 1.45rem; font-weight: 400; }
+.pick { border-top: 1px dashed rgba(255, 209, 102, .35); }
+.pick-badge { border-radius: 0; background: transparent; border: 1px solid #ffd166; }
+.pager a { border-radius: 0; border: 1px dashed var(--line); color: #fff; }
+.site-footer { background: rgba(11, 58, 110, .94); border-top: 1px solid var(--line); }
+
+@media (max-width: 640px) {
+  .hero { padding: 28px 18px 30px; }
+  .hero::before { content: "DWG NO. DL-2026 · REV A"; }
+  .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-stats .stat:nth-child(3) { border-left: 0; }
+  .hero-stats .stat:nth-child(n+3) { border-top: 1px dashed var(--line); }
+  .hero-stats dd { font-size: 1.4rem; }
+}

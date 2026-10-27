@@ -1,0 +1,105 @@
+/* Night City：《赛博朋克 2077》式界面。酸性黄色块、黑底斜纹、红与青点缀、斜切角面板、方正粗体标题。 */
+:root {
+  color-scheme: dark;
+  --bg: #0a0a0c;
+  --surface: #121216;
+  --surface-2: #1a1a1f;
+  --ink: #f2f2f2;
+  --muted: #9a9aa4;
+  --line: #2b2b33;
+  --yellow: #fcee0a;
+  --cyan: #02d7f2;
+  --red: #ff003c;
+  --accent: #fcee0a;
+  --accent-soft: rgba(252, 238, 10, .12);
+  --legal: #ffffff;
+  --legal-soft: #ff003c;
+  --paper: #02d7f2;
+  --paper-soft: rgba(2, 215, 242, .14);
+  --note: #02d7f2;
+  --star: #fcee0a;
+  --pick-soft: rgba(252, 238, 10, .12);
+  --radius: 0px;
+  --font: "Chakra Petch", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans", "Noto Sans CJK SC", sans-serif;
+  --display: "Chakra Petch", "ZCOOL QingKe HuangYou", "PingFang SC", sans-serif;
+}
+:lang(ja) { --display: "Chakra Petch", "Dela Gothic One", "Hiragino Sans", sans-serif;
+            font-family: "Chakra Petch", -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }
+body { font-family: var(--font); overflow-x: clip;
+       background: repeating-linear-gradient(-45deg, rgba(252, 238, 10, .028) 0 2px, transparent 2px 16px), var(--bg); }
+a { color: var(--cyan); }
+h1, h2, h3, .hero-stats dd { font-synthesis: none; }
+
+/* 页眉：整条黄色，当前栏目反黑 */
+.site-header { background: var(--yellow); border-bottom: 3px solid #000; }
+.brand-cn { color: #000; font-family: var(--display); font-weight: 700; }
+.brand-en { color: #000; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; }
+.main-nav a { color: #000; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; border-bottom: 0; padding: 0 12px; }
+.main-nav a:hover { color: var(--red); }
+.main-nav a[aria-current] { background: #000; color: var(--yellow); }
+.lang-switch a { color: #000; border-radius: 0; font-weight: 700; }
+.lang-switch a:hover { color: var(--red); }
+.lang-switch a[aria-current] { background: #000; color: var(--yellow); border-color: #000; }
+
+/* 首页：黄色大色块，右下斜切，红色条 */
+main.wrap { padding-top: 20px; }
+.hero { position: relative; max-width: none; padding: 34px 34px 30px; background: var(--yellow); color: #000;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%); }
+.hero::before { content: ""; position: absolute; top: 0; right: 70px; width: 160px; height: 10px; background: var(--red); }
+.hero::after { content: "DL//2026"; position: absolute; top: 18px; right: 34px; font-weight: 700; font-size: .78rem; letter-spacing: .2em; color: rgba(0, 0, 0, .55); }
+.hero .eyebrow { display: inline-block; margin: 0; background: #000; color: var(--yellow); font-weight: 700; letter-spacing: .14em;
+                 text-transform: uppercase; font-size: .78rem; padding: 3px 12px; }
+.hero h1 { font-family: var(--display); font-size: clamp(2.2rem, 5.6vw, 4.2rem); font-weight: 700; line-height: 1.04;
+           text-transform: uppercase; color: #000; margin: 16px 0 12px; }
+.hero .hero-intro { color: #141400; font-weight: 500; max-width: 780px; }
+.hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 22px; border-top: 3px solid #000; }
+.hero-stats .stat { flex-direction: column-reverse; align-items: flex-start; gap: 0; padding: 10px 14px 0 0; }
+.hero-stats dt { color: #000; font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+.hero-stats dd { color: #000; font-family: var(--display); font-size: 2.2rem; font-weight: 700; }
+
+/* 区块：黄色标题线；面板左侧色条、右上斜切 */
+.block { margin-top: 34px; }
+.block > .block-head { border-bottom: 2px solid var(--yellow); padding-bottom: 6px; margin-bottom: 14px; }
+.block > .block-head h2 { font-family: var(--display); text-transform: uppercase; color: var(--yellow); font-size: 1.5rem; letter-spacing: .03em; margin: 0; }
+.more { color: var(--cyan); text-transform: uppercase; font-weight: 700; letter-spacing: .04em; }
+.count { color: var(--cyan); font-weight: 600; }
+.section-card { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--yellow); border-radius: 0;
+                clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%); }
+.section-card h3 a, .section-card h2 a { color: var(--yellow); text-transform: uppercase; font-weight: 700; letter-spacing: .03em; }
+.compact { border-top-color: var(--line); }
+.compact .orig a, .item .orig a { color: var(--ink); }
+.compact .orig a:hover, .item .orig a:hover { color: var(--yellow); }
+.compact .note { color: var(--cyan); }
+.item { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--cyan); border-radius: 0;
+        clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%); }
+.item.notable { border-left-color: var(--yellow); }
+.item .orig { text-transform: none; }
+.label { border-radius: 0; background: var(--cyan); color: #000; font-weight: 700; }
+.label-why { background: var(--yellow); color: #000; }
+.tag { border-radius: 0; font-weight: 700; }
+.tag-legal { background: var(--red); color: #fff; }
+.tag-paper, .tag-signal { background: var(--cyan); color: #000; }
+.tag-code { background: transparent; color: var(--cyan); border: 1px solid var(--cyan); }
+.chips a { border-radius: 0; background: transparent; border-color: var(--line); color: var(--ink); text-transform: uppercase; font-weight: 600; }
+.chips a[aria-current] { background: var(--yellow); color: #000; border-color: var(--yellow); }
+.chips a[aria-current] .count { color: rgba(0, 0, 0, .6); }
+.filter { border-radius: 0; background: #000; border: 1px solid var(--yellow); color: var(--yellow); }
+.filter:focus { outline: none; box-shadow: 0 0 0 2px var(--yellow); }
+.day-head { color: var(--yellow); text-transform: uppercase; font-weight: 700; letter-spacing: .05em; border-bottom-color: var(--line); }
+.page-title { font-family: var(--display); text-transform: uppercase; color: var(--yellow); }
+.picks { background: var(--surface); border: 0; border-top: 6px solid var(--yellow); border-radius: 0;
+         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%); }
+.picks .block-head h2 { color: var(--yellow); text-transform: uppercase; font-family: var(--display); }
+.pick { border-top-color: var(--line); }
+.pick-badge { border-radius: 0; background: var(--yellow); color: #000; }
+.pick-badge .stars { color: #000; }
+.pager a { border-radius: 0; border-color: var(--line); }
+.site-footer { background: #000; border-top: 3px solid var(--yellow); }
+
+@media (max-width: 640px) {
+  .hero { padding: 26px 20px 34px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%); }
+  .hero::after { display: none; }
+  .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-stats dd { font-size: 1.7rem; }
+  .main-nav a { padding: 6px 10px 8px; }
+}
