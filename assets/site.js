@@ -1,8 +1,9 @@
-// 记住选择的语言；手机上把当前板块按钮滑到可见处；列表页的本页筛选和「只看值得关注」
+// 本次浏览中记住手动选择的语言（新的浏览默认跟随浏览器语言）；手机上把当前板块按钮滑到可见处；列表页的本页筛选和「只看值得关注」
 (function () {
+  try { localStorage.removeItem("diting-lang"); } catch (e) {}   // 旧版本永久记住的选择不再生效
   document.querySelectorAll(".lang-switch a[data-lang]").forEach(function (a) {
     a.addEventListener("click", function () {
-      try { localStorage.setItem("diting-lang", a.dataset.lang); } catch (e) {}
+      try { sessionStorage.setItem("diting-lang", a.dataset.lang); } catch (e) {}
     });
   });
   var chips = document.querySelector(".chips");

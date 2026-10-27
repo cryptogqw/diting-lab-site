@@ -5,15 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>谛听 Diting Lab</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/style.css?v=3177a2b6bd">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;family=ZCOOL+QingKe+HuangYou&amp;family=Dela+Gothic+One&display=swap"><link rel="stylesheet" href="assets/themes/nightcity.css?v=3177a2b6bd"><script>
+<link rel="stylesheet" href="assets/style.css?v=6717a498f4">
+<link rel="stylesheet" href="assets/fonts/fonts.css?v=6717a498f4"><link rel="stylesheet" href="assets/themes/nightcity.css?v=6717a498f4"><script>
 (function () {
+  // 默认跟随浏览器语言：按浏览器的偏好顺序取第一个支持的语言；本次浏览中手动切换过的优先
   var langs = ["zh", "ja", "en"], pick = null;
-  try { pick = localStorage.getItem("diting-lang"); } catch (e) {}
+  try { pick = sessionStorage.getItem("diting-lang"); } catch (e) {}
   if (langs.indexOf(pick) < 0) {
-    var nav = (navigator.languages || [navigator.language || "en"]).join(",").toLowerCase();
-    pick = /(^|,)ja/.test(nav) ? "ja" : /(^|,)zh/.test(nav) ? "zh" : "en";
+    pick = "en";
+    var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = String(prefs[i]).toLowerCase().slice(0, 2);
+      if (langs.indexOf(code) >= 0) { pick = code; break; }
+    }
   }
   location.replace(pick + "/index.html");
 })();
