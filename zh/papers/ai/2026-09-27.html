@@ -256,7 +256,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33586" target="_blank" rel="noopener noreferrer nofollow">Approximating Softmax in Pretrained LLMs: Model Sensitivity and Kernel Acceleration</a>  </h3>
-<p class="note"><span class="label">说明</span>预训练大语言模型中 Softmax 的近似：模型敏感性与内核加速</p><p class="summary"><span class="label">简介</span>论文研究在推理时用粗略的近似替代 Softmax 指数运算，测试了十个冻结的仅解码器模型（0.5B 至 72B）。结果显示，参与概率分配的位置数量和行内分辨率可以大幅削减，但均匀加权会造成损害；分辨率放在行最大值附近最有利。作者据此提出 Rowmax-PoT 及其在 FlashAttention-4 中的硬件实现 Rowmax-H15，在 B200 上测得 FP8 注意力前向速度有所提升，并给出五个模型的困惑度变化范围。</p>
+<p class="note"><span class="label">说明</span>预训练大语言模型中的Softmax近似：模型敏感性与内核加速</p><p class="summary"><span class="label">简介</span>该论文研究在推理时用近似方式计算十个冻结的仅解码器Transformer模型（0.5B至72B）中的softmax，发现可以大幅减少赋予概率的位置数量和行内分辨率，但均匀加权这些位置会造成损害，且分辨率靠近行最大值时更有利。基于此提出了锚定于行最大值的粗粒度对数权重表示Rowmax-PoT及其在FlashAttention-4中的硬件特化版本Rowmax-H15。在B200上，补丁后的FP8注意力前向在8K长度下因果与非因果情形分别快12.4%和25.8%（主机端调用延迟测量）。</p>
 <p class="authors">Shangzhen Zhu, Muyan Hu, Tomasz Kozlowski</p></article>
 <article class="item">
   <div class="meta">
@@ -328,7 +328,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33565" target="_blank" rel="noopener noreferrer nofollow">Dr. Free: You Don&#39;t Need Difficulty Rewards for Self-Evolving Search Agents</a>  </h3>
-<p class="note"><span class="label">说明</span>Dr. Free：自我进化搜索智能体无需难度奖励</p><p class="summary"><span class="label">简介</span>该论文提出 Dr.Free，一种无需数据、用于训练搜索智能体的自我进化框架。它不再依赖基于难度的出题奖励，而是从知识图谱采样关系链并配对对应段落，只有当完整证据下的目标答案似然超过所有捷径上下文时才给予信息增益奖励。该方法在七个开放域问答基准上优于先前的无数据搜索智能体与监督基线，多跳问答提升明显，并使出题器训练时间缩短逾 7 倍。</p>
+<p class="note"><span class="label">说明</span>Dr. Free：自我进化搜索智能体无需难度奖励</p><p class="summary"><span class="label">简介</span>该论文提出 Dr. Free，一种无需数据的自我进化搜索智能体训练框架，用于训练能进行搜索的问答系统。它不再依赖基于难度的出题奖励，而是从知识图谱采样关系链并配对对应段落，只有当完整证据下目标答案的似然高于所有捷径上下文时，才给予正向信息增益奖励。实验显示该方法在七个开放域问答基准上优于既有方法，并在多跳问答上提升明显，同时使出题器训练时间缩短超过 7 倍。</p>
 <p class="authors">Zhipeng Qian, Zihan Liang, Yufei Ma 等</p></article>
 <article class="item">
   <div class="meta">
@@ -634,7 +634,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33497" target="_blank" rel="noopener noreferrer nofollow">Hamiltonian JEPA: Action-Conditioned World Models with an Inherited Control State</a>  </h3>
-<p class="note"><span class="label">说明</span>Hamiltonian JEPA：带有继承控制状态的动作条件世界模型</p><p class="summary"><span class="label">简介</span>该论文提出 H-JEPA，把感知编码与控制状态分开：宽的感知编码经 Bures-Wasserstein 先验正则化，其固定正交切片作为控制状态，并在带端口的耗散哈密顿动力学下演化。作者提出端口逆一致性（PIC）作为预测误差的无参数重加权。在四个基于像素的控制基准上，H-JEPA 不低于无重建基线，包括 Delta-JEPA，其中在 OGB-Cube 上提升最大。</p>
+<p class="note"><span class="label">说明</span>Hamiltonian JEPA：带有继承控制状态的动作条件世界模型</p><p class="summary"><span class="label">简介</span>该论文提出H-JEPA，把感知编码与控制状态分开：宽感知编码用Bures-Wasserstein先验正则化，其固定正交子空间作为控制状态，并采用带端口的耗散哈密顿动力学建模。论文提出端口逆一致性（PIC）作为无额外参数的预测误差重加权，并在四个基于像素的控制基准上与无重建基线相比达到或超过其表现，其中在OGB-Cube上的提升最大。</p>
 <p class="authors">Tamim Zoabi, Ameen Ali, Lior Wolf</p></article>
 <article class="item">
   <div class="meta">

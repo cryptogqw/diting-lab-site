@@ -265,7 +265,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.02638" target="_blank" rel="noopener noreferrer nofollow">Batched Speech Decisions Without Decoding: Single-Token Supervision Lets a Frozen LLM Hear Beyond the Transcript</a>  </h3>
-<p class="note"><span class="label">説明</span>デコードせずに音声判断をバッチ処理：単一トークン監督で凍結LLMが転写文以外も聞き取れる</p><p class="summary"><span class="label">要約</span>論文はDuplexJevを提案し、ASRエンコーダの隠れ状態を小さなコネクタで凍結したLLMに入力して、各質問を選択肢上の単一トークン分布として読み取ります。逐次デコードは行いません。クロスアテンション型コネクタでは性別と感情の認識精度がともに90%に達し、音声QAは83%から82%へ1ポイントonly低下したと報告されています。訓練は解答トークンへの交差エントロピーを用い、内容には蒸留を維持します。重み、訓練手順、バッチ推論パイプライン、バイリンガル音声QAデータセットも公開されています。</p>
+<p class="note"><span class="label">説明</span>デコード不要のバッチ音声判定：単一トークン監督で凍結LLMが書き起こし以上を聞き取る</p><p class="summary"><span class="label">要約</span>DuplexJevは、音声認識エンコーダの隠れ状態を小さなコネクタを通して凍結LLMに入力し、各質問を選択肢上の単一トークン分布として読み取る手法である。デコードは行わず、8GPUノードで8発話の80件の判定を約0.1秒で処理する。クロスアテンション型コネクタでは、性別と感情の認識精度がともに90%に達し、音声質問応答は83%から82%へ1ポイントの低下にとどまる。学習は読み出した答えトークンへの交差エントロピーで行い、内容については蒸留を維持する。重み、学習手順、バッチ推論パイプライン、バイリンガル音声質問応答データセットが公開されている。</p>
 <p class="authors">Jie Jin, Ziyin Ma, Min Yin ほか</p></article>
 <article class="item">
   <div class="meta">
@@ -868,7 +868,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.02486" target="_blank" rel="noopener noreferrer nofollow">From Retrieval to Typed Decisions: Calibrated System One Models from Biomedical Sentence Encoders</a>  </h3>
-<p class="note"><span class="label">説明</span>検索から型付き判断へ：生物医学文エンコーダから得た較正済み System One モデル</p><p class="summary"><span class="label">要約</span>本論文は、検索用に訓練された生物医学文エンコーダを型付き判断モデルの出発点にできるかを検討し、SBERT2S1 手法と BIODECIDE スイート、MEDLINE-S1 データセットを提示しています。微調整後の効果はヘッドの種類によって異なり、C ヘッドは各訓練目標で PFR ヘッドより優れていました。また、オープンな System One モデルの RLCD 手法は交叉エントロピーに劣り、その差は主に報酬の正規化に起因すると報告されています。</p>
+<p class="note"><span class="label">説明</span>検索から型付き決定へ：生物医学文エンコーダに基づく校正済みSystem One モデル</p><p class="summary"><span class="label">要約</span>本論文は、テキストに対するスキーマ制約付きの質問に一度の順伝播で答え、確率を出力する型付き決定モデルを扱います。検索向けに訓練された生物医学文エンコーダを決定モデルに転用するSBERT2S1、生物医学の型付き決定ベンチマークBIODECIDE、NLMのインデックスから得た243k件の訓練データMEDLINE-S1を提示しています。検索訓練の効果は決定ヘッドの種類に依存し、各種訓練目標の比較と校正の分析も行われています。コード、ラベル、モデルが公開されています。</p>
 <p class="authors">Pritam Deka</p></article>
 <article class="item">
   <div class="meta">

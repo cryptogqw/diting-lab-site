@@ -867,7 +867,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.31633" target="_blank" rel="noopener noreferrer nofollow">BeNice! Closing Looping&#39;s Inference-Memory Gap via KV-Sharing</a>  </h3>
-<p class="note"><span class="label">说明</span>BeNice!：借助 KV 共享弥合循环模型的推理内存差距</p><p class="summary"><span class="label">简介</span>循环架构通过让同一组层反复处理激活来提升模型质量，但推理时每次循环都会产生独立的 KV 缓存，内存随之线性增长。本文研究如何让循环模型具备 KV 共享能力，提出两阶段方法：预训练时使用随机深度，再以后训练方法 BeNice!把最后一次循环的 KV 缓存广播到第一次循环。论文称，该方法在保持与标准微调相当的验证困惑度的同时实现 KV 共享，并能与其他 KV 压缩方法组合使用。在模拟的低内存长上下文推理中，缓存命中率最高提升 31.4%，吞吐量最高提升 23.6%，p90 首词元时间最高降低 83.6%。</p>
+<p class="note"><span class="label">说明</span>BeNice!：通过KV共享缩小循环模型的推理内存差距</p><p class="summary"><span class="label">简介</span>循环架构通过在固定参数下反复使用同一组层来提升模型质量，但推理时每次循环都会生成独立的KV缓存，内存随之线性增长。本文研究如何让循环模型实现KV共享，提出两阶段方法：预训练时使用随机深度，再通过后训练方法BeNice!将最后一次循环的KV缓存广播到第一次循环。实验显示，KV共享可与其他KV压缩方法结合，并在模拟的低内存长上下文推理中提高缓存命中率、吞吐量并降低首词延迟。</p>
 <p class="authors">Hayden Prairie, Jacob M. Ryan, Taylor Berg-Kirkpatrick 等</p></article>
 <article class="item">
   <div class="meta">

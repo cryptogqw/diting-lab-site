@@ -265,7 +265,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.02638" target="_blank" rel="noopener noreferrer nofollow">Batched Speech Decisions Without Decoding: Single-Token Supervision Lets a Frozen LLM Hear Beyond the Transcript</a>  </h3>
-<p class="note"><span class="label">说明</span>无需解码的批量语音判断：单 token 监督让冻结的大语言模型听到转录文本之外的信息</p><p class="summary"><span class="label">简介</span>论文提出 DuplexJev，将 ASR 编码器的隐藏状态经小型连接器输入冻结的大语言模型，把每个选择题读作选项上的单 token 分布，无需逐字解码。采用跨注意力连接器后，性别与情绪识别准确率均达到 90%，口语问答仅由 83% 降至 82%。训练采用对答案 token 的交叉熵，内容部分仍保留蒸馏，并同时发布权重、训练配方、批量推理流程和双语口语问答数据集。</p>
+<p class="note"><span class="label">说明</span>无需解码的批量语音判断：单词元监督让冻结的大语言模型听见转写之外的信息</p><p class="summary"><span class="label">简介</span>论文提出DuplexJev，将语音识别编码器的隐藏状态经小型连接器输入冻结的大语言模型，把每个选择题读作选项上的单词元概率分布，无需解码，8卡节点约0.1秒可完成8段语音的80个判断。采用跨注意力连接器时，性别与情绪识别准确率均达到90%，口语问答仅由83%降至82%。训练以读出的答案词元做交叉熵监督，内容部分保留蒸馏。作者同时发布了权重、训练方法、批量推理流程和双语口语问答数据集。</p>
 <p class="authors">Jie Jin, Ziyin Ma, Min Yin 等</p></article>
 <article class="item">
   <div class="meta">
@@ -868,7 +868,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.02486" target="_blank" rel="noopener noreferrer nofollow">From Retrieval to Typed Decisions: Calibrated System One Models from Biomedical Sentence Encoders</a>  </h3>
-<p class="note"><span class="label">说明</span>从检索到类型化决策：由生物医学句子编码器得到的校准型 System One 模型</p><p class="summary"><span class="label">简介</span>本文研究能否以检索训练的生物医学句子编码器作为类型化决策模型的起点，并提出 SBERT2S1 方法，将其转换为双编码器、交叉头和先验融合残差等模型，并发布 BIODECIDE 套件与 MEDLINE-S1 数据集。结果显示，检索训练对微调后的效果取决于模型头部，其中 C 头在各目标函数下均优于 PFR 头。作者还指出开放 System One 模型的 RLCD 方案落后于交叉熵，差距主要来自奖励归一化。</p>
+<p class="note"><span class="label">说明</span>从检索到类型化决策：基于生物医学句子编码器的校准型系统一模型</p><p class="summary"><span class="label">简介</span>该论文研究用于回答文本结构化问题的类型化决策模型，能一次前向计算输出概率。作者提出SBERT2S1方法，把面向检索训练的生物医学句子编码器改造为决策模型，并构建了生物医学类型化决策套件BIODECIDE和由NLM索引派生的243k条训练决策数据MEDLINE-S1。研究比较了不同检索训练与决策头设计在微调后的效果，并分析了各训练目标的表现与校准情况，同时公开了代码、标签和模型。</p>
 <p class="authors">Pritam Deka</p></article>
 <article class="item">
   <div class="meta">

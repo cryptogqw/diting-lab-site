@@ -184,7 +184,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.38997" target="_blank" rel="noopener noreferrer nofollow">Settle: Learning When to Stop Reasoning</a>  </h3>
-<p class="note"><span class="label">説明</span>Settle：推論をいつ止めるかを学習する手法</p><p class="summary"><span class="label">要約</span>推論モデルは、答えが安定した後も生成を続けることが多い。Settleは、完了した推論過程における答えの安定性から停止時点を学習する。既存の推論終了トークンのみを訓練し、他の予測は基盤モデルに近い状態に保ち、推論時は通常のデコードだけで済む。MATH-500でQwen3-4Bを用いた場合、Settleはトークン数を40%削減し、正答率は0.5ポイント低下した。</p>
+<p class="note"><span class="label">説明</span>Settle：推論をいつ止めるかを学習する手法</p><p class="summary"><span class="label">要約</span>推論モデルは答えが安定した後も生成を続けることがよくあります。Settle は完了した推論トレースにおける答えの安定性から停止時点を学習し、既存の推論終了トークンのみを訓練して、それ以外の予測はベースモデルに近いまま保ちます。推論時は通常のデコーディングだけで動作します。Qwen3-4B による MATH-500 では、トークン数を 40% 削減しつつ正答率の低下は 0.5 ポイントでした。最初の安定した答えで切り詰めた同じトレースで教師ありファインチューニングを行った場合と比べ、トークン数はほぼ同じで正答率が 6.16 ポイント上回りました。</p>
 <p class="authors">Ryan Brown, Zihao Fu, Chris Russell</p></article>
 <article class="item">
   <div class="meta">
@@ -553,7 +553,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.38912" target="_blank" rel="noopener noreferrer nofollow">Composing Task-specific Agent Harnesses at Test Time with Reusable Primitives</a>  </h3>
-<p class="note"><span class="label">説明</span>テスト時に再利用可能なプリミティブでタスク専用のエージェントハーネスを組み立てる研究</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルがコンテキストの取得、ツール呼び出し、結果の検証などを行う仕組み（エージェントハーネス）について、固定されたハーネスは課題ごとに効果が異なると指摘し、タスクごとに構築する方針を提示しています。失敗したタスクの軌跡から再利用可能なHarness Primitivesを抽出し、タスク情報に基づいて適切なプリミティブを選んでテスト時にタスク専用ハーネスへコンパイルするフレームワークSTITCHを提案しています。実験では、固定ハーネスの基準と比べてタスク成功率が最大12ポイント向上し、テスト時の組み立てオーバーヘッドは2.7%にとどまったと報告されています。</p>
+<p class="note"><span class="label">説明</span>テスト時に再利用可能なプリミティブからタスク特化型エージェントハーネスを組み立てる研究</p><p class="summary"><span class="label">要約</span>本論文は STITCH というフレームワークを提案する。失敗したタスクの軌跡から再利用可能なハーネスのプリミティブを抽出し、テスト時にタスク情報に基づいて適切なプリミティブを選んでタスク特化型のハーネスにまとめる。テスト時にコードを生成・修復する必要がない。実験では、固定ハーネスの基準と比べてタスク成功率が最大 12 ポイント向上し、テスト時の組み立てコストは 2.7% にとどまったと報告されている。</p>
 <p class="authors">Peng Kuang, Haibo Jin, Dehao Wu ほか</p></article>
 <article class="item">
   <div class="meta">
@@ -643,7 +643,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.38897" target="_blank" rel="noopener noreferrer nofollow">FFASR: Benchmarking Far-Field Automatic Speech Recognition using High-Fidelity Simulated RIRs</a>  </h3>
-<p class="note"><span class="label">説明</span>FFASR：高忠実度シミュレーション室内インパルス応答による遠距離音声認識の評価</p><p class="summary"><span class="label">要約</span>本論文はFFASRを提案します。15,637発話からなる非公開テストコーパスと公開リーダーボードで、各条件は音響要因を1つだけ変えています。近距離から遠距離、静的・移動話者、信号対雑音比の違いまでを含む評価で、平均単語誤り率は近距離の4.4%から静的低SNR条件の41.3%に上昇しました。著者らは、試験した条件下では高忠実度シミュレーションが遠距離実測評価の拡張可能な代替手段になりうると述べています。</p>
+<p class="note"><span class="label">説明</span>FFASR：高忠実度シミュレーション室内インパルス応答を用いた遠距離音声認識のベンチマーク</p><p class="summary"><span class="label">要約</span>本論文はFFASRを提案します。15,637発話からなる保持型コーパスと公開リーダーボードで、九つの条件を含み、各条件では音響要因を一つだけ変えています。15名の話者が録音した乾いた音声を、家具の置かれた14の部屋の混合型室内インパルス応答と畳み込んで遠距離音声を作成しています。平均単語誤り率は近距離の4.4%から静的な低SNR条件の41.3%まで上昇しました。オフィス実験室の条件では、実測とシミュレーションの誤り率が平均して近い値になりました。</p>
 <p class="authors">Shivam Saini, Eric Bezzam, Georg G\&#34;otz ほか</p></article>
 <article class="item">
   <div class="meta">

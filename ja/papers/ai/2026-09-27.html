@@ -256,7 +256,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33586" target="_blank" rel="noopener noreferrer nofollow">Approximating Softmax in Pretrained LLMs: Model Sensitivity and Kernel Acceleration</a>  </h3>
-<p class="note"><span class="label">説明</span>事前学習済みLLMにおけるSoftmaxの近似：モデルの感度とカーネル高速化</p><p class="summary"><span class="label">要約</span>本論文は、推論時にSoftmaxの指数演算を粗い近似で置き換えられるかを、凍結された10個のデコーダ専用モデル（0.5Bから72B）で検証しています。確率を割り当てる位置の数や行内の分解能は大幅に減らせる一方、同じ位置への一様な重み付けは性能を損なうこと、分解能は行の最大値付近に置くのが有利であることを示しています。これに基づき、Rowmax-PoTとFlashAttention-4向けのハードウェア実装Rowmax-H15を提案し、B200上での高速化と、5モデルでのパープレキシティ変化の範囲を報告しています。</p>
+<p class="note"><span class="label">説明</span>事前学習済みLLMにおけるSoftmaxの近似：モデル感度とカーネル高速化</p><p class="summary"><span class="label">要約</span>本論文は、推論時にsoftmaxを近似計算した場合の影響を、10個の凍結済みデコーダ専用Transformerモデル（0.5B～72B）で調べています。確率を割り当てる位置の数と行内の分解能は大幅に削減できるものの、同じ位置を一様に重み付けすると性能を損なうこと、また行の最大値付近の分解能が有利であることを示しています。これに基づき、各行の最大値を基準とする粗い対数重み表現Rowmax-PoTと、FlashAttention-4向けのハードウェア特化版Rowmax-H15を提案しています。NVIDIA B200では、パッチ適用後のFP8注意力の順伝播が8Kで因果ありの場合12.4%、因果なしの場合25.8%高速化されました（ホスト側の呼び出し遅延による計測）。</p>
 <p class="authors">Shangzhen Zhu, Muyan Hu, Tomasz Kozlowski</p></article>
 <article class="item">
   <div class="meta">
@@ -328,7 +328,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33565" target="_blank" rel="noopener noreferrer nofollow">Dr. Free: You Don&#39;t Need Difficulty Rewards for Self-Evolving Search Agents</a>  </h3>
-<p class="note"><span class="label">説明</span>Dr. Free：難易度報酬なしで自己進化する検索エージェント</p><p class="summary"><span class="label">要約</span>本論文は、検索エージェントを学習するためのデータフリーな自己進化フレームワーク Dr.Free を提案します。従来の難易度ベースの出題報酬を使わず、知識グラフから関係連鎖を取り出して対応する段落と組み合わせ、完全な証拠のもとでの正解の尤度が全ての近道的文脈の最大尤度を上回る場合にのみ情報利得報酬を与えます。7 つのオープンドメイン QA ベンチマークで先行手法と教師ありベースラインを上回り、特にマルチホップ QA で大きな改善を示し、出題器の学習時間を 7 倍以上短縮しました。</p>
+<p class="note"><span class="label">説明</span>Dr. Free：難易度報酬を使わない自己進化型検索エージェント</p><p class="summary"><span class="label">要約</span>本論文は、データを必要としない自己進化型の検索エージェント学習フレームワーク Dr. Free を提案しています。従来の難易度ベースの出題報酬を使わず、知識グラフから関係チェーンを抽出して対応する文章と組み合わせ、捷径文脈と比べて証拠が必要かどうかを直接最適化します。七つのオープンドメイン QA ベンチマークで既存手法と教師あり基準を上回り、特にマルチホップ QA で大きな改善を示し、出題器の学習時間は 7 倍以上短縮されたと報告しています。</p>
 <p class="authors">Zhipeng Qian, Zihan Liang, Yufei Ma ほか</p></article>
 <article class="item">
   <div class="meta">
@@ -634,7 +634,7 @@
   </div>
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33497" target="_blank" rel="noopener noreferrer nofollow">Hamiltonian JEPA: Action-Conditioned World Models with an Inherited Control State</a>  </h3>
-<p class="note"><span class="label">説明</span>Hamiltonian JEPA：継承された制御状態を持つ行動条件付き世界モデル</p><p class="summary"><span class="label">要約</span>本論文はH-JEPAを提案し、知覚的エンコーディングと制御状態を分離します。広い知覚符号はBures-Wasserstein事前分布で正則化され、その固定直交スライスが制御状態として機能し、ポート付き散逸ハミルトン力学の下で発展します。著者はポート逆一致性（PIC）を、予測誤差のパラメータを持たない再重み付けとして提示しています。4つのピクセルベース制御ベンチマークでH-JEPAは再構成を用いないベースラインと同等以上で、特にOGB-Cubeで最大の改善を示します。</p>
+<p class="note"><span class="label">説明</span>Hamiltonian JEPA：継承された制御状態を持つ行動条件付き世界モデル</p><p class="summary"><span class="label">要約</span>本論文はH-JEPAを提案し、知覚の符号化と制御状態を分離します。広い知覚符号を Bures-Wasserstein 事前分布で正則化し、その固定された正規直交部分を制御状態とします。制御状態は帯ポート付きの散逸ポート・ハミルトン力学に従います。また、ポート逆一致性（PIC）により、パラメータを増やさずに予測誤差を再重み付けします。四つの画素ベースの制御ベンチマークで、再構成を用いない基線と同等以上の結果を示し、OGB-Cubeで最大の改善が見られます。</p>
 <p class="authors">Tamim Zoabi, Ameen Ali, Lior Wolf</p></article>
 <article class="item">
   <div class="meta">
