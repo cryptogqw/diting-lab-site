@@ -438,6 +438,17 @@ arXiv · 2026年10月27日
 ★★★★ 值得关注：提出Edge of Convexity并推广Edge of Stability定义，在多个最高787M参数的LLM预训练中系统验证，对理解二次近似失效有重要意义。</summary>
   </entry>
   <entry>
+    <title>Poly2MsgLeaks：基于多项式到消息泄漏的可认证密钥恢复攻击</title>
+    <link rel="alternate" href="https://eprint.iacr.org/2026/2657"/>
+    <id>urn:diting-lab:zh:doc:311259</id>
+    <updated>2026-10-27T00:00:00+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Poly2MsgLeaks: Certified Key Recovery from Polynomial-to-Message Leakage
+IACR ePrint · 2026年10月27日
+该论文提出 Poly2MsgLeaks，一种针对 SMAUG-T（TiMER 参数集）公钥加密方案的画像式选择密文功耗分析攻击，可恢复完整的 512 个系数密钥。作者在 STM32F415 上采集了六条物理 P2M 功耗迹线进行验证，在 1000 个未见过的密钥中恢复出 999 个，另一组的 1000 个密钥全部恢复，平均需要 7.021 条迹线，且无误接受。在对单次写入消息组装和两份掩码 P2M 的评估中，该六次执行攻击未恢复出完整密钥。
+★★★★★ 值得关注：提出针对SMAUG-T的P2M选择密文功耗攻击，完整恢复512系数私钥，并给出错误密钥接受概率的界，新颖且证据较扎实。</summary>
+  </entry>
+  <entry>
     <title>用于科学机器学习时间插值的生成式修正学习</title>
     <link rel="alternate" href="https://arxiv.org/abs/2610.36751"/>
     <id>urn:diting-lab:zh:doc:294428</id>
@@ -447,6 +458,17 @@ arXiv · 2026年10月27日
 arXiv · 2026年10月27日
 论文提出 iFLEX 模型，用于重建两个观测时刻之间的中间科学场。它先对两个观测做加权平均作为初步估计，再用条件扩散模型学习并生成与真实中间场之间的残差，最后把残差加回平均结果。作者在 Navier-Stokes Kraichnan 湍流、上海雷达降水和海表温度数据上进行评估，报告其重建误差低于所比较的基线方法。
 ★★★★ 值得关注：在加权平均基础上用条件扩散模型学习残差，并在三个科学数据集上对比光流和视频插帧扩散基线，证据较充分，对该子领域有实用价值。</summary>
+  </entry>
+  <entry>
+    <title>利用采样器联合侧信道泄漏恢复 Falcon 私钥</title>
+    <link rel="alternate" href="https://eprint.iacr.org/2026/2656"/>
+    <id>urn:diting-lab:zh:doc:311260</id>
+    <updated>2026-10-27T00:00:00+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Falcon Key Recovery from Joint Sampler Leakages
+IACR ePrint · 2026年10月27日
+Falcon 及基于它的 FN-DSA 标准通过离散高斯采样生成签名，功耗会泄露与私钥相关的中间值。本文提出统一的密钥恢复框架，融合每次采样调用中的三类观测，并将候选集合转化为私钥约束，通过回归与整数重构求解，不依赖 LLL 或 BKZ 等格约减。实验显示该攻击能恢复全部 50 个评估密钥，且表明仅靠指令级规范化无法阻止密钥恢复。
+★★★★★ 值得关注：融合中心指数类、符号位和提议幅值三类侧信道观测，绕过LLL/BKZ直接恢复Falcon密钥；在Cortex-M4上对50个密钥完成实验，影响面较大。</summary>
   </entry>
   <entry>
     <title>非线性直接反馈对齐：可扩展的无反向传播训练方法</title>
@@ -535,27 +557,5 @@ arXiv · 2026年10月27日
 arXiv · 2026年10月27日
 该论文针对 Mamba-2 模型的固定大小循环状态，提出一种训练后压缩方法，在写入与读出对应的子空间上做平衡截断，而非逐坐标压缩。作者还提出 HARP 方法，按层从 Hankel 谱分配秩并保护对检索敏感的层。在 130M 至 2.7B 的模型上，状态维度减半时 WikiText-2 困惑度平均仅上升 0.3 点（1.8%），优于 GHOST 的 1.6 点（9.3%）。
 ★★★★ 值得关注：将平衡截断用于Mamba-2状态子空间压缩，并按Hankel谱分配层级秩；在130M至2.7B模型上以0.3点困惑度增幅减半状态维度，优于GHOST。</summary>
-  </entry>
-  <entry>
-    <title>InfraDev：编程智能体能否开发AI基础设施，又如何评估？</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2610.36589"/>
-    <id>urn:diting-lab:zh:doc:294358</id>
-    <updated>2026-10-27T00:00:00+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">InfraDev: Can Coding Agents Develop AI Infrastructure, and How Can We Tell?
-arXiv · 2026年10月27日
-该论文提出InfraDev基准，包含36项任务，取材于Megatron-LM、vLLM和verl的真实拉取请求，涵盖训练、推理和强化学习等AI基础设施开发。评估时通过隐藏探针检验原有测试未覆盖的要求。测试结果显示，表现最好的前沿模型仅解决了38.9%的任务。
-★★★★ 值得关注：针对多文件、多GPU的真实基础设施PR构建基准并提出隐藏探针评分，填补了单内核基准的空白；实验覆盖六个前沿模型并分析失败模式，证据充分。</summary>
-  </entry>
-  <entry>
-    <title>从点与块中学习：用于时间序列分析的预训练混合注意力Transformer</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2610.36572"/>
-    <id>urn:diting-lab:zh:doc:294349</id>
-    <updated>2026-10-27T00:00:00+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Learning from Points and Patches: A Pre-trained Hybrid Attention Transformer for Time Series Analysis
-arXiv · 2026年10月27日
-该论文提出TimeHAT，一个面向时间序列分析的通用预训练框架。它设计了统一的点-块掩码策略，同时利用点级和块级监督进行上下文重建与因果外推，并构建混合注意力编码器以兼顾上下文交互与缓解秩退化。论文在分类、长期预测、缺失值填补和异常检测四类下游任务上，于微调、少样本和零样本迁移设置下进行了评估，结果显示其表现具有竞争力。
-★★★★ 值得关注：提出统一点-块掩码与混合注意力编码器的组合，对时间序列预训练有实质改进；在四类下游任务和多种迁移设置上做了系统实验。</summary>
   </entry>
 </feed>

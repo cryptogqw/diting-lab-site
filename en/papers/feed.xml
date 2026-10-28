@@ -438,6 +438,17 @@ This paper revisits how well quadratic approximations model neural network train
 ★★★★ Notable: Proposes Edge of Convexity and generalizes Edge of Stability, validated systematically across LLM pretraining runs up to 787M parameters.</summary>
   </entry>
   <entry>
+    <title>Poly2MsgLeaks: Certified Key Recovery via Polynomial-to-Message Power Leakage</title>
+    <link rel="alternate" href="https://eprint.iacr.org/2026/2657"/>
+    <id>urn:diting-lab:en:doc:311259</id>
+    <updated>2026-10-27T00:00:00+09:00</updated>
+    <category term="Cryptography &amp; Security"/>
+    <summary type="text">Poly2MsgLeaks: Certified Key Recovery from Polynomial-to-Message Leakage
+IACR ePrint · Oct 27, 2026
+This paper presents Poly2MsgLeaks, a profiled chosen-ciphertext power-analysis attack that recovers the full 512-coefficient secret key of the SMAUG-T public-key encryption scheme in its TiMER parameter set. Using six physical polynomial-to-message traces recorded on an STM32F415, the attack recovers 999 of 1,000 unseen secrets, and recovers all 1,000 secrets of a second cohort at a mean cost of 7.021 traces without false acceptances. Against single-write message assembly and a two-share masked P2M implementation, the evaluated six-execution attack recovers no complete secret.
+★★★★★ Notable: Proposes a profiled P2M power attack fully recovering SMAUG-T&#39;s 512-coefficient secret, with a bound on false key acceptance.</summary>
+  </entry>
+  <entry>
     <title>Learning to correct interpolation for reconstructing intermediate scientific fields</title>
     <link rel="alternate" href="https://arxiv.org/abs/2610.36751"/>
     <id>urn:diting-lab:en:doc:294428</id>
@@ -447,6 +458,17 @@ This paper revisits how well quadratic approximations model neural network train
 arXiv · Oct 27, 2026
 The paper proposes iFLEX, a method for reconstructing unobserved intermediate scientific fields between two observation times. It first forms a time-weighted average of the two observations, then uses a conditional diffusion model to learn and generate the residual between this average and the true intermediate field. The authors evaluate it on Navier-Stokes Kraichnan turbulence, Shanghai radar precipitation, and sea surface temperature data, reporting lower reconstruction error than the compared baselines.
 ★★★★ Notable: Learns residuals over weighted averaging with a conditional diffusion model, benchmarked on three scientific datasets against optical-flow and video baselines; useful for the subfield.</summary>
+  </entry>
+  <entry>
+    <title>Recovering Falcon Private Keys by Combining Sampler Side-Channel Leakages</title>
+    <link rel="alternate" href="https://eprint.iacr.org/2026/2656"/>
+    <id>urn:diting-lab:en:doc:311260</id>
+    <updated>2026-10-27T00:00:00+09:00</updated>
+    <category term="Cryptography &amp; Security"/>
+    <summary type="text">Falcon Key Recovery from Joint Sampler Leakages
+IACR ePrint · Oct 27, 2026
+Falcon and the FN-DSA standard based on it create signatures using discrete Gaussian sampling, and power consumption during this step leaks information about secret-dependent values. The paper presents a key-recovery method that combines three observations from each sampler call and turns the resulting candidate sets into constraints on the secret key, solved by regression and integer reconstruction without lattice reduction like LLL or BKZ. The attack recovers all 50 evaluation keys on PQClean Falcon-512 and still recovers 38 of 50 keys on c-fn-dsa, showing that instruction-level normalization alone is insufficient.
+★★★★★ Notable: Fuses three sampler side-channel observations to recover Falcon keys without LLL/BKZ, with experiments on 50 keys on Cortex-M4, indicating broad impact.</summary>
   </entry>
   <entry>
     <title>Nonlinear Direct Feedback Alignment: a scalable training method without backpropagation</title>
@@ -535,27 +557,5 @@ This paper studies how an optimizer in zero-sum games can gain cumulative payoff
 arXiv · Oct 27, 2026
 This paper proposes a post-training method that compresses the fixed-size recurrent state of Mamba-2 models by balanced truncation over the subspace that writes and reads the output, rather than scoring individual coordinates. It also introduces HARP, which allocates ranks per layer from the Hankel spectrum and protects retrieval-sensitive layers. With HARP, halving the state dimension raises average WikiText-2 perplexity by 0.3 points (1.8%) across 130M to 2.7B models, compared with 1.6 points (9.3%) for GHOST.
 ★★★★ Notable: Applies balanced truncation to Mamba-2 state compression with layer-wise ranks from Hankel spectra, halving state dimension with 0.3 perplexity increase across 130M–2.7B.</summary>
-  </entry>
-  <entry>
-    <title>InfraDev: Can Coding Agents Build AI Infrastructure, and How to Judge Them</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2610.36589"/>
-    <id>urn:diting-lab:en:doc:294358</id>
-    <updated>2026-10-27T00:00:00+09:00</updated>
-    <category term="AI &amp; Machine Learning"/>
-    <summary type="text">InfraDev: Can Coding Agents Develop AI Infrastructure, and How Can We Tell?
-arXiv · Oct 27, 2026
-The paper introduces InfraDev, a benchmark of 36 tasks drawn from real pull requests to Megatron-LM, vLLM, and verl, covering training, inference, and reinforcement learning infrastructure. Grading combines hidden probes that check requirements the original tests miss with a prompt that specifies the required interfaces. Across six frontier models, the best resolved 38.9% of the tasks, and the probes rejected 32% of submissions that passed all official tests.
-★★★★ Notable: Builds a multi-file, multi-GPU infrastructure benchmark from real PRs with hidden probes, evaluated across six frontier models with failure analysis.</summary>
-  </entry>
-  <entry>
-    <title>Learning from Points and Patches: A Pre-trained Transformer for Time Series Analysis</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2610.36572"/>
-    <id>urn:diting-lab:en:doc:294349</id>
-    <updated>2026-10-27T00:00:00+09:00</updated>
-    <category term="AI &amp; Machine Learning"/>
-    <summary type="text">Learning from Points and Patches: A Pre-trained Hybrid Attention Transformer for Time Series Analysis
-arXiv · Oct 27, 2026
-This paper presents TimeHAT, a general-purpose pre-training framework for time-series analysis. It introduces a unified point-patch masking strategy that combines point-level and patch-level supervision for contextual reconstruction and causal extrapolation, along with a hybrid attention encoder intended to preserve contextual interactions while mitigating rank degeneration. The model is evaluated on real-world datasets across classification, long-term forecasting, imputation, and anomaly detection, under fine-tuning, few-shot, and zero-shot settings, with competitive results reported.
-★★★★ Notable: Combines unified point-patch masking with hybrid attention for time-series pre-training, validated across four downstream tasks and multiple transfer settings.</summary>
   </entry>
 </feed>
