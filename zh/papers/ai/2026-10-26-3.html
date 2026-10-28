@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">131</span></a>
-      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1669</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1676</span></a>
       <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">2372</span></a>
       <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">204</span></a>
       <a href="../../../zh/papers/ai/index.html" aria-current="page"><span>AI 算法</span> <span class="count">16385</span></a>
@@ -227,7 +227,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.34951" target="_blank" rel="noopener noreferrer nofollow">Improving Reasoning with Rollout Agreement for Group-Based Policy Optimization</a>  </h3>
 <p class="note"><span class="label">说明</span>利用组内推演一致性改进基于分组的策略优化推理（RoAR）</p><p class="summary"><span class="label">简介</span>论文发现，同一题目中正确答案推演的一致性越低，其中含有无效推理的比例越高。作者据此提出RoAR，在GRPO奖励中加入推理层面的一致性信号，无需人工标注或额外采样。在五个数学推理基准上，1.5B模型的平均pass@1达到55.5%，并经盲审比较了各模型正确答案中无效推理的比例。</p>
-<p class="why"><span class="label label-why">看点</span>提出以同组正确轨迹一致性作奖励的RoAR，并通过盲配对分析与审计支撑，较已有方法有实质改进，影响面限于RLVR训练领域。</p><p class="authors">Sohyun Son, Yerim Hong, Jaeyun Park 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出RoAR，把同组正确轨迹的推理一致性加入GRPO奖励；作者用盲配对分析发现低一致性轨迹含更多虚假推理，并报告5个数学基准上平均pass@1达55.5%，高于GRPO与GRPO-CARE。</p><p class="authors">Sohyun Son, Yerim Hong, Jaeyun Park 等</p></article>
 <article class="item" id="d268030">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -380,7 +380,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.34901" target="_blank" rel="noopener noreferrer nofollow">LE-GDA: Layer Ensemble Gaussian Discriminant Analysis for Training-Free Few-Shot CLIP Adaptation</a>  </h3>
 <p class="note"><span class="label">说明</span>LE-GDA：无需训练的少样本 CLIP 适配方法，融合中间层与最终层表示</p><p class="summary"><span class="label">简介</span>本文针对视觉-语言模型 CLIP 的无训练少样本适配，提出层集成高斯判别分析（LE-GDA）。该方法对中间层与最终层表示分别拟合正则化的共享协方差判别器，并对每个查询的类别分数做标准化，再与零样本分类器组合，全程无需梯度优化。作者在 11 个数据集、4 种 CLIP 骨干、5 种样本数上进行评估，结果显示该方法在各骨干上平均准确率最高，表明中间层表示包含超出最终嵌入的有用信息。</p>
-<p class="authors">Pavodi Maniamfu, Vogel Kiketa, Zezina Kuzulu Kuetu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>将CLIP中间层与最终表示各自拟合的共享协方差高斯判别器，逐查询标准化后集成，无需梯度优化即可提升少样本适应；摘要报告在11数据集、四种骨干上16-shot平均精度由78.01%升至79.54%。</p><p class="authors">Pavodi Maniamfu, Vogel Kiketa, Zezina Kuzulu Kuetu 等</p></article>
 <article class="item" id="d268007">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -461,7 +461,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.34884" target="_blank" rel="noopener noreferrer nofollow">MedAdaptAgent: An Automatic Harness for Adapting Medical Imaging Models to New Sites</a>  </h3>
 <p class="note"><span class="label">说明</span>MedAdaptAgent：将医学影像模型适配到新医院的自动化工具</p><p class="summary"><span class="label">简介</span>预训练医学影像模型在新医院可能因成像协议和预处理不同而表现变差。本文提出MedAdaptAgent，由大语言模型驱动的规划器根据模型与站点证据选择适配实验，只有在优于预训练模型时才接受结果，并输出可运行的完整模型包。在26个分割与分类迁移任务中，使用20个本地标注后，分割Dice平均从0.483升至0.774，分类AUROC平均从0.810升至0.837。</p>
-<p class="why"><span class="label label-why">看点</span>提出LLM驱动的自动化医学影像模型迁移框架，新意在于流程自动化与证据门控；在26次迁移、多任务上有对比实验，分割Dice与分类AUROC均有提升，影响面限于医学影像迁移子领域。</p><p class="authors">Hanxue Gu, Zhonghao Liu, Xingrui Gu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出 MedAdaptAgent，由 LLM 规划器驱动，将预训练医学影像模型自动迁移到新医院；摘要报告在 26 次分割与分类迁移中，分割 Dice 由 0.483 升至 0.774，分类 AUROC 由 0.810 升至 0.837。</p><p class="authors">Hanxue Gu, Zhonghao Liu, Xingrui Gu 等</p></article>
 <article class="item" id="d267997">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -524,7 +524,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.34868" target="_blank" rel="noopener noreferrer nofollow">GADAR: Generalizing Across Domains via Action Ranking for Classical Planning</a>  </h3>
 <p class="note"><span class="label">说明</span>GADAR：基于动作排序的经典规划跨领域泛化方法</p><p class="summary"><span class="label">简介</span>该论文提出GADAR，一种无需搜索的经典规划学习策略，它以领域描述为输入，可在训练时未见过的新领域中构造可执行动作。模型通过符号在领域中扮演的角色（而非名称）进行表示，分三层实现。在八个基准领域的留一领域外零样本评估中，单一策略在七个训练领域上的测试覆盖率为58.3%，与专用单领域模型的59.3%接近；在大型测试实例上的零样本平均覆盖率为22.6%，高于随机选择的3.3%。</p>
-<p class="authors">Rajesh Mangannavar, Pranay Dugar, Prasad Tadepalli</p></article>
+<p class="why"><span class="label label-why">看点</span>提出以域描述为输入、按符号角色而非名称理解的零样本经典规划策略；摘要报告留出一域评测中，单一策略在七域训练下覆盖率为58.3%，与单域模型的59.3%接近，并在留出域上超过随机选择。</p><p class="authors">Rajesh Mangannavar, Pranay Dugar, Prasad Tadepalli</p></article>
 <article class="item" id="d267990">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -713,7 +713,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.34817" target="_blank" rel="noopener noreferrer nofollow">Silent and Costly: Characterizing and Detecting Prompt-Caching Mis-Integration in LLM Agents</a>  </h3>
 <p class="note"><span class="label">说明</span>静默且代价高昂：LLM 智能体中提示词缓存误用的表征与检测</p><p class="summary"><span class="label">简介</span>本文首次实证研究了 10 个热门开源智能体系统中 120 个与提示词缓存相关的拉取请求，发现误用既出现在请求端配置，也出现在读取端用量统计，且多数误用不会引发可观察的运行时故障。作者据此提出 CACHELINT 工具，用 CodeQL 定位缓存调用点并核对前置条件，在 120 个标注样本上取得 0.71 的精确率和 0.78 的召回率，在 571 个真实项目中识别出 32 处误用（精确率 0.86）。这些发现获得 21 位开发者确认，并推动 18 项上游修复。</p>
-<p class="why"><span class="label label-why">看点</span>首次实证研究提示缓存误用，并设计结合CodeQL与LLM检查的检测工具；在120个标注样本和571个项目上验证，产生18个上游修复。</p><p class="authors">Ying Zhang, Ruoqi Guo, Yi Liu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>首次实证研究LLM智能体中提示缓存的误集成问题，多数误用静默发生；设计CACHELINT，结合CodeQL与能力检查，在120个标注样本上精度0.71、召回0.78，并在571个项目中识别32处误用，得到21次开发者确认与18个上游修复。</p><p class="authors">Ying Zhang, Ruoqi Guo, Yi Liu 等</p></article>
 <article class="item" id="d267966">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -947,7 +947,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.34742" target="_blank" rel="noopener noreferrer nofollow">From Sentinel-2 to 1-m Imagery: Real-World × 10 Cross-Sensor Super-Resolution via Visual Autoregressive Modeling</a>  </h3>
 <p class="note"><span class="label">说明</span>从 Sentinel-2 到 1 米影像：基于视觉自回归建模的真实跨传感器十倍超分辨率</p><p class="summary"><span class="label">简介</span>论文研究如何由 Sentinel-2 卫星影像重建 1 米分辨率影像，两者来自不同卫星，无法用合成降质方式关联，且需要十倍放大。作者基于长江经济带数据集 YREB-SR 提出 CrossVAR 模型，在 3015 个测试场景上取得 27.60 dB PSNR、0.7725 SSIM、0.1451 LPIPS 和 7.15 FID，各项指标均优于对比方法，并已公开代码。</p>
-<p class="why"><span class="label label-why">看点</span>针对真实跨传感器×10超分提出视觉自回归模型CrossVAR，在3015个测试场景上取得最优指标，方法新颖且验证充分，对遥感超分子领域有较大价值。</p><p class="authors">Tailai Chen, Yuluxin Fu, Jie Deng 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出视觉自回归模型CrossVAR，用于Sentinel-2到1米影像的真实跨传感器×10超分，在3015个测试场景上报告PSNR 27.60 dB、SSIM 0.7725、LPIPS 0.1451、FID 7.15，四项指标均为对比方法中最优。</p><p class="authors">Tailai Chen, Yuluxin Fu, Jie Deng 等</p></article>
 <article class="item" id="d267935">
   <div class="meta">
     <span class="source">arXiv</span>

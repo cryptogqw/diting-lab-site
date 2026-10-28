@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">131</span></a>
-      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1669</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1676</span></a>
       <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">2372</span></a>
       <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">204</span></a>
       <a href="../../../zh/papers/ai/index.html" aria-current="page"><span>AI 算法</span> <span class="count">16385</span></a>
@@ -164,7 +164,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05458" target="_blank" rel="noopener noreferrer nofollow">Measuring and Reducing Cross-Vendor Mismatch in Language Models</a>  </h3>
 <p class="note"><span class="label">说明</span>衡量并减少语言模型在不同GPU厂商之间的跨平台偏差</p><p class="summary"><span class="label">简介</span>同一语言模型在不同厂商的GPU上运行，即使权重和输入相同，也会产生不同的输出。论文用五类指标分析两个稠密模型和两个混合专家模型，并发现偏差部分来自厂商矩阵指令内部的累加顺序。文中提到，将计算提升到FP32可使稠密模型的logit误差降低43%，但运行时间约为三倍；仅将MLP保持为BF16则可保留94%的收益，运行时间约为1.3倍。</p>
-<p class="why"><span class="label label-why">看点</span>系统分析跨厂商GPU数值差异的多种度量并给出仅MLP保留BF16可保留94%收益的实用发现，证据包括对比实验与蒸馏训练验证。</p><p class="authors">Erland Hilman Fuadi, Chong Tian, Xiaosong Ma 等</p></article>
+<p class="why"><span class="label label-why">看点</span>论文分析同一模型在不同GPU厂商上的logit差异，发现仅MLP保留BF16可保留FP32上转约94%的误差降低收益，运行时间为1.3倍；蒸馏实验显示差异会带入训练，431道MMLU题答案不同。</p><p class="authors">Erland Hilman Fuadi, Chong Tian, Xiaosong Ma 等</p></article>
 <article class="item" id="d249050">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -218,7 +218,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05450" target="_blank" rel="noopener noreferrer nofollow">Groupwise Distortion Guarantees for Preference-Based Alignment</a>  </h3>
 <p class="note"><span class="label">说明</span>面向偏好对齐的分组失真保证：一种按群体条件学习策略的方法</p><p class="summary"><span class="label">简介</span>基于偏好的对齐方法（如 RLHF 与 NLHF）通过成对比较学习语言模型策略，但目标通常是最大化社会福利，而单纯的比较不足以确定这一目标。本文提出 GLHF 算法，每位用户只需一次比较，即可为各群体学习一个条件策略。在 Bradley–Terry 比较模型下，GLHF 在多个预设（可重叠）群体上渐近达到已知的最优失真界，且对相似偏好群体有更强保证。实验显示，在各群体中失真均有降低，最差群体的失真也明显低于 NLHF 等基线方法。</p>
-<p class="why"><span class="label label-why">看点</span>将失真保证推广到多群体且可重叠的分组条件策略，样本复杂度对群体数呈对数增长；理论与咖啡评分及合成LLM实验相互印证。</p><p class="authors">Jacob Brodkey, Roberto Tamez, Aaron Roth</p></article>
+<p class="why"><span class="label label-why">看点</span>把偏好对齐的社会福利失真保证推广到可重叠的多群体，用分组条件策略同时逼近各群体最优失真，样本量随群体数对数增长，咖啡与合成LLM实验中各群体失真下降。</p><p class="authors">Jacob Brodkey, Roberto Tamez, Aaron Roth</p></article>
 <article class="item" id="d249046">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -380,7 +380,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05398" target="_blank" rel="noopener noreferrer nofollow">MMPostTrainBench: Benchmarking Autonomous Research for Multimodal Post-Training</a>  </h3>
 <p class="note"><span class="label">说明</span>MMPostTrainBench：多模态后训练自主研究基准</p><p class="summary"><span class="label">简介</span>本文提出 MMPostTrainBench 基准，涵盖图像、音频、视频及音视频联合理解等八项任务，考察 LLM 智能体在固定预算下对多模态模型进行迭代后训练的能力。结果显示，52.1% 的模型-任务均值低于基础模型，且存在非目标能力退化，智能体也未能稳定选出最佳候选提交。作者进一步提出 MMResearch 框架，借助分层记忆与开发集评估改进表现。</p>
-<p class="why"><span class="label label-why">看点</span>提出多模态自主后训练基准及带分层记忆的研究框架，发现回归与选择差距；在八项任务上做了系统评估，影响面集中于多模态研究智能体领域。</p><p class="authors">Yuxin Liu, Yuxuan Wang, Zhenxin Lei 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出八项多模态任务的自主后训练基准MMPostTrainBench，摘要报告52.1%的模型-任务均值低于基线且存在非目标回归；另提出带分层记忆的MMResearch框架，使Claude Opus 4.8的提交模型准确率最高提升7.75个百分点。</p><p class="authors">Yuxin Liu, Yuxuan Wang, Zhenxin Lei 等</p></article>
 <article class="item" id="d249033">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -524,7 +524,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05367" target="_blank" rel="noopener noreferrer nofollow">AIProver: Agentic Auto-Formalization of Mathematical Research via Certificate-Driven Evolving Harness</a>  </h3>
 <p class="note"><span class="label">说明</span>AIProver：借助证书驱动的演化式框架，自动形式化数学研究论文</p><p class="summary"><span class="label">简介</span>该论文提出 AIProver，一个用于自动将数学定理及证明翻译为 Lean 等形式语言并自动生成证明的智能体框架。框架联合微调一个 119B 开源语言模型，并通过 HarnessEvolve 演化其工具调用流程，依据类型、证明完整性与语义正确性的验证证书进行强化学习。作者还构建了包含 58.9k 实例的 LoCoBench 基准。原文报告其语义正确率（pass@4）从基线的 15.7% 提升至 36.7%，并优于其他开源系统与 Aristotle，成本也低于 Numina-Lean-Agent。</p>
-<p class="authors">Prithwish Jana, Viet Bach Hoang, Logan Luna 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出AIProver，将119B开源模型的联合后训练与证书驱动的HarnessEvolve进化式工具调用框架结合，并在新建的LoCoBench上报告pass@4语义正确率从15.7%提升至36.7%。</p><p class="authors">Prithwish Jana, Viet Bach Hoang, Logan Luna 等</p></article>
 <article class="item" id="d259761">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -632,7 +632,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05334" target="_blank" rel="noopener noreferrer nofollow">AgentDiscover: Autonomous Discovery with Minimal Search Scaffolding</a>  </h3>
 <p class="note"><span class="label">说明</span>AgentDiscover：用最少搜索脚手架进行自主科学发现</p><p class="summary"><span class="label">简介</span>该论文提出 AgentDiscover，让编码智能体自行规划搜索，并用数据库记录想法、候选方案及其关系，作为长期记忆。实验显示其在内核工程、生物学、算法设计和数学等任务上优于现有发现框架，成本更低、分数更高。文中还报告其程序在七届过往 AtCoder 启发式竞赛中本可名列第一。</p>
-<p class="why"><span class="label label-why">看点</span>让编码代理自主规划搜索并用数据库记忆实验，相比固定算法框架有新意；在多领域任务和历届AtCoder比赛上做了对比实验。</p><p class="authors">Mahdi Farahbakhsh, Ilan Sela, Fatemeh Doudi 等</p></article>
+<p class="why"><span class="label label-why">看点</span>让编码代理自行规划搜索并用数据库记忆每次实验，取代人工设计的固定算法；摘要报告其在多领域任务及七届AtCoder启发式比赛中成绩优于已有框架。</p><p class="authors">Mahdi Farahbakhsh, Ilan Sela, Fatemeh Doudi 等</p></article>
 <article class="item" id="d249009">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -686,7 +686,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05327" target="_blank" rel="noopener noreferrer nofollow">Quantitative Universality of Approximate Message Passing for Rank-One Quadratic Sensing</a>  </h3>
 <p class="note"><span class="label">说明</span>秩一二次感知下近似消息传递算法的定量普适性</p><p class="summary"><span class="label">简介</span>本文研究近似消息传递（AMP）算法在秩一二次感知矩阵下的表现。作者证明，在固定迭代次数内，这类矩阵与协方差匹配的各向同性高斯矩阵所得的归一化信号重叠、平滑谱统计量等结果仅相差 O(d^{-1/2})。由此得出归一化均方误差、谱矩及经验谱分布的普适性。该结果为 Maillard 等人（arXiv:2408.03733）提出的 AMP 普适性猜想，在规定的平滑谱去噪器情形下提供了证明。</p>
-<p class="why"><span class="label label-why">看点</span>证明了秩一二次感知下AMP的定量普适性，并确认了Maillard等人提出的猜想，理论上有实质推进，但应用范围较窄。</p><p class="authors">Duy Thuc Nguyen, Yue M. Lu, Subhabrata Sen</p></article>
+<p class="why"><span class="label label-why">看点</span>摘要称在秩一二次感知下，AMP的归一化信号重叠、谱统计等与协方差匹配的高斯模型只相差O(d^{-1/2})，并称此结果确立了Maillard等人提出的猜想。</p><p class="authors">Duy Thuc Nguyen, Yue M. Lu, Subhabrata Sen</p></article>
 <article class="item" id="d253546">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -784,7 +784,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05303" target="_blank" rel="noopener noreferrer nofollow">ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience</a>  </h3>
 <p class="note"><span class="label">说明</span>ASCENT：通过自蒸馏已验证经验，在线测试时训练长程智能体</p><p class="summary"><span class="label">简介</span>该论文研究大语言模型智能体在部署过程中、对一连串相关任务边执行边在线更新权重的方法，称为在线智能体测试时训练。ASCENT 让模型冻结的初始副本以已验证的执行轨迹作为特权信息，预测沿轨迹的下一词分布，再把这些分布蒸馏进持久的 LoRA 快速权重，用于后续任务。论文报告，在 ALFWorld、WebShop 和 AppWorld 上，随着经验积累，该方法提高了任务成功率与交互效率，并能迁移到未见过的场景。</p>
-<p class="authors">Haodong Lu, Dong Gong</p></article>
+<p class="why"><span class="label label-why">看点</span>提出在部署阶段用自蒸馏把已验证的执行经验写入模型权重，无需单独训练阶段或记忆检索；在ALFWorld、WebShop和AppWorld上，作者报告任务成功率和交互效率随经验积累提升，并优于在线适应方法，且能迁移到未见场景。</p><p class="authors">Haodong Lu, Dong Gong</p></article>
 <article class="item" id="d248992">
   <div class="meta">
     <span class="source">arXiv</span>

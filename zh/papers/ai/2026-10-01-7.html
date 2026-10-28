@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">131</span></a>
-      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1669</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1676</span></a>
       <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">2372</span></a>
       <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">204</span></a>
       <a href="../../../zh/papers/ai/index.html" aria-current="page"><span>AI 算法</span> <span class="count">16385</span></a>
@@ -92,7 +92,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40230" target="_blank" rel="noopener noreferrer nofollow">EviRover: Reinforcing Agentic Perception Beyond a Glance</a>  </h3>
 <p class="note"><span class="label">说明</span>EviRover：超越一瞥的智能体式视觉感知强化</p><p class="summary"><span class="label">简介</span>传统视觉感知通常只依据对图像的一次性判断，在细节不足或需要最新知识时容易失败。本文将感知建模为可通过多步交互获取额外信息的智能体过程，并构建了训练数据与人工校验的评测基准 EviLens。作者提出 EviRover 模型，先经监督微调再进行智能体强化学习，4B 模型在 EviLens 上平均比其基座模型高出 30 分。</p>
-<p class="why"><span class="label label-why">看点</span>将感知重构为可交互的智能体过程并设计数据管线与基准，实验覆盖多个基准且有明显提升，影响面较广。</p><p class="authors">Kaixuan Fan, Kaituo Feng, Tianshuo Peng 等</p></article>
+<p class="why"><span class="label label-why">看点</span>将视觉感知重构为可交互的智能体过程，构建数据管线与人工验证基准EviLens，4B模型平均提升30分，并迁移到多个感知与多模态基准。</p><p class="authors">Kaixuan Fan, Kaituo Feng, Tianshuo Peng 等</p></article>
 <article class="item" id="d245391">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -110,7 +110,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40221" target="_blank" rel="noopener noreferrer nofollow">PhantomEnvironments: Training LLM Agents in Fictional Worlds</a>  </h3>
 <p class="note"><span class="label">说明</span>《PhantomEnvironments：在虚构世界中训练LLM智能体》：用规则生成的虚构环境训练搜索智能体</p><p class="summary"><span class="label">简介</span>该论文提出PhantomEnvironments，用纯规则生成的虚构世界作为强化学习环境，无需LLM参与、边际成本为零。智能体需在模板化文章语料中检索，回答多跳问题。实验显示，这些训练出的智能体能迁移到真实世界多跳搜索基准，在较新的基准上常优于使用真实数据训练的结果。</p>
-<p class="why"><span class="label label-why">看点</span>提出完全由规则生成、零成本的虚构环境训练搜索智能体，并在真实多跳基准上迁移，新颖且有实验支撑。</p><p class="authors">Anmol Kabra, Swathi Saravana Selvam, Albert Gong 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出完全由规则生成、无需LLM且零边际成本的虚构环境训练搜索智能体；作者称其可迁移至真实多跳搜索基准，甚至在较新基准上优于真实数据训练，并报告搜索预算随问题难度近似线性增长。</p><p class="authors">Anmol Kabra, Swathi Saravana Selvam, Albert Gong 等</p></article>
 <article class="item" id="d246898">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -137,7 +137,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.00436" target="_blank" rel="noopener noreferrer nofollow">Every Batch Is Its Own Validation Set: Leave-One-Out Gradient Matching for Online Data Selection in LLM Fine-Tuning</a>  </h3>
 <p class="note"><span class="label">说明</span>每个批次都是它自己的验证集：用于大模型微调在线数据选择的留一梯度匹配</p><p class="summary"><span class="label">简介</span>该论文提出 LOOM 方法，用于大语言模型微调时的在线批次数据选择。作者指出，直接对同一批样本做梯度匹配会因包含样本自身的梯度噪声而产生偏差，导致整批训练往往最优；改为留一法（去掉每个样本自身的贡献）后可得到无偏估计，并在多个任务与模型上优于整批训练和其他梯度匹配方法。</p>
-<p class="why"><span class="label label-why">看点</span>提出留一法梯度匹配消除协方差惩罚，给出半批优于全批的精确条件；在7个骨干、4个任务上对比充分，效果有说服力，影响限于LLM微调数据选择。</p><p class="authors">Hongyu Chen, Xinyi Luo, Ming Zhao 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出留一法梯度匹配，去掉梯度Gram矩阵对角线上的协方差惩罚，给出半批优于全批的精确条件；摘要报告在四个微调任务和七个骨干上超过全批训练及多种基线，并能以不到基准率五分之一的比例挑出注入的标签噪声。</p><p class="authors">Hongyu Chen, Xinyi Luo, Ming Zhao 等</p></article>
 <article class="item" id="d245389">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -191,7 +191,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40190" target="_blank" rel="noopener noreferrer nofollow">Cheap to Draw, Expensive to Trust: Certifying Test-Time Scaling Curves</a>  </h3>
 <p class="note"><span class="label">说明</span>抽样越多越准？为测试时扩展曲线提供可信的置信区间</p><p class="summary"><span class="label">简介</span>论文关注测试时扩展：对每题采样k个答案，由验证器选出得分最高者，并以准确率随k变化的曲线呈现效果。作者指出，这类曲线画起来容易，但结论难以信任，因此提出能同时覆盖所有预算的置信带，并推导了认证整条曲线所需的最小最大成本。在185个留出的得分池上，文中的配对审计方法所用答案数为最便宜的对比认证方法的0.74倍（64个预算）和0.53倍（1024个预算）。</p>
-<p class="why"><span class="label label-why">看点</span>提出对整条测试时扩展曲线同时认证的极小极大成本理论，并给出配对审计方法，相比已有认证方法在实验中节省answer数量，理论和实证结合较扎实。</p><p class="authors">Sohail (Neel) Sarkar, Shakuntala Baichoo</p></article>
+<p class="why"><span class="label label-why">看点</span>提出整条测试时扩展曲线同时认证的极小极大成本理论，并给出配对审计方法；在185个保留分数池上，64个预算时所用回答数为最便宜的竞争认证审计的0.74倍，1,024个预算时为0.53倍。</p><p class="authors">Sohail (Neel) Sarkar, Shakuntala Baichoo</p></article>
 <article class="item" id="d249902">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -245,7 +245,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.23912" target="_blank" rel="noopener noreferrer nofollow">Junction Geometry Survives an Unidentifiable Blur</a>  </h3>
 <p class="note"><span class="label">说明</span>在无法识别的模糊下仍可恢复交叉点几何结构</p><p class="summary"><span class="label">简介</span>论文研究显微图像中细丝交叉或分支、以及X射线探测器上色散谱线交叉时，如何在未知高斯混合模糊的情况下恢复交点处直线臂的数量、方向与相对权重。作者证明了一个与单元概率欧氏差成正比的误差界，并给出从n个观测得到的最小极大误差阶为n^{-1/2}。在360个由单分子定位数据构建的交叉点和分支上，拟合方法比调优的固定尺度Hessian脊检测器更常正确给出臂数和方向。</p>
-<p class="why"><span class="label label-why">看点</span>证明了在不可辨识模糊下仍可恢复交叉结构，给出统一界与极小极大速率，并在多组真实数据上验证。</p><p class="authors">Sohail (Neel) Sarkar, Shakuntala Baichoo</p></article>
+<p class="why"><span class="label label-why">看点</span>作者指出，在不可辨识的高斯混合模糊下，交叉点的臂数、方向与权重仍可恢复：摘要给出统一界、n^{-1/2} 的极小极大速率，并在显微与 Chandra 数据上报告了优于固定尺度 Hessian 脊检测器的结果。</p><p class="authors">Sohail (Neel) Sarkar, Shakuntala Baichoo</p></article>
 <article class="item" id="d245379">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -281,7 +281,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40148" target="_blank" rel="noopener noreferrer nofollow">From Spectra to Joint Schedules in LLM Pre-training: 3+3(+2) Scaling-Law Regimes</a>  </h3>
 <p class="note"><span class="label">说明</span>从谱到联合调度：大语言模型预训练中的 3+3(+2) 缩放律区间</p><p class="summary"><span class="label">简介</span>本文研究带噪声的在线 SGD 与线性随机特征模型中，幂律学习曲线如何随学习率与批量大小调度而变化。作者通过精确的 Volterra 方程，将损失分解为传播未解决目标误差的强迫项与传播随机误差的记忆核，并给出幂律成立的谱条件。受控的 nanoGPT 实验显示，匹配 B/η 路径的调度在内在时间上近似等价，并验证了一个预测多种调度下损失的代理模型。</p>
-<p class="authors">Yichen Wang, Fanghui Liu, Yudong Chen</p></article>
+<p class="why"><span class="label label-why">看点</span>给出精确Volterra方程与谱质量条件，刻画学习率与批量调度下幂律何时保持、改变或被破坏；并以nanoGPT实验和代理模型进行检验。</p><p class="authors">Yichen Wang, Fanghui Liu, Yudong Chen</p></article>
 <article class="item notable" id="d256627">
 <div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
     <span class="source">arXiv</span>
@@ -290,7 +290,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40147" target="_blank" rel="noopener noreferrer nofollow">Policy Iteration Is Not Strongly Polynomial for Deterministic Markov Decision Processes: The Price of Algorithmic Anarchy</a>  </h3>
 <p class="note"><span class="label">说明</span>策略迭代在确定性马尔可夫决策过程中并非强多项式：算法无序的代价</p><p class="summary"><span class="label">简介</span>该论文研究确定性折扣与平均奖励马尔可夫决策过程（MDP）中的Howard策略迭代算法，证明其迭代次数随状态数呈指数增长，因此不具备强多项式性。作者同时证明，Dantzig式变体在确定性平均奖励MDP上可在强多项式时间内运行，两者形成指数级差距。</p>
-<p class="authors">Han Zhong, Yinyu Ye</p></article>
+<p class="why"><span class="label label-why">看点</span>作者证明确定性MDP上Howard策略迭代的指数下界，并给出Dantzig变体的强多项式界，建立两者之间的指数分离，摘要称此为「算法无政府状态的代价」。</p><p class="authors">Han Zhong, Yinyu Ye</p></article>
 <article class="item" id="d245375">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -308,7 +308,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40140" target="_blank" rel="noopener noreferrer nofollow">Less is more: error-distance scaling relation for data-efficient kilometer-scale downscaling of extreme heat</a>  </h3>
 <p class="note"><span class="label">说明</span>少即是多：用于极端高温数据高效千米级降尺度的误差-距离标度关系</p><p class="summary"><span class="label">简介</span>该论文提出CASPER模型（带结构保持损失的U-Net），将32公里再分析数据降尺度到1公里的气温、湿度和风场。研究在24种不同训练时长（1至8个月）的配置中发现，预测误差随训练数据的气候距离线性增长（RMSE = 0.83 + 2.95d），该关系解释了90%的方差。在极端夏季周的测试中，该模型在极端高温期间的站点观测对比中误差在1.8 K以内；用11天本地模拟数据可将温哥华的误差从3.8 K降至1.3 K，训练期应覆盖目标气候。</p>
-<p class="why"><span class="label label-why">看点</span>提出误差随气候距离线性增长的定量规律，并用于指导数据高效的千米级极端高温降尺度，实证覆盖24种配置与多地区验证。</p><p class="authors">Ahmed Marey, Henry Lu, Abhishek Gaur 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出千米级极端高温降尺度的误差随气候距离线性增长规律（RMSE = 0.83 + 2.95d），解释90%方差，据此可用更少模拟数据训练降尺度模型，并在温哥华验证。</p><p class="authors">Ahmed Marey, Henry Lu, Abhishek Gaur 等</p></article>
 <article class="item" id="d245374">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -361,7 +361,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40127" target="_blank" rel="noopener noreferrer nofollow">Learning Functional Subspaces for Neural Network Compression</a>  </h3>
 <p class="note"><span class="label">说明</span>学习功能子空间用于神经网络压缩：通过端到端训练选择要舍弃的子空间，压缩 Transformer 模型</p><p class="summary"><span class="label">简介</span>论文提出可学习子空间投影（LSP），用于压缩 Transformer 模型。现有低秩分解方法用局部准则选择要删去的子空间，高压缩率下误差会随深度累积。LSP 则以全局目标（与稠密模型输出分布的 KL 散度或原始训练损失）端到端学习这些子空间，同时冻结预训练权重，最后合并为标准低秩因子。实验涵盖 OPT、Qwen3、Llama-2 和 ViT-B/16，在约 70% 压缩率下表现优于基线，且压缩越多优势越明显。</p>
-<p class="authors">Massimo Bini, Anders Christensen, Stephan Alaniz 等</p></article>
+<p class="why"><span class="label label-why">看点</span>用端到端学习的正交投影替代局部闭式准则做低秩压缩，并让同组层共享一个KV潜变量；摘要报告在Llama-2-7B等模型上压缩率越高优势越明显，解码最多快1.6倍。</p><p class="authors">Massimo Bini, Anders Christensen, Stephan Alaniz 等</p></article>
 <article class="item notable" id="d260722">
 <div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
     <span class="source">arXiv</span>
@@ -370,7 +370,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40124" target="_blank" rel="noopener noreferrer nofollow">Debias It Yourself: Teaching LLMs Cognitive Bias Mitigation Interventions</a>  </h3>
 <p class="note"><span class="label">说明</span>自助去偏（DIY）：教会大语言模型认知偏见缓解方法</p><p class="summary"><span class="label">简介</span>该论文借鉴社会心理学和认知科学中经过验证的干预方法，提出“自助去偏”（DIY）框架，把五种干预转化为大语言模型的去偏流程，并通过示例提示、指令微调和引导式自我修正三种范式实现。实验在三个模型、五个偏见基准、十一个去偏基线和三个推理基准上进行。结果显示，Train+Revise与单独Revise的平均排名居前两位，在偏见与推理的权衡中表现最佳，并能将未见维度上的偏见最多降低14.8%。</p>
-<p class="why"><span class="label label-why">看点</span>将人类认知偏差干预迁移到LLM去偏，并结合三种范式，是有新意的组合；实验覆盖三模型、五基准与十一基线。</p><p class="authors">Chahat Raj, Sina Mansouri, Aylin Caliskan 等</p></article>
+<p class="why"><span class="label label-why">看点</span>将人类认知偏差干预转化为LLM去偏程序并通过三种范式实现，摘要报告在三模型、五个偏差基准上，Train+Revise与Revise平均排名最高，偏差可低至2%、推理准确率达90%，并在未见维度上降低偏差最多14.8%。</p><p class="authors">Chahat Raj, Sina Mansouri, Aylin Caliskan 等</p></article>
 <article class="item" id="d245370">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -424,7 +424,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.00430" target="_blank" rel="noopener noreferrer nofollow">Memetic Trojans: Social Contagions as Carriers of Adversarial Payloads in Agent Networks</a>  </h3>
 <p class="note"><span class="label">说明</span>记忆型木马：在智能体网络中借社会传播携带对抗性载荷</p><p class="summary"><span class="label">简介</span>本文提出“记忆型木马”，一种利用智能体自发转发、放大内容的网络攻击方式，不同于依赖对抗诱导传播的智能体蠕虫。作者从面向LLM智能体的社交平台Moltbook提取社会传播内容并进行受控实验，最有效的内容约有50%被后续帖子转发，点赞率为平均水平的2.5倍；蒙特卡洛模拟显示其预期曝光最多放大3.19倍。结论认为，仅防御提示注入或防止智能体被攻陷不足以阻止此类传播，需要考虑网络结构与推荐机制的网络层防御。</p>
-<p class="why"><span class="label label-why">看点</span>提出区别于智能体蠕虫的内生社会传播攻击新类别，并用Monte Carlo模拟量化放大效应；实验基于单一平台，规模有限。</p><p class="authors">Birk Torpmann-Hagen, Finn Schwall, Leon Moonen</p></article>
+<p class="why"><span class="label label-why">看点</span>提出区别于智能体蠕虫的内生社会传播攻击新类别，并用蒙特卡洛模拟估计放大效应，最多达3.19倍；实验基于单一平台Moltbook。</p><p class="authors">Birk Torpmann-Hagen, Finn Schwall, Leon Moonen</p></article>
 <article class="item" id="d245366">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -595,7 +595,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40067" target="_blank" rel="noopener noreferrer nofollow">Community-Driven API and AI Writer Design for Openly Scaling Community Notes</a>  </h3>
 <p class="note"><span class="label">说明</span>社区驱动的 API 与 AI 撰写者设计：公开扩展社区笔记</p><p class="summary"><span class="label">简介</span>该论文介绍了 X 平台社区笔记（Community Notes）的 AI 笔记撰写 API 的设计、运行与影响，该接口自 2025 年 9 月起公开提供。笔记是否显示由用户而非平台或 AI 决定；社区撰写者贡献了 AI API 输出的大部分，占被选为有帮助并广泛显示笔记的 52%。研究还发现，在有有帮助笔记的帖子中，42% 只有 AI 笔记，30% 只有人工笔记，AI 撰写是对人工撰写的补充。该撰写者为 Apache 2.0 许可的开源软件。</p>
-<p class="why"><span class="label label-why">看点</span>提出面向社区的AI撰写API设计并在X上实际运行，结合人机笔记覆盖分析，新意与影响面较强，证据主要为大规模运行数据。</p><p class="authors">Brad Miller, Jay Baxter, Jiansong Chao 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出面向社区的AI撰写API并在X上运行，摘要报告AI撰写者生成52%被选为有帮助并广泛显示的笔记，且42%的帖子仅有AI笔记、30%仅有人工笔记。</p><p class="authors">Brad Miller, Jay Baxter, Jiansong Chao 等</p></article>
 <article class="item" id="d245350">
   <div class="meta">
     <span class="source">arXiv</span>

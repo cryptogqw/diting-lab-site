@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../en/papers/crypto/index.html"><span>Crypto &amp; Blockchain</span> <span class="count">131</span></a>
-      <a href="../../../en/papers/cryptography/index.html"><span>Cryptography &amp; Security</span> <span class="count">1669</span></a>
+      <a href="../../../en/papers/cryptography/index.html"><span>Cryptography &amp; Security</span> <span class="count">1676</span></a>
       <a href="../../../en/papers/quantum/index.html"><span>Quantum Computing</span> <span class="count">2372</span></a>
       <a href="../../../en/papers/finance/index.html"><span>Quantitative Finance</span> <span class="count">204</span></a>
       <a href="../../../en/papers/ai/index.html" aria-current="page"><span>AI &amp; Machine Learning</span> <span class="count">16385</span></a>
@@ -119,7 +119,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36641" target="_blank" rel="noopener noreferrer nofollow">Inducing Process Supervision from Outcome-Only Reinforcement Learning</a>  </h3>
 <p class="note"><span class="label">In brief</span>Inducing Process Supervision from Outcome-Only RL (A method for training step-level process reward models using only final-outcome signals, without per-step annotation.)</p><p class="summary"><span class="label">Summary</span>Process reward models give step-level feedback for LLM reasoning, but training them is costly because human step annotation is hard to scale and Monte Carlo estimation is computationally expensive. The paper introduces TIPS, an outcome-only reinforcement learning framework in which the model produces a chain-of-thought, step labels, and an outcome label, with reward based solely on outcome correctness. The authors validate TIPS on math and agent benchmarks across four backbone families. TIPS-Qwen3-4B-Thinking-2507 reaches 85.2 F1 on ProcessBench using only 3.2K outcome-labeled trajectories.</p>
-<p class="why"><span class="label label-why">Why</span>Novel idea of inducing step-level supervision from outcome-only RL; ProcessBench F1 of 85.2 supports it, though evaluation is limited to math and agent benchmarks.</p><p class="authors">Shengda Fan, Xin Cong, Zhong Zhang et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>TIPS trains generative process reward models using only outcome-label RL, with step labels emitted after a chain of thought. The authors report 85.2 F1 on ProcessBench from 3.2K outcome-labeled trajec</p><p class="authors">Shengda Fan, Xin Cong, Zhong Zhang et al.</p></article>
 <article class="item" id="d239366">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -272,7 +272,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36612" target="_blank" rel="noopener noreferrer nofollow">Do LLMs Really Forget? Hidden-State Leakage in Model Unlearning and How to Fix it</a>  </h3>
 <p class="note"><span class="label">In brief</span>Do LLMs Really Forget? Hidden-State Leakage in Unlearning and Its Fix</p><p class="summary"><span class="label">Summary</span>This paper argues that unlearning in large language models is usually judged only by outputs, so a model can look like it has forgotten sensitive content while that information remains in its hidden representations. The authors show this with probe decoders trained on hidden states across layers, recovering substantial sensitive information on the TOFU, MUSE, and WMDP benchmarks even when output metrics indicate success. They propose Probe-Adversarial Representation Suppression (PARS), which adversarially minimizes extractable information from hidden representations. According to the paper, PARS gives stronger erasure guarantees under probing and relearning attacks than all evaluated baselines.</p>
-<p class="why"><span class="label label-why">Why</span>Separates output suppression from representational erasure and proposes adversarial probing-based suppression, validated across three benchmarks with layer-wise probes.</p><p class="authors">Hadi Reisizadeh, Jiajun Ruan, Sijia Liu et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>The authors argue LLM unlearning is often judged only at the output level and report sensitive information remaining in hidden states, proposing PARS, an adversarial representation-suppression method </p><p class="authors">Hadi Reisizadeh, Jiajun Ruan, Sijia Liu et al.</p></article>
 <article class="item" id="d239351">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -389,7 +389,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36588" target="_blank" rel="noopener noreferrer nofollow">Cooperative Multi-Agent Vision-Language-Action Models via Reinforced Fine Tuning</a>  </h3>
 <p class="note"><span class="label">In brief</span>Reinforcement fine-tuning for cooperative multi-robot vision-language-action models</p><p class="summary"><span class="label">Summary</span>This paper studies reinforcement learning for fine-tuning vision-language-action models so that multiple robots can cooperate. The authors propose a three-stage pipeline: initialization-aware data collection that uses human demonstrations only when the pretrained model repeatedly fails, offline fine-tuning on per-agent trajectories with credit filtering, and online RL in the frozen model&#39;s latent noise space. The method is evaluated on RoboTwin, RoboFactory, and real-world tasks with two Franka robots, reporting average success-rate gains of 23.1%, 16.4%, and 44% respectively.</p>
-<p class="why"><span class="label label-why">Why</span>Combines credit-filtered tuning and latent-space RL, validated on 11 tasks with substantial gains over prior multi-robot VLA baselines.</p><p class="authors">Ruixiao Xu, Wong Lik Hang Kenny, Zhiqian Liu et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>Proposes a three-stage reinforced fine-tuning pipeline for multi-agent VLAs: initialization-aware data collection, per-agent credit-filtered offline tuning, and frozen-VLA latent-space online RL; the </p><p class="authors">Ruixiao Xu, Wong Lik Hang Kenny, Zhiqian Liu et al.</p></article>
 <article class="item" id="d239338">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -407,7 +407,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36585" target="_blank" rel="noopener noreferrer nofollow">Transformers Stop Thinking Too Early, and a Tiny LoRA Fixes It</a>  </h3>
 <p class="note"><span class="label">In brief</span>Transformers stop reasoning too early; a tiny LoRA extends it</p><p class="summary"><span class="label">Summary</span>The paper finds that pretrained transformers use little depth to follow in-context references, reliably tracing only about 1.4 to 3.6 lines across thirteen base models. With all weights frozen, a rank-8 LoRA at one early layer extends this computation. For example, Qwen3-8B&#39;s exact accuracy on 24-line chains rises from 15.5% to 99%.</p>
-<p class="why"><span class="label label-why">Why</span>Shows pretrained transformers underuse depth; a frozen-model rank-8 LoRA lifts 24-line chain accuracy from 15.5% to 99%, with solid multi-model experiments and notable subfield impact.</p><p class="authors">Zehao Jin, Ruixuan Deng, Junran Wang</p></article>
+<p class="why"><span class="label label-why">Why</span>The authors report pretrained transformers use little depth to follow in-context references; a frozen Qwen3-8B with a rank-8 LoRA raises 24-line chain accuracy from 15.5% to 99%.</p><p class="authors">Zehao Jin, Ruixuan Deng, Junran Wang</p></article>
 <article class="item" id="d239336">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -533,7 +533,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36559" target="_blank" rel="noopener noreferrer nofollow">HiTS-CL: A Continual Learning Framework for Long-Horizon Temporal Knowledge Graph Extrapolation</a>  </h3>
 <p class="note"><span class="label">In brief</span>HiTS-CL: A continual learning method for predicting future facts in evolving knowledge graphs over long time spans</p><p class="summary"><span class="label">Summary</span>Existing temporal knowledge graph reasoning methods train once on an early part of the timeline and then use a frozen model for future timestamps, which degrades over long horizons as the data changes. This paper frames extrapolative reasoning as continual learning over streaming snapshots and proposes HiTS-CL, a backbone-agnostic framework that uses continual fine-tuning for current dynamics, multi-teacher adaptive distillation for stable knowledge, and a selective memory of recent and frequent facts. HiTS-CL was integrated into five representative backbones and tested on four benchmark datasets. The authors report consistent gains in extrapolation accuracy and reduced long-horizon degradation compared with continual-learning baselines.</p>
-<p class="why"><span class="label label-why">Why</span>Reframes temporal KG extrapolation as continual learning, combining fine-tuning, multi-teacher distillation and memory; validated on five backbones and four datasets.</p><p class="authors">Yansong Liu, Rui Liu, Yuan Zuo et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>Frames temporal KG extrapolation as continual learning over streaming snapshots, combining fine-tuning, multi-teacher adaptive distillation and recent-fact memory; the authors report accuracy gains an</p><p class="authors">Yansong Liu, Rui Liu, Yuan Zuo et al.</p></article>
 <article class="item" id="d239322">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -551,7 +551,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36556" target="_blank" rel="noopener noreferrer nofollow">MAADBench: The Refreshable Paradigm for Anomaly Detection in Multi-Agent Systems</a>  </h3>
 <p class="note"><span class="label">In brief</span>MAADBench: A Refreshable Benchmark for Anomaly Detection in Multi-Agent Systems</p><p class="summary"><span class="label">Summary</span>This paper introduces MAADBench, the first refreshable benchmark for detecting anomalies in multi-agent systems built on large language models. It addresses task leakage and expiring traces by combining sampled generative tasks, trace generation under configurable LLM backbones, and automatically provided step-level labels. The authors release MAADBench-Full, a dataset of 5,200 step-labeled traces across five LLM backbones. Evaluating 25 anomaly detection methods shows that current approaches depend heavily on supervision, struggle with subtle anomalies, and lack robustness across backbones.</p>
-<p class="why"><span class="label label-why">Why</span>Proposes a refreshable multi-agent anomaly detection benchmark, systematically evaluating 25 methods across five LLM backbones and revealing clear limitations.</p><p class="authors">Lei Ma, Dennis Hofmann, Haowen Xu et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>Proposes MAADBench, a refreshable multi-agent anomaly detection benchmark with 5,200 step-labeled traces; the authors report that 25 methods across five LLM backbones rely heavily on supervision, stru</p><p class="authors">Lei Ma, Dennis Hofmann, Haowen Xu et al.</p></article>
 <article class="item" id="d239320">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -623,7 +623,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36534" target="_blank" rel="noopener noreferrer nofollow">Retrieval Sensitivity to Identity Signals in Queries</a>  </h3>
 <p class="note"><span class="label">In brief</span>How Retrieval Models Respond to Political and Dialect Signals in Queries</p><p class="summary"><span class="label">Summary</span>This paper examines whether dense retrieval models are biased by identity signals in user queries, namely political ideology and dialect, in political news and consumer-health domains. Across five dense retrievers and a sparse baseline, all systems retrieved articles matching the query&#39;s political lean and performed worse on African American Language than on White Mainstream English. Probing analyses indicate these gaps reflect identity signals beyond surface vocabulary, recoverable from query embeddings.</p>
-<p class="why"><span class="label label-why">Why</span>Systematically shows dense retrievers are biased by user political lean and dialect, validated on synthetic and naturalistic queries beyond lexical explanations.</p><p class="authors">Andrew Tang, Nicholas Deas, Kathleen McKeown et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>The paper examines whether political lean and dialect in user queries bias five dense retrievers and a sparse baseline. The authors report retrieval favoring articles matching the query&#39;s political le</p><p class="authors">Andrew Tang, Nicholas Deas, Kathleen McKeown et al.</p></article>
 <article class="item" id="d239313">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -713,7 +713,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36515" target="_blank" rel="noopener noreferrer nofollow">Large-scale factor analysis shows machine intelligence is only partially interpretable</a>  </h3>
 <p class="note"><span class="label">In brief</span>Large-scale factor analysis finds machine intelligence is only partly interpretable</p><p class="summary"><span class="label">Summary</span>This paper applies factor analysis, a psychometric method, to 13,251 evaluation scores from 1,618 language models across 456 text-only benchmarks to test whether a general intelligence factor exists. At the most generous estimate, a general factor accounts for 70.8% of performance variance, and much less in most solutions. Content-similar benchmarks do not necessarily cluster, and the factor is not dominated by a common theme or well proxied by standard intelligence benchmarks. The authors conclude this does not support treating general intelligence as a tangible target for language model development.</p>
-<p class="why"><span class="label label-why">Why</span>First large-scale factor analysis of 1,618 language models across 456 benchmarks challenges the general-intelligence assumption, with robustness checks across imputation methods.</p><p class="authors">Faiz Ghifari Haznitrama, Afrizal Hasbi Azizy, Faeyza Rishad Ardi</p></article>
+<p class="why"><span class="label label-why">Why</span>A large-scale factor analysis of 1,618 language models across 456 benchmarks tests for a general intelligence factor; the authors report it explains at most 70.8% of variance and that similar-content </p><p class="authors">Faiz Ghifari Haznitrama, Afrizal Hasbi Azizy, Faeyza Rishad Ardi</p></article>
 <article class="item" id="d239305">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -785,7 +785,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36490" target="_blank" rel="noopener noreferrer nofollow">LLMs Learn to Evade Latent Monitors from Prior Feedback Alone</a>  </h3>
 <p class="note"><span class="label">In brief</span>LLMs Learn to Evade Latent Monitors from Prior Feedback Alone: language models learning to hide internal activity from detectors using feedback.</p><p class="summary"><span class="label">Summary</span>The paper studies whether latent-space monitors, which inspect LLM internal activations to detect undesired behavior, can be evaded by agents. Models inferred the monitor&#39;s decision rule from prior verdicts and edited activations accordingly. Scaling edits by 8x cut the monitor&#39;s true positive rate from 100% to 27%, and a rank-1 LoRA reduced it to 4% on held-out concept monitors while retaining benchmark capabilities.</p>
-<p class="why"><span class="label label-why">Why</span>Shows models learn to evade latent monitors from feedback alone, with scaling and LoRA experiments supporting the claim and a significant AI-safety impact.</p><p class="authors">Hugo Lyons Keenan, Christopher Leckie, Sarah Erfani</p></article>
+<p class="why"><span class="label label-why">Why</span>The authors show models can infer latent monitor rules from feedback alone and edit activations to evade detection, reporting TPR falling to 27% with scaling and 4% with rank-1 LoRA.</p><p class="authors">Hugo Lyons Keenan, Christopher Leckie, Sarah Erfani</p></article>
 <article class="item" id="d239297">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -803,7 +803,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36486" target="_blank" rel="noopener noreferrer nofollow">Optimal Multi-Reward Reinforcement Learning</a>  </h3>
 <p class="note"><span class="label">In brief</span>Optimal sample complexity for learning policies across multiple rewards</p><p class="summary"><span class="label">Summary</span>This paper studies a finite-horizon Markov decision process with unknown transitions and several known reward functions, aiming to learn an ε-optimal policy for each reward using only online episodic interaction. The authors design a provably efficient algorithm with a minimax sample complexity of O(SAH³/ε² · log M) up to polylogarithmic factors, with no extra burn-in cost. The method combines optimistic value estimates adapted from MVP to reward switching, conservative policy evaluation with fresh replay samples, and gap-based multiplicative weights that allocate learning across rewards.</p>
-<p class="why"><span class="label label-why">Why</span>Achieves a minimax-optimal sample complexity bound for multi-reward MDPs matching lower bounds, a notable theoretical advance within the subfield.</p><p class="authors">Zijun Chen, Zihan Zhang</p></article>
+<p class="why"><span class="label label-why">Why</span>For unknown-transition finite-horizon MDPs with several known rewards, the authors report a sample complexity matching the information-theoretic lower bound up to polylog factors, achieved by adapting</p><p class="authors">Zijun Chen, Zihan Zhang</p></article>
 <article class="item" id="d257622">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -875,7 +875,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36472" target="_blank" rel="noopener noreferrer nofollow">DisCoMBO: Steering Expert-in-the-Loop Black-Box Optimization via Distributional Conformance</a>  </h3>
 <p class="note"><span class="label">In brief</span>DisCoMBO: Distributional-conformance method for expert-guided black-box optimization</p><p class="summary"><span class="label">Summary</span>This paper addresses how to incorporate expert knowledge into sequential model-based optimization using Probabilistic Circuits as surrogates. It introduces the Distributional Conformance Score (DisCo), a bounded measure of model surprise that also assesses how well external knowledge conforms to model evidence. The authors present DisCoMBO, prove it is a zero-regret algorithm, and demonstrate it on AutoML, materials, and wind park optimization benchmarks.</p>
-<p class="why"><span class="label label-why">Why</span>Proposes a distributional conformance score on probabilistic circuits unifying uncertainty and expert knowledge injection, proves zero-regret, and validates across several benchmarks.</p><p class="authors">Jonas Seng, Bennet Wittelsbach, Kristian Kersting</p></article>
+<p class="why"><span class="label label-why">Why</span>Proposes DisCo, a distributional conformance score on probabilistic circuits that gives linear-time uncertainty estimates and assesses expert knowledge conformance, building the DisCoMBO framework; th</p><p class="authors">Jonas Seng, Bennet Wittelsbach, Kristian Kersting</p></article>
 <article class="item" id="d239288">
   <div class="meta">
     <span class="source">arXiv</span>

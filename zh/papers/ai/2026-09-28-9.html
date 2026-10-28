@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">131</span></a>
-      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1669</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1676</span></a>
       <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">2372</span></a>
       <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">204</span></a>
       <a href="../../../zh/papers/ai/index.html" aria-current="page"><span>AI 算法</span> <span class="count">16385</span></a>
@@ -173,7 +173,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33762" target="_blank" rel="noopener noreferrer nofollow">EfficientAgent: What Makes KV Cache Offloading Work for Concurrent Agents?</a>  </h3>
 <p class="note"><span class="label">说明</span>EfficientAgent：KV 缓存卸载如何在并发智能体中生效？</p><p class="summary"><span class="label">简介</span>LLM 智能体每轮都会重发完整对话，服务系统通过缓存 KV 状态避免重复计算，GPU 显存不足时再卸载到主机内存。论文发现，卸载效果在不同部署间并不一致，关键在于主机内存层能否容纳所有智能体的可复用上下文（即“复用工作集”）。EfficientAgent 据此用栈距离模型估算容量，并在主机层较小时过滤写入、较大时全部写入。在 SWE-bench Verified 编码智能体上，按估算工作集配置的主机层使重算提示词 token 减少 93%，端到端时间减少 39%。</p>
-<p class="authors">Kunming Shao, Jierun Chen, Jiangnan Yu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>论文提出用代理池的复用工作集（stack-distance模型）确定KV缓存卸载的主机内存容量，并配合运行时写入过滤策略；摘要报告在SWE-bench Verified上重算提示词token减少93%，端到端时间减少39%。</p><p class="authors">Kunming Shao, Jierun Chen, Jiangnan Yu 等</p></article>
 <article class="item" id="d262738">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -191,7 +191,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33760" target="_blank" rel="noopener noreferrer nofollow">Oracle-Efficient Online Classification with Stochastic Inputs and Adversarial Outputs</a>  </h3>
 <p class="note"><span class="label">说明</span>在随机上下文、对抗输出下的高效在线分类（可用优化器调用的算法）</p><p class="summary"><span class="label">简介</span>论文研究上下文服从未知独立同分布、但损失函数可自适应选择的二分类预测问题。作者证明，对每个观测到的上下文加入高斯扰动的 Follow-the-Perturbed-Leader 算法，在 N 个专家的类中可达到 Õ(√(T log N)) 的遗憾界，每轮只需一次优化器调用，无需显式枚举假设类。对无限假设类，该算法的遗憾界为 Õ(√(T·VC(H)))。</p>
-<p class="why"><span class="label label-why">看点</span>提出简单的扰动领导者算法，用每个上下文的高斯扰动并仅需一次优化预言机调用，解决了Lazaric和Munos的公开问题，理论界限有实质推进。</p><p class="authors">Gon Buzaglo, Elad Hazan</p></article>
+<p class="why"><span class="label label-why">看点</span>提出一种简单的扰动领导者算法，对每个观测到的上下文加高斯扰动，每轮仅需一次优化预言机调用，摘要报告其遗憾界为可与类的规模相关的次线性界；据作者称解决了Lazaric和Munos提出的公开问题，并可用于约化到上下文赌博机。</p><p class="authors">Gon Buzaglo, Elad Hazan</p></article>
 <article class="item" id="d237322">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -218,7 +218,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33757" target="_blank" rel="noopener noreferrer nofollow">YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality</a>  </h3>
 <p class="note"><span class="label">说明</span>YuE2：统一符号与音频音乐生成的前沿模型</p><p class="summary"><span class="label">简介</span>该论文提出YuE2，一个先生成可读乐谱（规定旋律与和声）、再转为音频的音乐生成模型，把符号规划与音频生成统一起来。文中报告，专家评审中符号规划版本在整体质量上获得49.3%的偏好，高于无规划版本的34.6%；在WildSongBench基准上，最佳八选一结果达到6.96分。作者还介绍了用于表征学习和乐谱转录的MERT2与SheetSage2。</p>
-<p class="authors">Ruibin Yuan, Jiahao Pan, Junyan Jiang 等</p></article>
+<p class="why"><span class="label label-why">看点</span>YuE2 用单一 AR-NAR 混合 Transformer 先写出可读乐谱再生成全曲音频；摘要报告符号规划使专家偏好从34.6%升至49.3%，并在 WildSongBench 上取得领先。</p><p class="authors">Ruibin Yuan, Jiahao Pan, Junyan Jiang 等</p></article>
 <article class="item" id="d237319">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -272,7 +272,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33746" target="_blank" rel="noopener noreferrer nofollow">PQ-HSA: Reusing Product-Quantized Scores for Hybrid Sparse-Approximate Attention</a>  </h3>
 <p class="note"><span class="label">说明</span>PQ-HSA：复用乘积量化分数的混合稀疏-近似注意力机制</p><p class="summary"><span class="label">简介</span>语言模型解码时每一步都要读取全部历史键值缓存，长上下文下受内存带宽限制。PQ-HSA 用倒排乘积量化索引为未被选中的词元估算注意力分数，并将其作为背景项纳入同一个 softmax，与被选中词元的精确计算结合。论文报告在 128K 上下文、1-2% 检索预算下，其准确率高于 Quest 与 SnapKV；在 NVIDIA H20 上，解码注意力调用比 FlashAttention-3 快 1.6 倍。</p>
-<p class="why"><span class="label label-why">看点</span>将IVF-PQ的近似分数用于未选中token的背景项，与稀疏注意力结合，是对已有方法的实质改进；在128K上以多模型和vLLM实测验证。</p><p class="authors">Kunming Shao, Jierun Chen, Yanli Wang 等</p></article>
+<p class="why"><span class="label label-why">看点</span>PQ-HSA将IVF-PQ索引计算的近似分数复用为未选中token的背景项，与稀疏注意力结合；摘要报告在128K上于两个模型中准确率优于Quest和SnapKV，并在vLLM中相对FlashAttention-3的解码注意力加速1.6倍。</p><p class="authors">Kunming Shao, Jierun Chen, Yanli Wang 等</p></article>
 <article class="item" id="d237314">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -308,7 +308,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33738" target="_blank" rel="noopener noreferrer nofollow">The Effects of Incremental Instruction Delivery on Language-Model Creative Writing</a>  </h3>
 <p class="note"><span class="label">说明</span>逐步给出指令对语言模型创意写作的影响：研究大语言模型在多轮对话中，指令分次给出是否会削弱作品的结构与连贯性。</p><p class="summary"><span class="label">简介</span>该论文研究了用户在多轮互动中分步提出写作要求时，大语言模型创意写作质量会如何变化。研究使用160个人工撰写的创意写作任务（涵盖六种体裁），将需求一次性或分5至9轮逐步给出，测试六个开源模型家族，共960组配对。结果显示，逐步给出会降低对明确约束的遵循程度，并使结构与连贯性下降最明显；作者提出“创作完整性”指标，逐步给出时模型保留了完整给出条件下71.2%的得分。</p>
-<p class="authors">Anshuman Singh, Abrar Eyasir, Haseeb Yaqoob 等</p></article>
+<p class="why"><span class="label label-why">看点</span>首次系统比较渐进式与一次性指令对创意写作的影响：160个任务、六个模型族，渐进交付使结构连贯性退化最明显；作者报告人工评估独立复现了这一结论，并提出Creative Integrity指标，渐进交付下保留约71.2%。</p><p class="authors">Anshuman Singh, Abrar Eyasir, Haseeb Yaqoob 等</p></article>
 <article class="item" id="d237312">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -506,7 +506,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33702" target="_blank" rel="noopener noreferrer nofollow">Understanding Confabulation and Rethinking Reconstruction in Activation Explanations</a>  </h3>
 <p class="note"><span class="label">说明</span>理解激活解释中的虚构现象并重新思考重建方法</p><p class="summary"><span class="label">简介</span>自然语言自编码器（NLA）用无监督文本解释模型的激活，由描述器生成文字、重建器从文字还原激活。作者发现，按既有的点重建方式训练时，解释对预测模型行为更有用，但也越来越多地出现无依据细节和写作缺陷。论文提出标准化评估框架以分别衡量，并提出Flow-NLA，用扩散似然界训练描述器以建模与解释相容的激活分布，在Qwen、Gemma和Apertus上实验，结果保留了效用增益，同时抑制了虚构和写作缺陷。</p>
-<p class="why"><span class="label label-why">看点</span>提出以分布式重建替代点重建训练NLA，并引入评估框架，改进思路较新；实验覆盖Qwen、Gemma、Apertus等模型，但摘要中的结果细节有限。</p><p class="authors">Gert Lek, Zixuan Xia, Pin-Yu Chen 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出以分布式重建替代点重建来训练自然语言自编码器，在保留效用增益的同时减少编造细节和写作缺陷，并在Qwen、Gemma、Apertus上验证。</p><p class="authors">Gert Lek, Zixuan Xia, Pin-Yu Chen 等</p></article>
 <article class="item" id="d237293">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -623,7 +623,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33675" target="_blank" rel="noopener noreferrer nofollow">Benign Overfitting for General Norms and Distributions</a>  </h3>
 <p class="note"><span class="label">说明</span>一般范数与分布下的良性过拟合：研究在训练数据被完全拟合（含噪声）时，线性回归为何仍能泛化，并把分析推广到非欧几里得范数和非高斯分布。</p><p class="summary"><span class="label">简介</span>论文研究线性回归中的“良性过拟合”现象，即模型在含噪声的训练数据上完全拟合，却仍能良好泛化。以往工作多针对最小二范数解，而 Adam、Muon 等现代优化器偏向其他范数。作者提出分析方法，适用于一般范数与一般亚高斯分布。结果显示，在一定条件下，p&gt;1 的最小 p 范数插值即使对非高斯分布也能良性过拟合；但对 1 范数，在表现良好的非高斯分布下并不普遍成立。</p>
-<p class="why"><span class="label label-why">看点</span>将良性过拟合分析推广到一般范数与次高斯分布，证明p&gt;1的范数插值可良性过拟合，并揭示1-范数结果依赖高斯性，理论突破明显。</p><p class="authors">Daniel Barzilai, Ohad Shamir</p></article>
+<p class="why"><span class="label label-why">看点</span>将良性过拟合分析推广到一般范数与次高斯分布，摘要报告p&gt;1的范数插值在一定条件下可良性过拟合，并称1-范数的已有正面结果依赖高斯性。</p><p class="authors">Daniel Barzilai, Ohad Shamir</p></article>
 <article class="item" id="d237281">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -677,7 +677,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33667" target="_blank" rel="noopener noreferrer nofollow">Scalable Attribution and Control of Model Behavior During Training</a>  </h3>
 <p class="note"><span class="label">说明</span>训练过程中模型行为的可扩展归因与控制：用互信息与行为梯度唯一性衡量每个样本的贡献，并在训练中快速调整权重以引导模型行为。</p><p class="summary"><span class="label">简介</span>该论文针对训练过程中如何及时判断每个样本对模型行为的贡献这一问题，提出以互信息处理同一批次内样本的相互干扰，并证明该互信息是行为梯度唯一性（BGU）的对数函数。作者提出BS-Ghost算法，在批次空间中共享计算，无需存储模型规模的样本梯度。在1000个样本的Qwen2.5-7B-Instruct实验中，该实现约增加8.0%（27秒）的训练时间，删除并重新训练的实验显示BGU能识别因果影响最终行为的数据。</p>
-<p class="authors">Sleem Abdelghafar</p></article>
+<p class="why"><span class="label label-why">看点</span>论文将批内样本的互信息与行为梯度唯一性（BGU）联系起来，提出BS-Ghost算法在训练循环中高效计算归因分数；摘要报告在1000样本的Qwen2.5-7B-Instruct工作负载上仅增加8.0%训练时间，并称删除重训显示BGU识别出因果影响最终行为的数据。</p><p class="authors">Sleem Abdelghafar</p></article>
 <article class="item" id="d237275">
   <div class="meta">
     <span class="source">arXiv</span>

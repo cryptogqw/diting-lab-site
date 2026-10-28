@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">131</span></a>
-      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1669</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1676</span></a>
       <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">2372</span></a>
       <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">204</span></a>
       <a href="../../../zh/papers/ai/index.html"><span>AI 算法</span> <span class="count">16385</span></a>
@@ -146,7 +146,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.01380" target="_blank" rel="noopener noreferrer nofollow">GPU-Initiated Communication: Dissecting Down to the Bone</a>  </h3>
 <p class="note"><span class="label">说明</span>GPU 发起的通信：深入剖析到底层</p><p class="summary"><span class="label">简介</span>本文剖析 GPU 直接向网卡提交 RDMA 操作的通信机制，这是 NVSHMEM、NCCL GIN 和 DeepEP 等库的基础。作者比较了最小 GPU 路径与 CPU 代理路径，并在 H100、H200、B200 和 GB200 平台上测量多个库。结果显示，最小 GPU 路径发起操作约 0.7 微秒、完成约 4.0 微秒，库的额外开销最多 4.6 微秒；与大流量共享队列会使延迟增加一到三个数量级，且仅看提交路径无法预测通信性能。</p>
-<p class="authors">Javid Baydamirli, Ismayil Ismayilov, Kaan Oktay 等</p></article>
+<p class="why"><span class="label label-why">看点</span>拆解GPU到NIC的通信路径，用最小化传输层mini-gda和mini-proxy与多个库在H100、H200、B200、GB200上对比测量，区分硬件机制与库本身的开销，并指出提交路径本身不能预测通信性能。</p><p class="authors">Javid Baydamirli, Ismayil Ismayilov, Kaan Oktay 等</p></article>
 <article class="item" id="d246408">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -200,7 +200,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.01160" target="_blank" rel="noopener noreferrer nofollow">Serving a Revisable World: Versioned Execution for Interruptible Agents</a>  </h3>
 <p class="note"><span class="label">说明</span>面向可修订世界的服务：可中断智能体的版本化执行</p><p class="summary"><span class="label">简介</span>本文提出 RETIRE 服务控制平面设计，针对 LLM 智能体在任务被修改时的需求。它将执行版本作为发布输出和安装状态的权限，先撤销过时工作，再界定剩余执行并确认可继承的已完成前缀，后续版本由此继续运行。论文在 vLLM 中实现该设计，报告在受控配对实验中修订到后继首词元时间的中位数减少 17.1%。</p>
-<p class="why"><span class="label label-why">看点</span>提出以版本化执行统一撤销过期工作与继承KV状态的新控制面设计，并在vLLM中实现；实验包括正确性与成对对比，中位TTFT降低17.1%。</p><p class="authors">Yanxin Zhang, Rahul Sharma, Nitin Vegesna 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出以版本化执行统一撤销过期工作与继承已完成的KV状态，并在vLLM中实现；作者报告在受控成对实验中，修订到后继请求的中位TTFT降低17.1%。</p><p class="authors">Yanxin Zhang, Rahul Sharma, Nitin Vegesna 等</p></article>
 <article class="item" id="d246082">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -227,7 +227,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.02259" target="_blank" rel="noopener noreferrer nofollow">Feature Freshness Budgets for Real-Time ML Inference Under Stream Lag</a>  </h3>
 <p class="note"><span class="label">说明</span>流延迟下实时机器学习推断的特征新鲜度预算</p><p class="summary"><span class="label">简介</span>本文将在线特征存储建模为事件流上的物化视图，定义每个特征的新鲜度预算，即特征被使用的决策窗口与服务管道造成的陈旧度之差。作者证明了单特征陈旧度上界和一个闭式阈值，并在离散事件模拟及 Kafka、Redis、PostgreSQL 实际管道上验证；结果表明模拟与实际之间的主要差距源于采样相位，随机化相位后两者的单特征丢弃率平均绝对误差仅为 0.018。</p>
-<p class="why"><span class="label label-why">看点</span>将在线特征新鲜度形式化为有界预算并给出闭式阈值，且在真实Kafka/Redis/PostgreSQL管线上验证，同时发现仿真相位锁定偏差。</p><p class="authors">Amit Rajula</p></article>
+<p class="why"><span class="label label-why">看点</span>将在线特征的新鲜度定义为有界预算，给出闭式阈值，并在真实Kafka、Redis、PostgreSQL管线上验证，发现仿真中相位锁定会系统性低估陈旧度。</p><p class="authors">Amit Rajula</p></article>
 <article class="item" id="d245968">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -281,7 +281,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40267" target="_blank" rel="noopener noreferrer nofollow">Two-sided Market Design Meets Autobidding</a>  </h3>
 <p class="note"><span class="label">说明</span>双边市场设计与自动出价的结合：研究在线广告中买卖双方都可能策略性行事的交易机制</p><p class="summary"><span class="label">简介</span>本文研究双边市场中的自动出价者，其中一方或双方是按回报率（RoS）最大化价值的智能体。作者先证明在无先验设定下，若干机制类别在存在价值最大化者时，流动性交易收益的无政府代价无界；随后给出两个正面结果：麦卡菲交易缩减机制在RoS出价下对流动性福利具有常数无政府代价。在已知私有成本与价值分布时，作者设计了一种双边机制，在至少一方为RoS价值最大化者时达到一阶最优流动性福利，并与Myerson-Satterthwaite不可能性定理形成对比。</p>
-<p class="why"><span class="label label-why">看点</span>首次研究含自动竞价者的双边市场，给出负面与正面结果，并在分布信息下设计达到一阶最优的机制，与Myerson-Satterthwaite不可能性形成对比，理论贡献较突出。</p><p class="authors">Yang Cai, Christopher Liaw, Aranyak Mehta 等</p></article>
+<p class="why"><span class="label label-why">看点</span>首次研究含自动竞价者的双边市场：先证明多类机制在先验无关下流动性交易收益的PoA无界，再在重复双重拍卖中展示麦卡菲机制的常数流动性福利PoA，并在分布信息下设计达到一阶最优的机制，与Myerson-Satterthwaite不可能性形成对比。</p><p class="authors">Yang Cai, Christopher Liaw, Aranyak Mehta 等</p></article>
 <article class="item" id="d245392">
   <div class="meta">
     <span class="source">arXiv</span>

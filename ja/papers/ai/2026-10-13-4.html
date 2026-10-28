@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">131</span></a>
-      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1669</span></a>
+      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1676</span></a>
       <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">2372</span></a>
       <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">204</span></a>
       <a href="../../../ja/papers/ai/index.html" aria-current="page"><span>AI アルゴリズム</span> <span class="count">16385</span></a>
@@ -74,7 +74,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17719" target="_blank" rel="noopener noreferrer nofollow">Keep Your Receipts: Trustworthy Cleanup of Agent-Built Knowledge Graphs</a>  </h3>
 <p class="note"><span class="label">説明</span>根拠を残す：エージェントが構築したナレッジグラフの信頼できる整理手法</p><p class="summary"><span class="label">要約</span>論文は、エージェントが構築したナレッジグラフは、情報源が撤回・覆された後に整理することが難しいと指摘します。既存の方法は直接抽出された事実だけを削除するため効果が限られ、再構築すると大量の不整合が生じます。著者らはPolyGraphを提案し、構築モデルが各成果物に対して代替となる根拠の組を出力させ、モデルを再び呼び出さずに集合演算で整理します。根拠は、削除後の再導出で検証されます。</p>
-<p class="why"><span class="label label-why">注目点</span>構築器に証拠の「レシート」を出力させ集合演算で清掃する新手法は新規性が高い。再導出監査で信頼性を検証し複数モデル・領域で評価しており、影響は知識グラフ保守に限られる。</p><p class="authors">Vishisht Choudhary</p></article>
+<p class="why"><span class="label label-why">注目点</span>構築器に各成果物の証拠「レシート」を出力させ、清掃を集合演算で行う（モデル呼び出し不要）。再導出監査では文ごとに一つのレシートを持つ摘要層が高い忠実度を示し、35件中33件の摘要を保持できたと報告。</p><p class="authors">Vishisht Choudhary</p></article>
 <article class="item" id="d267738">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -182,7 +182,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17697" target="_blank" rel="noopener noreferrer nofollow">LeanPRM: Lean-Grounded Process Supervision for Natural Language Proof Verification</a>  </h3>
 <p class="note"><span class="label">説明</span>LeanPRM：Leanを用いた自然言語証明の検証のためのプロセス監督</p><p class="summary"><span class="label">要約</span>本論文は、Leanの定理証明支援系を用いて自然言語の数学的証明の各ステップに正誤ラベルを自動付与するLeanPRMという枠組みを提案している。人手による注釈は使わず、10,634件の証明と152Kの標注済みステップからなるデータセットを構築した。Qwen3-4Bの検証器では、PRM800Kで学習した場合の60.3に対し、保留された200件の証明で逐步ラベルの正解率が74.7に向上したと報告されている。</p>
-<p class="why"><span class="label label-why">注目点</span>Leanで自然言語証明の段階ごとのラベルを人手なしに生成し、複数ベンチマークでPRM800K学習の検証器を上回り、証拠は比較的充実している。</p><p class="authors">Rodney Lafuente-Mercado, Salman Rahman, Jingyan Shen ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>Leanで自然言語証明の段階ごとのラベルを人手なしに自動生成する。作者は、この方法で学習した検証器がPRM800K学習版を複数ベンチマークで上回ったと報告している。</p><p class="authors">Rodney Lafuente-Mercado, Salman Rahman, Jingyan Shen ほか</p></article>
 <article class="item" id="d256779">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -326,7 +326,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17666" target="_blank" rel="noopener noreferrer nofollow">DeltaTTG: Training Multi-Turn Agents with a Token-to-Go Progress Meter</a>  </h3>
 <p class="note"><span class="label">説明</span>DeltaTTG：「Token-to-Go」進捗メーターによるマルチターンエージェントの学習</p><p class="summary"><span class="label">要約</span>本論文は、マルチターンエージェントの強化学習において終端の疎な報酬しか得られず個々のステップの良否を評価しにくい問題に対し、DeltaTTGという手法を提案します。複数の方策が記録した軌跡を用い、タスク完了までに残り生成すべきトークン数（Token-to-Go）を目標とする再利用可能な進捗メーターを学習します。アクター学習時には報酬を変えずに、このメーターの推定値の変化に応じて各ステップの優位性を再配分します。著者らはALFWorld、PaperSearchQA、BFCLv3で、GRPOや他の比較対象の強化学習手法を平均スコアで上回ったと報告しています。</p>
-<p class="why"><span class="label label-why">注目点</span>残りトークン数を目標とする再利用可能な進捗指標を提案し、タスク固有規則なしでRLの優位性を再配分する点に新規性がある。3つのベンチマークで複数基線と比較している。</p><p class="authors">Xuyan Ye, Xiyan Fu, Shengda Fan ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>残りトークン数（Token-to-Go）を目標に学習する再利用可能な進捗指標を提案し、報酬を変えずに進捗の変化に応じてRLの優位性を再配分する。タスク固有のルールは不要とされる。著者らはALFWorld、PaperSearchQA、BFCLv3でGRPOを平均5.7および7.2ポイント上回ったと報告している。</p><p class="authors">Xuyan Ye, Xiyan Fu, Shengda Fan ほか</p></article>
 <article class="item" id="d259792">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -371,7 +371,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17656" target="_blank" rel="noopener noreferrer nofollow">Open-o3-Video-v2: Seek, Ground, and Reason with Verifiable Spatio-Temporal Evidence</a>  </h3>
 <p class="note"><span class="label">説明</span>Open-o3-Video-v2：検証可能な時空間的証拠で動画を推論する手法</p><p class="summary"><span class="label">要約</span>本論文は、モデルが不足している映像情報を自ら取得し、回答を支える時刻や物体の位置を推論過程に書き込む Open-o3-Video-v2 を提案しています。学習用に STGR-v2-CoT135K と STGR-v2-RL-13K のデータセット、そして CS-GRPO という強化学習手法を構築しました。V-STaR ベンチマークでは、4B モデルがベースの Qwen3-VL-4B を上回る結果を示しています。</p>
-<p class="why"><span class="label label-why">注目点</span>能動的な証拠取得と検証可能な時空間グラウンディングを組み合わせ、CS-GRPOでV-STaRの骨格モデルを大きく上回る。</p><p class="authors">Jiahao Meng, Zhongyuan Bao, Yue Tan ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>推論中に不足する視覚的証拠を能動的に取得し、時刻と物体の境界ボックスを推論過程に書き込む手法。摘要では4BモデルがV-STaRでmAM 40.4%、mLGM 56.3%を達成し、骨格のQwen3-VL-4Bをそれぞれ8.5%、12.6%上回ったとされる。</p><p class="authors">Jiahao Meng, Zhongyuan Bao, Yue Tan ほか</p></article>
 <article class="item notable" id="d256760">
 <div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="5/5">★★★★★</span> 注目</div>  <div class="meta">
     <span class="source">arXiv</span>
@@ -380,7 +380,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17655" target="_blank" rel="noopener noreferrer nofollow">textGrain watermarking is harder to detect: can sum-tests still do it optimally?</a>  </h3>
 <p class="note"><span class="label">説明</span>textGrain透かしは検出しにくい：和検定は依然として最適に検出できるか</p><p class="summary"><span class="label">要約</span>本論文は、人手による編集後にtextGrain透かしを検出できるか、またどの程度効率的に検出できるかを研究しています。textGrainはサンプリングのエントロピーに基づいて透かし信号を調整します。著者らは検出境界を理論的に示し、和検出器が特定の条件では最適でないことを指摘し、次トークン分布・エントロピー予算・編集割合を知らなくても使える重み付き多尺度二項スキャン法を提案しています。</p>
-<p class="why"><span class="label label-why">注目点</span>textGrain透かしの最小最大検出境界がGumbel-max方式より厳密に小さいことを証明し、最適指数率と加権多尺度スキャン検出器を示す。理論的貢献は大きいが、影響は透かし検出理論の範囲に限られる。</p><p class="authors">Swapnaneel Bhattacharyya, Soham Bonnerjee</p></article>
+<p class="why"><span class="label label-why">注目点</span>textGrain透かしの最小最大検出境界がGumbel-max方式より厳密に小さいことを作者は示し、その原因は構造にあるとする。最適指数率と、分布や編集割合を知らずに使える加権多尺度スキャン検出器を提案している。</p><p class="authors">Swapnaneel Bhattacharyya, Soham Bonnerjee</p></article>
 <article class="item" id="d256759">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -479,7 +479,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17633" target="_blank" rel="noopener noreferrer nofollow">Executable Prefix Values for Locating Agent Failures</a>  </h3>
 <p class="note"><span class="label">説明</span>実行可能なプレフィックス価値でエージェントの失敗箇所を特定する</p><p class="summary"><span class="label">要約</span>本論文は、LLMエージェントのデバッグで人間やLLM審査者が付けた「最初のミス」が、必ずしも失敗の原因を示していないかを検証しています。失敗した軌跡の中間状態からエージェントを再起動し、各ステップからの成功確率（プレフィックス価値）と失敗の不可逆点を推定します。SWE-bench Verifiedの150タスクでの実験では、審査者のラベルが成功確率の低下と一致しないことが示されました。</p>
-<p class="why"><span class="label label-why">注目点</span>エージェントの失敗ステップのラベルを実行可能な接頭辞価値曲線と比較し、原因ではなく症状を指す場合が多いことを示す。150タスクでの実再起動実験が根拠。</p><p class="authors">Bingyu Shen, Jiaqi Tang, Lan Wei ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>本研究は、エージェント失敗の「最初の誤り」を人間やLLM判定者のラベルで真因とみなす前提に疑問を呈し、失敗軌跡の中間状態から再起動して各ステップの成功確率を推定する。要約では、判定者ラベル位置での再起動は期待成功率を改善せず、測定された再起動点では0.44から0.57に上がると報告されている。</p><p class="authors">Bingyu Shen, Jiaqi Tang, Lan Wei ほか</p></article>
 <article class="item" id="d256747">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -587,7 +587,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17607" target="_blank" rel="noopener noreferrer nofollow">Facts Don&#39;t Speak Louder than Words: The Behavioral Essence of Long-CoT Distillation</a>  </h3>
 <p class="note"><span class="label">説明</span>事実より振る舞い：長い思考連鎖蒸留の本質を探る論文</p><p class="summary"><span class="label">要約</span>本論文は、長い思考連鎖（Long-CoT）蒸留がなぜ有効なのかを検討します。誤りを含む推論過程や限られた問題集だけで学習しても、一般的な手法とほぼ同等の性能が得られると報告しています。この結果から「行動仮説」を提唱し、蒸留の本質は事実知識の記憶ではなく、構造化された推論パターンへの振る舞いの整合にあるとしています。さらに、確率ベースの損失は単純なパターンの学習に優れ、複雑な思考連鎖の拡張には標準の交差エントロピー損失が必要だと比較しています。</p>
-<p class="why"><span class="label label-why">注目点</span>行動仮説を提案し、誤った推論軌跡や限定プロンプトでも同等の性能が出ることを示して拒否サンプリングの前提に疑問を投げかけるが、実験の規模と基準の幅は限られる。</p><p class="authors">Yongcan Yu, Jian Liang, Lingxiao He ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>行動仮説を提案し、長い思考連鎖蒸留の本質は事実の記憶ではなく構造化された推論パターンへの行動的整合だと論じる。摘要は誤った軌跡や限定プロンプトでも同程度の性能が出ると報告し、既習問題のみの微調整でも推論が向上したとしている。</p><p class="authors">Yongcan Yu, Jian Liang, Lingxiao He ほか</p></article>
 <article class="item" id="d256737">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -650,7 +650,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17590" target="_blank" rel="noopener noreferrer nofollow">Revisiting the 16x Pretraining Compute Gap between Diffusion and Autoregressive Language Models</a>  </h3>
 <p class="note"><span class="label">説明</span>拡散言語モデルと自己回帰言語モデルの事前学習計算量の16倍差を再検証</p><p class="summary"><span class="label">要約</span>拡散言語モデル（DLM）を自己回帰言語モデル（ARM）と同等の尤度に到達させるには約16倍の学習計算量が必要だという、広く引用された研究の結論を再検討した論文です。従来の手法は現在のDLMの実践と合わなくなっていると指摘し、正確な尤度、ブロック拡散学習、エンコーダ・デコーダ構成などの新しい条件下で、約1,700のモデルを対象にスケーリング則を調べています。その結果、計算量の倍率は正確な尤度で12.8倍に下がり、ブロック拡散とエンコーダ・デコーダ構成では、ブロックサイズ32で7.8倍、サイズ8で4.6倍、サイズ4で3.0倍まで低下しました。したがって、DLMを一から事前学習するコストは従来想定より大幅に小さいとされています。</p>
-<p class="why"><span class="label label-why">注目点</span>約1700モデルの大規模スイープにより、拡散言語モデルと自己回帰モデルの事前学習計算量差(16倍)が過大評価だったことを示す。</p><p class="authors">Guanghan Wang, Bing He, Zhan Shi ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>著者らは、広く引用される16倍の計算量差は古い評価法によるものだとし、厳密尤度やブロック拡散学習などを用いて約1700モデルで3.0〜12.8倍まで縮小されると報告している。</p><p class="authors">Guanghan Wang, Bing He, Zhan Shi ほか</p></article>
 <article class="item" id="d256731">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -677,7 +677,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17582" target="_blank" rel="noopener noreferrer nofollow">Chasing Label Shifters: A Change-Aware Framework for Dynamic Graph Node Classification</a>  </h3>
 <p class="note"><span class="label">説明</span>ラベル移行ノードの追跡：動的グラフ節点分類のための変化認識フレームワーク</p><p class="summary"><span class="label">要約</span>現実のシステムにおける実体は時間とともに変化し、動的グラフとしてモデル化すると、連続するスナップショット間でクラスラベルが変わるノード（シフター）として表れます。論文は、主要な動的GNNのいずれもシフターの性能が安定ノードに劣り、誤りが旧ラベルに集中することを示し、その原因を近傍集約による埋め込みの慣性にあるとしています。提案手法CHASEは、任意の動的GNNに組み込めるモデル非依存のフレームワークで、ラベル移行の検出と古い近傍信号の上書きを行い、安定ノードの性能を維持しつつシフターの性能を改善します。</p>
-<p class="why"><span class="label label-why">注目点</span>動的グラフでラベルが変化するノードを対象に、既存の動的GNNを包む変化認識フレームワークを提案し、多数のモデルとデータセットで有効性を示した。</p><p class="authors">Junghoon Kim, Seungyoon Choi, Hyunsung Kim ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>動的グラフでラベルが変化するノードを対象に、任意の動的GNNを包む変化認識フレームワークCHASEを提案。作者は構造分析で埋め込みの慣性が失敗の原因だと指摘し、多数のモデルとデータセットで転移ノードの性能向上を報告している。</p><p class="authors">Junghoon Kim, Seungyoon Choi, Hyunsung Kim ほか</p></article>
 <article class="item" id="d256728">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -749,7 +749,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17544" target="_blank" rel="noopener noreferrer nofollow">Many Steps into One: Reasoning Contraction and the Limits of Safe Memory Reuse for LLM Agents</a>  </h3>
 <p class="note"><span class="label">説明</span>多段階を一つに：推論の圧縮と LLM エージェントにおける安全なメモリ再利用の限界</p><p class="summary"><span class="label">要約</span>LLM エージェントがテンプレート、スキルライブラリ、メモリ、キャッシュによって多段階の推論を一つにまとめる手法（推論圧縮、reasoning contraction）を扱った論文です。著者らは、成功と失敗を数える従来のカウンタは変化検出器として不適切であり、事実が変わった後も古い答えを返し続けることを示しています。複数の LLM による多跳質問や代码タスクでの実験では、そうしたカウンタが認証済みメモリよりはるかに多くの古い答えを返しました。論文は、似然比に基づく重み付けと認証、事実変更時の再認証を組み合わせた手法を提案しています。</p>
-<p class="why"><span class="label label-why">注目点</span>記憶の再利用を推論収縮として捉え、カウンタ型検出器の欠陥を証明し、複数モデルでの実験と安全性のスケーリング則を示す点に新規性がある。</p><p class="authors">Jianghong Zhou, Hao Rong, Chen Lin ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>記憶の再利用を推論収縮として捉え、カウンタ型の変化検出器が調整不十分であることを示し、尤度比による検出と効用認証に基づく安全な再利用手法を提案する。摘要では五つのLLMで、カウンタ方式が認証記憶の7.0～13.5倍、コードタスクでは35～73倍の古い回答を返したと報告されている。</p><p class="authors">Jianghong Zhou, Hao Rong, Chen Lin ほか</p></article>
 <article class="item" id="d256717">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -803,7 +803,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17530" target="_blank" rel="noopener noreferrer nofollow">TwinPrune: Density-Aware Two-Phase Token Pruning for Vision-Language Models</a>  </h3>
 <p class="note"><span class="label">説明</span>TwinPrune：視覚言語モデル向けの密度考慮型2段階トークン剪定手法</p><p class="summary"><span class="label">要約</span>本論文は、視覚言語モデルの推論における事前充填（prefill、bipartite merge）と復号（decode、KVキャッシュ削除）の両段階でトークンの重要度を採点する、統一された空間密度信号を提案します。著者らは、事前充填向けのベンチマークだけで復号段階の剪定を評価すると誤った結論になると指摘し、TextVQA、DocVQA、MM-Vetなど全工程を評価するベンチマークで検証しています。結果として、計算量、メモリ、精度の間で三者のパレート最適な境界を実現したと報告しています。</p>
-<p class="authors">Kai Liu, Anqi Li, Junxian Li ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>空間密度信号を預充填の合併とデコードのKV削除に統一して用い、預充填のみの評価ではデコードを誤判定すると指摘。複数モデルでH2O等を上回ると報告。</p><p class="authors">Kai Liu, Anqi Li, Junxian Li ほか</p></article>
 <article class="item notable" id="d265384">
 <div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
     <span class="source">arXiv</span>
@@ -812,7 +812,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17528" target="_blank" rel="noopener noreferrer nofollow">ATTUNE: Agentic Throughput Tuning for LLM Training</a>  </h3>
 <p class="note"><span class="label">説明</span>ATTUNE：LLM学習のためのエージェント型スループット調整手法</p><p class="summary"><span class="label">要約</span>本論文はATTUNEを提案します。これは、GPUの分割方法やメモリと計算のトレードオフ、カーネルや通信のオーバーラップなど、LLM学習の構成を、GPU時間の予算内で無人で調整するコーディングエージェントです。学習の目的を変えるおそれのある引数は外部の正しさチェックで排除されます。H100、H200、B200クラスタでの評価では、平均1.7倍のスループット向上が報告されています。</p>
-<p class="authors">Leo Fan, Hongyang Wang, Wenbo Chen ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>ATTUNEは、技能ルールを用いるコーディングエージェントでLLM学習レシピを調整し、学習目標を変える引数を外部のゲートで拒否する。要旨によるとH100・H200・B200で平均1.7倍のスループット向上を報告し、同一GPU時間予算でベイズ最適化やランダム探索を上回るという。</p><p class="authors">Leo Fan, Hongyang Wang, Wenbo Chen ほか</p></article>
 <article class="item" id="d256713">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -920,7 +920,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.17488" target="_blank" rel="noopener noreferrer nofollow">Origin Attribution for Unsafe Behavior in Self-Evolving Multi-Agent Coding Systems</a>  </h3>
 <p class="note"><span class="label">説明</span>自己進化するマルチエージェント・コーディングシステムにおける安全でない振る舞いの起源特定</p><p class="summary"><span class="label">要約</span>本論文は、言語モデルベースのコーディングエージェントがプログラムを改変し互いのコードを再利用する環境で、観測された安全でない振る舞いを最初に導入したエージェントとプログラム版を特定する、あるいはそれが局所的に発生したと判断する手法を研究している。挙動フィンガープリントの照合、履歴版の位置特定、再帰的な遡及を組み合わせた方法を提案している。85の制御シナリオにおける158件のクエリで、正確な起源特定精度は96.8%であり、再帰を用いない網羅的フィンガープリント照合の77.2%を上回った。</p>
-<p class="why"><span class="label label-why">注目点</span>マルチエージェントのコード系譜における不安全挙動の起源特定という新課題と、行動指紋と再帰追跡を組み合わせた手法を提案し、158件で96.8%の精度を示した。</p><p class="authors">Hanyi Yu, Jiaming Cui</p></article>
+<p class="why"><span class="label label-why">注目点</span>マルチエージェントのコード系譜における不安全挙動の起源特定という新課題を提示し、行動指紋照合・履歴定位・再帰追跡を組み合わせた手法を提案。著者らは158件の問い合わせで精度96.8%を報告し、再帰なしの場合は77.2%としている。</p><p class="authors">Hanyi Yu, Jiaming Cui</p></article>
 <article class="item" id="d257261">
   <div class="meta">
     <span class="source">arXiv</span>

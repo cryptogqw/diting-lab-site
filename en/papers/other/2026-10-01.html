@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../en/papers/crypto/index.html"><span>Crypto &amp; Blockchain</span> <span class="count">131</span></a>
-      <a href="../../../en/papers/cryptography/index.html"><span>Cryptography &amp; Security</span> <span class="count">1669</span></a>
+      <a href="../../../en/papers/cryptography/index.html"><span>Cryptography &amp; Security</span> <span class="count">1676</span></a>
       <a href="../../../en/papers/quantum/index.html"><span>Quantum Computing</span> <span class="count">2372</span></a>
       <a href="../../../en/papers/finance/index.html"><span>Quantitative Finance</span> <span class="count">204</span></a>
       <a href="../../../en/papers/ai/index.html"><span>AI &amp; Machine Learning</span> <span class="count">16385</span></a>
@@ -146,7 +146,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.01380" target="_blank" rel="noopener noreferrer nofollow">GPU-Initiated Communication: Dissecting Down to the Bone</a>  </h3>
 <p class="note"><span class="label">In brief</span>GPU-Initiated Communication: A Low-Level Performance Dissection</p><p class="summary"><span class="label">Summary</span>This paper examines how GPU threads post RDMA operations directly to the network interface card, a mechanism used by NVSHMEM, NCCL GIN, and DeepEP. The authors build minimal GPU and CPU-proxy transports and benchmark them against several libraries on NVIDIA H100, H200, B200, and GB200 systems. They report that a minimal GPU path issues an operation in 0.7 µs and completes it in 4.0 µs, with library overheads adding up to 4.6 µs. The paper concludes that the submission path alone does not predict overall communication performance.</p>
-<p class="why"><span class="label label-why">Why</span>Decomposes GPU-to-NIC communication via minimal transports and measures multiple libraries on several platforms, separating hardware from library costs.</p><p class="authors">Javid Baydamirli, Ismayil Ismayilov, Kaan Oktay et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>Dissects the GPU-to-NIC path with minimal transports mini-gda and mini-proxy, comparing against several libraries on H100, H200, B200 and GB200, and separating hardware costs from library overhead.</p><p class="authors">Javid Baydamirli, Ismayil Ismayilov, Kaan Oktay et al.</p></article>
 <article class="item" id="d246408">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -200,7 +200,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.01160" target="_blank" rel="noopener noreferrer nofollow">Serving a Revisable World: Versioned Execution for Interruptible Agents</a>  </h3>
 <p class="note"><span class="label">In brief</span>Serving Revisable Agent Tasks Through Versioned Execution</p><p class="summary"><span class="label">Summary</span>The paper presents RETIRE, a serving control-plane design for LLM agents whose running tasks get revised. Each execution version holds the authority to publish output or install state, so obsolete work is revoked first and the completed prefix that a successor can inherit is certified. The design is implemented in vLLM. In controlled paired experiments, it reduces the median revision-to-successor time-to-first-token by 17.1%.</p>
-<p class="why"><span class="label label-why">Why</span>Proposes versioned execution unifying obsolete-work revocation and KV state inheritance, implemented in vLLM with paired experiments showing a 17.1% median TTFT reduction.</p><p class="authors">Yanxin Zhang, Rahul Sharma, Nitin Vegesna et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>Proposes versioned execution to unify revoking obsolete work with inheriting completed KV state, implemented in vLLM; the authors report a 17.1% median TTFT reduction in controlled paired experiments.</p><p class="authors">Yanxin Zhang, Rahul Sharma, Nitin Vegesna et al.</p></article>
 <article class="item" id="d246082">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -227,7 +227,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.02259" target="_blank" rel="noopener noreferrer nofollow">Feature Freshness Budgets for Real-Time ML Inference Under Stream Lag</a>  </h3>
 <p class="note"><span class="label">In brief</span>Feature freshness budgets for real-time ML inference under stream lag</p><p class="summary"><span class="label">Summary</span>The paper models an online feature store as a materialized view over an event stream and defines a per-feature freshness budget, the gap between a feature&#39;s decision window and the staleness imposed by serving. It proves a per-feature staleness bound and a closed-form threshold below which a feature cannot be served within budget. The results are validated in a discrete-event simulation and on a real Kafka, Redis, and PostgreSQL pipeline, where the predicted threshold reproduces. The authors find the main simulation-to-infrastructure gap stems from sampling-phase artifacts rather than latency, and randomizing the phase reduces the drop-rate error to 0.018.</p>
-<p class="why"><span class="label label-why">Why</span>Formalizes feature freshness as a bounded budget with a closed-form threshold, validated on real Kafka, Redis, PostgreSQL pipelines, and identifies a phase-locking simulation bias.</p><p class="authors">Amit Rajula</p></article>
+<p class="why"><span class="label label-why">Why</span>Defines online feature freshness as a bounded budget with a closed-form threshold, validated on real Kafka, Redis, and PostgreSQL pipelines; the authors report that phase-locked simulation systematica</p><p class="authors">Amit Rajula</p></article>
 <article class="item" id="d245968">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -281,7 +281,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40267" target="_blank" rel="noopener noreferrer nofollow">Two-sided Market Design Meets Autobidding</a>  </h3>
 <p class="note"><span class="label">In brief</span>Market design for two-sided ad auctions with autobidders: which mechanisms still work when both buyers and sellers are strategic</p><p class="summary"><span class="label">Summary</span>The paper studies two-sided markets in which autobidders, such as Return-on-Spend (RoS) value maximizers, participate on one or both sides. It shows that, without prior information, many incentive-compatible, budget-balanced mechanisms have unbounded Price of Anarchy for liquid gains from trade when value maximizers are present. It also finds that McAfee&#39;s Trade Reduction mechanism keeps a constant Price of Anarchy for liquid welfare under RoS bidding. With distributional information, the authors design a mechanism that achieves first-best liquid welfare when at least one side consists of RoS maximizers, contrasting with the Myerson-Satterthwaite impossibility.</p>
-<p class="why"><span class="label label-why">Why</span>First study of two-sided autobidder markets, with negative and positive results, and a first-best mechanism under distributional information contrasting Myerson-Satterthwaite impossibility.</p><p class="authors">Yang Cai, Christopher Liaw, Aranyak Mehta et al.</p></article>
+<p class="why"><span class="label label-why">Why</span>First study of two-sided autobidder markets: the authors report unbounded PoA for broad mechanism classes prior-free, constant liquid-welfare PoA for McAfee&#39;s mechanism, and a first-best mechanism und</p><p class="authors">Yang Cai, Christopher Liaw, Aranyak Mehta et al.</p></article>
 <article class="item" id="d245392">
   <div class="meta">
     <span class="source">arXiv</span>

@@ -73,7 +73,7 @@ arXiv · 2026年10月28日
     <summary type="text">Can Discrete Tokens Serve as Semantically Lossless Representations of Visual Signals?
 arXiv · 2026年10月28日
 论文挑战了“量化误差必然造成语义损失”的假设，发现误差更大的离散表示反而可能有更好的理解效果，关键在于离散索引的有效比特预算。作者提出因子化向量量化（Factorized Vector Quantization），用对称并行码本量化视觉特征的互补视图，在比特预算增大时仍持续提升，并在多模态理解上接近连续表示。该模型在离散表示模型中取得最佳表现，并在包括细粒度OCR在内的任务上与Qwen3-VL等连续表示模型具有竞争力。
-★★★★ 值得关注：挑战了量化误差必然造成语义损失的假设，提出因子化向量量化并在多模态理解上追平连续表示，实验规模大且有对比。</summary>
+★★★★ 值得关注：挑战量化误差必然造成语义损失的假设，指出离散索引的有效比特预算是关键，提出因子化向量量化，摘要报告其在多模态理解上追平连续表示，并在九项指标平均上超过UniAR与Emu3-Chat。</summary>
   </entry>
   <entry>
     <title>何时在测试阶段进行干预？提出用于控制干预时机与标注查询的 PORTAL 方法</title>
@@ -84,7 +84,8 @@ arXiv · 2026年10月28日
     <category term="AI 算法"/>
     <summary type="text">When Should We Intervene at Test Time?
 arXiv · 2026年10月28日
-该论文关注部署后的模型在测试阶段自适应时，同一种干预对不同批次效果可能相反。作者提出 PORTAL 控制器，决定何时部署干预、标注哪些输入以及何时停止查询。实验表明，该方法能让总体上有损的干预在部分批次中变得有用，并减少因输入顺序变化带来的严重失误。</summary>
+该论文关注部署后的模型在测试阶段自适应时，同一种干预对不同批次效果可能相反。作者提出 PORTAL 控制器，决定何时部署干预、标注哪些输入以及何时停止查询。实验表明，该方法能让总体上有损的干预在部分批次中变得有用，并减少因输入顺序变化带来的严重失误。
+★★★★ 值得关注：提出PORTAL控制器：测试时决定何时启用干预、标注哪些输入并何时停止查询，每个标签同时评估所有候选规则；摘要报告它能把整体掉点的干预在部分批次上转为有用选择，并在完整损坏流上保留收益。</summary>
   </entry>
   <entry>
     <title>注意力即格点规范理论：关系只通过 Wilson 环相互作用</title>
@@ -205,7 +206,8 @@ arXiv · 2026年10月28日
     <category term="AI 算法"/>
     <summary type="text">Know, then Draw: A New Learning Paradigm for Visual Generation
 arXiv · 2026年10月28日
-该论文提出一种视觉生成学习范式：用自回归预训练获取高层语义知识，再用扩散后训练完成高保真渲染。研究比较了不同预训练目标，发现自回归更利于下游渲染，并提出仅用语言监督训练、无图像解码器的纯语义分词器。作者还建立了知识获取与渲染的计算最优缩放规律，并据此训练了30亿参数的文生图模型，在GenEval和DPG-Bench上分别达到86和87分。</summary>
+该论文提出一种视觉生成学习范式：用自回归预训练获取高层语义知识，再用扩散后训练完成高保真渲染。研究比较了不同预训练目标，发现自回归更利于下游渲染，并提出仅用语言监督训练、无图像解码器的纯语义分词器。作者还建立了知识获取与渲染的计算最优缩放规律，并据此训练了30亿参数的文生图模型，在GenEval和DPG-Bench上分别达到86和87分。
+★★★★ 值得关注：提出「先知识后渲染」的视觉生成新范式：用自回归预训练获取语义知识，用扩散后训练做高保真渲染；受控比较显示自回归预训练优于从零的扩散训练，并给出缩放律，以6600 H100 GPU小时训练的3B文生图模型在GenEval和DPG-Bench上分别达86和87。</summary>
   </entry>
   <entry>
     <title>稀有、相关，却仍然错误：记忆如何导致LLM群体决策失误</title>
@@ -315,7 +317,8 @@ arXiv · 2026年10月28日
     <category term="AI 算法"/>
     <summary type="text">Timestral
 arXiv · 2026年10月28日
-该论文介绍了Timestral，一组参数规模从5M到209M的四个时间序列基础模型，用于概率预测。论文称其在GIFT-Eval、TIME和fev-bench基准上取得新的最佳结果，其中Timestral-209M与Timestral-123M在各项指标上包揽前两名。模型依靠解耦预测时域（DHF）、支持已知未来协变量的因果架构，以及先用大规模合成语料预训练、再用真实与合成数据混合并扩展上下文进行后训练的两阶段流程。</summary>
+该论文介绍了Timestral，一组参数规模从5M到209M的四个时间序列基础模型，用于概率预测。论文称其在GIFT-Eval、TIME和fev-bench基准上取得新的最佳结果，其中Timestral-209M与Timestral-123M在各项指标上包揽前两名。模型依靠解耦预测时域（DHF）、支持已知未来协变量的因果架构，以及先用大规模合成语料预训练、再用真实与合成数据混合并扩展上下文进行后训练的两阶段流程。
+★★★★ 值得关注：提出解耦预测token（DHF）等设计，四个模型参数从5M到209M，在GIFT-Eval、TIME、fev-bench上报告领先结果，且两款较大模型包揽每项指标前两名。</summary>
   </entry>
   <entry>
     <title>REGER：用语义ID建模物品间关系的生成式推荐框架</title>
@@ -701,7 +704,7 @@ arXiv · 2026年10月28日
     <summary type="text">Follow the Gradient: Tracing Safety Degradation Back to Training Data
 arXiv · 2026年10月28日
 论文指出，即使训练样本本身看似无害，用指令数据微调大语言模型也可能悄然削弱其安全性。作者提出可扩展的梯度嵌入方法SimpleLoRIF，用于识别梯度与不安全行为方向一致的微调样本，并借此构建去除约20%相关样本的SafeTulu数据集。在Qwen、Llama和Olmo上，训练SafeTulu可使GCG攻击成功率最多降低22%，同时基本保持或提升能力。
-★★★★ 值得关注：将低秩梯度归因简化并扩展到百万级数据，用于过滤安全退化数据，并在多个模型上以GCG攻击成功率下降22%验证。</summary>
+★★★★ 值得关注：作者将低秩梯度归因简化并扩展到百万级样本，用于过滤可能导致安全退化的微调数据；摘要报告在Qwen、Llama和Olmo上过滤后GCG攻击成功率最多下降22%，并称能力基本保持甚至提升。</summary>
   </entry>
   <entry>
     <title>在无线电中完成推理：面向毫米波通感一体化活动识别的脉冲神经网络加速器设计与测量</title>
@@ -790,7 +793,7 @@ arXiv · 2026年10月28日
     <summary type="text">Concordat: Typed Sessions for LLM Agents
 arXiv · 2026年10月28日
 该论文提出 Concordat，一个 Python 库，把智能体的交互规则写成有限状态协议，并在运行时强制执行：每一轮只向模型开放当前状态下合法的工具，越权调用在产生副作用前被拒绝。在 tau-bench 航空任务上的实验显示，标准智能体在 50 个任务中有 13 个未经确认就修改了预订，Concordat 智能体则没有违规，任务成功率无显著差异。
-★★★★ 值得关注：将会话类型与类型状态应用于LLM代理的运行时协议约束，较新颖；实验仅在tau-bench航空任务上进行，规模有限。</summary>
+★★★★ 值得关注：将会话类型与类型状态用于在运行时约束LLM代理的协议：每轮只提供当前状态合法的工具，越界调用在产生副作用前被拒绝；作者报告在tau-bench航空任务上，标准代理有13/50任务（gpt-4.1）和29/128任务运行（Claude Haiku 5.5）未经确认就修改，而该方法下为零且任务成功率无显著差异。</summary>
   </entry>
   <entry>
     <title>M4Bench：评估临床电子病历派生代理的程序性规范</title>
@@ -802,7 +805,7 @@ arXiv · 2026年10月28日
     <summary type="text">M4Bench: Evaluating Procedural Specification for Clinical EHR Derivation Agents
 arXiv · 2026年10月28日
 该论文提出M4Bench，包含MIMIC-IV和eICU上15个任务族的28项临床变量派生任务，用于测试AI编码代理能否复现这类派生，以及临床医生审核的代理技能如何影响结果。实验显示，技能平均提高奖励0.136，其中大部分增益来自规范完整性；仅有少数运行通过全部严格检查，且技能对返回行的影响很小。作者同时以开源方式发布任务、技能、评估代码和运行证据。
-★★★★ 值得关注：提出面向临床EHR衍生变量的新基准并分解技能价值，多组对照实验支撑结论，对该子领域有实际参考意义。</summary>
+★★★★ 值得关注：提出面向临床EHR衍生变量的M4Bench基准，发现对AI编码代理而言，规范完整性而非技能格式贡献了大部分收益，但多数运行仍未完全通过严格检查。</summary>
   </entry>
   <entry>
     <title>输入跳连可以重新参数化VAE，但不一定改善生成器</title>
@@ -880,7 +883,7 @@ arXiv · 2026年10月28日
     <summary type="text">FeatureArc: Benchmarking Coding Agents on Evolving Features
 arXiv · 2026年10月28日
 论文提出 FeatureArc 基准，用于评测编程智能体在软件功能逐步演进中的能力：每个阶段的扩展都建立在智能体自己先前写的代码之上。任务由代码仓库历史构建，覆盖四种编程语言，并以新行为和既有行为的测试检验正确性。对 10 个智能体在 73 个任务上的评测显示，单阶段成功率为 62.7%，完整功能测试成功率降至 28.5%，常见失败原因是早期缺陷被遗留到后续阶段。
-★★★★ 值得关注：提出面向演化功能的编码智能体基准与自动构建流程，通过10个智能体在73个任务上的实验揭示首阶段与整体成功率的显著落差。</summary>
+★★★★ 值得关注：提出面向演化功能的编码智能体基准FeatureArc及其自动构建流程；作者报告10个智能体在73个任务上的实验中，首阶段成功率62.7%，整体功能成功率降至28.5%，并指出继承性缺陷是常见失败机制。</summary>
   </entry>
   <entry>
     <title>面向任意卷积神经网络的分割置信度估计</title>
@@ -925,7 +928,7 @@ arXiv · 2026年10月28日
     <summary type="text">Beyond the Readout: A Latent Numerical Frame Shared Across Modality and Operation
 arXiv · 2026年10月28日
 该论文研究多模态模型对文本或图像中的算术题（加法、减法）是否使用同一套内部数字概念。作者用因果干预在 Gemma4-12B-it 的残差流中学习子空间，发现不同条件下的数字方向不同，但通过一次旋转和缩放可以对齐，说明它们共享同一几何结构。此外，部分方向虽不影响当前输出的数字，却携带数值信息，并能引导后续数字的生成。
-★★★★ 值得关注：用因果干预而非相似度指标，揭示文本与图像算术共享一套数字几何，并发现不参与输出的隐藏方向承载数值，新意明显。</summary>
+★★★★ 值得关注：用因果干预而非相似度指标，发现文本与图像算术共享同一数字几何，且不影响输出数字的隐藏方向仍承载数值；摘要报告重定向下一位数字的比例为77.6%。</summary>
   </entry>
   <entry>
     <title>布朗插值采样中的位移矩与路径终端分离</title>
@@ -1013,7 +1016,8 @@ arXiv · 2026年10月28日
     <category term="AI 算法"/>
     <summary type="text">LinMix: Data Mixing as Linear Domain Attribution
 arXiv · 2026年10月28日
-本文研究语言模型预训练数据中各领域的混合比例如何影响性能。作者提出LinMix，在有上限的单纯形顶点上采样数据混合，使各领域处于上限或不出现，从而得到可解释的线性模型，其系数即为各领域的归因值。实验表明，在10亿与40亿参数模型上，LinMix在推理、代码和数学基准上优于基于狄利克雷采样的方法，并能支持288个细粒度领域的线性拟合。</summary>
+本文研究语言模型预训练数据中各领域的混合比例如何影响性能。作者提出LinMix，在有上限的单纯形顶点上采样数据混合，使各领域处于上限或不出现，从而得到可解释的线性模型，其系数即为各领域的归因值。实验表明，在10亿与40亿参数模型上，LinMix在推理、代码和数学基准上优于基于狄利克雷采样的方法，并能支持288个细粒度领域的线性拟合。
+★★★★ 值得关注：将数据配比视为线性域归因问题，用顶点采样替代狄利克雷采样，摘要称给出了最优性证明；在1B的OLMo2与4B的Qwen3.5上测试，报告相对狄利克雷方法在MBPP上提升46%、GSM8K上提升14%，并在288个细粒度域上实现11%的平均提升。</summary>
   </entry>
   <entry>
     <title>负样本该用多少、每个各占多大权重？知识图谱嵌入的对比学习方法RADAR</title>
@@ -1124,7 +1128,7 @@ arXiv · 2026年10月28日
     <summary type="text">TRIDENT-Seq: Profile-Matched Prefix-Future Contrast for Label-Efficient Payment Risk Modeling
 arXiv · 2026年10月28日
 该论文提出 TRIDENT-Seq，一种在无标签交易历史上预训练的交易基础模型，采用前缀-未来对比（PFC）方法：把每段交易前缀与活跃度特征相近的候选样本的后续行为摘要进行匹配对比。在三个生产支付业务中，预训练编码器在 0.5% 干预预算下的平均精度和召回率均优于同架构从零训练。部署评估显示，相比基于 XGBoost 的旧系统，记录的按金额计算的拒付率和总损失率分别低 37.7% 和 37.9%。
-★★★★ 值得关注：提出按活动画像匹配候选的前缀-未来对比预训练，显著优于随机候选；在三个生产业务上验证，标签效率提升明显，并有真实部署的损失下降结果。</summary>
+★★★★ 值得关注：提出按活动画像匹配候选的前缀-未来对比预训练（PFC），相比随机候选，召回率从5.64%提升至24.62%；在三个生产业务上，作者称其在各设定下优于从头训练，并报告部署后金额类拒付和总损失率分别降低37.7%和37.9%。</summary>
   </entry>
   <entry>
     <title>EmbeddingGemma 2：统一高效的多模态表示模型</title>
@@ -1400,7 +1404,7 @@ arXiv · 2026年10月27日
     <summary type="text">Low-degree polynomials lower bounds for clustering in small dimension
 arXiv · 2026年10月27日
 该论文研究在维度 d 远小于组数 K 时，从 R^d 中各向同性混合分布抽取的 n 个观测进行聚类的计算极限。作者构造了由对偶 BCH 码生成中心的伯努利乘积混合分布，并证明在分离度满足一定条件时，低次多项式需要约 K^2 d^{3/2} 量级的样本量，同时该困难性可通过高斯化论证推广到各向同性高斯混合。
-★★★★ 值得关注：用BCH码构造混合分布，将低次多项式下界从n≳dK²改进到n≳K²d^{3/2}，并以二部图多项式族证明，理论贡献突出。</summary>
+★★★★ 值得关注：作者用对偶BCH码构造2K个乘积伯努利分布的混合，使观测的矩张量在阶数2m+1以内与均匀分布一致；摘要报告低次多项式下界从n≳dK²提升到n≳K²d^{3/2}（多对数因子内），证明依赖二部图索引的近似正交多项式族。</summary>
   </entry>
   <entry>
     <title>GradCO：面向文本描述行人异常搜索的行为感知梯度冲突卸载方法</title>
@@ -1445,7 +1449,7 @@ arXiv · 2026年10月27日
     <summary type="text">Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces
 arXiv · 2026年10月27日
 论文研究语言模型智能体的训练与部署方式：提示、工具和控制逻辑构成的“线束”决定任务如何呈现给模型。作者证明，训练后的最优策略会携带其线束的偏好，部署回报等于线束的上限减去策略自身决策失误的偏差。实验显示，在MiniWoB++中调换观测字段顺序，训练后模型的成功率从85.0%降至19.2%。
-★★★★ 值得关注：提出在KL正则化控制下策略对数几率编码harness偏好的理论框架，并在MiniWoB++与Terminal-Bench上验证，新颖性较高。</summary>
+★★★★ 值得关注：在KL正则化控制下，最优策略的对数几率反映其harness对各动作的偏好；部署回报可分解为harness上限减去策略失配。在MiniWoB++与Terminal-Bench上，调换观测字段使成功率从85.0%降至19.2%，并给出相关实验结果。</summary>
   </entry>
   <entry>
     <title>面向非洲语言的大模型安全对齐：豪萨语案例研究</title>
@@ -1632,7 +1636,8 @@ arXiv · 2026年10月27日
     <category term="AI 算法"/>
     <summary type="text">Does Your Generalist Skill Optimizer Really Incentivize Agentic Tasks? Rethinking Skill Optimization via Bipartite Attribution
 arXiv · 2026年10月27日
-论文提出BiPA方法，用于评估智能体技能优化器的效果。研究发现，优化后的技能在测试集上的成功率与原始技能基本相同，开发集上的提升在测试中消失，同时输入token约增加16%。作者由此提出了四条原则，包括只接受超过选择偏差的改进，并按增加的交互轮次计费。</summary>
+论文提出BiPA方法，用于评估智能体技能优化器的效果。研究发现，优化后的技能在测试集上的成功率与原始技能基本相同，开发集上的提升在测试中消失，同时输入token约增加16%。作者由此提出了四条原则，包括只接受超过选择偏差的改进，并按增加的交互轮次计费。
+★★★★ 值得关注：提出BiPA，用选择基线和二分图归因检验技能优化器：学到的技能成功率与种子技能接近，开发集增益在测试集上消失，额外输入token约增加16%。</summary>
   </entry>
   <entry>
     <title>最优 N 选一法能为世界动作模型带来多少提升？衡量可选空间并在闭环中实现</title>
@@ -1731,7 +1736,8 @@ arXiv · 2026年10月27日
     <category term="AI 算法"/>
     <summary type="text">WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training
 arXiv · 2026年10月27日
-该论文提出WorkFactory框架，通过信息层面规划构建信息支持图，并结合探测执行与修复，生成可执行的职业任务。研究构建了112,686个任务，覆盖612种职业，并用教师轨迹微调Qwen模型，得到WorkPilot系列模型，在多项职业工作基准上均有提升。</summary>
+该论文提出WorkFactory框架，通过信息层面规划构建信息支持图，并结合探测执行与修复，生成可执行的职业任务。研究构建了112,686个任务，覆盖612种职业，并用教师轨迹微调Qwen模型，得到WorkPilot系列模型，在多项职业工作基准上均有提升。
+★★★★ 值得关注：提出WorkFactory框架，以信息支持图规划并通过探测执行修复专业任务，构建112,686个任务覆盖612种职业，微调Qwen模型，WorkPilot-35B-A3B在GDPval-AA v2.1上由879提升至1565 Elo。</summary>
   </entry>
   <entry>
     <title>物理引导的流匹配：用于全球总电子含量预报的生成式人工智能框架</title>
@@ -1820,7 +1826,7 @@ arXiv · 2026年10月27日
     <summary type="text">MixSIS: Mixed-supervised instance segmentation
 arXiv · 2026年10月27日
 本文提出混合监督实例分割任务（MixSIS），允许同一数据集中混合使用图像、点、框和掩码四种标注级别。作者同时提出基线方法AnnsMixer，可从各级标注生成伪掩码标注，并支持在同一图像内混合使用不同标注。论文称该方法在弱监督和混合监督任务上均大幅优于现有方法，并在三个案例中展示了减少标注时间或提升结果的效果。
-★★★★ 值得关注：提出混合标注级别的实例分割新任务与基线方法，并在WSIS和MixSIS上大幅超越现有方法，有三个案例研究佐证。</summary>
+★★★★ 值得关注：提出混合标注级别（图像、点、框、掩码）的实例分割新任务MixSIS及基线AnnsMixer，可在同一图像内混合利用各级标注生成伪掩码；作者报告其在WSIS和MixSIS上大幅超越现有方法，并称在三个案例中可减少90%的标注时间或提升34%的结果。</summary>
   </entry>
   <entry>
     <title>主要Lund平面遗漏了什么：喷注标记器表示缺口的模型拼接诊断</title>
@@ -2173,7 +2179,7 @@ arXiv · 2026年10月27日
     <summary type="text">V-LUMEN: Visual Lookup Memory for Embedding Scaling in Vision-Language Models
 arXiv · 2026年10月27日
 该论文提出V-LUMEN，一种为视觉语言模型设计的视觉查找记忆模块。它用冻结的码本离散化视觉特征，通过空间聚合哈希构建空间感知的记忆键，并结合文本相关性信号进行调制，检索到的嵌入经门控残差通路融入主干模型。在五个推理密集型基准上，它提升了冻结的Qwen3-VL-2B主干模型的表现，并能零样本迁移到三个图像与训练数据不重叠的基准上。
-★★★★ 值得关注：将查找式外部记忆引入视觉语言模型，提出空间感知哈希与门控残差融合的新思路，并在五个基准上验证，实验规模中等。</summary>
+★★★★ 值得关注：将查找式外部记忆引入视觉语言模型，以空间感知哈希和门控残差融合检索视觉嵌入；摘要报告在五个推理密集型基准上提升冻结的Qwen3-VL-2B，并称其能零样本迁移到三个图像不重叠的基准。</summary>
   </entry>
   <entry>
     <title>评估按需拼车服务中高级会员的优先调度方案</title>
@@ -2273,7 +2279,7 @@ arXiv · 2026年10月27日
     <summary type="text">The State and Fate of Multilingual, Contextual Evaluation in the NLP World
 arXiv · 2026年10月27日
 本文对51个近期多语言评测基准（涵盖242个数据集、219种语言）进行了数据驱动的审计，从覆盖面、代表性和严谨性三方面分析。结果显示，覆盖面广但浅，许多语言仅出现在一个基准中，低资源语言的任务类别明显少于高资源语言；56%的数据集-语言实例由英语翻译而来，存在翻译痕迹和以英语为中心的问题；评测还受到基准污染的影响。作者据此提出原生构建、文化相关、防污染等改进建议。
-★★★★ 值得关注：对51个多语言基准进行数据驱动审计，系统揭示覆盖、代表性与严谨性问题，视角较新，证据量大。</summary>
+★★★★ 值得关注：作者对51个多语言基准（242个数据集、219种语言）做数据驱动审计，指出覆盖广而薄、翻译构建占主导、基准污染等问题，并提出改进建议。</summary>
   </entry>
   <entry>
     <title>面向自治人机组织的严肃游戏测试平台</title>
@@ -2395,7 +2401,7 @@ arXiv · 2026年10月27日
     <summary type="text">PailitaoMMSearch2.0 Technical Report: Scaling Generative Retrieval to Unified End-to-End Multimodal Search
 arXiv · 2026年10月27日
 该论文提出PailitaoMMSearch系统，输入原始查询图像和自由形式的指令，直接生成商品语义ID，实现统一的端到端多模态搜索。系统从数据、意图和场景三个维度进行扩展，并已部署于淘宝拍立淘的多模态搜索应用中。在受控的在线A/B测试中，商品页浏览量提升17.90%，交易量提升27.04%，成交总额提升8.94%，结果具有统计显著性。
-★★★★ 值得关注：提出统一端到端的多模态生成式检索系统，结合持续预训练与强化学习；通过淘宝线上A/B测试显示显著提升，影响面大。</summary>
+★★★★ 值得关注：提出统一的端到端多模态生成式检索系统PailitaoMMSearch，直接从查询图像和指令生成商品语义ID，通过持续预训练、混合预算微调与强化学习扩展意图与场景；摘要报告其在淘宝拍立淘线上A/B测试中浏览量提升17.90%、成交量提升27.04%、GMV提升8.94%。</summary>
   </entry>
   <entry>
     <title>脊柱X光关键点检测的密集表示学习与可微形状建模</title>
@@ -2505,7 +2511,8 @@ arXiv · 2026年10月27日
     <category term="AI 算法"/>
     <summary type="text">DocXEval: A Systematic Evaluation of Explainability in Multimodal Document Understanding
 arXiv · 2026年10月27日
-本文提出DocXEval，这是首个面向多模态文档理解（文本、版面与图像）的综合可解释性框架，将现有XAI方法与评估指标改造用于此类任务，并针对语义实体识别等场景加入多目标适配。作者用该框架系统评估了13种XAI方法，涵盖3类文档理解任务、8个数据集、4个模型和17项评估指标。结果显示遮挡法（Occlusion）总体上最为忠实且易于解释，并给出了指标间一致性及模型行为的诊断分析。</summary>
+本文提出DocXEval，这是首个面向多模态文档理解（文本、版面与图像）的综合可解释性框架，将现有XAI方法与评估指标改造用于此类任务，并针对语义实体识别等场景加入多目标适配。作者用该框架系统评估了13种XAI方法，涵盖3类文档理解任务、8个数据集、4个模型和17项评估指标。结果显示遮挡法（Occlusion）总体上最为忠实且易于解释，并给出了指标间一致性及模型行为的诊断分析。
+★★★★ 值得关注：首个面向多模态文档理解的XAI框架，系统评估13种方法和17项指标，覆盖8个数据集与4个模型；摘要报告Occlusion整体表现最忠实、可解释性最好。</summary>
   </entry>
   <entry>
     <title>视觉语言智能体可以在自身的潜在世界中学习</title>
@@ -2528,7 +2535,7 @@ arXiv · 2026年10月27日
     <summary type="text">Do We Need an LLM to Know Why Sources Conflict? Decision Models for Knowledge-Conflict Typing in RAG
 arXiv · 2026年10月27日
 检索到的来源相互矛盾时，应对方式取决于冲突类型。本文研究能在单次前向传播中输出固定选项概率的决策模型，能否快速廉价地完成冲突类型分类。在CONFLICTS基准上，11个决策模型的准确率为50.0%至67.0%，其中10个不低于Gemini 2.5 Flash（61.3%），成本低4至39倍，延迟低2.6至6.0倍。
-★★★★ 值得关注：将决策模型用于RAG知识冲突类型判别，并与LLM及级联方案系统比较，有实际新意；以全面的基准实验支撑结论，对子领域有实用价值。</summary>
+★★★★ 值得关注：作者将决策模型用于RAG知识冲突类型判别，在CONFLICTS基准上与Gemini模型及级联方案比较；摘要报告多数决策模型准确率与Gemini 2.5 Flash相当或更高，成本和延迟更低。</summary>
   </entry>
   <entry>
     <title>为巴斯克语开发语音语言模型</title>
@@ -2639,7 +2646,7 @@ arXiv · 2026年10月27日
     <summary type="text">GUI-JEPA: Candidate-Conditioned JEPA Latents as a Fast Action Policy for Mobile GUI Agents
 arXiv · 2026年10月27日
 该论文提出GUI-JEPA，一种无需解码器的移动端图形界面智能体策略，基于联合嵌入预测架构（JEPA）构建。它在无标注界面截图上预训练的编码器潜空间中选择动作，通过动作与区域条件化的潜变量预测器为每个候选动作生成潜变量，轻量级头部可在一次批处理中对所有候选动作打分，无需逐词解码。在AndroidControl上，其速度比同输入微调的Qwen2.5-VL-7B智能体快2.8至4.0倍，参数量仅为后者的6%，同时达到其分布内准确率的86%至92%。
-★★★★ 值得关注：提出基于JEPA潜空间的无解码器GUI动作策略，思路新颖；在AndroidControl上与7B模型对比，速度与参数效率有提升，但准确率仍低于基线。</summary>
+★★★★ 值得关注：提出基于JEPA潜空间、无需解码的移动GUI动作策略；摘要报告在AndroidControl上比同输入微调的7B模型快2.8至4.0倍，参数仅6%，准确率达其分布内准确率的86%至92%。</summary>
   </entry>
   <entry>
     <title>HoloRecon：具有全局一致性的长程全景增量重建</title>
@@ -2727,7 +2734,8 @@ arXiv · 2026年10月27日
     <category term="AI 算法"/>
     <summary type="text">Forget the Data, Keep the Capability: Switchable Unlearning for Retrieval
 arXiv · 2026年10月27日
-该论文提出MoME框架，可在同一模型中切换标准推理（Full模式）与遗忘后推理（Core模式），以满足删除个人训练数据的隐私合规要求。Core模式下的核心参数不接收遗忘集梯度，从而与被删除数据相互独立，并可用提出的Forgetting-Rank统计量进行审计。在Market-1501、VeRi-776和RegDB上，该方法的Core模式在三种成员推断攻击下接近重新训练的参考模型，且检索性能更优。</summary>
+该论文提出MoME框架，可在同一模型中切换标准推理（Full模式）与遗忘后推理（Core模式），以满足删除个人训练数据的隐私合规要求。Core模式下的核心参数不接收遗忘集梯度，从而与被删除数据相互独立，并可用提出的Forgetting-Rank统计量进行审计。在Market-1501、VeRi-776和RegDB上，该方法的Core模式在三种成员推断攻击下接近重新训练的参考模型，且检索性能更优。
+★★★★ 值得关注：提出可切换的MoME框架，核心参数与携带全量数据知识的分支梯度隔离训练，关闭分支即得遗忘模型；作者给出Core与遗忘集无关的证明并以秩统计审计，摘要报告在Market-1501、VeRi-776、RegDB上Core检索优于重训参考。</summary>
   </entry>
   <entry>
     <title>评估 AlphaEarth 嵌入用于作物分类：可分性、时间动态与跨区域迁移能力</title>
@@ -2793,7 +2801,8 @@ arXiv · 2026年10月27日
     <category term="AI 算法"/>
     <summary type="text">Evolving Agent Teams
 arXiv · 2026年10月27日
-论文指出现有编程智能体在真实专家编写的GPU内核（如FlashInfer）优化中容易陷入局部最优。作者提出“进化式智能体团队”框架，由中央监督者诊断局部最优并重组团队，并借助持久文件系统积累经验。在扩展的计算预算下，该框架所生成的CUDA内核相对FlashInfer的MLA分页解码内核平均加速1.2倍，并在FlashInfer-Bench的47个工作负载中的36个上胜出。</summary>
+论文指出现有编程智能体在真实专家编写的GPU内核（如FlashInfer）优化中容易陷入局部最优。作者提出“进化式智能体团队”框架，由中央监督者诊断局部最优并重组团队，并借助持久文件系统积累经验。在扩展的计算预算下，该框架所生成的CUDA内核相对FlashInfer的MLA分页解码内核平均加速1.2倍，并在FlashInfer-Bench的47个工作负载中的36个上胜出。
+★★★★ 值得关注：提出中央监督器诊断局部最优并重组智能体团队，借助持久化文件系统积累经验；摘要报告在 FlashInfer 等真实内核任务及其他任务上取得加速。</summary>
   </entry>
   <entry>
     <title>零和部分可观测随机博弈的保守策略迭代</title>
@@ -2860,7 +2869,7 @@ arXiv · 2026年10月27日
     <summary type="text">Right Click, Wrong Box: Grading GUI Grounding by What a Click Does
 arXiv · 2026年10月27日
 该论文指出，现有GUI定位基准只把落在标注框内的点击算作正确，但界面中同一操作常由多个元素触发。作者提出按点击实际产生的结果判定正确性，通过执行并记录约一千次点击构建结果图和执行判定器。在两个网页应用上的测试显示，框式评分拒绝的点击中，相当一部分实际能达到预期结果，并据此对ScreenSpot-v2的评分作出修正。
-★★★★★ 值得关注：提出以点击结果而非标注框评判GUI定位的新视角，并通过执行探测与盲审在ScreenSpot-v2上验证其显著影响。</summary>
+★★★★★ 值得关注：该论文提出以点击结果而非标注框来判定GUI定位是否正确，通过对实时网页执行约千次点击的探测及对ScreenSpot-v2的盲审，作者称约五分之一至三分之一被框式评分拒绝的点击实际达到目标结果，且该影响与榜单间差距相当。</summary>
   </entry>
   <entry>
     <title>当评判者落后：面向智能体持续自我改进的评分标准与框架协同演化</title>
@@ -3004,7 +3013,7 @@ arXiv · 2026年10月27日
     <summary type="text">Language Models Keep Abandoned Analyses: Residue and Adaptation after Garden-Path Sentences
 arXiv · 2026年10月27日
 这篇论文研究语言模型在读完花园路径句（先误解后纠正的句子）后，是否仍保留已被放弃的句法分析。作者测试了24个开源模型，发现模型会留下对被放弃分析的残留，并随句子消歧错误程度出现向正确结构的适应。残留可由名词短语状态中的角色信息解释，修补这些状态后残留几乎消失。
-★★★★ 值得关注：通过激活修补区分残留与适应两种机制，并在24个模型上验证花园路径句的持续影响，新意明确；实验规模大，对照充分。</summary>
+★★★★ 值得关注：通过激活修补区分花园路径句的残留与适应两种机制，并在24个开放模型上考察其持续影响，同时检验被覆盖的陈述与人类实验范式的迁移。</summary>
   </entry>
   <entry>
     <title>Transformer 的代数体系</title>
@@ -3071,7 +3080,7 @@ arXiv · 2026年10月27日
     <summary type="text">Does LLM Pre-Training Typically Occur at the Edge of Stability?
 arXiv · 2026年10月27日
 本文重新审视二次近似作为神经网络训练动力学模型的可靠性，尤其关注其在大语言模型训练中的失效情形。作者提出&#34;凸性边缘&#34;（EoC）现象，即持续的负曲率使二次动力学发散而与学习率无关；并为随机自适应优化器提出广义的稳定性边缘（EoS）定义。在参数量最高787M的多组LLM预训练中，EoC始终出现，而EoS普遍但并非普遍存在，学习率足够小或批量低于临界阈值时会消失。
-★★★★ 值得关注：提出Edge of Convexity并推广Edge of Stability定义，在多个最高787M参数的LLM预训练中系统验证，对理解二次近似失效有重要意义。</summary>
+★★★★ 值得关注：提出与学习率无关的Edge of Convexity，并把Edge of Stability推广到自适应优化器的随机训练，摘要报告在最大787M参数的LLM预训练中，EoC始终出现，EoS普遍但并非总是出现。</summary>
   </entry>
   <entry>
     <title>数学论证的依赖图：表示、结构度量与证明审查</title>
@@ -3214,7 +3223,8 @@ arXiv · 2026年10月27日
     <category term="AI 算法"/>
     <summary type="text">Generative Refinement Learning for Temporal Interpolation in Scientific Machine Learning
 arXiv · 2026年10月27日
-论文提出 iFLEX 模型，用于重建两个观测时刻之间的中间科学场。它先对两个观测做加权平均作为初步估计，再用条件扩散模型学习并生成与真实中间场之间的残差，最后把残差加回平均结果。作者在 Navier-Stokes Kraichnan 湍流、上海雷达降水和海表温度数据上进行评估，报告其重建误差低于所比较的基线方法。</summary>
+论文提出 iFLEX 模型，用于重建两个观测时刻之间的中间科学场。它先对两个观测做加权平均作为初步估计，再用条件扩散模型学习并生成与真实中间场之间的残差，最后把残差加回平均结果。作者在 Navier-Stokes Kraichnan 湍流、上海雷达降水和海表温度数据上进行评估，报告其重建误差低于所比较的基线方法。
+★★★★ 值得关注：在加权平均基础上，作者用条件扩散模型学习残差，并在三个科学数据集上与光流和视频插帧扩散基线比较，摘要报告其重建误差更低。</summary>
   </entry>
   <entry>
     <title>用于MODIS光谱-时间解混的多任务解耦融合Mamba-CNN模型（含端元变异建模）</title>
@@ -3302,7 +3312,8 @@ arXiv · 2026年10月27日
     <category term="AI 算法"/>
     <summary type="text">Nonlinear Direct Feedback Alignment for Scalable Backpropagation-Free Training
 arXiv · 2026年10月27日
-该论文针对反向传播（BP）生物不合理且存在反向锁定问题的缺陷，改进了直接反馈对齐（DFA）方法。作者提出非线性直接反馈对齐（NDFA），用轻量的非线性代理子网络构造每个隐藏层的反馈，并设计学习策略更新该子网络。实验覆盖残差网络与视觉Transformer，数据集包括CIFAR-10、CIFAR-100、SVHN和ImageNet，结果显示NDFA优于现有DFA方法，并缩小了与BP的性能差距。</summary>
+该论文针对反向传播（BP）生物不合理且存在反向锁定问题的缺陷，改进了直接反馈对齐（DFA）方法。作者提出非线性直接反馈对齐（NDFA），用轻量的非线性代理子网络构造每个隐藏层的反馈，并设计学习策略更新该子网络。实验覆盖残差网络与视觉Transformer，数据集包括CIFAR-10、CIFAR-100、SVHN和ImageNet，结果显示NDFA优于现有DFA方法，并缩小了与BP的性能差距。
+★★★★ 值得关注：提出非线性直接反馈对齐（NDFA），用轻量非线性代理子网络构造各隐藏层反馈并更新该子网络，在CIFAR-10、CIFAR-100、SVHN和ImageNet上对残差网络与视觉Transformer的实验中优于现有DFA方法，并缩小了与BP的性能差距。</summary>
   </entry>
   <entry>
     <title>通过隔离异议减少智能体过度防御性写作的框架</title>

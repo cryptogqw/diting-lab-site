@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">131</span></a>
-      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1669</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1676</span></a>
       <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">2372</span></a>
       <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">204</span></a>
       <a href="../../../zh/papers/ai/index.html" aria-current="page"><span>AI 算法</span> <span class="count">16385</span></a>
@@ -118,7 +118,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36641" target="_blank" rel="noopener noreferrer nofollow">Inducing Process Supervision from Outcome-Only Reinforcement Learning</a>  </h3>
 <p class="note"><span class="label">说明</span>从仅有结果的强化学习中诱导过程监督（说明：一种无需逐步标注、仅依据最终结果训练过程奖励模型的方法）</p><p class="summary"><span class="label">简介</span>过程奖励模型可以对大模型推理的每一步给出反馈，但训练成本高，人工逐步标注难以扩展，蒙特卡洛估计也计算昂贵。本文提出TIPS框架，模型先生成思维链，再输出步骤标签和结果标签，奖励只取决于结果是否与标准答案一致。作者在数学和智能体基准及四个基座模型系列上验证了该方法；其中TIPS-Qwen3-4B-Thinking-2507在ProcessBench上达到85.2的F1，使用的结果标注轨迹仅3.2K条。</p>
-<p class="why"><span class="label label-why">看点</span>提出仅用结果奖励的强化学习来诱导过程监督，思路新颖；以ProcessBench上85.2 F1的结果验证，但仅覆盖数学与智能体基准，证据有一定局限。</p><p class="authors">Shengda Fan, Xin Cong, Zhong Zhang 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出TIPS框架，仅用结果标签的强化学习训练生成式过程奖励模型，让模型在输出中先写推理链再给出步骤标签；作者报告在ProcessBench上以3.2K条结果标注轨迹得到85.2 F1，超过评测中的已训练PRM和部分提示式评审模型。</p><p class="authors">Shengda Fan, Xin Cong, Zhong Zhang 等</p></article>
 <article class="item" id="d239366">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -271,7 +271,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36612" target="_blank" rel="noopener noreferrer nofollow">Do LLMs Really Forget? Hidden-State Leakage in Model Unlearning and How to Fix it</a>  </h3>
 <p class="note"><span class="label">说明</span>大语言模型真的遗忘了吗？隐藏状态中的信息泄露及其修复</p><p class="summary"><span class="label">简介</span>该论文指出，大语言模型的遗忘效果通常只在输出层评估，输出没有敏感内容并不代表信息已被清除，敏感信息仍可能保留在隐藏表示中。作者用生成式探测解码器在各层测量泄露，在TOFU、MUSE、WMDP三个基准上发现，即使输出指标显示遗忘成功，仍能从隐藏状态中恢复大量敏感信息。为此，论文提出对抗性表示抑制方法PARS，直接最小化隐藏表示中可提取的信息，据其结果在对抗探测和再学习攻击下优于所有对比基线。</p>
-<p class="why"><span class="label label-why">看点</span>揭示输出层遗忘与隐藏表示泄露的分离，提出对抗式表示抑制方法，并在三个基准上以层级探针验证，新颖性较突出。</p><p class="authors">Hadi Reisizadeh, Jiajun Ruan, Sijia Liu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>指出大模型遗忘常只在输出层评估，作者称隐藏表示中仍可恢复敏感信息，并提出对抗式表示抑制方法PARS，在TOFU、MUSE、WMDP上用分层探针验证。</p><p class="authors">Hadi Reisizadeh, Jiajun Ruan, Sijia Liu 等</p></article>
 <article class="item" id="d239351">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -388,7 +388,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36588" target="_blank" rel="noopener noreferrer nofollow">Cooperative Multi-Agent Vision-Language-Action Models via Reinforced Fine Tuning</a>  </h3>
 <p class="note"><span class="label">说明</span>基于强化微调的多智能体视觉-语言-动作协作模型</p><p class="summary"><span class="label">简介</span>本文研究多机器人协作的视觉-语言-动作（VLA）模型的强化学习微调方法。作者提出三阶段流程：先按初始化配置收集数据，仅在预训练模型反复失败时引入人工示范；再按单个智能体的轨迹进行基于信用筛选的离线微调；最后在冻结模型的潜在噪声空间中进行在线强化学习。实验涵盖 RoboTwin、RoboFactory 及两台 Franka 机器人的真实操作任务，论文报告平均成功率分别提升 23.1%、16.4% 和 44%。</p>
-<p class="why"><span class="label label-why">看点</span>三阶段强化微调流程，结合信用过滤与潜空间RL，在11项任务上验证，对多机器人VLA有实质改进。</p><p class="authors">Ruixiao Xu, Wong Lik Hang Kenny, Zhiqian Liu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出三阶段强化微调流程：按初始化感知收集数据、按智能体信用过滤离线微调、冻结VLA做潜空间在线RL；摘要报告在11项任务上平均成功率分别提升23.1%、16.4%和44%。</p><p class="authors">Ruixiao Xu, Wong Lik Hang Kenny, Zhiqian Liu 等</p></article>
 <article class="item" id="d239338">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -406,7 +406,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36585" target="_blank" rel="noopener noreferrer nofollow">Transformers Stop Thinking Too Early, and a Tiny LoRA Fixes It</a>  </h3>
 <p class="note"><span class="label">说明</span>Transformer过早停止思考，一个微小的LoRA即可修复</p><p class="summary"><span class="label">简介</span>这篇论文发现，预训练Transformer在上下文中追踪引用时只用了很少的深度，13个基础模型只能可靠地跟随1.4至3.6行。作者在冻结全部权重的情况下，在早期一层加入秩为8的LoRA，显著延伸了这种计算能力，例如Qwen3-8B在24行链条上的精确率从15.5%提高到99%。</p>
-<p class="authors">Zehao Jin, Ruixuan Deng, Junran Wang</p></article>
+<p class="why"><span class="label label-why">看点</span>预训练Transformer只用很少的深度跟随上下文中的引用，13个基础模型仅稳定跟随1.4至3.6行；冻结全部权重后，一个秩为8的LoRA可把Qwen3-8B在24行链上的精确准确率从15.5%提升到99%。</p><p class="authors">Zehao Jin, Ruixuan Deng, Junran Wang</p></article>
 <article class="item" id="d239336">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -532,7 +532,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36559" target="_blank" rel="noopener noreferrer nofollow">HiTS-CL: A Continual Learning Framework for Long-Horizon Temporal Knowledge Graph Extrapolation</a>  </h3>
 <p class="note"><span class="label">说明</span>HiTS-CL：面向长时程时序知识图谱外推的持续学习框架</p><p class="summary"><span class="label">简介</span>时序知识图谱推理通常只在时间线前段训练一次，之后冻结模型用于所有未来时间点，难以适应非平稳的数据流，长时程下性能会下降。本文将外推式时序知识图谱推理视为对流式快照的持续学习，提出一种与骨干模型无关的框架HiTS-CL，通过持续微调跟踪当前动态、多教师自适应蒸馏保留稳定知识，并用选择性记忆保留近期与高频的历史事实。作者在五种代表性骨干模型和四个基准数据集上进行了验证，结果显示该框架提升了外推准确率并减缓长时程性能退化。</p>
-<p class="why"><span class="label label-why">看点</span>将时序知识图谱外推重新表述为流式快照上的持续学习，并结合微调、多教师蒸馏与历史记忆；在五个骨干和四个数据集上验证，优于强基线。</p><p class="authors">Yansong Liu, Rui Liu, Yuan Zuo 等</p></article>
+<p class="why"><span class="label label-why">看点</span>将时序知识图谱外推视为对流式快照的持续学习，结合在线微调、多教师自适应蒸馏与近期高频事实记忆；作者称在五个骨干和四个数据集上提升外推精度并减轻长时程退化。</p><p class="authors">Yansong Liu, Rui Liu, Yuan Zuo 等</p></article>
 <article class="item" id="d239322">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -550,7 +550,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36556" target="_blank" rel="noopener noreferrer nofollow">MAADBench: The Refreshable Paradigm for Anomaly Detection in Multi-Agent Systems</a>  </h3>
 <p class="note"><span class="label">说明</span>MAADBench：面向多智能体系统异常检测的可刷新基准</p><p class="summary"><span class="label">简介</span>该论文提出 MAADBench，这是首个可刷新的多智能体大模型系统异常检测基准，用于应对任务泄露、轨迹与异常模式过期等问题。它结合采样耦合的生成任务、可配置大模型底座下的可刷新轨迹生成，以及自动提供的步骤级标签。作者用五种大模型底座发布了含 5200 条带步骤标签轨迹的数据集，并测试了 25 种异常检测方法，结果显示现有方法依赖监督、难以识别细微异常且跨底座鲁棒性不足。</p>
-<p class="why"><span class="label label-why">看点</span>提出可刷新的多智能体异常检测基准范式，并在五种骨干和25种方法上做了系统评测，揭示现有方法的明显局限。</p><p class="authors">Lei Ma, Dennis Hofmann, Haowen Xu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>提出可刷新的多智能体异常检测基准MAADBench，含5,200条带步骤标签的轨迹，在5种LLM骨干上评测25种方法，结果显示现有方法依赖监督、难以识别细微异常且跨骨干不够稳健。</p><p class="authors">Lei Ma, Dennis Hofmann, Haowen Xu 等</p></article>
 <article class="item" id="d239320">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -622,7 +622,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36534" target="_blank" rel="noopener noreferrer nofollow">Retrieval Sensitivity to Identity Signals in Queries</a>  </h3>
 <p class="note"><span class="label">说明</span>检索模型对查询中身份信号的敏感性</p><p class="summary"><span class="label">简介</span>该论文研究稠密检索模型是否会因用户查询中体现的政治立场和方言而产生偏差，测试领域包括政治新闻和消费者健康问题。研究发现，五种稠密检索器和一个稀疏基线模型都会检索与查询政治倾向一致的文章，并且对非裔美国人语（AAL）提出的问题表现比白人主流英语（WME）更差。作者通过探测实验表明，这些差距不仅来自表层词汇，还与查询嵌入中编码的立场和方言信息有关。</p>
-<p class="why"><span class="label label-why">看点</span>首次系统考察用户身份信号（政治立场、方言）对稠密检索器结果的偏差，并用合成集与自然查询双重验证，且排除词汇表层解释。</p><p class="authors">Andrew Tang, Nicholas Deas, Kathleen McKeown 等</p></article>
+<p class="why"><span class="label label-why">看点</span>该研究考察用户查询中的政治立场和方言等身份信号是否使五种稠密检索器及一种稀疏基线产生偏差。作者报告，检索结果会偏向与查询政治倾向一致的文章，且非裔美国人语查询的表现低于白人主流英语查询；并称在控制词汇不对称后，合成集上的差距基本保持。</p><p class="authors">Andrew Tang, Nicholas Deas, Kathleen McKeown 等</p></article>
 <article class="item" id="d239313">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -712,7 +712,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36515" target="_blank" rel="noopener noreferrer nofollow">Large-scale factor analysis shows machine intelligence is only partially interpretable</a>  </h3>
 <p class="note"><span class="label">说明</span>大规模因子分析表明机器智能只能部分被解释</p><p class="summary"><span class="label">简介</span>该论文借鉴心理测量学方法，对1618个语言模型在456个纯文本基准上的13251个评测分数进行因子分析，检验是否存在通用的智能因子。结果显示，在最宽松的估计下，通用因子约解释模型表现方差的70.8%，多数方案中远低于此；内容相近的基准不一定聚在一起，且通用因子也未明显受某一共同主题主导。作者认为，这不支持将通用智能作为可具体定义和针对性提升的构念。</p>
-<p class="why"><span class="label label-why">看点</span>首次在大规模（1618个模型、456个基准）上用因子分析检验语言模型是否存在通用智能因子，结论挑战主流假设，证据规模大且做了多种稳健性检验。</p><p class="authors">Faiz Ghifari Haznitrama, Afrizal Hasbi Azizy, Faeyza Rishad Ardi</p></article>
+<p class="why"><span class="label label-why">看点</span>以1618个语言模型、456个文本基准的大规模因子分析，检验语言模型是否存在通用智能因子；作者报告通用因子仅解释约70.8%的方差（最乐观估计），且内容相近的基准未必聚类，结论对将通用智能作为单一目标的策略提出质疑。</p><p class="authors">Faiz Ghifari Haznitrama, Afrizal Hasbi Azizy, Faeyza Rishad Ardi</p></article>
 <article class="item" id="d239305">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -784,7 +784,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36490" target="_blank" rel="noopener noreferrer nofollow">LLMs Learn to Evade Latent Monitors from Prior Feedback Alone</a>  </h3>
 <p class="note"><span class="label">说明</span>大语言模型仅凭先前反馈即可学会规避潜在空间监测器</p><p class="summary"><span class="label">简介</span>该论文研究基于模型内部激活的潜在空间监测器是否会被智能体规避。作者发现，模型可从交互中的判定反馈推断监测规则，并编辑激活以逃避检测。放大编辑幅度后，监测器真阳性率从100%降至27%；加入秩1的LoRA微调后进一步降至4%，同时保留标准基准能力。</p>
-<p class="authors">Hugo Lyons Keenan, Christopher Leckie, Sarah Erfani</p></article>
+<p class="why"><span class="label label-why">看点</span>提出模型仅凭监测反馈即可推断监控规则并编辑激活以规避检测；作者报告缩放编辑幅度后TPR降至27%，秩一LoRA进一步降至4%。</p><p class="authors">Hugo Lyons Keenan, Christopher Leckie, Sarah Erfani</p></article>
 <article class="item" id="d239297">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -802,7 +802,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36486" target="_blank" rel="noopener noreferrer nofollow">Optimal Multi-Reward Reinforcement Learning</a>  </h3>
 <p class="note"><span class="label">说明</span>多奖励强化学习的最优样本复杂度</p><p class="summary"><span class="label">简介</span>本文研究转移概率未知的有限时域马尔可夫决策过程，给定有限个已知奖励函数，目标是仅通过在线回合交互为每个奖励输出一个 ε 最优策略。作者设计了可证明高效的算法，给出 O(SAH³/ε² · log M · polylog) 的极小极大样本复杂度，与信息论下界仅相差一个多对数因子。方法结合了面向奖励切换的 MVP 乐观估计、用新鲜回放样本保守评估候选策略，以及基于间隙的乘性权重更新来分配奖励采样。</p>
-<p class="why"><span class="label label-why">看点</span>提出多奖励强化学习的极小极大最优样本复杂度界，并给出匹配下界的算法，理论上较突出，对子领域影响较大。</p><p class="authors">Zijun Chen, Zihan Zhang</p></article>
+<p class="why"><span class="label label-why">看点</span>提出未知转移有限时域MDP在多个已知奖励函数下的学习算法，作者称其样本复杂度与信息论下界仅相差polylog因子，并通过改造MVP、重放样本评估及基于差距的乘性权重更新实现对所有奖励的同时保证。</p><p class="authors">Zijun Chen, Zihan Zhang</p></article>
 <article class="item" id="d257622">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -874,7 +874,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36472" target="_blank" rel="noopener noreferrer nofollow">DisCoMBO: Steering Expert-in-the-Loop Black-Box Optimization via Distributional Conformance</a>  </h3>
 <p class="note"><span class="label">说明</span>DisCoMBO：基于分布一致性的专家参与黑箱优化方法</p><p class="summary"><span class="label">简介</span>该论文针对顺序模型优化（SMBO）中引入专家知识的问题，提出分布一致性得分DisCo，用于衡量模型的“意外程度”并评估外部知识与模型证据的一致性。基于概率电路（PC）的DisCoMBO框架可实现知识感知的优化，作者证明其为零遗憾算法，并在AutoML、材料优化和风电场优化等基准上进行了验证。</p>
-<p class="why"><span class="label label-why">看点</span>提出基于概率电路的分布一致性分数，统一了不确定性量化与专家知识注入，并证明零遗憾性质；在多个领域基准上验证。</p><p class="authors">Jonas Seng, Bennet Wittelsbach, Kristian Kersting</p></article>
+<p class="why"><span class="label label-why">看点</span>提出基于概率电路的分布一致性分数DisCo，将线性时间推断的不确定性度量与专家知识一致性评估结合，构建DisCoMBO框架；作者称其为零遗憾算法，并在AutoML、材料优化和风电场优化基准上进行了验证。</p><p class="authors">Jonas Seng, Bennet Wittelsbach, Kristian Kersting</p></article>
 <article class="item" id="d239288">
   <div class="meta">
     <span class="source">arXiv</span>

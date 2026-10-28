@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">131</span></a>
-      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1669</span></a>
+      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1676</span></a>
       <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">2372</span></a>
       <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">204</span></a>
       <a href="../../../ja/papers/ai/index.html" aria-current="page"><span>AI アルゴリズム</span> <span class="count">16385</span></a>
@@ -173,7 +173,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33762" target="_blank" rel="noopener noreferrer nofollow">EfficientAgent: What Makes KV Cache Offloading Work for Concurrent Agents?</a>  </h3>
 <p class="note"><span class="label">説明</span>EfficientAgent：並行エージェントにおいてKVキャッシュのオフロードが効果を発揮する条件は何か</p><p class="summary"><span class="label">要約</span>LLMエージェントは毎ターン会話全体を再送するため、サービングシステムはKV状態をキャッシュし、GPUメモリが不足するとホストメモリへオフロードします。本論文では、オフロードの効果がデプロイ構成によって一定しないのは、ホスト層がエージェント全体の再利用可能なコンテキスト（「再利用ワーキングセット」）を保持できるかどうかに依存するためだと示します。EfficientAgentはスタック距離モデルでこの量を推定してホスト層を設定し、層が小さいときは書き込みを絞り、十分なときは全て書き込みます。SWE-bench Verifiedのコーディングエージェントでは、推定ワーキングセットに合わせたホスト層により、再計算されるプロンプトトークンが93%、エンドツーエンドの時間が39%削減されました。</p>
-<p class="why"><span class="label label-why">注目点</span>エージェント群の再利用ワーキングセットをスタック距離モデルで推定し、KVキャッシュのオフロード容量と書き込み方針を決める点で既存手法を実質的に改良し、SWE-bench上で対照実験も行っている。</p><p class="authors">Kunming Shao, Jierun Chen, Jiangnan Yu ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>エージェント群の再利用ワーキングセットをスタック距離モデルで推定し、KVキャッシュのホストメモリ容量と書き込み方針を決める手法。摘要はSWE-bench Verifiedで再計算トークンが93%、所要時間が39%減少したと報告している。</p><p class="authors">Kunming Shao, Jierun Chen, Jiangnan Yu ほか</p></article>
 <article class="item" id="d262738">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -191,7 +191,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33760" target="_blank" rel="noopener noreferrer nofollow">Oracle-Efficient Online Classification with Stochastic Inputs and Adversarial Outputs</a>  </h3>
 <p class="note"><span class="label">説明</span>確率的な入力と敵対的な出力を持つ、最適化オラクル効率の良いオンライン分類（計算しやすい学習手法）</p><p class="summary"><span class="label">要約</span>本論文は、文脈が未知の独立同分布から得られ、損失関数が適応的に選ばれる二値予測問題を扱います。観測されたそれぞれの文脈にガウス摂動を加えるFollow-the-Perturbed-Leader（摂動リーダーに従う）アルゴリズムが、N個のエキスパートからなるクラスに対して Õ(√(T log N)) の後悔（regret）を達成することを示しています。毎ラウンドの最適化オラクル呼び出しは1回で済み、仮説クラスの明示的な列挙は不要です。無限の仮説クラスに対しては、後悔は Õ(√(T·VC(H))) となります。</p>
-<p class="why"><span class="label label-why">注目点</span>各文脈へのガウス摂動を用いた単純なFollow-the-Perturbed-Leaderで、一回のオラクル呼び出しで解けることを示し、未解決問題を解決している。</p><p class="authors">Gon Buzaglo, Elad Hazan</p></article>
+<p class="why"><span class="label label-why">注目点</span>観測された各文脈にガウス摂動を加える単純なFollow-the-Perturbed-Leaderを提案し、毎ラウンド一回のオラクル呼び出しで済むとしている。著者らは、Lazaric and Munosの未解決問題を解決し、文脈付きバンディットへの応用も示すとしている。</p><p class="authors">Gon Buzaglo, Elad Hazan</p></article>
 <article class="item" id="d237322">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -218,7 +218,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33757" target="_blank" rel="noopener noreferrer nofollow">YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality</a>  </h3>
 <p class="note"><span class="label">説明</span>YuE2：記号と音声の音楽生成を統合したフロンティア品質のモデル</p><p class="summary"><span class="label">要約</span>本論文はYuE2を提案し、まず旋律と和声を指定する読める楽譜を生成し、それを音声へ変換する音楽生成モデルを示す。記号的プランニングを用いる版は、専門家評価で全体品質において49.3%の選好を得て、プランニングなし版の34.6%を上回ったと報告されている。WildSongBenchでは、八候補から選ぶ方式で平均6.96点に達した。あわせて、表現学習用のMERT2と、リードシート転写用のSheetSage2が紹介されている。</p>
-<p class="authors">Ruibin Yuan, Jiahao Pan, Junyan Jiang ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>YuE2 は単一の AR-NAR 混合 Transformer で読める楽譜を先に書き、その後全曲音声を生成する。要約では記号的計画により専門家の選好が34.6%から49.3%に上がり、WildSongBench で先行していると報告されている。</p><p class="authors">Ruibin Yuan, Jiahao Pan, Junyan Jiang ほか</p></article>
 <article class="item" id="d237319">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -272,7 +272,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33746" target="_blank" rel="noopener noreferrer nofollow">PQ-HSA: Reusing Product-Quantized Scores for Hybrid Sparse-Approximate Attention</a>  </h3>
 <p class="note"><span class="label">説明</span>PQ-HSA：乗積量子化スコアを再利用するハイブリッド疎・近似アテンション</p><p class="summary"><span class="label">要約</span>言語モデルは復号の各ステップで過去のすべてのキーバリューキャッシュを読み込むため、長い文脈ではメモリ帯域が制約になります。PQ-HSA は逆ファイル乗積量子化インデックスで未選択トークンの近似スコアを求め、それを選ばれたトークンの正確な計算と同じソフトマックスに組み込みます。論文によると、128K 文脈・検索予算 1〜2% で Quest や SnapKV より高い精度を示し、NVIDIA H20 上では復号アテンション呼び出しが FlashAttention-3 より 1.6 倍速いとされています。</p>
-<p class="why"><span class="label label-why">注目点</span>IVF-PQの近似スコアを未選択トークンの背景項に使い疎注意と組み合わせる点は既存手法の実質的改良で、128Kでの複数モデルとvLLM実測で検証されている。</p><p class="authors">Kunming Shao, Jierun Chen, Yanli Wang ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>PQ-HSAはIVF-PQ索引の近似スコアを未選択トークンの背景項として再利用し疎注意と組み合わせる。摘要によれば128Kで両モデルのQuest・SnapKVを上回り、vLLMでFlashAttention-3比1.6倍の高速化を報告している。</p><p class="authors">Kunming Shao, Jierun Chen, Yanli Wang ほか</p></article>
 <article class="item" id="d237314">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -308,7 +308,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33738" target="_blank" rel="noopener noreferrer nofollow">The Effects of Incremental Instruction Delivery on Language-Model Creative Writing</a>  </h3>
 <p class="note"><span class="label">説明</span>段階的な指示提示が言語モデルの創作文章に与える影響：複数ターンの対話で要件を分けて伝えると、作品の構成や一貫性が損なわれるかを調べた研究です。</p><p class="summary"><span class="label">要約</span>本論文は、利用者が対話の中で執筆要件を段階的に示した場合に、大規模言語モデルの創作文章の質がどう変わるかを検証しています。6つのジャンルにわたる人手作成の創作課題160件を、要件を一度に示す場合と5〜9ターンに分けて示す場合で比較し、6つのオープンウェイトモデル系統で合計960組の対を分析しました。その結果、段階的提示では明示的な制約の遵守が低下し、構成と一貫性の低下が最も大きいことが示されました。また、段階的提示でもモデルは全体提示時の完全な創作完全性スコアの71.2%を維持しました。</p>
-<p class="why"><span class="label label-why">注目点</span>段階的指示と一括指示が創作文章に与える影響を体系的に比較し、構造性の劣化を人手評価で検証しており、証拠は比較的確かである。</p><p class="authors">Anshuman Singh, Abrar Eyasir, Haseeb Yaqoob ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>段階的指示と一括指示が創作文章に与える影響を体系的に比較し、160件のタスクと六つのモデルファミリーで、段階的提示では構造・一貫性の劣化が最も大きいと報告している。著者らは人手評価で同様の結果を確認し、Creative Integrity指標では約71.2%を保持したとしている。</p><p class="authors">Anshuman Singh, Abrar Eyasir, Haseeb Yaqoob ほか</p></article>
 <article class="item" id="d237312">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -506,7 +506,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33702" target="_blank" rel="noopener noreferrer nofollow">Understanding Confabulation and Rethinking Reconstruction in Activation Explanations</a>  </h3>
 <p class="note"><span class="label">説明</span>活性化の説明における作話の理解と再構成手法の再検討</p><p class="summary"><span class="label">要約</span>自然言語オートエンコーダ（NLA）は、モデルの活性化を教師なしで文章により説明します。記述器が活性化を文章にし、再構成器がその文章から活性化を復元します。従来の点再構成の訓練では、説明はモデルの振る舞いの予測に有用になる一方、根拠のない詳細や文章の欠陥が増えることが示されています。本論文は、これらを分けて評価する標準化された枠組みを提示し、説明と両立する活性化の分布をモデル化し、拡散尤度の下界で記述器を訓練するFlow-NLAを提案します。Qwen、Gemma、Apertusでの実験では、有用性を保ちつつ作話と文章の欠陥の増加を抑えたと報告されています。</p>
-<p class="why"><span class="label label-why">注目点</span>点再構成に代えて分布的再構成でNLAを学習する新しい手法と評価枠組みを提案し、複数モデルで検証しているが、摘要では結果の詳細が限定的である。</p><p class="authors">Gert Lek, Zixuan Xia, Pin-Yu Chen ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>点再構成に代えて分布的再構成でNLAを学習し、有用性を保ちつつ虚構の細部や文章の欠陥を抑えることを、Qwen、Gemma、Apertusで検証している。</p><p class="authors">Gert Lek, Zixuan Xia, Pin-Yu Chen ほか</p></article>
 <article class="item" id="d237293">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -623,7 +623,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33675" target="_blank" rel="noopener noreferrer nofollow">Benign Overfitting for General Norms and Distributions</a>  </h3>
 <p class="note"><span class="label">説明</span>一般的なノルムと分布における良性過学習：学習データに含まれるノイズを完全に補間しても線形回帰が汎化できる理由を、非ユークリッドノルムと非ガウス分布へ拡張して分析する研究。</p><p class="summary"><span class="label">要約</span>本論文は線形回帰における「良性過学習」を扱います。ノイズを含む学習データを完全に補間しても、モデルがうまく汎化する現象です。従来研究は最小 2 ノルム解が中心でしたが、Adam や Muon などの最適化器は別のノルムに偏った解を選びます。著者らは一般的なノルムと亜ガウス分布に対する分析手法を提案しました。条件を満たせば、p&gt;1 の最小 p ノルム補間は非ガウス分布でも良性過学習しうることが示されています。一方、1 ノルムについては、性質の良い非ガウス分布では一般には成り立たないとされています。</p>
-<p class="why"><span class="label label-why">注目点</span>一般ノルムと劣ガウス分布へ良性過学習の解析を拡張し、p&gt;1のノルム補間の成立と、1ノルム結果がガウス性に依存することを示した。</p><p class="authors">Daniel Barzilai, Ohad Shamir</p></article>
+<p class="why"><span class="label label-why">注目点</span>一般ノルムと劣ガウス分布への良性過学習の解析拡張を扱い、摘要はp&gt;1のノルム補間が一定条件下で良性過学習しうると報告、1ノルムの既存の肯定的結果はガウス性に依存すると述べる。</p><p class="authors">Daniel Barzilai, Ohad Shamir</p></article>
 <article class="item" id="d237281">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -677,7 +677,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.33667" target="_blank" rel="noopener noreferrer nofollow">Scalable Attribution and Control of Model Behavior During Training</a>  </h3>
 <p class="note"><span class="label">説明</span>学習中のモデル挙動の拡張可能な帰属と制御：相互情報量と行動勾配の一意性で各サンプルの寄与を測り、重みを調整して挙動を誘導する手法です。</p><p class="summary"><span class="label">要約</span>本論文は、次の更新の前に各サンプルがモデルの挙動にどれだけ寄与したかを素早く判定する問題を扱います。同一バッチ内のサンプル同士の干渉を相互情報量で考慮し、この相互情報量が行動勾配の一意性（BGU）の対数関数であることを示します。バッチ空間で計算を共有するBS-Ghostアルゴリズムを提案し、モデル規模のサンプル勾配を保存せずに済ませます。Qwen2.5-7B-Instruct・1,000サンプルの実験では、通常の学習約5.5分に対して約27秒（8.0%）の追加で済み、データを除去して再学習した結果からBGUが最終挙動に因果的に影響するデータを識別できることが示されています。</p>
-<p class="authors">Sleem Abdelghafar</p></article>
+<p class="why"><span class="label label-why">注目点</span>論文は相互情報量と行動勾配の一意性（BGU）を結び、BS-Ghostアルゴリズムでバッチ空間上で学習ループ内に効率的に計算できるとしている。摘要は1,000例のQwen2.5-7B-Instructで学習時間が8.0%増えるだけだと報告し、削除後の再学習でBGUが最終的な振る舞いに因果的に影響するデータを特定すると著者らは述べている。</p><p class="authors">Sleem Abdelghafar</p></article>
 <article class="item" id="d237275">
   <div class="meta">
     <span class="source">arXiv</span>

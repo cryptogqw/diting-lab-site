@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">131</span></a>
-      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1669</span></a>
+      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1676</span></a>
       <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">2372</span></a>
       <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">204</span></a>
       <a href="../../../ja/papers/ai/index.html" aria-current="page"><span>AI アルゴリズム</span> <span class="count">16385</span></a>
@@ -164,7 +164,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05458" target="_blank" rel="noopener noreferrer nofollow">Measuring and Reducing Cross-Vendor Mismatch in Language Models</a>  </h3>
 <p class="note"><span class="label">説明</span>言語モデルのGPUベンダー間不一致の測定と低減</p><p class="summary"><span class="label">要約</span>同じ言語モデルを異なるGPUベンダーで動かすと、重みと入力が同一でも出力（logit）が異なる場合があります。本論文は2つの高密度モデルと2つのMoEモデルについて、五種類の指標でこの不一致を分析しています。原因の一つはベンダーの行列命令内部の累積順序にあるとされ、FP32への昇格で高密度モデルのlogit誤差は43%減少するものの、実行時間は約3倍になると述べています。MLPのみをBF16に保つと、その利得の94%を実行時間約1.3倍で保持できるとしています。</p>
-<p class="why"><span class="label label-why">注目点</span>複数指標でGPUベンダー間の数値差を体系的に分析し、MLPのみBF16で増加分の94%を保持できることを実験で示す。</p><p class="authors">Erland Hilman Fuadi, Chong Tian, Xiaosong Ma ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>同一モデルを異なるGPUベンダーで動かすと出力が変わる問題を分析し、MLPのみBF16で全面FP32化の利得の94%を、実行時間1.3倍で保持できると報告している。蒸馏実験では431問のMMLU回答が異なった。</p><p class="authors">Erland Hilman Fuadi, Chong Tian, Xiaosong Ma ほか</p></article>
 <article class="item" id="d249050">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -218,7 +218,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05450" target="_blank" rel="noopener noreferrer nofollow">Groupwise Distortion Guarantees for Preference-Based Alignment</a>  </h3>
 <p class="note"><span class="label">説明</span>選好ベースの整合における群ごとの歪み保証：群条件付きポリシーを学習する手法</p><p class="summary"><span class="label">要約</span>RLHF や NLHF などの選好ベースの整合手法は、ペア比較からLLMの方策を学習しますが、社会的厚生の最大化という目標は比較だけでは特定できない場合があります。本論文は、ユーザーごとに1回の比較だけで、群条件付きの単一の方策を学習する GLHF アルゴリズムを提案します。Bradley–Terry モデルの下で、事前に指定された（重なりを含みうる）複数の群すべてについて、既知の最適な歪み上界に漸近的に一致します。実験では、各群で歪みが下がり、最悪群の歪みも NLHF などの基準手法より大きく下がったと報告されています。</p>
-<p class="why"><span class="label label-why">注目点</span>重なりを許す複数グループに対する歪み保証を分組条件付き方策へ拡張し、標本複雑度はグループ数に対数的に増える。理論と実験で裏付けている。</p><p class="authors">Jacob Brodkey, Roberto Tamez, Aaron Roth</p></article>
+<p class="why"><span class="label label-why">注目点</span>嗜好に基づくアラインメントの社会厚生の歪み保証を、重なりを許す複数グループへ拡張し、グループ条件付き方策で各グループの最適歪みに同時に近づける。標本数はグループ数に対数的に増え、コーヒーと合成LLMの実験で各グループの歪みが下がったと報告している。</p><p class="authors">Jacob Brodkey, Roberto Tamez, Aaron Roth</p></article>
 <article class="item" id="d249046">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -380,7 +380,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05398" target="_blank" rel="noopener noreferrer nofollow">MMPostTrainBench: Benchmarking Autonomous Research for Multimodal Post-Training</a>  </h3>
 <p class="note"><span class="label">説明</span>MMPostTrainBench：マルチモーダル事後学習のための自律研究ベンチマーク</p><p class="summary"><span class="label">要約</span>本論文は、画像・音声・動画・音声動画統合理解など8つのタスクからなるベンチマーク MMPostTrainBench を提案し、固定予算のもとでLLMエージェントがマルチモーダルモデルを反復的に改善できるかを評価します。全タスクの平均の52.1%が基盤モデルを下回り、非対象能力の退行も見られ、エージェントは最良の候補を安定して選択できませんでした。著者らはこれを受け、階層型メモリと開発評価を用いる MMResearch フレームワークを提案しています。</p>
-<p class="why"><span class="label label-why">注目点</span>マルチモーダル自律的後学習のベンチマークと階層メモリ付き研究フレームワークを提案し、8タスクで回帰と選択ギャップを系統的に評価している。影響は主にマルチモーダル研究エージェント分野に及ぶ。</p><p class="authors">Yuxin Liu, Yuxuan Wang, Zhenxin Lei ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>8つのマルチモーダルタスクからなる自律的後学習ベンチマークMMPostTrainBenchを提案し、模型-タスク平均の52.1%がベースラインを下回り非対象回帰もあると報告。階層メモリ付きMMResearchでClaude Opus 4.8の精度が最大7.75ポイント向上したとしている。</p><p class="authors">Yuxin Liu, Yuxuan Wang, Zhenxin Lei ほか</p></article>
 <article class="item" id="d249033">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -524,7 +524,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05367" target="_blank" rel="noopener noreferrer nofollow">AIProver: Agentic Auto-Formalization of Mathematical Research via Certificate-Driven Evolving Harness</a>  </h3>
 <p class="note"><span class="label">説明</span>AIProver：証明書駆動型の進化ハーネスによる数学研究の自動形式化</p><p class="summary"><span class="label">要約</span>本論文は、数学の定理と証明をLeanなどの形式言語へ自動変換し証明を生成するエージェント型フレームワーク AIProver を提案する。119Bのオープン重み言語モデルを微調整しつつ、HarnessEvolve によって工具呼び出しの制御フローを進化させ、型・証明の完全性・意味的正しさの検証証明書に基づいて強化学習を行う。また、58.9k件のインスタンスからなるベンチマーク LoCoBench を導入している。原文によれば、意味的正しさ（pass@4）はベースモデルの15.7%から36.7%に向上し、Numina-Lean-Agent より24%低コストであるという。</p>
-<p class="why"><span class="label label-why">注目点</span>証明書駆動の進化的ハーネスと後学習を組み合わせ、研究レベルの形式化で基準を大きく上回り、証拠も比較的充実している。</p><p class="authors">Prithwish Jana, Viet Bach Hoang, Logan Luna ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>119Bのオープン重みモデルの後学習と証明書駆動のHarnessEvolveを組み合わせたAIProverを提案し、LoCoBenchでpass@4の意味的正確性が15.7%から36.7%に向上したと報告している。</p><p class="authors">Prithwish Jana, Viet Bach Hoang, Logan Luna ほか</p></article>
 <article class="item" id="d259761">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -632,7 +632,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05334" target="_blank" rel="noopener noreferrer nofollow">AgentDiscover: Autonomous Discovery with Minimal Search Scaffolding</a>  </h3>
 <p class="note"><span class="label">説明</span>AgentDiscover：最小限の探索足場による自律的発見</p><p class="summary"><span class="label">要約</span>本論文は、コーディングエージェントが自ら探索を計画し、アイデア・候補解・それらの関係を記録するデータベースを長期記憶として用いるフレームワーク AgentDiscover を提案しています。実験では、カーネル工学、生物学、アルゴリズム設計、数学のタスクで既存の発見フレームワークを上回り、より低いコストでより良いスコアに到達したと報告しています。さらに、過去の AtCoder ヒューリスティックコンテスト7回で1位相当になり得たとしています。</p>
-<p class="why"><span class="label label-why">注目点</span>固定アルゴリズムではなく符号化エージェントが探索を計画しデータベースで記憶する点は新しく、複数分野と過去のAtCoder大会で比較実験を行っている。</p><p class="authors">Mahdi Farahbakhsh, Ilan Sela, Fatemeh Doudi ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>符号化エージェントが探索を自ら計画し、データベースで実験を記録する方式を提案。摘要はカーネル、生物、アルゴリズム、数学などで既存フレームワークを上回ったと報告している。</p><p class="authors">Mahdi Farahbakhsh, Ilan Sela, Fatemeh Doudi ほか</p></article>
 <article class="item" id="d249009">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -686,7 +686,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05327" target="_blank" rel="noopener noreferrer nofollow">Quantitative Universality of Approximate Message Passing for Rank-One Quadratic Sensing</a>  </h3>
 <p class="note"><span class="label">説明</span>ランク1二次センシングにおける近似メッセージパッシングの定量的普遍性</p><p class="summary"><span class="label">要約</span>本論文は、ランク1二次センシング行列を用いた近似メッセージパッシング（AMP）アルゴリズムの振る舞いを検討する。固定された反復回数において、この行列と共分散を揃えた等方的ガウス行列の結果の差は、正規化された信号の重なりや滑らかな線形スペクトル統計量についてO(d^{-1/2})に収まることを示している。これにより、正規化平均二乗誤差、固定スペクトルモーメント、経験的スペクトル分布の普遍性が導かれる。規定された滑らかなスペクトル去雑音器の場合について、Maillardら（arXiv:2408.03733）が提唱したAMPの普遍性予想を証明している。</p>
-<p class="why"><span class="label label-why">注目点</span>ランク1二次センシングにおけるAMPの定量的普遍性を示し、Maillardらの予想を確立しており理論的に実質的な前進だが適用範囲は限定的。</p><p class="authors">Duy Thuc Nguyen, Yue M. Lu, Subhabrata Sen</p></article>
+<p class="why"><span class="label label-why">注目点</span>要旨によれば、ランク1二次センシングでのAMPの正規化重なりやスペクトル統計は共分散を揃えたガウス模型と O(d^{-1/2}) しか違わず、Maillardらの予想を確立したとされる。</p><p class="authors">Duy Thuc Nguyen, Yue M. Lu, Subhabrata Sen</p></article>
 <article class="item" id="d253546">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -785,7 +785,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.05303" target="_blank" rel="noopener noreferrer nofollow">ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience</a>  </h3>
 <p class="note"><span class="label">説明</span>ASCENT：検証済み経験の自己蒸留による長期タスク・エージェントのオンライン テスト時学習</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルのエージェントが連続する関連タスクを実行しながら、展開中に自らの重みをオンラインで更新する手法を研究しています。ASCENT は、固定された初期モデルの複製に検証済みの実行軌跡を特権情報として与え、その軌跡に沿った次トークン分布を予測させ、その分布を永続的な LoRA 高速重みに蒸留して後続タスクに用います。論文は、ALFWorld、WebShop、AppWorld で経験の蓄積とともにタスク成功率と操作効率が向上し、未見のシーンにも転移すると報告しています。</p>
-<p class="why"><span class="label label-why">注目点</span>検証済み軌跡を自己蒸留で重みに取り込む新しい枠組みを提案し、三つのベンチマークで比較しており、エージェント学習の分野に影響が及ぶ。</p><p class="authors">Haodong Lu, Dong Gong</p></article>
+<p class="why"><span class="label label-why">注目点</span>デプロイ中に検証済みの実行経験を自己蒸留で重みに取り込む手法を提案し、別途の学習段階や記憶検索を必要としない。著者は、ALFWorld、WebShop、AppWorldで経験の蓄積とともにタスク成功率と対話効率が向上し、オンライン適応手法を上回り、未知のシーンにも転移すると報告している。</p><p class="authors">Haodong Lu, Dong Gong</p></article>
 <article class="item" id="d248992">
   <div class="meta">
     <span class="source">arXiv</span>

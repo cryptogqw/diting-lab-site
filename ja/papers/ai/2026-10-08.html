@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">131</span></a>
-      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1669</span></a>
+      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1676</span></a>
       <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">2372</span></a>
       <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">204</span></a>
       <a href="../../../ja/papers/ai/index.html" aria-current="page"><span>AI アルゴリズム</span> <span class="count">16385</span></a>
@@ -83,7 +83,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.12083" target="_blank" rel="noopener noreferrer nofollow">All Verdicts are Not Equal: Rethinking LLM Judge Reliability</a>  </h3>
 <p class="note"><span class="label">説明</span>すべての判定が等しいわけではない：LLM評価者の信頼性を再考する</p><p class="summary"><span class="label">要約</span>本論文は、NLP評価の標準的手法である「LLM-as-a-Judge（LLMを評価者とする方式）」の信頼性を体系的に検証しています。6つの最先端モデルを4つのベンチマーク、5種類のプロンプト形式、2種類の提示順序、3つのサンプリング温度で試験した結果、温度ゼロでも判定が変わる、提示順序の入れ替えで多くの判定が覆るといった脆弱性が示されました。さらに、最も安定した評価者は誤った判定を繰り返すだけで、正解との一致率は51%にとどまりました。著者らは「信頼できる判定率（T）」という指標を提案し、ペアごとの勝率よりも全体的なルーブリック採点の方が信頼性を高めると報告しています。</p>
-<p class="why"><span class="label label-why">注目点</span>統一的信頼性指標Tを提案し、位置バイアス下の精度上限を導出。6モデル・4ベンチマークで多条件に検証し、評価手法への影響は大きい。</p><p class="authors">Vineet Kumar, Darshita Rathore, Anindya Moitra</p></article>
+<p class="why"><span class="label label-why">注目点</span>统一的信頼性指標Tを提案し、位置バイアス下の精度上限を導出。著者は6モデル・4ベンチマークで多条件を検証し、温度ゼロでも判定が変わり順序入替で多数が反転すると報告、整体評点への移行が信頼性を高めると述べている。</p><p class="authors">Vineet Kumar, Darshita Rathore, Anindya Moitra</p></article>
 <article class="item" id="d252968">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -182,7 +182,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.12052" target="_blank" rel="noopener noreferrer nofollow">Diffusion Removes Langevin&#39;s Conditioning Dependence: A Sharp Gaussian Analysis</a>  </h3>
 <p class="note"><span class="label">説明</span>拡散モデルはLangevinの条件数依存を取り除く：ガウス分布による鋭い解析</p><p class="summary"><span class="label">要約</span>本論文はガウス分布を用いて、拡散モデルが古典的なスコアベースのサンプラーの制約を超えられる理由を分析しています。最適化されたハイパーパラメータの下で2-Wasserstein収束の上界を導き、拡散過程の誤差は次元、サンプリングステップ数、目標共分散行列の最大固有値に依存することを示しています。一方、未調整および劣減衰のLangevin力学には条件数の平方根に比例する追加因子があります。さらに、これらの評価は漸近的に鋭いとされ、利点は学習段階ではなくサンプリング過程の時間依存スコア軌道から生じると論じています。</p>
-<p class="why"><span class="label label-why">注目点</span>ガウス設定で拡散サンプリングがランジュバン動力学の条件数依存を除くことを精密に示し、一次漸近で一致する鋭い境界を与えている。</p><p class="authors">Adam Perbost, Francis Bach, Pierre Marion</p></article>
+<p class="why"><span class="label label-why">注目点</span>ガウス設定で、拡散サンプリングの2-Wasserstein誤差は O(√(dλ_max)·log N/N) と示され、一次漸近で一致すると著者らは述べている。条件数 κ に依存する因子はランジュバン動力学側に現れる。</p><p class="authors">Adam Perbost, Francis Bach, Pierre Marion</p></article>
 <article class="item" id="d252959">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -263,7 +263,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.12022" target="_blank" rel="noopener noreferrer nofollow">Examining Social Attribution in LLM Reasoning: A Theory-Guided Probing Methodology</a>  </h3>
 <p class="note"><span class="label">説明</span>LLM推論における社会的帰属の検証：理論に基づくプロービング手法</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルによる社会的帰属、すなわち外部の出来事を行為者の責任や非難に結びつける推論を初めて体系的に調べたものです。帰属理論に基づき、7,639件の責任・非難判断の問いからなるベンチマークを構築し、32のLLMと5つの非LLMベースラインを評価しています。結果として、モデルの判断は人間と測定可能ながら不完全に一致し、その一致度はモデル規模と正の相関を示しました。</p>
-<p class="why"><span class="label label-why">注目点</span>依拠帰属理論で7,639問のベンチマークを構築し、32モデルを評価し、隠れ層のプロービングで内部機構を分析しており、新規性と実験規模が際立つ。</p><p class="authors">Zhaoxin Yu, Qingchao Kong, Dajun Zeng ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>本論文はLLMの社会的帰属を初めて体系的に調べ、帰属理論に基づく7,639問の責任・非難判断ベンチマークを構築し、32のLLMと5つの非LLMベースラインを評価している。隠れ層のプロービングで内部機構も分析し、人間との一致は測定可能だが不完全で、モデル規模と正の相関があると報告している。</p><p class="authors">Zhaoxin Yu, Qingchao Kong, Dajun Zeng ほか</p></article>
 <article class="item" id="d252950">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -299,7 +299,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.12008" target="_blank" rel="noopener noreferrer nofollow">Complexity of Grounded Semantics and Preferred Semantics in Finitary Argumentation Frameworks</a>  </h3>
 <p class="note"><span class="label">説明</span>有限論証フレームワークにおける基礎意味論と選好意味論の計算複雑性</p><p class="summary"><span class="label">要約</span>本論文は、Dungの抽象論証フレームワークにおける基礎意味論と選好意味論の判定問題の計算複雑性を、計算可能有限のフレームワークの下で分析する。信用的受容、懐疑的受容、拡張の存在、一意性、非空の存在などを扱う。有限性によって推論が算術的階層まで下がる境界と、二階量化により分析的階層に戻る場合を明らかにしている。</p>
-<p class="why"><span class="label label-why">注目点</span>有限型抽象論証フレームワークにおける基礎意味論と選好意味論の判定問題の正確な算術・解析階層分類を与え、有限性が成立する境界を示す。</p><p class="authors">Jinfan Xu, Jieting Luo</p></article>
+<p class="why"><span class="label label-why">注目点</span>計算可能な有限型論証フレームワークにおいて、基礎意味論と選好意味論の各判定問題の算術・解析階層での正確な分類を示す。基礎意味論の非空存在はΣ1^0完全、選好意味論の全称量化と一意性は解析階層に残る、と著者らは報告している。</p><p class="authors">Jinfan Xu, Jieting Luo</p></article>
 <article class="item" id="d252947">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -317,7 +317,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.12005" target="_blank" rel="noopener noreferrer nofollow">Test-Time Compute for Tabular Foundation Models: Mechanisms, Gains, and Limits</a>  </h3>
 <p class="note"><span class="label">説明</span>表形式基盤モデルのテスト時計算：仕組み・効果・限界</p><p class="summary"><span class="label">要約</span>本論文は、事前学習済みの表形式基盤モデル（TFM）の予測を、推論時の追加計算によってどう改善できるかを、適応・集約・文脈構築の三つの観点から体系的に検討しています。提案手法DiagScaleは、モデルパラメータのうち0.003〜0.03％のみを学習させ、全体のファインチューニングに近い効果を示したと報告されています。選択的な集約と適応は安定した改善をもたらす一方、文脈構築の効果はタスクやデータ規模に依存するとされています。</p>
-<p class="why"><span class="label label-why">注目点</span>DiagScaleなどの適応手法を提案し三つの軸を体系的に調べ、TabArenaで全量微調整と同等の効果を示し、表形式基盤モデルの分野で実用的な価値がある。</p><p class="authors">Kanghui Ning, Marin Bilo\v{s}, James T. Wilson ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>DiagScaleという対角クエリ・キー更新を提案し、適応・集約・文脈構築の三つの測試時計算を調べる。著者らは全パラメータの0.003-0.03%の学習でTabArenaにおいて全量微調整に匹敵する効果を報告。</p><p class="authors">Kanghui Ning, Marin Bilo\v{s}, James T. Wilson ほか</p></article>
 <article class="item" id="d8874">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -362,7 +362,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.11994" target="_blank" rel="noopener noreferrer nofollow">Neural Network Verification for Deep Joint Source-Channel Coding</a>  </h3>
 <p class="note"><span class="label">説明</span>深層結合信源通信路符号化のためのニューラルネットワーク検証</p><p class="summary"><span class="label">要約</span>本論文は、深層結合信源通信路符号化（DeepJSCC）の復号器を対象とした初の境界伝播検証フレームワークを提案し、所与の無線通信路の雑音範囲内で最悪ケースの再構成誤差を評価します。PReLUの線形緩和手法を拡張し、転置畳み込みを制限付きのアップサンプル後畳み込み形式に置き換え、レイリーフェージングを復号器の前段に置く構造的摂動として定式化しています。Lipschitz正則化による大域的ロバスト学習（GloRo）と組み合わせることで、画像伝送モデルに対する認証を得ており、ソフトウェア無線機によるOFDM実験でも証明された境界が実機で成立することを確認しています。</p>
-<p class="why"><span class="label label-why">注目点</span>DeepJSCCの復号器に対して初めての境界伝播による検証枠組みを示し、PReLU・転置畳み込み・レイリー減衰に対応、OFDM実機で証明書の有効性を確認している。</p><p class="authors">Thanh Le, Hai Duong, Takeshi Matsumura ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>著者らはDeepJSCC復号器に対する初の境界伝播検証枠組みを示し、PReLU・転置畳み込み・レイリー減衰を扱う。摘要は画像伝送モデルで認証安全事例が19から192に増えたと報告し、OFDM実機で誤差0.082、認証界0.128を測定したとしている。</p><p class="authors">Thanh Le, Hai Duong, Takeshi Matsumura ほか</p></article>
 <article class="item" id="d252939">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -398,7 +398,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.11986" target="_blank" rel="noopener noreferrer nofollow">FearCaut-Qwen: Affective Steering in a Vision-Language Model Shifts the Decision Criterion for Hazard Assessment</a>  </h3>
 <p class="note"><span class="label">説明</span>FearCaut-Qwen：視覚言語モデルにおける感情ステアリングが災害リスク判定の判断基準を変える仕組み</p><p class="summary"><span class="label">要約</span>視覚言語モデルは震災後の建物被害評価に有望だが、危険を宣言したがらず再現率が低いという課題がある。著者は信号検出理論で判断を感知能力と判断基準に分け、恐怖に関連する感情的表現をモデル内で特定して活性化ステアリングにより操作した。その結果、恐怖方向の注入で危険（赤）の再現率が75.7%に上がり、識別能力は改善しないまま判断基準だけが変化した。再学習は不要である。</p>
-<p class="why"><span class="label label-why">注目点</span>感情方向を視覚言語モデルに因果的に注入して判断基準を調整し、信号検出理論で識別力と基準を分離する点は新しい。ただし単一モデルと単一データセットでの検証に留まる。</p><p class="authors">Xiaoshan Zhou</p></article>
+<p class="why"><span class="label label-why">注目点</span>信号検出理論で震災後の危険判定を識別力と判断基準に分解し、感情方向を注入して基準を調整する。摘要では恐怖方向の注入で赤判定の再現率が27.0%から75.7%に上がり、識別力は改善しないと報告されている。</p><p class="authors">Xiaoshan Zhou</p></article>
 <article class="item" id="d252936">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -488,7 +488,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.11956" target="_blank" rel="noopener noreferrer nofollow">Reliability-Aware Future Conditioning for Temporally Robust Robot Manipulation</a>  </h3>
 <p class="note"><span class="label">説明</span>時間的に頑健なロボット操作のための信頼性考慮型未来条件付け（RAFC）</p><p class="summary"><span class="label">要約</span>本論文は、ロボットの現在の段階と時間的にずれた生成動画による未来予測が、方策の性能を損なうことを扱います。著者らはRAFCを提案し、各ステップで受け取った動画クリップをどの程度信頼するかと、近傍の時間仮説のどれを選ぶかを推定し、どちらも合わない場合は静的分岐に戻します。学習はタスク報酬のみで行われ、時間ずれのラベルは不要です。CALVINでは、時間ずれのある生成未来により成功率が大きく低下しますが、RAFCは時間不一致下での成功率を大幅に改善します。</p>
-<p class="why"><span class="label label-why">注目点</span>生成された未来を信頼性を考慮した制御問題として扱い、タスク報酬のみで信頼度を学習。CALVINと実機Franka上で時間ずれ下の成功率改善を示した。</p><p class="authors">Mohammad Khoshnazar, Mohammad Dehghani Tezerjani, Zhiyuan Gao ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>時間ずれにより生成された未来映像が有害な指針になり得る点に着目し、RAFCは信頼度と時間仮説の選択をタスク報酬のみで学習する制御問題として扱う。CALVINと実機Franka上で成功率の改善を報告。</p><p class="authors">Mohammad Khoshnazar, Mohammad Dehghani Tezerjani, Zhiyuan Gao ほか</p></article>
 <article class="item" id="d252928">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -551,7 +551,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.11942" target="_blank" rel="noopener noreferrer nofollow">Right Screen, Wrong Transition: World Models as Verifiers for GUI Agents</a>  </h3>
 <p class="note"><span class="label">説明</span>正しい画面、誤った遷移：GUIエージェントの検証器としてのワールドモデル</p><p class="summary"><span class="label">要約</span>論文は、GUIエージェントの安全性は画面単体ではなく操作による画面遷移で決まると指摘し、画面だけを検査する監視器は正当な画面の再利用で回避され得ると述べています。著者らは、表現空間で次の画面の表現を直接予測するデコーダ不要のアクション条件付きワールドモデル LGWM を提案し、185万件の実GUI遷移で学習させました。RSWT-BENCH での評価では、学習不要のスコアが AUC 0.987 に達し、1回の判定は17ミリ秒です。</p>
-<p class="why"><span class="label label-why">注目点</span>表現空間で次画面を予測する復号器不要の行動条件付き世界モデルを検証に用い新規性が高い。自作ベンチマークで実験は充分だが比較範囲は限定的。</p><p class="authors">Jiaming Zhang, Xuan Wang, Fuyao Zhang ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>LGWMは復号器を用いず行動条件付きで、表現空間において次画面を直接予測しGUI遷移の検証に用いる。RSWT-BENCHで0.987 AUC、判定1回17ミリ秒と報告。</p><p class="authors">Jiaming Zhang, Xuan Wang, Fuyao Zhang ほか</p></article>
 <article class="item" id="d256667">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -587,7 +587,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.33016" target="_blank" rel="noopener noreferrer nofollow">Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: An English-Preserving Repair for Nepali, Tested in Continued Pretraining</a>  </h3>
 <p class="note"><span class="label">説明</span>マージ方式の語彙拡張は事前トークナイザで頭打ち：ネパール語向けの英語保持型修正と継続事前学習での検証</p><p class="summary"><span class="label">要約</span>多くのオープンLLMが用いる事前トークン化の正規表現は、デーヴァナーガリーの母音記号で単語を分割するため、ネパール語のトークン数は同じ英語テキストの2.6〜5.8倍になります。本論文は、この正規表現への小さな修正と32,000個の新しいマージを提案し、標準的な語彙拡張と比べてネパール語のトークン数を約54%削減し、英語の1.01倍にしました。小規模な継続事前学習では、元のトークナイザが試したすべての設定で、保持データにおけるネパール語のビット/バイトが最も低くなりました。</p>
-<p class="why"><span class="label label-why">注目点</span>組み合わせ記号により正規表現が分割する根本原因を特定し、英語のトークンを保つ修正を示す点が新しい。ただし実験は小規模な継続事前学習に限られる。</p><p class="authors">Aarjan Chaudhary (Naamche Labs)</p></article>
+<p class="why"><span class="label label-why">注目点</span>一般的な事前トークン化の正規表現が結合記号でネパール語を分割し英語より多くのトークンを要することを指摘。著者は英語のトークンを変えない修正を示し、32,000の新規マージでネパール語を英語の1.01倍に抑えたと報告、小規模な継続事前学習で検証。</p><p class="authors">Aarjan Chaudhary (Naamche Labs)</p></article>
 <article class="item" id="d252919">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -767,7 +767,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.11862" target="_blank" rel="noopener noreferrer nofollow">LEVER: Adaptive Cost-Aware Proof Search Over AND/OR Graphs</a>  </h3>
 <p class="note"><span class="label">説明</span>LEVER：AND/OR グラフ上の適応的・コスト考慮型証明探索</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルを用いた定理証明において、AND/OR 証明グラフ上で証明を探索する LEVER アルゴリズムを提案します。証明が完成する前から、計算コストや証明の長さ、主題からの逸脱などの目的関数で探索を導きます。PutnamBench（Lean 4）での比較では、同じ予算の下で強力な単一会話型エージェントより約 34% 低いコストで、解決率が 80% から 96% に向上したと報告されています。目的関数の重みを変えることで、質とコストのトレードオフを選べます。</p>
-<p class="authors">Nihal Jain, Shuangjie Yao, Begum Cicekdag ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>LEVERは、AND/ORの証明グラフ探索中に可能な目的関数を最適化する手法で、著者はPutnamBenchで費用を34%削減し解決率を80%から96%に向上させたと報告している。</p><p class="authors">Nihal Jain, Shuangjie Yao, Begum Cicekdag ほか</p></article>
 <article class="item" id="d252896">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -857,7 +857,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.11834" target="_blank" rel="noopener noreferrer nofollow">Recovery Guarantees for Posterior Sampling of One-Bit Compressed Sensing</a>  </h3>
 <p class="note"><span class="label">説明</span>1ビット圧縮センシングの事後サンプリングにおける復元保証</p><p class="summary"><span class="label">要約</span>本論文は、事前分布から得られる信号に対するノイズあり1ビット圧縮センシングのサンプル複雑度を研究している。事前分布の近似被覆数によって分布的な複雑さを特徴づけ、測定数がその対数に比例するとき、事後サンプリングが高確率で正確な復元を達成することを示している。学習された事前分布がワッサーシュタイン距離で真の分布に十分近ければ信頼性が保たれること、また下界も示されている。拡散事前分布を用いた実験はFFHQおよびImageNetで行われている。</p>
-<p class="why"><span class="label label-why">注目点</span>近似被覆数で事前分布の複雑さを特徴づけ上下界を示し、拡散事前分布でFFHQとImageNetにて検証。影響は圧縮センシングの一分野に限られる。</p><p class="authors">Jing Ma, Yujia Wu, Zhaoqiang Liu</p></article>
+<p class="why"><span class="label label-why">注目点</span>著者は近似被覆数で事前分布の複雑さを特徴づけ、一ビット圧縮センシングの事後サンプリングの上界と下界を示し、拡散事前分布のFFHQとImageNetでの実験結果を報告している。</p><p class="authors">Jing Ma, Yujia Wu, Zhaoqiang Liu</p></article>
 <article class="item" id="d252887">
   <div class="meta">
     <span class="source">arXiv</span>

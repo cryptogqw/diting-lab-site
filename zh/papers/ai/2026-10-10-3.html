@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">131</span></a>
-      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1669</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">1676</span></a>
       <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">2372</span></a>
       <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">204</span></a>
       <a href="../../../zh/papers/ai/index.html" aria-current="page"><span>AI 算法</span> <span class="count">16385</span></a>
@@ -281,7 +281,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14423" target="_blank" rel="noopener noreferrer nofollow">Scaling Laws for Multimodal Data Mixtures</a>  </h3>
 <p class="note"><span class="label">说明</span>多模态数据混合的缩放定律：为训练前沿多模态大模型提供数据配比依据</p><p class="summary"><span class="label">简介</span>该论文研究预训练多模态大模型时，文本、视觉、音频三类数据各应占多少比例。作者用混合专家（MoE）模型进行了268组实验，参数规模从4.57亿到83亿，训练数据最多1500亿token。主要发现包括：音频的最优算力分配偏向增加模型参数，文本和视觉则需要模型规模与数据量均衡扩展；视觉或音频数据重复超过2倍几乎没有收益；视觉数据会明显干扰音频学习，而音频对文本和视觉的干扰可以忽略。</p>
-<p class="why"><span class="label label-why">看点</span>系统推导文本、视觉、音频三模态的数据混合缩放律，并通过268组MoE实验验证，结论对训练多模态大模型有实际指导意义。</p><p class="authors">Aditi Khandelwal, Ayush K. Tarun, Yixuan Xu 等</p></article>
+<p class="why"><span class="label label-why">看点</span>推导文本、视觉、音频三模态的数据混合缩放律，用268组MoE实验（457M至8.3B参数）考察，摘要报告音频偏向扩大模型、视觉与音频重复超过2倍收益很小、视觉对音频干扰明显。</p><p class="authors">Aditi Khandelwal, Ayush K. Tarun, Yixuan Xu 等</p></article>
 <article class="item" id="d254698">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -299,7 +299,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14409" target="_blank" rel="noopener noreferrer nofollow">PotentialEP: Backprop-Free Training of CIFAR-Scale Generative Models via Equilibrium Propagation</a>  </h3>
 <p class="note"><span class="label">说明</span>PotentialEP：基于平衡传播、无需反向传播训练的 CIFAR 规模生成模型</p><p class="summary"><span class="label">简介</span>该论文提出用能量松弛（relaxation）代替扩散或流匹配模型中数百步的序列积分来生成图像，以适配模拟神经形态硬件。作者证明，一个加入单一线性注入项的预测编码网络会松弛到输出层携带所需梯度的状态，并可以在无反向传播的平衡传播（Equilibrium Propagation）下训练。在无条件 CIFAR-10 上，该方法的 FID 为 3.64，对比反向传播的 3.54。</p>
-<p class="why"><span class="label label-why">看点</span>提出在预测编码网络中加入线性注入项，使能量松弛直接得到梯度，并用平衡传播实现无反向传播训练的生成模型，且在CIFAR-10上达到竞争性FID，新颖性较强。</p><p class="authors">Alex Gower</p></article>
+<p class="why"><span class="label label-why">看点</span>在预测编码网络的能量中加入一个线性注入项，使松弛后的可见层直接携带梯度，从而用一次松弛完成采样；并用平衡传播免反向传播训练，CIFAR-10上FID为3.64。</p><p class="authors">Alex Gower</p></article>
 <article class="item" id="d254697">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -326,7 +326,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14403" target="_blank" rel="noopener noreferrer nofollow">VisualCoding: Learning Executable Skills for Reliable Visual Reasoning</a>  </h3>
 <p class="note"><span class="label">说明</span>VisualCoding：学习可执行技能以实现可靠的视觉推理</p><p class="summary"><span class="label">简介</span>该论文提出VisualCoding方法，让视觉推理智能体通过执行反馈学习可复用的视觉程序，并在适用输入上直接执行已保存的求解器以获得答案。作者在四个模型和涵盖69个任务族的四个基准上进行评估，报告相比最强基线的平均准确率提升。消融实验表明，直接执行优于对同一程序进行文本或可调用方式的复用。</p>
-<p class="why"><span class="label label-why">看点</span>将视觉原语与代码组合成可复用求解器并经执行迭代修正，直接执行优于文本或可调用复用；在四个模型、四个基准、69个任务族上验证，平均准确率提升明显。</p><p class="authors">Jiaqi Liu, Ruinan Jin, Xiaoxiao Li</p></article>
+<p class="why"><span class="label label-why">看点</span>将视觉原语与额外代码组合成族级可复用求解器，经标注训练样本上的执行反复测试修正，并在适用输入上直接采用其答案；摘要报告在四个模型、四个基准、69个任务族上，直接执行优于文本或可调用复用。</p><p class="authors">Jiaqi Liu, Ruinan Jin, Xiaoxiao Li</p></article>
 <article class="item" id="d254695">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -479,7 +479,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14363" target="_blank" rel="noopener noreferrer nofollow">The Sample Complexity of Multicalibration with an ERM Oracle</a>  </h3>
 <p class="note"><span class="label">说明</span>基于经验风险最小化预言机的多重校准样本复杂度</p><p class="summary"><span class="label">简介</span>本文研究多重校准预测器的学习所需样本量，学习者只能通过经验风险最小化（ERM）预言机访问函数类。作者给出一种算法，使用约 d/ε³（忽略对数因子）个样本和多项式次数的 ERM 调用，其中 d 为函数类的 VC 维。文中还给出了相应的下界，并指出普通多重校准误差的估计在计算上比交换多重校准误差更难。</p>
-<p class="why"><span class="label label-why">看点</span>在ERM预言机模型下给出多校准样本复杂度的近最优界，并证明下界，分离了可计算与不可计算的情形，理论贡献明确。</p><p class="authors">Princewill Okoroafor</p></article>
+<p class="why"><span class="label label-why">看点</span>在只能通过ERM预言机访问函数类的条件下，给出多校准的样本复杂度上界，并在d较大时给出下界；作者称其对ε的依赖是最优的，并指出学习多校准预测器可能比计算给定预测器的多校准误差更容易。</p><p class="authors">Princewill Okoroafor</p></article>
 <article class="item" id="d254285">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -721,7 +721,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14277" target="_blank" rel="noopener noreferrer nofollow">Echo: Error-Compensated 4-Bit Tensor-Parallel Communication for LLM Training and Inference</a>  </h3>
 <p class="note"><span class="label">说明</span>Echo：面向大模型训练与推理的误差补偿4位张量并行通信</p><p class="summary"><span class="label">简介</span>张量并行每层末尾的all-reduce通信开销随算力增长而变大。本文提出Echo，以4位传输数据、高精度求和，并把每次量化误差反馈到后续调用中相互抵消，从而使累积误差与网络深度无关地保持有界。实验显示其在A100上比16位NCCL快2.09倍，并在Qwen3-8B推理与10B词元预训练中保持接近16位的精度。</p>
-<p class="why"><span class="label label-why">看点</span>将误差反馈应用于4位张量并行all-reduce，并证明误差有界；在A100上有速度与精度的实测对比，影响面集中于大模型训练与推理通信。</p><p class="authors">Xingyu Xie, Xiaoyong Xie, Zhouchen Lin 等</p></article>
+<p class="why"><span class="label label-why">看点</span>Echo把4位数据传输与高精度求和结合，并将每次求和暴露的误差反馈到后续调用中，使累积误差与深度无关；作者称其误差上界不随层数增长。在A100上，1GB消息的全规约比16位NCCL快2.09倍，首token时间最多快1.16倍，训练步最多快1.09倍；在Qwen3-8B上七项基准平均准确率与16位推理相差0.4点以内。</p><p class="authors">Xingyu Xie, Xiaoyong Xie, Zhouchen Lin 等</p></article>
 <article class="item" id="d254258">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -757,7 +757,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14261" target="_blank" rel="noopener noreferrer nofollow">BigCell: Generating Gigapixel Whole-Slide Images</a>  </h3>
 <p class="note"><span class="label">说明</span>BigCell：生成千兆像素全切片病理图像</p><p class="summary"><span class="label">简介</span>全切片图像（WSI）是组织病理切片的千兆像素数字扫描，是癌症诊断的主要依据。现有病理生成模型只能生成最大 1024×1024 像素的小图块。BigCell 在 120,000 多张公开全切片图像上训练流匹配 Transformer，可在推理时通过滑窗流程生成最大 32,768×32,768 像素的连贯全切片图像，并提出自适应调度策略以加速生成。文中还报告，加入合成样本后，全切片少样本分类性能比仅用真实数据训练的基线最多提升 18%。</p>
-<p class="why"><span class="label label-why">看点</span>首次在原生千兆像素分辨率生成全切片病理图像，并提出自适应调度与8k文本到图像合成；实验覆盖12万张WSI，并验证合成数据提升小样本分类最多18%。</p><p class="authors">Srikar Yellapragada, Alexandros Graikos, Zilinghan Li 等</p></article>
+<p class="why"><span class="label label-why">看点</span>首次在原生千兆像素分辨率生成连贯的全切片病理图像；作者称在12万张公开WSI上训练，合成样本使小样本分类最多提升18%。</p><p class="authors">Srikar Yellapragada, Alexandros Graikos, Zilinghan Li 等</p></article>
 <article class="item" id="d254254">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -838,7 +838,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14228" target="_blank" rel="noopener noreferrer nofollow">Latent World Action Model for GUI Agents</a>  </h3>
 <p class="note"><span class="label">说明</span>面向图形界面智能体的潜在世界动作模型：在潜在空间预测操作带来的变化，替代逐像素重建屏幕</p><p class="summary"><span class="label">简介</span>该论文提出一种用于图形界面（GUI）智能体的潜在世界模型，把预测目标从整屏像素重建改为潜在空间中由操作引起的未来信息。模型以大型多模态模型为基础，设两个头分别负责动作选择和状态转移预测，并引入动作感知对比目标以缓解预测结果过度沿用当前状态的问题。作者报告在离线和在线设置中，相比像素空间世界模型成功率相对提升最高为31.9%和40.6%，推理延迟最多降低98.9%。</p>
-<p class="authors">Seungjun Yu, Hojun Choi, Seojeong Park 等</p></article>
+<p class="why"><span class="label label-why">看点</span>将GUI世界模型的预测目标从全屏像素重建改为潜空间中的动作诱导未来信息，并用动作感知对比目标缓解恒等捷径；摘要报告在离线和在线设置下成功率分别相对像素空间世界模型提升至31.9%和40.6%，推理延迟最多降低98.9%。</p><p class="authors">Seungjun Yu, Hojun Choi, Seojeong Park 等</p></article>
 <article class="item notable" id="d254246">
 <div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
     <span class="source">arXiv</span>
@@ -847,7 +847,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.14226" target="_blank" rel="noopener noreferrer nofollow">CAPTOR: a vision-language foundation model for Chest-Abdomen-Pelvis Oncologic CT</a>  </h3>
 <p class="note"><span class="label">说明</span>CAPTOR：面向肿瘤胸腹盆CT的视觉-语言基础模型</p><p class="summary"><span class="label">简介</span>本文提出CAPTOR，一种用于肿瘤胸-腹-盆（CAP）CT阅片的对比式视觉-语言基础模型，训练数据来自北美、欧洲和亚洲的多中心回顾性数据集，以肿瘤病灶检查为主。研究在疾病检测、生存预测（TumorImagingBench）和图像检索三项下游任务上与现有CT基础模型进行比较，CAP及肿瘤子集上的分类与检索性能均优于基线模型。作者还公开了预处理、训练和推理代码及模型权重。</p>
-<p class="why"><span class="label label-why">看点</span>面向肿瘤学胸腹盆CT的视觉-语言基础模型，对已有CT基础模型有针对性改进；在多中心数据与多项下游任务上对比显著优于基线。</p><p class="authors">S\&#39;el\&#39;ena Jean-Mactoux, Sophie Loizillon, Ghina Jardali 等</p></article>
+<p class="why"><span class="label label-why">看点</span>面向肿瘤学胸腹盆CT的视觉-语言基础模型CAPTOR，用多中心肿瘤相关CT-报告数据预训练；摘要报告其在疾病检测、生存预测和图像检索上优于基线模型。</p><p class="authors">S\&#39;el\&#39;ena Jean-Mactoux, Sophie Loizillon, Ghina Jardali 等</p></article>
 <article class="item" id="d254245">
   <div class="meta">
     <span class="source">arXiv</span>

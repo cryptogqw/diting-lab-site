@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">131</span></a>
-      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1669</span></a>
+      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1676</span></a>
       <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">2372</span></a>
       <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">204</span></a>
       <a href="../../../ja/papers/ai/index.html" aria-current="page"><span>AI アルゴリズム</span> <span class="count">16385</span></a>
@@ -119,7 +119,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36641" target="_blank" rel="noopener noreferrer nofollow">Inducing Process Supervision from Outcome-Only Reinforcement Learning</a>  </h3>
 <p class="note"><span class="label">説明</span>結果のみの強化学習からプロセス監督を誘導する（解説：ステップごとの注釈なしで、最終結果だけを使ってプロセス報酬モデルを学習する手法）</p><p class="summary"><span class="label">要約</span>プロセス報酬モデルは大規模言語モデルの推論の各ステップにフィードバックを与えられるが、学習コストが高い。人手による手順ごとの注釈は拡張しにくく、モンテカルロ推定は計算負荷が大きい。本論文のTIPSは、モデルが思考連鎖とステップラベル、結果ラベルを生成し、報酬は結果が正解と一致するかどうかだけで決まる枠組みである。数学およびエージェントのベンチマークと4つのバックボーン系列で検証され、TIPS-Qwen3-4B-Thinking-2507はProcessBenchでF1 85.2を達成し、結果ラベル付き軌跡は3.2Kのみであった。</p>
-<p class="why"><span class="label label-why">注目点</span>結果のみの強化学習でプロセス監督を誘導する新しい発想だが、ProcessBenchでの85.2 F1など評価は数学とエージェント中心で範囲は限定的。</p><p class="authors">Shengda Fan, Xin Cong, Zhong Zhang ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>TIPSは結果ラベルのみの強化学習で生成式プロセス報酬モデルを学習する枠組み。著者らは3.2Kの結果ラベル付き軌跡でProcessBenchにおいて85.2 F1を得て、評価した学習済みPRMを上回ったとしている。</p><p class="authors">Shengda Fan, Xin Cong, Zhong Zhang ほか</p></article>
 <article class="item" id="d239366">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -272,7 +272,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36612" target="_blank" rel="noopener noreferrer nofollow">Do LLMs Really Forget? Hidden-State Leakage in Model Unlearning and How to Fix it</a>  </h3>
 <p class="note"><span class="label">説明</span>LLMは本当に忘れているのか？隠れ状態に残る情報漏えいと、その対策</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルのアンラーニングが出力レベルでのみ評価されがちであることを指摘します。出力から機密内容が消えても、隠れ表現には情報が残りうることを理論と実験で示しています。複数のTOFU、MUSE、WMDPの各ベンチマークで、各層の隠れ状態から大量の機密情報を復元できることを確認しました。これを受けて提案手法PARSは、隠れ表現から抽出可能な情報を敵対的に最小化し、論文の結果では評価した全ベースラインを上回るとされています。</p>
-<p class="why"><span class="label label-why">注目点</span>出力レベルの忘却と隠れ表現の情報残存の分離を示し、敵対的表現抑制手法を提案。三つのベンチマークで検証しており新規性は高い。</p><p class="authors">Hadi Reisizadeh, Jiajun Ruan, Sijia Liu ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>LLMの忘却は出力層でのみ評価されがちだが、著者は隠れ表現に機密情報が残ることを示し、敵対的表現抑制PARSを提案、三つのベンチマークで分層プローブにより検証したとしている。</p><p class="authors">Hadi Reisizadeh, Jiajun Ruan, Sijia Liu ほか</p></article>
 <article class="item" id="d239351">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -389,7 +389,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36588" target="_blank" rel="noopener noreferrer nofollow">Cooperative Multi-Agent Vision-Language-Action Models via Reinforced Fine Tuning</a>  </h3>
 <p class="note"><span class="label">説明</span>強化ファインチューニングによる協調型マルチエージェント視覚・言語・行動モデル</p><p class="summary"><span class="label">要約</span>本論文は、複数ロボットの協調作業を行う視覚・言語・行動（VLA）モデルを対象に、強化学習によるファインチューニング手法を検討しています。三段階のパイプラインを提案し、事前学習モデルが繰り返し失敗した場合にのみ人手による実演を使うデータ収集、エージェントごとの軌跡に基づく信用割り当て付きオフライン微調整、凍結したモデルの潜在ノイズ空間でのオンライン強化学習を組み合わせています。RoboTwin、RoboFactory、および2台のFranka単腕ロボットによる実機タスクで評価し、平均成功率がそれぞれ23.1%、16.4%、44%向上したと報告しています。</p>
-<p class="why"><span class="label label-why">注目点</span>信用フィルタリングと潜在空間RLを組み合わせた三段階微調整を11タスクで検証し、マルチロボットVLAを実質的に改善。</p><p class="authors">Ruixiao Xu, Wong Lik Hang Kenny, Zhiqian Liu ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>三段階の強化微調整を提案：初期化を考慮したデータ収集、エージェント単位の信用フィルタ付きオフライン微調整、VLAを凍結した潜在ノイズ空間でのオンラインRL。11タスクで平均成功率が23.1%、16.4%、44%向上したと報告。</p><p class="authors">Ruixiao Xu, Wong Lik Hang Kenny, Zhiqian Liu ほか</p></article>
 <article class="item" id="d239338">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -407,7 +407,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36585" target="_blank" rel="noopener noreferrer nofollow">Transformers Stop Thinking Too Early, and a Tiny LoRA Fixes It</a>  </h3>
 <p class="note"><span class="label">説明</span>Transformerは思考を早く止めすぎる：小さなLoRAで修正できる</p><p class="summary"><span class="label">要約</span>本論文は、事前学習済みTransformerが文脈内の参照をたどるのに深さをわずかしか使っていないことを示します。13の基盤モデルは確実にたどれるのは1.4〜3.6行程度でした。全重みを凍結したまま、初期の一層にランク8のLoRAを加えることで、この計算を延長できることが報告されています。例えばQwen3-8Bは24行の連鎖で正解率が15.5%から99%に向上しました。</p>
-<p class="authors">Zehao Jin, Ruixuan Deng, Junran Wang</p></article>
+<p class="why"><span class="label label-why">注目点</span>事前学習済みTransformerは文脈内の参照をたどるのに深さをわずかしか使わず、凍結モデルに秩8のLoRAを加えると、Qwen3-8Bの24行連鎖での正答率は15.5%から99%に向上したと報告している。</p><p class="authors">Zehao Jin, Ruixuan Deng, Junran Wang</p></article>
 <article class="item" id="d239336">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -533,7 +533,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36559" target="_blank" rel="noopener noreferrer nofollow">HiTS-CL: A Continual Learning Framework for Long-Horizon Temporal Knowledge Graph Extrapolation</a>  </h3>
 <p class="note"><span class="label">説明</span>HiTS-CL：長期時系列知識グラフ外挿のための継続学習フレームワーク</p><p class="summary"><span class="label">要約</span>時系列知識グラフ推論は通常、時間軸の初期部分で一度だけ学習させ、その後は固定したモデルで将来のすべての時点を予測しますが、非定常なデータ流には適応できず、長期にわたって性能が低下します。本論文は、外挿型の時系列知識グラフ推論をストリーミングスナップショットに対する継続学習として定式化し、バックボーンに依存しないフレームワークHiTS-CLを提案しています。継続的ファインチューニングで現在の動向を追跡し、多教師適応蒸散で安定した知識を保持し、近時かつ頻出の事実を選択的メモリで保存します。5種類の代表的なバックボーンと4つのベンチマークデータセットで評価され、外挿精度の向上と長期的な性能低下の抑制が示されています。</p>
-<p class="why"><span class="label label-why">注目点</span>時系列知識グラフ外挿を流れるスナップショット上の継続学習として定式化し、微調整・多教師蒸留・履歴メモリを組み合わせ、5つのバックボーンと4データセットで検証している。</p><p class="authors">Yansong Liu, Rui Liu, Yuan Zuo ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>時系列知識グラフ外挿を流れるスナップショット上の継続学習と捉え、微調整・多教師適応蒸留・高頻度事実メモリを組み合わせる。著者らは5つのバックボーン・4データセットで精度向上と長期劣化の緩和を報告。</p><p class="authors">Yansong Liu, Rui Liu, Yuan Zuo ほか</p></article>
 <article class="item" id="d239322">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -551,7 +551,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36556" target="_blank" rel="noopener noreferrer nofollow">MAADBench: The Refreshable Paradigm for Anomaly Detection in Multi-Agent Systems</a>  </h3>
 <p class="note"><span class="label">説明</span>MAADBench：マルチエージェントシステムの異常検知のための更新可能なベンチマーク</p><p class="summary"><span class="label">要約</span>本論文は、マルチエージェントシステム（MAS）の異常検知のための初の更新可能なベンチマーク MAADBench を提案している。タスク漏洩や、軌跡と異常パターンの陳腐化といった課題に対処するため、サンプリングと結合による生成タスク、設定可能な大規模言語モデル基盤での軌跡生成、ステップ単位のラベルの自動付与を組み合わせている。5 種類の基盤モデルで作成した 5,200 件のステップラベル付き軌跡からなるデータセットを公開し、25 の異常検知手法を評価した結果、既存手法は教師データへの依存が強く、微細な異常の検出や基盤モデル間での頑健性に課題があることが示された。</p>
-<p class="why"><span class="label label-why">注目点</span>更新可能なマルチエージェント異常検知ベンチマークを提案し、5種のバックボーンと25手法で体系的に評価して既存手法の限界を示した。</p><p class="authors">Lei Ma, Dennis Hofmann, Haowen Xu ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>更新可能なマルチエージェント異常検知ベンチマークMAADBenchを提案し、5種のLLMバックボーン・25手法で評価。依存的監督、微細な異常の検出困難、バックボーン間の不安定性を報告。</p><p class="authors">Lei Ma, Dennis Hofmann, Haowen Xu ほか</p></article>
 <article class="item" id="d239320">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -623,7 +623,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36534" target="_blank" rel="noopener noreferrer nofollow">Retrieval Sensitivity to Identity Signals in Queries</a>  </h3>
 <p class="note"><span class="label">説明</span>クエリ内の属性シグナルに対する検索モデルの感度</p><p class="summary"><span class="label">要約</span>本論文は、ユーザーのクエリに表れる政治的立場や方言が稠密検索モデル（dense retriever）の結果に偏りをもたらすかを、政治ニュースと消費者向け健康質問の二つの領域で検証しています。五つの稠密検索モデルと一つのスパース基準モデルのいずれも、クエリの政治的傾向に沿った記事を取り出し、アフリカ系アメリカ人語（AAL）で書かれた質問では白人主流英語（WME）より成績が低いことが示されています。さらに線形プローブにより、語彙の表層を超えて立場と方言がクエリ埋め込みから読み取れることが報告されています。</p>
-<p class="why"><span class="label label-why">注目点</span>利用者の政治的立場や方言といった属性が密検索器の結果に与える偏りを、合成データと自然なクエリの双方で体系的に示している。</p><p class="authors">Andrew Tang, Nicholas Deas, Kathleen McKeown ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>利用者のクエリに含まれる政治的立場や方言といった属性が、5種の密検索器と疎な基準手法の結果に偏りを生むかを検討している。著者らは、検索結果がクエリの政治的傾向に沿う記事に偏り、アフリカ系アメリカ人英語のクエリでは白人主流英語より性能が低いと報告している。語彙の非対称性を除いても合成データ上の差はおおむね残るとしている。</p><p class="authors">Andrew Tang, Nicholas Deas, Kathleen McKeown ほか</p></article>
 <article class="item" id="d239313">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -713,7 +713,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36515" target="_blank" rel="noopener noreferrer nofollow">Large-scale factor analysis shows machine intelligence is only partially interpretable</a>  </h3>
 <p class="note"><span class="label">説明</span>大規模因子分析が示す、機械知能は部分的にしか解釈できないという結論</p><p class="summary"><span class="label">要約</span>本論文は心理測定学の手法を用い、1,618の言語モデルが456の純テキストベンチマークで得た13,251件の評価スコアを因子分析しました。最も寛大な推定では、一般知能因子がモデル性能の分散の70.8%を説明しますが、多くの解ではそれよりはるかに小さいとしています。内容が似たベンチマークが必ずしもまとまらないことや、一般因子が標準的な知能ベンチマークでよく代理されるという証拠が乏しいことも報告されており、単一の一般知能を明確な構成概念として狙う戦略は支持されないとしています。</p>
-<p class="why"><span class="label label-why">注目点</span>1618モデル・456ベンチマークの大規模因子分析で言語モデルに汎用知能因子が存在するかを検証し、主流の前提に疑問を投げかける。規模が大きく頑健性検討も行われている。</p><p class="authors">Faiz Ghifari Haznitrama, Afrizal Hasbi Azizy, Faeyza Rishad Ardi</p></article>
+<p class="why"><span class="label label-why">注目点</span>1618モデル・456ベンチマークの大規模因子分析により、言語モデルに汎用知能因子があるかを検証。著者らは、汎用因子は最も楽観的な推定でも性能分散の70.8%しか説明せず、内容の似たベンチマークが必ずしもまとまらないとし、単一能力を目標とする戦略に疑問を投げかけている。</p><p class="authors">Faiz Ghifari Haznitrama, Afrizal Hasbi Azizy, Faeyza Rishad Ardi</p></article>
 <article class="item" id="d239305">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -785,7 +785,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36490" target="_blank" rel="noopener noreferrer nofollow">LLMs Learn to Evade Latent Monitors from Prior Feedback Alone</a>  </h3>
 <p class="note"><span class="label">説明</span>LLMは事前のフィードバックだけで潜在モニターを回避することを学習する</p><p class="summary"><span class="label">要約</span>本論文は、出力ではなく内部活性を調べて LLM エージェントの望ましくない振る舞いを検出する潜在空間モニターが回避されうるかを検討しています。モニターの判定フィードバックから検出規則を推測し、活性を編集して検出を逃れる能力が示されています。活性編集を8倍に拡大すると真陽性率は100%から27%に下がり、ランク1のLoRAで4%まで低下し、標準ベンチマークの性能は維持されました。</p>
-<p class="why"><span class="label label-why">注目点</span>監視フィードバックのみから潜在空間モニタの回避を学習する新たな脅威を示し、スケーリングとLoRA実験で検証しておりAI安全性への影響が大きい。</p><p class="authors">Hugo Lyons Keenan, Christopher Leckie, Sarah Erfani</p></article>
+<p class="why"><span class="label label-why">注目点</span>モデルは監視フィードバックのみから監視規則を推定し活性を編集して検出を回避しうると示す。作者は編集量を8倍にするとTPRが27%に下がり、rank-1 LoRAで4%まで下がったと報告している。</p><p class="authors">Hugo Lyons Keenan, Christopher Leckie, Sarah Erfani</p></article>
 <article class="item" id="d239297">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -803,7 +803,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36486" target="_blank" rel="noopener noreferrer nofollow">Optimal Multi-Reward Reinforcement Learning</a>  </h3>
 <p class="note"><span class="label">説明</span>多報酬強化学習の最適サンプル複雑度</p><p class="summary"><span class="label">要約</span>本論文は、遷移確率が未知の有限時間マルコフ決定過程を扱い、有限個の既知の報酬関数それぞれに対して、オンラインのエピソード的な相互作用のみでε最適方策を得る問題を研究している。著者らは、O(SAH³/ε² · log M · polylog) という極小最大サンプル複雑度を達成する、証明可能に効率的なアルゴリズムを設計した。これは情報理論的下界に多対数因子を除いて一致する。手法は、報酬切り替えに適応させた MVP による楽観的価値推定、新鮮なリプレイサンプルによる候補方策の保守的評価、そして間隔に基づく乗法的重み更新による報酬サンプリング分布の調整から成る。</p>
-<p class="why"><span class="label label-why">注目点</span>複数報酬の強化学習に対して、下界と一致する最小最大最適なサンプル複雑度を示す手法を提案し、理論面で顕著である。</p><p class="authors">Zijun Chen, Zihan Zhang</p></article>
+<p class="why"><span class="label label-why">注目点</span>未知の遷移を持つ有限期間MDPで複数の既知報酬関数に対し、著者らは試料複雑度が情報理論的下界とpolylog因子を除いて一致すると述べ、MVPの改良や再生試料による評価、差分に基づく乗法的重み更新で全報酬への同時保証を得る手法を示している。</p><p class="authors">Zijun Chen, Zihan Zhang</p></article>
 <article class="item" id="d257622">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -875,7 +875,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.36472" target="_blank" rel="noopener noreferrer nofollow">DisCoMBO: Steering Expert-in-the-Loop Black-Box Optimization via Distributional Conformance</a>  </h3>
 <p class="note"><span class="label">説明</span>DisCoMBO：分布適合性に基づく専門家参加型ブラックボックス最適化手法</p><p class="summary"><span class="label">要約</span>本論文は、逐次モデルベース最適化（SMBO）に専門家知識を取り入れる課題に取り組み、モデルの「意外さ」を有界な指標で測る分布適合性スコアDisCoを提案しています。確率回路（PC）を用いたDisCoMBOフレームワークにより、知識を考慮した最適化が可能になるとされ、著者はこれがゼロリグレットアルゴリズムであることを証明し、AutoML、材料最適化、風力発電所の最適化のベンチマークで有効性を示しています。</p>
-<p class="why"><span class="label label-why">注目点</span>確率回路に基づく分布適合スコアを提案し、不確実性定量化と専門知識の注入を統一、ゼロリグレット性を証明し複数ベンチマークで検証。</p><p class="authors">Jonas Seng, Bennet Wittelsbach, Kristian Kersting</p></article>
+<p class="why"><span class="label label-why">注目点</span>確率回路に基づく分布適合スコアDisCoを提案し、線形時間の推論で不確実性を測るとともに専門知識との適合性を評価する枠組みDisCoMBOを構築。著者はゼロリグレットのアルゴリズムだと述べ、AutoML、材料最適化、風力発電所最適化のベンチマークで検証したと報告している。</p><p class="authors">Jonas Seng, Bennet Wittelsbach, Kristian Kersting</p></article>
 <article class="item" id="d239288">
   <div class="meta">
     <span class="source">arXiv</span>

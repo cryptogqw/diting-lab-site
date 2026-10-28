@@ -42,7 +42,7 @@
   <aside class="side">
     <nav class="chips">
       <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">131</span></a>
-      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1669</span></a>
+      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">1676</span></a>
       <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">2372</span></a>
       <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">204</span></a>
       <a href="../../../ja/papers/ai/index.html"><span>AI アルゴリズム</span> <span class="count">16385</span></a>
@@ -146,7 +146,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.01380" target="_blank" rel="noopener noreferrer nofollow">GPU-Initiated Communication: Dissecting Down to the Bone</a>  </h3>
 <p class="note"><span class="label">説明</span>GPU 主導の通信：基盤レベルまで分解して解析</p><p class="summary"><span class="label">要約</span>本論文は、GPU スレッドが RDMA 操作を NIC へ直接投入する通信方式を、GPU と NIC の境界から詳しく分析しています。NVSHMEM、NCCL GIN、DeepEP などのライブラリの性能を、ハードウェアの仕組みとライブラリの処理に分けて比較しています。最小構成の GPU 経路では操作の発行に約 0.7 マイクロ秒、完了に約 4.0 マイクロ秒かかり、ライブラリによる追加の発行時間は最大 4.6 マイクロ秒です。提出経路だけでは通信性能を予測できないことも示しています。</p>
-<p class="why"><span class="label label-why">注目点</span>最小限の転送層でGPUからNICへの経路を分解し複数ライブラリと比較測定して、ハードウェアとライブラリの遅延を分離した。</p><p class="authors">Javid Baydamirli, Ismayil Ismayilov, Kaan Oktay ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>GPUからNICへの通信経路を分解し、最小限の転送層mini-gdaとmini-proxyで複数ライブラリをH100・H200・B200・GB200上で比較測定し、ハードウェアとライブラリの遅延を切り分けた。</p><p class="authors">Javid Baydamirli, Ismayil Ismayilov, Kaan Oktay ほか</p></article>
 <article class="item" id="d246408">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -200,7 +200,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.01160" target="_blank" rel="noopener noreferrer nofollow">Serving a Revisable World: Versioned Execution for Interruptible Agents</a>  </h3>
 <p class="note"><span class="label">説明</span>修正可能な世界へのサービス提供：中断可能なエージェントのためのバージョン管理実行</p><p class="summary"><span class="label">要約</span>本論文は、LLM エージェントがタスクの途中で修正される場合に対応する、RETIRE というサービス制御プレーンの設計を提案する。実行バージョンが出力の公開や状態の導入の権限を持ち、古いタスクを取り消したうえで、後継が引き継げる完了済みプレフィックスを確認する。vLLM への実装では、対照実験において、修正から後継の最初のトークンまでの時間が中央値で 17.1% 短縮されたと報告している。</p>
-<p class="why"><span class="label label-why">注目点</span>版本化実行により古い作業の取り消しと有用なKV状態の継承を統一した新しい制御面を提案し、vLLMで実装して対照実験で中央値17.1%のTTFT短縮を示した。</p><p class="authors">Yanxin Zhang, Rahul Sharma, Nitin Vegesna ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>版本化実行により古い作業の取り消しと完了済みKV状態の継承を一つの版本遷移にまとめた制御面を提案し、vLLMで実装した。作者は対照実験で中央値17.1%のTTFT短縮を報告している。</p><p class="authors">Yanxin Zhang, Rahul Sharma, Nitin Vegesna ほか</p></article>
 <article class="item" id="d246082">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -227,7 +227,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2610.02259" target="_blank" rel="noopener noreferrer nofollow">Feature Freshness Budgets for Real-Time ML Inference Under Stream Lag</a>  </h3>
 <p class="note"><span class="label">説明</span>ストリーム遅延下におけるリアルタイム機械学習推論の特徴量鮮度予算</p><p class="summary"><span class="label">要約</span>本論文は、オンライン特徴量ストア（feature store）をイベントストリーム上のマテリアライズドビューとしてモデル化し、特徴量ごとの鮮度予算（特徴量が使われる判断ウィンドウと、サービング経路による陳腐化との差）を定義します。単一特徴量の陳腐化上限と閉形式の閾値を証明し、離散事件シミュレーションおよび Kafka・Redis・PostgreSQL による実環境パイプラインで検証しています。シミュレーションと実環境の差は主にサンプリング位相によるもので、位相をランダム化すると特徴量ごとの欠落率の平均絶対誤差は 0.018 となりました。</p>
-<p class="why"><span class="label label-why">注目点</span>オンライン特徴の鮮度を有界な予算として定式化し閉形式の閾値を導出、実際のKafka/Redis/PostgreSQLで検証し、シミュレーションの位相固定による偏りを明らかにした。</p><p class="authors">Amit Rajula</p></article>
+<p class="why"><span class="label label-why">注目点</span>オンライン特徴の鮮度を有界な予算として定式化し閉形式の閾値を示す。実際のKafka・Redis・PostgreSQLで検証し、位相固定のシミュレーションが陈旧性を過小評価することを報告している。</p><p class="authors">Amit Rajula</p></article>
 <article class="item" id="d245968">
   <div class="meta">
     <span class="source">arXiv</span>
@@ -281,7 +281,7 @@
   <h3 class="orig" lang="en">
 <a href="https://arxiv.org/abs/2609.40267" target="_blank" rel="noopener noreferrer nofollow">Two-sided Market Design Meets Autobidding</a>  </h3>
 <p class="note"><span class="label">説明</span>双方向市場の設計と自動入札の融合：広告取引で売り手と買い手の双方が戦略的に振る舞う場合の交換メカニズムを研究</p><p class="summary"><span class="label">要約</span>本論文は、オンライン広告で自動入札者が支払いに対する価値比率（RoS）を最大化する双方向市場を分析します。まず無事前情報の設定では、価値最大化エージェントが存在する場合、多くの効用真実性・予算均衡型メカニズムの無秩序価格（PoA）が無限大になることを示します。次に、RoS入札の下でMcAfeeの取引縮小メカニズムが流動的余剰に対して定数のPoAを達成することを示します。分布情報がある場合には、少なくとも一方がRoS価値最大化者であれば一階最適な流動的余剰を達成する双方向メカニズムを設計し、Myerson-Satterthwaiteの不可能性定理との対比を述べています。</p>
-<p class="why"><span class="label label-why">注目点</span>自動入札者を含む両面市場を初めて扱い、否定的結果と肯定的結果を示し、分布情報下で一階最適を達成する機構を設計して、Myerson-Satterthwaiteの不可能性と対比させている。</p><p class="authors">Yang Cai, Christopher Liaw, Aranyak Mehta ほか</p></article>
+<p class="why"><span class="label label-why">注目点</span>自動入札者を含む両面市場を初めて扱い、先験情報なしでは多くの機構のPoAが無界になると示し、分布情報下で一階最適な流動性余剰を達成する機構を設計して、Myerson-Satterthwaiteの不可能性と対比させている。</p><p class="authors">Yang Cai, Christopher Liaw, Aranyak Mehta ほか</p></article>
 <article class="item" id="d245392">
   <div class="meta">
     <span class="source">arXiv</span>
