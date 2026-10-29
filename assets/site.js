@@ -1,6 +1,7 @@
 // 本次浏览中记住手动选择的语言（新的浏览默认跟随浏览器语言）；手机上把当前板块按钮滑到可见处；
 // 列表页的本页筛选、「只看值得关注」「只看加密相关」、匹配条数和没有结果时的提示。
 // 筛选条件写进网址（?q=…&only=1），复制网址给别人能打开同样的结果；常见术语的中日英写法互通（D-37）。
+// 切换语言时带上筛选条件和条目锚点；英文缩写别名按整词匹配（defi 不命中 definition）（D-38）。
 (function () {
   try { localStorage.removeItem("diting-lang"); } catch (e) {}   // 旧版本永久记住的选择不再生效
   document.querySelectorAll(".lang-switch a[data-lang]").forEach(function (a) {
@@ -8,6 +9,14 @@
       try { sessionStorage.setItem("diting-lang", a.dataset.lang); } catch (e) {}
     });
   });
+  // 语言链接带上当前的筛选条件和锚点：换语言看的是同一批条目
+  var langLinks = Array.prototype.slice.call(document.querySelectorAll(".lang-switch a[data-lang]"));
+  langLinks.forEach(function (a) { a.dataset.base = a.getAttribute("href"); });
+  function syncLangLinks() {
+    langLinks.forEach(function (a) { a.setAttribute("href", a.dataset.base + location.search + location.hash); });
+  }
+  syncLangLinks();
+  window.addEventListener("hashchange", syncLangLinks);
   var chips = document.querySelector(".chips");
   var active = chips && chips.querySelector("a[aria-current]");
   if (active && chips.scrollWidth > chips.clientWidth) {
@@ -32,11 +41,17 @@
     ["智能合约", "智能合約", "smart contract", "スマートコントラクト"],
     ["征求意见", "意见征集", "consultation", "意見募集", "パブリックコメント"],
   ];
-  function terms(q) {
+  function group(q) {
     for (var i = 0; i < ALIASES.length; i++) {
       if (ALIASES[i].indexOf(q) >= 0) return ALIASES[i];
     }
-    return [q];
+    return null;
+  }
+  // 别名里的英文词按整词匹配；用户自己输入的照旧按包含匹配
+  function matcher(w, whole) {
+    if (!whole || !/^[a-z0-9 .\-]+$/.test(w)) return function (s) { return s.indexOf(w) >= 0; };
+    var re = new RegExp("(^|[^a-z0-9])" + w.replace(/[.\-]/g, "\\$&") + "([^a-z0-9]|$)");
+    return function (s) { return re.test(s); };
   }
   // 「只看值得关注」（论文）或「只看加密相关」（法规）：data-only 是条目上要有的样式类
   var only = document.querySelector(".only-toggle input");
@@ -46,15 +61,16 @@
   var picksBlock = document.querySelector("section.picks");
   var empty = document.querySelector(".filter-empty");
   var count = document.querySelector(".filter-count");
+  var hint = document.querySelector(".alias-hint");
   var texts = new Map();
   function text(el) {
     if (!texts.has(el)) texts.set(el, el.textContent.toLowerCase());
     return texts.get(el);
   }
-  function matches(el, words) {
-    if (!words) return true;
+  function matches(el, tests) {
+    if (!tests) return true;
     var s = text(el);
-    return words.some(function (w) { return s.indexOf(w) >= 0; });
+    return tests.some(function (f) { return f(s); });
   }
   function save(q, onlyOn) {
     try {
@@ -63,10 +79,17 @@
       if (onlyOn) url.searchParams.set("only", "1"); else url.searchParams.delete("only");
       history.replaceState(null, "", url.pathname + url.search + url.hash);
     } catch (e) {}
+    syncLangLinks();
   }
   function apply() {
     var q = input.value.trim().toLowerCase();
-    var words = q === "" ? null : terms(q);
+    var g = q === "" ? null : group(q);
+    var words = q === "" ? null : (g ? g.map(function (w) { return matcher(w, w !== q); }).concat([matcher(q, false)])
+                                    : [matcher(q, false)]);
+    if (hint) {
+      hint.hidden = !g;
+      if (g) hint.textContent = hint.dataset.text.replace("{terms}", g.filter(function (w) { return w !== q; }).join(" / "));
+    }
     var onlyOn = !!(only && only.checked);
     var shown = 0;
     items.forEach(function (el) {
