@@ -47,10 +47,10 @@
     }
     return null;
   }
-  // 别名里的英文词按整词匹配；用户自己输入的照旧按包含匹配
+  // 输入的是别名：组里的英文词（包括输入的这个）按整词匹配，defi 不命中 definition；其它输入按包含匹配
   function matcher(w, whole) {
     if (!whole || !/^[a-z0-9 .\-]+$/.test(w)) return function (s) { return s.indexOf(w) >= 0; };
-    var re = new RegExp("(^|[^a-z0-9])" + w.replace(/[.\-]/g, "\\$&") + "([^a-z0-9]|$)");
+    var re = new RegExp("(^|[^a-z0-9])" + w.replace(/[.\-]/g, "\\$&") + "(?:s|es)?([^a-z0-9]|$)");   // 允许复数
     return function (s) { return re.test(s); };
   }
   // 「只看值得关注」（论文）或「只看加密相关」（法规）：data-only 是条目上要有的样式类
@@ -84,8 +84,7 @@
   function apply() {
     var q = input.value.trim().toLowerCase();
     var g = q === "" ? null : group(q);
-    var words = q === "" ? null : (g ? g.map(function (w) { return matcher(w, w !== q); }).concat([matcher(q, false)])
-                                    : [matcher(q, false)]);
+    var words = q === "" ? null : (g ? g.map(function (w) { return matcher(w, true); }) : [matcher(q, false)]);
     if (hint) {
       hint.hidden = !g;
       if (g) hint.textContent = hint.dataset.text.replace("{terms}", g.filter(function (w) { return w !== q; }).join(" / "));
