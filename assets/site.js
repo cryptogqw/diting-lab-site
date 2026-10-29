@@ -2,6 +2,7 @@
 // 列表页的本页筛选、「只看值得关注」「只看加密相关」、匹配条数和没有结果时的提示。
 // 筛选条件写进网址（?q=…&only=1），复制网址给别人能打开同样的结果；常见术语的中日英写法互通（D-37）。
 // 切换语言时带上筛选条件和条目锚点；英文缩写别名按整词匹配（defi 不命中 definition）（D-38）。
+// 网站超过 12 小时没有重新生成时，首页和列表页顶部提示内容可能不是最新的（D-39）。
 (function () {
   try { localStorage.removeItem("diting-lang"); } catch (e) {}   // 旧版本永久记住的选择不再生效
   document.querySelectorAll(".lang-switch a[data-lang]").forEach(function (a) {
@@ -17,6 +18,17 @@
   }
   syncLangLinks();
   window.addEventListener("hashchange", syncLangLinks);
+  // 网站超过 12 小时没生成就提示（D-39）：生成时间在 assets/built.json，按访客的时钟比对；读不到就不提示
+  var stale = document.querySelector(".stale-note");
+  if (stale && window.fetch) {
+    fetch(stale.dataset.src, { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (info) {
+        var built = info && Date.parse(info.built);
+        if (built && Date.now() - built > 12 * 3600 * 1000) stale.hidden = false;
+      })
+      .catch(function () {});
+  }
   var chips = document.querySelector(".chips");
   var active = chips && chips.querySelector("a[aria-current]");
   if (active && chips.scrollWidth > chips.clientWidth) {
