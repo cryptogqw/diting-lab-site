@@ -5,9 +5,129 @@
   <id>urn:diting-lab:feed:zh/papers/cryptography/feed.xml</id>
   <link rel="self" type="application/atom+xml" href="https://ditinglab.org/zh/papers/cryptography/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://ditinglab.org/zh/papers/cryptography/index.html"/>
-  <updated>2026-11-05T23:05:30+09:00</updated>
+  <updated>2026-11-05T23:35:54+09:00</updated>
   <author><name>Diting Lab</name></author>
   <rights>说明和简介由 AI 根据原文自动生成，其中的日期、比率、金额已按规则与原文核对，但仍可能有误，请以原文为准。本站不构成法律、税务或投资建议。</rights>
+  <entry>
+    <title>《已签名、已封装、已泄露：MCP工具链超越签名的信任》：论文介绍已签名的第三方工具可能暗藏泄露数据的恶意代码，并提出限制信息披露的隔离执行方法</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.06585"/>
+    <id>urn:diting-lab:zh:doc:460380</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Signed, Sealed, Leaked: Trust Beyond Signature for MCP Toolchains
+arXiv · 2026年11月4日论文指出，AI智能体所用的第三方工具（如模型上下文协议MCP服务器）即使通过了发布者身份认证，也可能在完成既定功能的同时暗中泄露机密信息。作者用一个已签名的MCP工具进行演示，并测试了运行时防御方案MCPGuard-Dynamic。论文提出“生殖系执行”方法，每次工具调用都在不含数据的母进程分叉出的临时副本中运行，只获得其目的地被授权的信息。在153次攻击测试中，该方法未检测到未经授权的披露。
+★★★★ 值得关注：提出生殖细胞式执行，用数据隔离的临时副本限制信息泄露，无需检查工具实现；实验覆盖153次攻击运行并与基线对比。</summary>
+  </entry>
+  <entry>
+    <title>签名正确但可被操纵：离线检索增强生成中文本与向量的完整性缺口</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.06498"/>
+    <id>urn:diting-lab:zh:doc:460354</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation
+arXiv · 2026年11月4日论文研究边缘设备上离线检索增强生成（RAG）所用签名知识包中文本与预计算向量不一致的问题：签名只能证明发布者身份，不能证明向量与文本对应。作者发现，若验证器仅按余弦容差接受向量，攻击者便可借助向量操纵检索结果，并在五个语料库和两种嵌入模型上测得相应暴露比例。论文还提出对量化编码进行验证的方法，并报告了若干预先登记的负面结果，代码与数据已公开。
+★★★★★ 值得关注：新意在于指出签名只证明发布者而不证明向量与文本一致，并量化角度检索间隔导致的劫持率；在多语料与嵌入模型上实验，并给出基于量化码的验证方案。</summary>
+  </entry>
+  <entry>
+    <title>在 RP2350 上利用光子发射显微与激光故障注入恢复安全调试功能的研究</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.06386"/>
+    <id>urn:diting-lab:zh:doc:460311</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Shoot on (Core)Sight: Re-enabling Secure Debug on the RP2350 with Photon-Emission Microscopy and Laser Fault Injection
+arXiv · 2026年11月4日该论文针对 RP2350A4 芯片，使用差分光子发射显微镜（PEM）和激光故障注入（LFI）进行研究。研究人员借助 PEM 缩小激光扫描范围，找到两处能够置位 DEBUGEN 位、从而启用核心 1 安全调试的位置。仅通过串行线调试（SWD）反馈的在线攻击序列恢复了持续访问，并在救援复位后恢复出一个 128 位的测试密钥。
+★★★★ 值得关注：新意在于把光子发射显微镜与激光故障注入结合，定位并翻转RP2350的调试使能位，恢复安全调试访问；摘要报告在RP2350A4上恢复了128位测试密钥，可能影响芯片安全认知。</summary>
+  </entry>
+  <entry>
+    <title>KVGuard：面向大模型推理服务系统的 KV 缓存安全检测器</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.06138"/>
+    <id>urn:diting-lab:zh:doc:460015</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">KVGuard: A KV Cache Safety Checker for LLM Serving Systems
+arXiv · 2026年11月4日大模型推理服务用 PagedAttention 把 KV 缓存切分为固定大小的块管理，这种设计会引入双重释放、释放后使用、越界访问、未初始化读取和权限违规等内存安全问题，且通常不会崩溃而只悄悄破坏输出或请求隔离。本文提出 KVGuard，为每个物理 KV 块维护影子元数据，在分配、块表构建与转换、GPU 端查表与访问等环节执行五类安全检查。在 vLLM 和 SGLang 上的原型覆盖了两者补丁历史中收集的 29 个真实 KV 缓存安全缺陷，并发现 8 个此前未知的安全违规，且未报告误报。
+★★★★★ 值得关注：首次系统化KV缓存内存安全抽象，提出五项检查并在vLLM和SGLang上验证，覆盖29个历史漏洞并发现8个新问题。</summary>
+  </entry>
+  <entry>
+    <title>SenTrojan：揭示针对传感器的模拟硬件木马攻击</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.06103"/>
+    <id>urn:diting-lab:zh:doc:460001</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">SenTrojan: Revealing Analog Hardware Trojan Attacks on Sensors
+arXiv · 2026年11月4日该论文提出 SenTrojan，一种面向传感器的模拟硬件木马框架，可在部署前把恶意功能植入多种传感器通用的模拟信号电路中，并通过特定外部物理信号激活，引发从永久拒绝服务到静态或动态欺骗等故障。论文设计了逻辑规则驱动和物理效应驱动两种木马，并在14款涵盖6种转换原理的传感器上评估，报告平均触发成功率超过95%，与正常行为的相似度超过97%。
+★★★★ 值得关注：提出在传感器模拟电路中植入硬件木马的系统框架，并设计两种互补方案，属于新的威胁模型。摘要报告在14个传感器、6种转换原理上的实验结果。</summary>
+  </entry>
+  <entry>
+    <title>灾难性过拟合是训练损失无法察觉的权重漂移</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.06082"/>
+    <id>urn:diting-lab:zh:doc:459989</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Catastrophic Overfitting is Weight Drift the Training Loss Cannot See
+arXiv · 2026年11月4日快速对抗训练用单步攻击代替多步攻击以降低成本，但训练中途会出现灾难性过拟合，对多步攻击的鲁棒性几乎降到零。论文提出这一过程是权重的悄然漂移：前后权重的训练目标几乎不变，却丢失了大部分鲁棒性，而权重的指数移动平均保持鲁棒。据此，当验证鲁棒性下降时，将权重重置为其移动平均，并在此基础上构建训练方法，在三个基准数据集上消除了该现象。
+★★★★ 值得关注：新意在于将灾难性过拟合解释为训练损失不可见的权重漂移，并提出以EMA权重重置的廉价修复；摘要报告在三个基准数据集上取得较强结果。</summary>
+  </entry>
+  <entry>
+    <title>PIMROP：商用内存内计算架构上返回导向编程的可行性研究</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.06036"/>
+    <id>urn:diting-lab:zh:doc:459962</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">PIMROP: A Feasibility Study of Return-Oriented Programming on Commercial Processing-in-Memory Architectures
+arXiv · 2026年11月4日本文研究内存内计算（PIM）设备上的代码复用攻击。作者以商用UPMEM DPU指令集为对象，构建了适配其定长编码的gadget扫描工具Galileo-for-DPU，在功能模拟器上发现运行时库中已有517个非平凡gadget。论文演示了两种经验证的端到端攻击，并指出栈金丝雀和边界检查加固两种标准防御在该平台上失效，同时验证了一种有界DMA可阻止攻击。作者已开源相关工具与测试框架。
+★★★★ 值得关注：首次在商用存内计算指令集UPMEM DPU上验证代码复用攻击，并给出两个端到端攻击，仅在功能模拟器上验证。</summary>
+  </entry>
+  <entry>
+    <title>基于公开量子货币的量子密钥交换</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.05985"/>
+    <id>urn:diting-lab:zh:doc:459941</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Quantum Key Exchange from Public Quantum Money
+arXiv · 2026年11月4日本文给出两消息量子密钥交换（2QKE）的完整刻画，证明其与若干原语存在性等价，包括可高效验证的量子状态谜题（EV-StatePuzzs）等。由于EV-StatePuzzs可能弱于单向函数，这意味着2QKE可能弱于单向函数。研究还表明标准2QKE与永久安全2QKE等价，并给出一次性签名等原语对应的下界。
+★★★★★ 值得关注：证明2QKE与EV-StatePuzzs等四种原语等价，给出了可能弱于单向函数的假设，并构造了带证书冻结功能的QPKE。</summary>
+  </entry>
+  <entry>
+    <title>文件解析可能误导大语言模型：办公文档中的差异测量与缓解</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.05806"/>
+    <id>urn:diting-lab:zh:doc:459881</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">When File Ingestion Misleads Language Models: Measuring and Mitigating Divergences in Office Documents
+arXiv · 2026年11月4日论文指出，大语言模型通常读取解析器从办公文档OOXML文件中提取的文本，其结果可能与人眼所见不同。作者分析了常用解析器，发现19个人眼不可见却被读取的渠道，以及12个人眼可见却被丢弃的渠道。基于此构造了五种攻击，在四款主流聊天助手和四款编程代理上均有效。作者还提出了名为Prism的轻量防御方法，据称可泛化到未见过的攻击载荷。
+★★★★★ 值得关注：新意在于系统揭示办公文档提取与人类视图的差异并构造无指令注入的攻击；摘要报告在四款聊天助手与四款编码代理上均被至少一种攻击误导，并提出Prism防御。</summary>
+  </entry>
+  <entry>
+    <title>用“真实—理想”范式理解信息流降级</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.05695"/>
+    <id>urn:diting-lab:zh:doc:459830</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Demystifying Information Flow Downgrading using the Real--Ideal Paradigm
+arXiv · 2026年11月4日本文将密码学界的“真实—理想”安全规范范式引入基于语言的安全研究，提出一个新的语义框架。该框架能够清晰地刻画包括无干扰性在内的已有安全定义，以及涉及降级（downgrading）的稳健declassification和不可延展信息流等较少被理解的性质。作者还证明，一个支持降级的while语言信息流类型系统可以强制执行这些性质，并且其正确性可表述为真实—理想模拟。全部结果已在Rocq证明器中形式化并公开。
+★★★★ 值得关注：将现实-理想范式引入语言安全语义，统一刻画含降级的信息流性质，并以Rocq完整形式化验证类型系统的正确性。</summary>
+  </entry>
+  <entry>
+    <title>大域有限域上基于transvection的带陷门矩阵的最优边缘混合</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.05573"/>
+    <id>urn:diting-lab:zh:doc:459784</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Optimal Marginal Mixing for Transvection-Based Trapdoored Matrices over Large Fields
+arXiv · 2026年11月4日本文研究由随机transvection游走在SL_n(F_q)上生成的带陷门伪随机矩阵：拥有秘密密钥即可快速做矩阵-向量乘法。作者证明，对任意非空矩阵元素集合，该游走使其达到平稳边缘分布的最坏时间为Θ(|S|+n log(n/ε))，即渐近最优，并给出n≥256时的具体上下界。
+★★★★ 值得关注：证明随机 transvection 游走的混合时间达到渐近最优的 Θ(|S|+n log(n/ε))，并给出具体界，据称首次实现有限域可信陷门矩阵的逆矩阵陷门。</summary>
+  </entry>
+  <entry>
+    <title>从爪态到会议：超越无信号假设的设备无关密钥协商</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.05509"/>
+    <id>urn:diting-lab:zh:doc:459755</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:35:54+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">From Claws to Conferences: Device-Independent Key Agreement Beyond Non-Signaling
+arXiv · 2026年11月4日本文提出一种设备无关会议密钥协商协议，允许一组用户在不信任量子设备内部运行的情况下建立共同密钥。与以往需要设备组件在每轮中不通信的协议不同，该方案把所有接口及其相互通信视为一个不可信设备，仅要求其在协议运行期间为量子多项式时间。在学习带误差（LWE）问题对量子算法在执行期间具有量子建议时仍然困难的假设下，论文证明了其针对相干攻击的有限规模安全性；协议结束后，即使LWE被攻破，密钥的保密性仍然保持。
+★★★★ 值得关注：首次在无非信号假设下实现DI-CKA，把claw态提升为GHZ相关多方态，并给出有限尺寸对抗相干攻击的证明。</summary>
+  </entry>
   <entry>
     <title>具身物联网中语义通信的综合身份保护</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.06788"/>
@@ -18,15 +138,6 @@
 arXiv · 2026年11月5日本文面向具身物联网中的任务导向语义通信，指出现有可信设计多关注语义内容保护，对信号来源合法性关注不足。作者提出将语义信息与发送方物理身份信息联合利用的新框架，并设计认证与隐匿两种模式下的双分支身份保护机制。文中给出主动冒充和被动身份推断两个案例研究，用于评估该框架。</summary>
   </entry>
   <entry>
-    <title>《已签名、已封装、已泄露：MCP工具链超越签名的信任》：论文介绍已签名的第三方工具可能暗藏泄露数据的恶意代码，并提出限制信息披露的隔离执行方法</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.06585"/>
-    <id>urn:diting-lab:zh:doc:460380</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Signed, Sealed, Leaked: Trust Beyond Signature for MCP Toolchains
-arXiv · 2026年11月4日论文指出，AI智能体所用的第三方工具（如模型上下文协议MCP服务器）即使通过了发布者身份认证，也可能在完成既定功能的同时暗中泄露机密信息。作者用一个已签名的MCP工具进行演示，并测试了运行时防御方案MCPGuard-Dynamic。论文提出“生殖系执行”方法，每次工具调用都在不含数据的母进程分叉出的临时副本中运行，只获得其目的地被授权的信息。在153次攻击测试中，该方法未检测到未经授权的披露。</summary>
-  </entry>
-  <entry>
     <title>减法带来加法：缓解大语言模型安全对齐脆弱性</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.06553"/>
     <id>urn:diting-lab:zh:doc:460374</id>
@@ -34,15 +145,6 @@ arXiv · 2026年11月4日论文指出，AI智能体所用的第三方工具（�
     <category term="密码学与安全"/>
     <summary type="text">Addition by Subtraction: Toward Mitigating Fragile Safety Alignment in Large Language Models
 arXiv · 2026年11月4日该论文针对大语言模型安全对齐的稀疏脆弱性，提出“减法带来加法”方法：微调时逐步移除已识别的安全关键神经元，并借助偏好优化让模型其他部分重新建立安全行为。实验显示，模型对基于剪枝的攻击更稳健，对拒绝方向消融及多种黑盒越狱攻击也有改善，部分攻击成功率最多降低90%，同时保持较好的通用能力。</summary>
-  </entry>
-  <entry>
-    <title>签名正确但可被操纵：离线检索增强生成中文本与向量的完整性缺口</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.06498"/>
-    <id>urn:diting-lab:zh:doc:460354</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation
-arXiv · 2026年11月4日论文研究边缘设备上离线检索增强生成（RAG）所用签名知识包中文本与预计算向量不一致的问题：签名只能证明发布者身份，不能证明向量与文本对应。作者发现，若验证器仅按余弦容差接受向量，攻击者便可借助向量操纵检索结果，并在五个语料库和两种嵌入模型上测得相应暴露比例。论文还提出对量化编码进行验证的方法，并报告了若干预先登记的负面结果，代码与数据已公开。</summary>
   </entry>
   <entry>
     <title>面向真实世界漏洞的早期预警：基于非结构化披露信息预测 CVSS 向量的证据感知解耦方法</title>
@@ -61,15 +163,6 @@ arXiv · 2026年11月4日本文提出 VPre 框架，用于在美国国家漏洞�
     <category term="密码学与安全"/>
     <summary type="text">A Bag of Tricks for Defending Deep Learning-based Face Recognition Pipelines against Backdoor Attacks
 arXiv · 2026年11月4日本技术报告针对人脸识别系统的训练数据可能来自不可信第三方的情形，提出三种防御数据投毒后门攻击的实用方法。第一种在训练阶段或部署前检测被投毒的身份；另外两种在推理阶段过滤可疑输入，以免结果被回传给潜在攻击者。报告给出各方法的动机、算法及计算开销，并在贴近实际的人脸识别任务上进行了评估。</summary>
-  </entry>
-  <entry>
-    <title>在 RP2350 上利用光子发射显微与激光故障注入恢复安全调试功能的研究</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.06386"/>
-    <id>urn:diting-lab:zh:doc:460311</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Shoot on (Core)Sight: Re-enabling Secure Debug on the RP2350 with Photon-Emission Microscopy and Laser Fault Injection
-arXiv · 2026年11月4日该论文针对 RP2350A4 芯片，使用差分光子发射显微镜（PEM）和激光故障注入（LFI）进行研究。研究人员借助 PEM 缩小激光扫描范围，找到两处能够置位 DEBUGEN 位、从而启用核心 1 安全调试的位置。仅通过串行线调试（SWD）反馈的在线攻击序列恢复了持续访问，并在救援复位后恢复出一个 128 位的测试密钥。</summary>
   </entry>
   <entry>
     <title>CoRTeC：可由任意生成器解码的差分隐私合成表格数据发布方法</title>
@@ -135,15 +228,6 @@ arXiv · 2026年11月4日该论文比较了基于大模型的智能体爬虫与�
 arXiv · 2026年11月4日本文提出MODEXRE取证流程，将经过验证的XGBoost入侵检测模型与SHAP可解释性方法结合，分为实验室模式（训练与认证）和正式模式（对案件证据进行推理，并以SHA-256哈希链保障证据链完整性）。论文通过实验报告了多项在实际部署中发现并修正的问题，并给出了不同模型在CICIDS2017衍生证据上的F1-macro结果。</summary>
   </entry>
   <entry>
-    <title>KVGuard：面向大模型推理服务系统的 KV 缓存安全检测器</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.06138"/>
-    <id>urn:diting-lab:zh:doc:460015</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">KVGuard: A KV Cache Safety Checker for LLM Serving Systems
-arXiv · 2026年11月4日大模型推理服务用 PagedAttention 把 KV 缓存切分为固定大小的块管理，这种设计会引入双重释放、释放后使用、越界访问、未初始化读取和权限违规等内存安全问题，且通常不会崩溃而只悄悄破坏输出或请求隔离。本文提出 KVGuard，为每个物理 KV 块维护影子元数据，在分配、块表构建与转换、GPU 端查表与访问等环节执行五类安全检查。在 vLLM 和 SGLang 上的原型覆盖了两者补丁历史中收集的 29 个真实 KV 缓存安全缺陷，并发现 8 个此前未知的安全违规，且未报告误报。</summary>
-  </entry>
-  <entry>
     <title>后量子交互式哈希定理：在量子攻击者面前仍然成立的交互式哈希协议安全性证明</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.06124"/>
     <id>urn:diting-lab:zh:doc:460010</id>
@@ -151,15 +235,6 @@ arXiv · 2026年11月4日大模型推理服务用 PagedAttention 把 KV 缓存�
     <category term="密码学与安全"/>
     <summary type="text">A Post-Quantum Interactive Hashing Theorem
 arXiv · 2026年11月4日交互式哈希是许多密码学协议的基础构件，可用于由单向置换构造完美隐藏承诺。本文针对带任意关系的多输出交互式哈希协议，给出了其后量子安全性证明。</summary>
-  </entry>
-  <entry>
-    <title>SenTrojan：揭示针对传感器的模拟硬件木马攻击</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.06103"/>
-    <id>urn:diting-lab:zh:doc:460001</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">SenTrojan: Revealing Analog Hardware Trojan Attacks on Sensors
-arXiv · 2026年11月4日该论文提出 SenTrojan，一种面向传感器的模拟硬件木马框架，可在部署前把恶意功能植入多种传感器通用的模拟信号电路中，并通过特定外部物理信号激活，引发从永久拒绝服务到静态或动态欺骗等故障。论文设计了逻辑规则驱动和物理效应驱动两种木马，并在14款涵盖6种转换原理的传感器上评估，报告平均触发成功率超过95%，与正常行为的相似度超过97%。</summary>
   </entry>
   <entry>
     <title>在隐私与溯源之间取得平衡的语言模型水印方法</title>
@@ -171,15 +246,6 @@ arXiv · 2026年11月4日该论文提出 SenTrojan，一种面向传感器的模
 arXiv · 2026年11月4日该论文探讨语言模型水印在隐私与溯源之间的矛盾，提出将水印目标从追踪个人转为估计群体使用情况。作者设计了满足本地差分隐私的水印，并提出红绿序列（RGS）水印，在不同模型、样本量和生成熵条件下实现了高隐私水平下的准确频率估计。</summary>
   </entry>
   <entry>
-    <title>灾难性过拟合是训练损失无法察觉的权重漂移</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.06082"/>
-    <id>urn:diting-lab:zh:doc:459989</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Catastrophic Overfitting is Weight Drift the Training Loss Cannot See
-arXiv · 2026年11月4日快速对抗训练用单步攻击代替多步攻击以降低成本，但训练中途会出现灾难性过拟合，对多步攻击的鲁棒性几乎降到零。论文提出这一过程是权重的悄然漂移：前后权重的训练目标几乎不变，却丢失了大部分鲁棒性，而权重的指数移动平均保持鲁棒。据此，当验证鲁棒性下降时，将权重重置为其移动平均，并在此基础上构建训练方法，在三个基准数据集上消除了该现象。</summary>
-  </entry>
-  <entry>
     <title>用“先编译后执行”范式保护网页智能体的安全</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.06039"/>
     <id>urn:diting-lab:zh:doc:459964</id>
@@ -189,15 +255,6 @@ arXiv · 2026年11月4日快速对抗训练用单步攻击代替多步攻击以�
 arXiv · 2026年11月4日该论文提出 Baya，一种先编译后执行的网页智能体，在访问网站前把用户请求编译为调用可信网站接口的 Python 程序，规划模型不直接读取网页内容，从而从设计上防止提示注入劫持控制流。在 581 个有效 WebArena Verified 任务上，Baya 的综合效用为 77.8%，高于纯浏览器 ReAct（55.1%）和启用 API 的 ReAct（66.7%）；在安全基准 WASP 上，其攻击成功率为 0%，而启用 API 的 ReAct 为 16.2%，纯浏览器 ReAct 为 25.5%。</summary>
   </entry>
   <entry>
-    <title>PIMROP：商用内存内计算架构上返回导向编程的可行性研究</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.06036"/>
-    <id>urn:diting-lab:zh:doc:459962</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">PIMROP: A Feasibility Study of Return-Oriented Programming on Commercial Processing-in-Memory Architectures
-arXiv · 2026年11月4日本文研究内存内计算（PIM）设备上的代码复用攻击。作者以商用UPMEM DPU指令集为对象，构建了适配其定长编码的gadget扫描工具Galileo-for-DPU，在功能模拟器上发现运行时库中已有517个非平凡gadget。论文演示了两种经验证的端到端攻击，并指出栈金丝雀和边界检查加固两种标准防御在该平台上失效，同时验证了一种有界DMA可阻止攻击。作者已开源相关工具与测试框架。</summary>
-  </entry>
-  <entry>
     <title>CoordX协议：点对点、密码学可验证的共享记录</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.06034"/>
     <id>urn:diting-lab:zh:doc:459960</id>
@@ -205,15 +262,6 @@ arXiv · 2026年11月4日本文研究内存内计算（PIM）设备上的代码�
     <category term="密码学与安全"/>
     <summary type="text">CoordX Protocol: Peer to Peer Cryptographically Verified Shared Records
 arXiv · 2026年11月4日该论文提出CoordX协议，使互不信任的各方无需中心服务器即可协作处理共享记录。记录作者拥有完全权限，其他方的创建、读取或更新权限通过显式授权和密钥分配；每条记录为带签名且不可变的因果树，每个条目标明授权依据，任何人都可独立验证。内容加密，协议不选定获胜版本，也不要求全局时序或共识，语义由应用层决定。</summary>
-  </entry>
-  <entry>
-    <title>基于公开量子货币的量子密钥交换</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.05985"/>
-    <id>urn:diting-lab:zh:doc:459941</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Quantum Key Exchange from Public Quantum Money
-arXiv · 2026年11月4日本文给出两消息量子密钥交换（2QKE）的完整刻画，证明其与若干原语存在性等价，包括可高效验证的量子状态谜题（EV-StatePuzzs）等。由于EV-StatePuzzs可能弱于单向函数，这意味着2QKE可能弱于单向函数。研究还表明标准2QKE与永久安全2QKE等价，并给出一次性签名等原语对应的下界。</summary>
   </entry>
   <entry>
     <title>机密AI中的可问责披露机制（CORDE系统）</title>
@@ -232,15 +280,6 @@ arXiv · 2026年11月4日该论文提出CORDE系统，用于机密虚拟机，�
     <category term="密码学与安全"/>
     <summary type="text">A Hybrid Approach for Automated Security Pattern Recovery
 arXiv · 2026年11月4日本文提出 SecPatRec，一种从源代码仓库中自动恢复安全设计模式实现的混合方法。它把安全模式视为参考架构，结合基于大语言模型的智能体进行角色识别与代码定位，并用静态代码属性图分析恢复组件间的交互序列。作者在93个开源仓库的100个人工验证实例上进行了评估，平均角色识别准确率为0.84，交互恢复得分为0.66。</summary>
-  </entry>
-  <entry>
-    <title>文件解析可能误导大语言模型：办公文档中的差异测量与缓解</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.05806"/>
-    <id>urn:diting-lab:zh:doc:459881</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">When File Ingestion Misleads Language Models: Measuring and Mitigating Divergences in Office Documents
-arXiv · 2026年11月4日论文指出，大语言模型通常读取解析器从办公文档OOXML文件中提取的文本，其结果可能与人眼所见不同。作者分析了常用解析器，发现19个人眼不可见却被读取的渠道，以及12个人眼可见却被丢弃的渠道。基于此构造了五种攻击，在四款主流聊天助手和四款编程代理上均有效。作者还提出了名为Prism的轻量防御方法，据称可泛化到未见过的攻击载荷。</summary>
   </entry>
   <entry>
     <title>时机至关重要：推断持续更新模型中的时间成员身份</title>
@@ -279,15 +318,6 @@ arXiv · 2026年11月4日安全运营中心需要从大量告警中找出真实�
 arXiv · 2026年11月4日该论文提出 Trinetra.Q，一套协同工作的检测层，用于发现量子纠错流程和经典控制软件栈中的篡改攻击。各检测器依据诚实运行时校准的范围，仅在出现统计显著偏差时发出警报。作者在仿真和三台 IBM Heron 处理器上进行了评估，并对自适应攻击者做了测试。</summary>
   </entry>
   <entry>
-    <title>用“真实—理想”范式理解信息流降级</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.05695"/>
-    <id>urn:diting-lab:zh:doc:459830</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Demystifying Information Flow Downgrading using the Real--Ideal Paradigm
-arXiv · 2026年11月4日本文将密码学界的“真实—理想”安全规范范式引入基于语言的安全研究，提出一个新的语义框架。该框架能够清晰地刻画包括无干扰性在内的已有安全定义，以及涉及降级（downgrading）的稳健declassification和不可延展信息流等较少被理解的性质。作者还证明，一个支持降级的while语言信息流类型系统可以强制执行这些性质，并且其正确性可表述为真实—理想模拟。全部结果已在Rocq证明器中形式化并公开。</summary>
-  </entry>
-  <entry>
     <title>AQUA：一个模块化的身份认证质量建模框架</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.05660"/>
     <id>urn:diting-lab:zh:doc:459822</id>
@@ -313,24 +343,6 @@ arXiv · 2026年11月4日本文提出一种名为ACCA的持续授权方法，用
     <category term="密码学与安全"/>
     <summary type="text">Exploring the Privacy--Size Tradeoff for Differentially Private Self-Attentive Variational Autoencoders
 arXiv · 2026年11月4日本文提出SAVANT，一种用DP-SGD训练的表格数据自注意力变分自编码器，据作者所知首次将注意力机制、VAE与差分隐私结合于同一表格模型。作者在两个公开数据集上，同时改变隐私预算与数据规模，将其与PrivBayes和MST两种边际方法比较，衡量下游分类器用合成数据代替真实数据所损失的效用。结果显示，在相同差分隐私保证下，数据越多通常效用越高；对边际方法而言，更多数据能抵消严格预算带来的大部分损失。</summary>
-  </entry>
-  <entry>
-    <title>大域有限域上基于transvection的带陷门矩阵的最优边缘混合</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.05573"/>
-    <id>urn:diting-lab:zh:doc:459784</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Optimal Marginal Mixing for Transvection-Based Trapdoored Matrices over Large Fields
-arXiv · 2026年11月4日本文研究由随机transvection游走在SL_n(F_q)上生成的带陷门伪随机矩阵：拥有秘密密钥即可快速做矩阵-向量乘法。作者证明，对任意非空矩阵元素集合，该游走使其达到平稳边缘分布的最坏时间为Θ(|S|+n log(n/ε))，即渐近最优，并给出n≥256时的具体上下界。</summary>
-  </entry>
-  <entry>
-    <title>从爪态到会议：超越无信号假设的设备无关密钥协商</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.05509"/>
-    <id>urn:diting-lab:zh:doc:459755</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-05T23:05:30+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">From Claws to Conferences: Device-Independent Key Agreement Beyond Non-Signaling
-arXiv · 2026年11月4日本文提出一种设备无关会议密钥协商协议，允许一组用户在不信任量子设备内部运行的情况下建立共同密钥。与以往需要设备组件在每轮中不通信的协议不同，该方案把所有接口及其相互通信视为一个不可信设备，仅要求其在协议运行期间为量子多项式时间。在学习带误差（LWE）问题对量子算法在执行期间具有量子建议时仍然困难的假设下，论文证明了其针对相干攻击的有限规模安全性；协议结束后，即使LWE被攻破，密钥的保密性仍然保持。</summary>
   </entry>
   <entry>
     <title>Rotom：一种基于模乘运算、面向微控制器的可调分组密码</title>
