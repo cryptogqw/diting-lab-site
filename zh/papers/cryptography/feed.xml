@@ -5,9 +5,39 @@
   <id>urn:diting-lab:feed:zh/papers/cryptography/feed.xml</id>
   <link rel="self" type="application/atom+xml" href="https://ditinglab.org/zh/papers/cryptography/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://ditinglab.org/zh/papers/cryptography/index.html"/>
-  <updated>2026-11-06T04:42:39+09:00</updated>
+  <updated>2026-11-06T05:17:58+09:00</updated>
   <author><name>Diting Lab</name></author>
   <rights>说明和简介由 AI 根据原文自动生成，其中的日期、比率、金额已按规则与原文核对，但仍可能有误，请以原文为准。本站不构成法律、税务或投资建议。</rights>
+  <entry>
+    <title>超越求逆的陷门：公钥密码学中可恢复的信息</title>
+    <link rel="alternate" href="https://eprint.iacr.org/2026/2764"/>
+    <id>urn:diting-lab:zh:doc:463588</id>
+<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-06T05:17:58+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Trapdoors Beyond Inversion: Recoverable Information in Public-Key Cryptography
+IACR ePrint · 2026年11月4日本文研究陷门硬核函数（TDHF），其陷门可从公开计算结果中恢复指定的值h(x)，同时h(x)在公钥和计算结果下仍保持伪随机。作者证明，对完美正确的原语而言，自适应TDHF刻画了IND-CCA2安全的公钥加密，并给出了有损TDHF与有损公钥加密的对应关系。
+★★★★ 值得关注：提出陷门硬核函数，刻画IND-CCA2与有损公钥加密，给出参数保持的对应关系，理论贡献明确。</summary>
+  </entry>
+  <entry>
+    <title>Keyber：通过放大噪声恢复ML-KEM的信号（针对密钥生成的故障攻击）</title>
+    <link rel="alternate" href="https://eprint.iacr.org/2026/2766"/>
+    <id>urn:diting-lab:zh:doc:463582</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T05:17:58+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">Keyber: Recovering the Signal by Amplifying the Noise in ML-KEM
+IACR ePrint · 2026年11月5日本文提出Keyber，这是首个针对ML-KEM密钥生成的统计无效故障攻击（SIFA）。攻击者只需在密钥生成时注入一次故障，使公钥中的误差向量加入已知值，而公钥矩阵种子保持完好。之后攻击者在本地封装并只保留误差峰值恰好落在一个系数上的密文，每次查询可得到关于私钥的一个线性不等式。作者在ARM Cortex-M4设备上针对ML-KEM-512实现了该攻击，并端到端恢复了完整私钥，表明保护ML-KEM需要同时加固解封装与密钥生成。
+★★★★★ 值得关注：首次提出针对ML-KEM密钥生成的统计无效故障攻击，单次故障即可恢复完整私钥；摘要报告在ARM Cortex-M4上对ML-KEM-512完成端到端验证。</summary>
+  </entry>
+  <entry>
+    <title>HqcLethe：面向微型无状态服务器的流式 HQC 封装方案</title>
+    <link rel="alternate" href="https://eprint.iacr.org/2026/2767"/>
+    <id>urn:diting-lab:zh:doc:463581</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T05:17:58+09:00</updated>
+    <category term="密码学与安全"/>
+    <summary type="text">HqcLethe: Streaming HQC Encapsulation for Tiny Stateless Servers
+IACR ePrint · 2026年11月5日这是一篇密码学预印本论文，提出无状态密钥交换协议 HqcLethe，用于在小型服务器上以数据包为单位流式完成基于 HQC 的密钥封装，避免服务器为握手缓存多个数据包而耗尽内存。论文借助中国剩余定理把多项式乘法拆成每个数据包一个独立余数，并加掩码使其泄露的信息不超过普通 HQC 密文；作者在 Rocq（SSProve）中证明了该性质，并在 ProVerif 中验证了会话保密性、服务器认证和前向保密。论文报告，在树莓派 3B+ 上每个工作进程固定占用 1.2 至 1.6 MiB 内存；在第 5 类安全级别下，相比早期无状态基于 McEliece 的设计 McTiny，发送字节数减少 27 倍，服务器 CPU 占用减少 9.0 倍。
+★★★★ 值得关注：用中国剩余定理把HQC多项式乘法拆成逐包独立余数，实现无状态流式封装；摘要报告用Rocq/SSProve证明并用ProVerif验证，并在树莓派上与McTiny对比。</summary>
+  </entry>
   <entry>
     <title>从暴露的神经XOR激活中恢复DES与TDES密钥</title>
     <link rel="alternate" href="https://eprint.iacr.org/2026/2763"/>
@@ -18,15 +48,6 @@
 IACR ePrint · 2026年11月4日本文研究在攻击者可提交非二进制输入并观察部分中间神经值时，自然ReLU实现的DES和两密钥三重DES（TDES）的安全性。攻击利用XOR的分段线性扩展，通过成对输入的变化恢复轮密钥比特，从而恢复DES的56位有效主密钥以及TDES的112位密钥对。实验在Python中对1000个随机DES密钥和1000个随机TDES密钥对实现了精确恢复，但研究针对的是合成的中间值预言机模型，不涉及对常规DES/TDES硬件或软件的物理攻击。</summary>
   </entry>
   <entry>
-    <title>超越求逆的陷门：公钥密码学中可恢复的信息</title>
-    <link rel="alternate" href="https://eprint.iacr.org/2026/2764"/>
-    <id>urn:diting-lab:zh:doc:463588</id>
-<published>2026-11-04T00:00:00+09:00</published>    <updated>2026-11-06T04:42:39+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Trapdoors Beyond Inversion: Recoverable Information in Public-Key Cryptography
-IACR ePrint · 2026年11月4日本文研究陷门硬核函数（TDHF），其陷门可从公开计算结果中恢复指定的值h(x)，同时h(x)在公钥和计算结果下仍保持伪随机。作者证明，对完美正确的原语而言，自适应TDHF刻画了IND-CCA2安全的公钥加密，并给出了有损TDHF与有损公钥加密的对应关系。</summary>
-  </entry>
-  <entry>
     <title>BASTION：一种一阶掩码 ML-KEM NTT 在 FPGA 上的锁步、错开与顺序份额调度方案</title>
     <link rel="alternate" href="https://eprint.iacr.org/2026/2765"/>
     <id>urn:diting-lab:zh:doc:463583</id>
@@ -34,24 +55,6 @@ IACR ePrint · 2026年11月4日本文研究陷门硬核函数（TDHF），其陷
     <category term="密码学与安全"/>
     <summary type="text">BASTION: Lock-Step, Staggered and Sequential Share Schedules for a First-Order Masked ML-KEM NTT on FPGA
 IACR ePrint · 2026年11月5日本文针对 ML-KEM（FIPS 203）中的数论变换（NTT）硬件实现，比较了三种一阶掩码份额调度方式：顺序处理、错开启动和锁步执行。作者在 Artix-7 FPGA 上实现了这三种方案，并在同一综合流程下测量了资源开销与综合前的侧信道泄漏。论文还与无掩码对照设计进行对比，以区分掩码与并行化各自带来的成本。</summary>
-  </entry>
-  <entry>
-    <title>Keyber：通过放大噪声恢复ML-KEM的信号（针对密钥生成的故障攻击）</title>
-    <link rel="alternate" href="https://eprint.iacr.org/2026/2766"/>
-    <id>urn:diting-lab:zh:doc:463582</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T04:42:39+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">Keyber: Recovering the Signal by Amplifying the Noise in ML-KEM
-IACR ePrint · 2026年11月5日本文提出Keyber，这是首个针对ML-KEM密钥生成的统计无效故障攻击（SIFA）。攻击者只需在密钥生成时注入一次故障，使公钥中的误差向量加入已知值，而公钥矩阵种子保持完好。之后攻击者在本地封装并只保留误差峰值恰好落在一个系数上的密文，每次查询可得到关于私钥的一个线性不等式。作者在ARM Cortex-M4设备上针对ML-KEM-512实现了该攻击，并端到端恢复了完整私钥，表明保护ML-KEM需要同时加固解封装与密钥生成。</summary>
-  </entry>
-  <entry>
-    <title>HqcLethe：面向微型无状态服务器的流式 HQC 封装方案</title>
-    <link rel="alternate" href="https://eprint.iacr.org/2026/2767"/>
-    <id>urn:diting-lab:zh:doc:463581</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T04:42:39+09:00</updated>
-    <category term="密码学与安全"/>
-    <summary type="text">HqcLethe: Streaming HQC Encapsulation for Tiny Stateless Servers
-IACR ePrint · 2026年11月5日这是一篇密码学预印本论文，提出无状态密钥交换协议 HqcLethe，用于在小型服务器上以数据包为单位流式完成基于 HQC 的密钥封装，避免服务器为握手缓存多个数据包而耗尽内存。论文借助中国剩余定理把多项式乘法拆成每个数据包一个独立余数，并加掩码使其泄露的信息不超过普通 HQC 密文；作者在 Rocq（SSProve）中证明了该性质，并在 ProVerif 中验证了会话保密性、服务器认证和前向保密。论文报告，在树莓派 3B+ 上每个工作进程固定占用 1.2 至 1.6 MiB 内存；在第 5 类安全级别下，相比早期无状态基于 McEliece 的设计 McTiny，发送字节数减少 27 倍，服务器 CPU 占用减少 9.0 倍。</summary>
   </entry>
   <entry>
     <title>扩展弗雷格证明系统中基础整数算术的细粒度证明复杂度</title>
