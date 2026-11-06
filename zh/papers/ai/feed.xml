@@ -5,9 +5,128 @@
   <id>urn:diting-lab:feed:zh/papers/ai/feed.xml</id>
   <link rel="self" type="application/atom+xml" href="https://ditinglab.org/zh/papers/ai/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://ditinglab.org/zh/papers/ai/index.html"/>
-  <updated>2026-11-06T11:13:57+09:00</updated>
+  <updated>2026-11-06T11:49:18+09:00</updated>
   <author><name>Diting Lab</name></author>
   <rights>说明和简介由 AI 根据原文自动生成，其中的日期、比率、金额已按规则与原文核对，但仍可能有误，请以原文为准。本站不构成法律、税务或投资建议。</rights>
+  <entry>
+    <title>对抗性多重性：挑选出的模型与披露的局限</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07378"/>
+    <id>urn:diting-lab:zh:doc:476082</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Adversarial Multiplicity: Cherry-Picked Models and the Limits of Disclosure
+arXiv · 2026年11月5日论文研究预测多重性（准确率相近的模型对个体预测结果不一致）被恶意利用的情况。作者区分了软操纵（调整超参数、特征工程等无害的模型选择）与硬操纵（直接修改模型参数），并发现足够灵活的模型可在几乎不损失预测性能的情况下被操纵，以通过黑盒审计。论文还列出了可能通过现有法规和披露政策的操纵方式，并提出预注册、模型训练证明、敏感性分析等缓解建议。
+★★★★ 值得关注：新意在于揭示预测多重性可被对抗性利用以翻转个体预测和聚合估计，并区分软硬操纵；摘要称在多类场景中验证，并提出缓解措施。</summary>
+  </entry>
+  <entry>
+    <title>长视频问答的成绩提升从何而来：对帧选择、证据注入与专家路由的受控审计</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07329"/>
+    <id>urn:diting-lab:zh:doc:476065</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Where Do Reported Long-Video QA Gains Come From? A Controlled Audit of Frame Selection, Evidence Injection, and Expert Routing
+arXiv · 2026年11月5日论文提出 VideoRouteAudit，在固定骨干模型、帧数、解码、提示词和评分方式的前提下，逐一比较帧选择、注入非视觉证据和切换作答模型三种做法。在 Video-MME 长视频子集（900 题，每题 8 帧）上，测试的各种帧选择方法都没有显著优于均匀抽帧；在常用的 200 题子集上，结论却不稳定。作者也指出了自己早期结果中的问题，并给出了代码与脚本。
+★★★★ 值得关注：新意在于把帧选择、证据注入与模型路由分开做受控审计；摘要报告在Video-MME长视频子集上，选择器均未显著优于均匀采样。</summary>
+  </entry>
+  <entry>
+    <title>递归稀疏注意力：以对数成本实现百万级词元长度外推</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07232"/>
+    <id>urn:diting-lab:zh:doc:476031</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Recursive Sparse Attention: Million-Token Length Extrapolation at Logarithmic Cost
+arXiv · 2026年11月5日该论文提出RecSA（递归稀疏注意力），在KV缓存上构建树结构，每个节点用一个键和一个均值池化值概括其子树，每个查询的选择与读取成本为O(log L)。模型从Qwen3-4B初始化，在32K长度上训练0.62B词元。在RULER基准的131K至2M长度上，RecSA均优于各基线；在1M长度下得分60.5，最佳基线Dense + DCA为40.0。在64K至2M长度范围内，RecSA的端到端预填充与解码速度快于稠密注意力。
+★★★★ 值得关注：用共享池化器构建KV缓存递归树，选择成本降为O(log L)，并用层内相对位置保持训练长度内的距离范围；摘要报告在RULER上于131K至2M长度均优于基线，1M时得分60.5。</summary>
+  </entry>
+  <entry>
+    <title>SAFE-Teen：评估聊天机器人在青少年心理健康对话中的安全性</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07218"/>
+    <id>urn:diting-lab:zh:doc:476027</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">SAFE-Teen: Evaluating Chatbot Safety Across Adolescent Mental Health Conversations
+arXiv · 2026年11月5日这篇论文借助模拟对话评估AI聊天机器人在与13至17岁青少年交谈时的安全性，共评估了18个聊天机器人接口、32,555段模拟对话，使用22项安全标准。结果显示，不加入面向青少年的系统提示时，标准失败率为43.3%，加入后降至24.9%，但问题仍未完全消除。当青少年反驳机器人的回答时，心理诊断、用药和物质滥用相关边界的失败率在不加提示的情况下上升10至12个百分点，超过80%的聊天机器人如此。
+★★★★ 值得关注：新意在于比较青少年回应的细微变化对聊天机器人安全性的影响；摘要报告在18个API、32,555段模拟对话上评估，并比较青少年施压后的失败率变化。</summary>
+  </entry>
+  <entry>
+    <title>组合式去对齐：审计大型视觉语言模型的安全性</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07216"/>
+    <id>urn:diting-lab:zh:doc:476025</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Compositional Unalignment: Auditing Safety in Large Vision-Language Models
+arXiv · 2026年11月5日论文指出，单独无害的图像与提示组合后，大型视觉语言模型可能产生有害输出。作者发现，仅用少量监督微调即可在对齐基准上取得与复杂强化学习流程相当的分数，说明基准分数难以证明安全鲁棒性。论文提出无需训练的CMaG方法，在Qwen2.5-VL-7B和LLaVA-1.5-7B上将组合安全得分最多降低65分，且超过98%的输出仍保持连贯。
+★★★★ 值得关注：提出训练-free的合成式反对齐方法CMaG，揭示识别与拒绝解耦；在两个7B模型上做了实验对比，影响偏向安全审计。</summary>
+  </entry>
+  <entry>
+    <title>SeVerus：面向 Rust 形式化验证的上下文感知、游戏化基准测试</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07194"/>
+    <id>urn:diting-lab:zh:doc:476016</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">SeVerus: Context-Aware, Gamified Benchmarking for Rust Verification
+arXiv · 2026年11月5日论文提出 SeVerus，一种自动生成 Verus（Rust 程序验证器）基准的方法。它把每个验证目标组织成一个“任务”，并分为逐级递减辅助引理的“关卡”，从只需补一个引理到完全不给辅助引理。用它在六个开源 Verus 项目上生成了 819 个任务、10,095 个关卡，并测试了多个编码代理，结果显示随着辅助证明上下文减少，成功率下降、成本上升。
+★★★★ 值得关注：新意在于将验证任务游戏化分级，逐步移除证明上下文以构造更具挑战的Verus基准；摘要报告在六个开源项目、819个任务、10095个关卡上测试多种编码智能体。</summary>
+  </entry>
+  <entry>
+    <title>多步软件工程：编码智能体能否在长链任务中持续基于自身代码开发？</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07166"/>
+    <id>urn:diting-lab:zh:doc:476008</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Multi-step SWE: Can Coding Agents Keep Building on Their Own Code Over Long Horizons?
+arXiv · 2026年11月5日本文提出Multi-step SWE基准，包含69个软件工程任务，每个任务是在同一代码库上的5至15个相互依赖的步骤链，后续步骤从智能体在前序步骤中生成的代码继续。任务涵盖四类工程工作和九种编程语言。九个前沿模型中，表现最好的求解率仅为18.5%，69个任务中有38个未被任何模型解决。
+★★★★ 值得关注：新意在于评测智能体在自身代码上连续多步开发的能力，覆盖69个任务、9种语言，并在九个前沿模型上测试，最佳模型解决率仅18.5%。</summary>
+  </entry>
+  <entry>
+    <title>LLM动物园之夜：面向生成预训练大语言模型权重的数据条件流匹配</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07103"/>
+    <id>urn:diting-lab:zh:doc:475981</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">A Night at the LLM Zoo: Data Conditioned Flow Matching for Generating Pretrained LLM Weights
+arXiv · 2026年11月5日本文为大语言模型构建了一个系统变化训练数据配比的模型集合，涵盖网页文本、图书、数学、代码和法语，参数规模包括5100万、1.24亿和3.55亿的GPT-2模型。作者利用该集合训练了一个以数据配比为条件的流匹配模型，用于在压缩后的权重空间中生成完整的预训练大语言模型权重。实验表明，生成的模型在未见过的数据配比上具有零样本泛化能力，其性能与集合内模型相近。
+★★★★ 值得关注：将数据配比条件化的流匹配用于生成完整预训练LLM权重，在GPT-2规模模型群上验证对未见配比的零样本泛化。</summary>
+  </entry>
+  <entry>
+    <title>双人零和扩展式博弈中扩展式适当均衡的多项式时间计算</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07089"/>
+    <id>urn:diting-lab:zh:doc:475979</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Polynomial-Time Computation of Extensive-Form Proper Equilibria in Two-Player Zero-Sum Games
+arXiv · 2026年11月5日本文提出一种确定性多项式时间算法，用于计算有限双人零和扩展式博弈（具有完美回忆和有理数数据）中的精确扩展式适当均衡。算法为每个信息集构造允许动作概率的几何置换多面体，并借助缩放双随机表示将这些约束嵌入多项式规模的序列形式多面体中。作者还通过参数化线性系统的符号稳定性等方法得到精确而非近似的均衡，所得概率为有理数且编码长度为多项式级。
+★★★★ 值得关注：新意在于在多项式时间内精确计算两人零和扩展式博弈的扩展式适当均衡，利用几何置换面体与双随机表示；摘要报告了算法构造与符号稳定性论证，影响主要在博弈论算法子领域。</summary>
+  </entry>
+  <entry>
+    <title>一般和博弈中的乐观Hedge算法：基本极限与遗憾界（通过时间近似方法）</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07078"/>
+    <id>urn:diting-lab:zh:doc:475975</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Optimistic Hedge in General-Sum Games: Fundamental Limits and Regret Bounds via Temporal Approximation
+arXiv · 2026年11月5日本文研究乐观Hedge算法（一种带一步外推的乘法权重更新方法）在博弈中的遗憾界。作者证明：两人博弈中存在学习率使每位玩家的遗憾与时间跨度无关，上界为O(n log n)；三人及以上博弈中则存在构造的博弈，使某些玩家的遗憾呈指数级增长。上界基于时间近似框架分析得出，该框架也简化了对m人博弈已知遗憾界的证明。
+★★★★ 值得关注：新意在于区分两人与三人博弈，证明三人时存在指数级后悔下界，并提出时间近似框架，两人情形给出紧界。</summary>
+  </entry>
+  <entry>
+    <title>通过内部表征塑造与监控模型</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07071"/>
+    <id>urn:diting-lab:zh:doc:475972</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">Shaping &amp; Monitoring Models through their Internal Representations
+arXiv · 2026年11月5日论文提出“机制性塑造”框架，在训练中依据模型内部表征约束其表达与决策所依赖的概念，例如避免有害内容，或在筛选简历时不依赖性别。实验覆盖视觉、医学影像和语言等领域，参数规模最高达320亿，训练方法包括分类、SFT、DPO和GRPO，结果显示目标行为明显减少而任务性能基本保持。论文还提出一套监控器层级，并分析了概念规避的三种几何机制，指出多数情况下被塑造的概念仍可被监控。
+★★★★ 值得关注：提出统一的机制塑形框架并给出三种规避机制的几何刻画与监测层级，在视觉、医学影像、语言及至32B模型上做了多场景实验，报告显著减少目标行为且保持任务性能。</summary>
+  </entry>
+  <entry>
+    <title>SD-LoRA：在训练阶段将结构信息蒸馏进 LoRA 的少样本视觉-语言适配方法</title>
+    <link rel="alternate" href="https://arxiv.org/abs/2611.07063"/>
+    <id>urn:diting-lab:zh:doc:475968</id>
+<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:49:18+09:00</updated>
+    <category term="AI 算法"/>
+    <summary type="text">SD-LoRA: Training-Time Structural Distillation into LoRA for Few-Shot Vision-Language Adaptation
+arXiv · 2026年11月5日该论文提出 SD-LoRA，用于少样本条件下的视觉-语言模型适配。训练时，它用图模型刻画高分辨率 ViT 图像块之间及其与文本之间的结构关系，并通过隐式蒸馏和原型预测对齐，把这种结构信息迁移到轻量的 CLIP-LoRA 模型中。推理时图模型被丢弃，只需一次 CLIP-LoRA 前向计算和基于缓存的分类器。论文报告在 11 个少样本基准上，相比较强的 CLIP-LoRA 基线，各样本设定下准确率均有提升。</summary>
+  </entry>
   <entry>
     <title>FFMT：面向音乐到舞蹈生成的频率分解多速率标记化方法</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.07384"/>
@@ -16,15 +135,6 @@
     <category term="AI 算法"/>
     <summary type="text">FFMT: Frequency-Factorized Multi-Rate Tokenization for Music-to-Dance Generation
 arXiv · 2026年11月5日该论文提出频率分解运动标记化方法FFMT，将舞蹈动作拆分为低频的编舞框架和高频的局部残差。两部分使用不同的标记速率与码本容量，并采用先规划后细化的自回归方式生成动作。在AIST++和FineDance数据集上的实验显示，该方法在分布保真度、多样性以及音乐与动作同步方面表现良好，消融实验支持频率分解等设计。</summary>
-  </entry>
-  <entry>
-    <title>对抗性多重性：挑选出的模型与披露的局限</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07378"/>
-    <id>urn:diting-lab:zh:doc:476082</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Adversarial Multiplicity: Cherry-Picked Models and the Limits of Disclosure
-arXiv · 2026年11月5日论文研究预测多重性（准确率相近的模型对个体预测结果不一致）被恶意利用的情况。作者区分了软操纵（调整超参数、特征工程等无害的模型选择）与硬操纵（直接修改模型参数），并发现足够灵活的模型可在几乎不损失预测性能的情况下被操纵，以通过黑盒审计。论文还列出了可能通过现有法规和披露政策的操纵方式，并提出预注册、模型训练证明、敏感性分析等缓解建议。</summary>
   </entry>
   <entry>
     <title>用电影语言进行设计：面向人机协同视频片段创作的意图驱动方法</title>
@@ -133,15 +243,6 @@ arXiv · 2026年11月5日知识图谱常含缺失或不一致的事实，影响�
     <category term="AI 算法"/>
     <summary type="text">Last-Iterate Convergence of Stochastic Gradient Methods for Unbounded Problems
 arXiv · 2026年11月5日本文研究随机梯度方法在无界定义域或无界方差假设下的末次迭代收敛性，以黑盒变分推断为例。论文在两个放宽方差有界假设的条件下，证明末次迭代可达到近似最优的 O~(1/√T) 收敛速率。当总迭代次数 T 已知时，去除对数因子，得到最优阶 O(1/√T)，与有界方差或有界定义域假设下的结果一致。</summary>
-  </entry>
-  <entry>
-    <title>长视频问答的成绩提升从何而来：对帧选择、证据注入与专家路由的受控审计</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07329"/>
-    <id>urn:diting-lab:zh:doc:476065</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Where Do Reported Long-Video QA Gains Come From? A Controlled Audit of Frame Selection, Evidence Injection, and Expert Routing
-arXiv · 2026年11月5日论文提出 VideoRouteAudit，在固定骨干模型、帧数、解码、提示词和评分方式的前提下，逐一比较帧选择、注入非视觉证据和切换作答模型三种做法。在 Video-MME 长视频子集（900 题，每题 8 帧）上，测试的各种帧选择方法都没有显著优于均匀抽帧；在常用的 200 题子集上，结论却不稳定。作者也指出了自己早期结果中的问题，并给出了代码与脚本。</summary>
   </entry>
   <entry>
     <title>持续强化学习中的永久与瞬时表征：用两套互补系统在稳定与适应之间取得平衡</title>
@@ -405,15 +506,6 @@ arXiv · 2026年11月5日本文在语言模型内部验证了一个假设：模�
 arXiv · 2026年11月5日论文指出，同一或近似相同的神经网络函数可以有多种参数表示，而部署时通常只保存训练得到的那一组。作者利用这种表示自由度，在保持函数不变或做受控扰动的前提下搜索更易压缩的参数形式，压缩器本身保持不变。实验基于SmolLM2和Qwen3，使用Zstandard压缩时检查点大小最多减少23.4%，在gzip、Brotli和ZipNN下也有相近的相对减幅。</summary>
   </entry>
   <entry>
-    <title>递归稀疏注意力：以对数成本实现百万级词元长度外推</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07232"/>
-    <id>urn:diting-lab:zh:doc:476031</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Recursive Sparse Attention: Million-Token Length Extrapolation at Logarithmic Cost
-arXiv · 2026年11月5日该论文提出RecSA（递归稀疏注意力），在KV缓存上构建树结构，每个节点用一个键和一个均值池化值概括其子树，每个查询的选择与读取成本为O(log L)。模型从Qwen3-4B初始化，在32K长度上训练0.62B词元。在RULER基准的131K至2M长度上，RecSA均优于各基线；在1M长度下得分60.5，最佳基线Dense + DCA为40.0。在64K至2M长度范围内，RecSA的端到端预填充与解码速度快于稠密注意力。</summary>
-  </entry>
-  <entry>
     <title>源平衡封顶Fisher方法：用于语言模型用户推断的有界证据聚合</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.07228"/>
     <id>urn:diting-lab:zh:doc:476030</id>
@@ -432,15 +524,6 @@ arXiv · 2026年11月5日本文研究在只能观察某来源新文档的情况�
 arXiv · 2026年11月5日循环Transformer通过重复调用共享模块来减少参数量，但重复计算结果如何被复用并不由参数共享决定。本文分析残差连接中每次模块调用后保存的表示及后续读取时的加权方式，提出Loopback Transformer，以几何衰减控制总更新权重并提供近期性先验，再由注意力机制学习如何分配这些权重。在ClimbMix数据集上，该模型在参数量为标准Transformer基线40%至75%的情况下取得更低验证损失，并在1.4B和3B规模下下游十三项任务平均准确率更高。</summary>
   </entry>
   <entry>
-    <title>SAFE-Teen：评估聊天机器人在青少年心理健康对话中的安全性</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07218"/>
-    <id>urn:diting-lab:zh:doc:476027</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">SAFE-Teen: Evaluating Chatbot Safety Across Adolescent Mental Health Conversations
-arXiv · 2026年11月5日这篇论文借助模拟对话评估AI聊天机器人在与13至17岁青少年交谈时的安全性，共评估了18个聊天机器人接口、32,555段模拟对话，使用22项安全标准。结果显示，不加入面向青少年的系统提示时，标准失败率为43.3%，加入后降至24.9%，但问题仍未完全消除。当青少年反驳机器人的回答时，心理诊断、用药和物质滥用相关边界的失败率在不加提示的情况下上升10至12个百分点，超过80%的聊天机器人如此。</summary>
-  </entry>
-  <entry>
     <title>TileQuant：以权重块为精度分配单位的大语言模型混合精度训练后量化</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.07217"/>
     <id>urn:diting-lab:zh:doc:476026</id>
@@ -448,15 +531,6 @@ arXiv · 2026年11月5日这篇论文借助模拟对话评估AI聊天机器人�
     <category term="AI 算法"/>
     <summary type="text">TileQuant: Tile as the Precision-Allocation Unit for LLM Mixed-Precision Post-Training Quantization
 arXiv · 2026年11月5日该论文提出 TileQuant，一种无需训练的大语言模型训练后量化框架，以硬件对齐的二维权重块为单位分配精度。通过离线校准评分，每个投影层在保留预算内将得分最高的块保留为 16 位，其余使用 8 位，并由内核进行整数与 16 位混合计算。实验显示其生成吞吐量达到原模型的 2.66 倍，并在多项任务上保持质量。</summary>
-  </entry>
-  <entry>
-    <title>组合式去对齐：审计大型视觉语言模型的安全性</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07216"/>
-    <id>urn:diting-lab:zh:doc:476025</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Compositional Unalignment: Auditing Safety in Large Vision-Language Models
-arXiv · 2026年11月5日论文指出，单独无害的图像与提示组合后，大型视觉语言模型可能产生有害输出。作者发现，仅用少量监督微调即可在对齐基准上取得与复杂强化学习流程相当的分数，说明基准分数难以证明安全鲁棒性。论文提出无需训练的CMaG方法，在Qwen2.5-VL-7B和LLaVA-1.5-7B上将组合安全得分最多降低65分，且超过98%的输出仍保持连贯。</summary>
   </entry>
   <entry>
     <title>用分数阶物理信息神经网络建模社交媒体的传播热度</title>
@@ -513,15 +587,6 @@ arXiv · 2026年11月5日该论文提出 TrustMix，一种轻量的事后方法�
 arXiv · 2026年11月5日该论文提出 τ-bench-LILT，是 τ³-bench 的多语言扩展，覆盖德语、韩语、土耳其语和波斯语，涉及航空、零售、电信和银行四个领域。研究团队对基准的各个层面进行了本地化，包括客户数据库、用户模拟器提示词以及任务。在八个智能体模型上的评估显示，韩语和波斯语的零售领域相比英语下降幅度最大，pass^4 指标最多下降 61 分。</summary>
   </entry>
   <entry>
-    <title>SeVerus：面向 Rust 形式化验证的上下文感知、游戏化基准测试</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07194"/>
-    <id>urn:diting-lab:zh:doc:476016</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">SeVerus: Context-Aware, Gamified Benchmarking for Rust Verification
-arXiv · 2026年11月5日论文提出 SeVerus，一种自动生成 Verus（Rust 程序验证器）基准的方法。它把每个验证目标组织成一个“任务”，并分为逐级递减辅助引理的“关卡”，从只需补一个引理到完全不给辅助引理。用它在六个开源 Verus 项目上生成了 819 个任务、10,095 个关卡，并测试了多个编码代理，结果显示随着辅助证明上下文减少，成功率下降、成本上升。</summary>
-  </entry>
-  <entry>
     <title>基于脑电预训练骨干的适配器对比研究：在参数量匹配下比较两种下游适配方式</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.07192"/>
     <id>urn:diting-lab:zh:doc:476015</id>
@@ -565,15 +630,6 @@ arXiv · 2026年11月5日Shapley值是机器学习中常用的归因工具，但
     <category term="AI 算法"/>
     <summary type="text">Meta-Frieren: Beyond Single Level Online Learning
 arXiv · 2026年11月5日本文研究一种两阶段在线优化问题：每一轮中，元学习器先选择一个智能体与环境的组合，然后被选中的智能体与环境交互并获得奖励。作者提出Meta-Frieren框架以最大化累积奖励，并用于超参数优化的实验中验证了理论结果。</summary>
-  </entry>
-  <entry>
-    <title>多步软件工程：编码智能体能否在长链任务中持续基于自身代码开发？</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07166"/>
-    <id>urn:diting-lab:zh:doc:476008</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Multi-step SWE: Can Coding Agents Keep Building on Their Own Code Over Long Horizons?
-arXiv · 2026年11月5日本文提出Multi-step SWE基准，包含69个软件工程任务，每个任务是在同一代码库上的5至15个相互依赖的步骤链，后续步骤从智能体在前序步骤中生成的代码继续。任务涵盖四类工程工作和九种编程语言。九个前沿模型中，表现最好的求解率仅为18.5%，69个任务中有38个未被任何模型解决。</summary>
   </entry>
   <entry>
     <title>基于神经分位数解析的结构化条件独立性检验</title>
@@ -747,15 +803,6 @@ arXiv · 2026年11月5日这篇论文分析了六个癌症相关Reddit社区中�
 arXiv · 2026年11月5日该论文关注作者归属与作者验证任务，指出以往方法主要建模文档风格、较少建模作者本身。作者提出了多种建模作者的方式，并表明允许作者表示捕捉多种一致但彼此不同的写作风格，能显著提升性能。作者还考察了受众规模、时间距离、前文语境和体裁规范四种情形下，作者的写作何时最能体现其个人风格。</summary>
   </entry>
   <entry>
-    <title>LLM动物园之夜：面向生成预训练大语言模型权重的数据条件流匹配</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07103"/>
-    <id>urn:diting-lab:zh:doc:475981</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">A Night at the LLM Zoo: Data Conditioned Flow Matching for Generating Pretrained LLM Weights
-arXiv · 2026年11月5日本文为大语言模型构建了一个系统变化训练数据配比的模型集合，涵盖网页文本、图书、数学、代码和法语，参数规模包括5100万、1.24亿和3.55亿的GPT-2模型。作者利用该集合训练了一个以数据配比为条件的流匹配模型，用于在压缩后的权重空间中生成完整的预训练大语言模型权重。实验表明，生成的模型在未见过的数据配比上具有零样本泛化能力，其性能与集合内模型相近。</summary>
-  </entry>
-  <entry>
     <title>面向联邦混合专家模型的服务器端稀疏专家分配</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.07093"/>
     <id>urn:diting-lab:zh:doc:475980</id>
@@ -763,15 +810,6 @@ arXiv · 2026年11月5日本文为大语言模型构建了一个系统变化训�
     <category term="AI 算法"/>
     <summary type="text">Server-Side Sparse Assignment for Federated Mixture-of-Experts
 arXiv · 2026年11月5日本文提出 S³-MoE，一种在服务器端进行稀疏专家分配的联邦混合专家框架。它从客户端的部分观测中估计每个客户端对各专家的相关性，并通过利用与探索机制优化分配，同时给出相关性估计误差和精确 Top-K 恢复的理论保证。在 CIFAR-100 上的 CNN 实验中，该方法每个客户端仅加载 5 个专家，平均最终准确率比让每个客户端访问全部 20 个专家的 Full-20 FedAvg 高 1.31 个百分点。</summary>
-  </entry>
-  <entry>
-    <title>双人零和扩展式博弈中扩展式适当均衡的多项式时间计算</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07089"/>
-    <id>urn:diting-lab:zh:doc:475979</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Polynomial-Time Computation of Extensive-Form Proper Equilibria in Two-Player Zero-Sum Games
-arXiv · 2026年11月5日本文提出一种确定性多项式时间算法，用于计算有限双人零和扩展式博弈（具有完美回忆和有理数数据）中的精确扩展式适当均衡。算法为每个信息集构造允许动作概率的几何置换多面体，并借助缩放双随机表示将这些约束嵌入多项式规模的序列形式多面体中。作者还通过参数化线性系统的符号稳定性等方法得到精确而非近似的均衡，所得概率为有理数且编码长度为多项式级。</summary>
   </entry>
   <entry>
     <title>大规模合成人类与机器推理的符号模型</title>
@@ -792,15 +830,6 @@ arXiv · 2026年11月5日本文提出行为条件符号合成方法（BCSS），
 arXiv · 2026年11月5日该论文提出宽视角合成（WVS）任务，即从多个透视相机的观测中合成一个几何一致、位于指定虚拟视点的宽视角图像，需要处理因相机中心分离带来的视差与遮挡。作者提出前馈式高斯泼溅框架WV-GS，无需逐场景优化，并引入分段透视渲染（PPR）和空间仿射光度建模（SAPM）分别缓解边缘拉伸与相机间光度不一致问题。此外还发布了合成基准WideDrive，并在多个数据集上验证了方法的有效性。</summary>
   </entry>
   <entry>
-    <title>一般和博弈中的乐观Hedge算法：基本极限与遗憾界（通过时间近似方法）</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07078"/>
-    <id>urn:diting-lab:zh:doc:475975</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Optimistic Hedge in General-Sum Games: Fundamental Limits and Regret Bounds via Temporal Approximation
-arXiv · 2026年11月5日本文研究乐观Hedge算法（一种带一步外推的乘法权重更新方法）在博弈中的遗憾界。作者证明：两人博弈中存在学习率使每位玩家的遗憾与时间跨度无关，上界为O(n log n)；三人及以上博弈中则存在构造的博弈，使某些玩家的遗憾呈指数级增长。上界基于时间近似框架分析得出，该框架也简化了对m人博弈已知遗憾界的证明。</summary>
-  </entry>
-  <entry>
     <title>当验证不等于一致：跨智能体的 LLM 到 Dafny 形式化</title>
     <link rel="alternate" href="https://arxiv.org/abs/2611.07073"/>
     <id>urn:diting-lab:zh:doc:475974</id>
@@ -817,15 +846,6 @@ arXiv · 2026年11月5日论文研究用两个大模型分别担任规范生成�
     <category term="AI 算法"/>
     <summary type="text">Automated Feedback to Peer Tutors Increases Their Talk Moves and Learner Reasoning but Not the Balance of Talk
 arXiv · 2026年11月5日该随机对照试验在两个为期四周的SAT数学训练营中进行，涉及1030名志愿导师和7443名学习者。导师随机接受无反馈、针对自身话语的自动反馈，或再加上面向学习者的参与度反馈。结果显示，对导师的反馈使其引导学习者想法、回应学习者发言及学习者推理增加了8%至15%，但导师讲话时间占比（对照组平均91.5%）在各组均未改变，面向学习者的反馈也未进一步改变课堂话语。</summary>
-  </entry>
-  <entry>
-    <title>通过内部表征塑造与监控模型</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07071"/>
-    <id>urn:diting-lab:zh:doc:475972</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">Shaping &amp; Monitoring Models through their Internal Representations
-arXiv · 2026年11月5日论文提出“机制性塑造”框架，在训练中依据模型内部表征约束其表达与决策所依赖的概念，例如避免有害内容，或在筛选简历时不依赖性别。实验覆盖视觉、医学影像和语言等领域，参数规模最高达320亿，训练方法包括分类、SFT、DPO和GRPO，结果显示目标行为明显减少而任务性能基本保持。论文还提出一套监控器层级，并分析了概念规避的三种几何机制，指出多数情况下被塑造的概念仍可被监控。</summary>
   </entry>
   <entry>
     <title>部分可观测马尔可夫决策过程中神经网络强化学习的有限时间收敛与遗憾保证</title>
@@ -853,15 +873,6 @@ arXiv · 2026年11月5日该论文研究多智能体强化学习中的协作探�
     <category term="AI 算法"/>
     <summary type="text">Stochastic Dynamics of Generative AI: From Autoregressive Models to Interacting LLM Networks and Neural SDEs
 arXiv · 2026年11月5日本文从随机动力系统的角度研究三类生成式AI模型。首先将大语言模型表述为带注意力依赖的高维非线性自回归模型，并解释其预训练与逐词生成之间的概率含义。其次分析相互作用的LLM网络，用平均场常微分方程刻画其集体行为，涉及偏好依附与持续的结构性偏差。最后将神经随机微分方程作为连续时间生成模型，讨论其训练，重点介绍基于粗糙路径分析的Wiener空间求积方法。</summary>
-  </entry>
-  <entry>
-    <title>SD-LoRA：在训练阶段将结构信息蒸馏进 LoRA 的少样本视觉-语言适配方法</title>
-    <link rel="alternate" href="https://arxiv.org/abs/2611.07063"/>
-    <id>urn:diting-lab:zh:doc:475968</id>
-<published>2026-11-05T00:00:00+09:00</published>    <updated>2026-11-06T11:13:57+09:00</updated>
-    <category term="AI 算法"/>
-    <summary type="text">SD-LoRA: Training-Time Structural Distillation into LoRA for Few-Shot Vision-Language Adaptation
-arXiv · 2026年11月5日该论文提出 SD-LoRA，用于少样本条件下的视觉-语言模型适配。训练时，它用图模型刻画高分辨率 ViT 图像块之间及其与文本之间的结构关系，并通过隐式蒸馏和原型预测对齐，把这种结构信息迁移到轻量的 CLIP-LoRA 模型中。推理时图模型被丢弃，只需一次 CLIP-LoRA 前向计算和基于缓存的分类器。论文报告在 11 个少样本基准上，相比较强的 CLIP-LoRA 基线，各样本设定下准确率均有提升。</summary>
   </entry>
   <entry>
     <title>用文生图模型自身生成的图像来分割皮肤病变（GENIQ）</title>
