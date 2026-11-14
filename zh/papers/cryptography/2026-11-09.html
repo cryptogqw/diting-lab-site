@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>密码学与安全 · 2026年11月9日（周一） · 諦聽 Diting Lab</title>
+<meta name="description" content="技术论文与全球加密监管速览">
+<link rel="alternate" hreflang="zh-Hans" href="../../../zh/papers/cryptography/2026-11-09.html">
+<link rel="alternate" hreflang="ja" href="../../../ja/papers/cryptography/2026-11-09.html">
+<link rel="alternate" hreflang="en" href="../../../en/papers/cryptography/2026-11-09.html">
+<link rel="alternate" hreflang="x-default" href="../../../index.html">
+<link rel="alternate" type="application/atom+xml" title="密码学与安全 · 2026年11月9日（周一） · 諦聽 Diting Lab" href="../../../zh/papers/cryptography/feed.xml"><link rel="icon" href="../../../assets/brand/favicon-32.png?v=8f6b178017" type="image/png" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.svg?v=8f6b178017" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/brand/apple-touch-icon.png?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/style.css?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/fonts/fonts.css?v=8f6b178017"><link rel="stylesheet" href="../../../assets/themes/nightcity.css?v=8f6b178017"><script src="../../../assets/site.js?v=8f6b178017" defer></script>
+</head>
+<body class="theme-nightcity">
+<header class="site-header">
+  <div class="wrap header-grid">
+    <a class="brand" href="../../../zh/index.html">
+      <img class="brand-logo" src="../../../assets/brand/logo.svg?v=8f6b178017" alt="諦聽 Diting Lab" width="149" height="40">
+    </a>
+    <nav class="main-nav">
+      <a href="../../../zh/index.html">首页</a>
+      <a href="../../../zh/papers/index.html" aria-current="page">论文</a>
+      <a href="../../../zh/laws/index.html">法规与监管</a>
+      <a href="../../../zh/about.html">关于</a>
+    </nav>
+    <nav class="lang-switch" aria-label="选择语言">
+      <a href="../../../zh/papers/cryptography/2026-11-09.html" data-lang="zh" lang="zh-Hans" aria-current="true">中文</a>
+      <a href="../../../ja/papers/cryptography/2026-11-09.html" data-lang="ja" lang="ja">日本語</a>
+      <a href="../../../en/papers/cryptography/2026-11-09.html" data-lang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="stale-note" hidden data-src="../../../assets/built.json">本站已超过 12 小时没有更新（正常每 3 小时更新一次），下面的内容可能不是最新的。</p><div class="page-head">
+  <h1 class="page-title">密码学与安全 · 2026年11月9日（周一）</h1>
+<p class="lede">arXiv 安全与密码类（cs.CR）和 IACR 密码学预印本。</p><a class="feed-link" href="../../../zh/papers/cryptography/feed.xml">RSS 订阅</a></div>
+<div class="layout">
+  <aside class="side">
+    <nav class="chips">
+      <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">194</span></a>
+      <a href="../../../zh/papers/cryptography/index.html" aria-current="page"><span>密码学与安全</span> <span class="count">2391</span></a>
+      <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">3530</span></a>
+      <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">305</span></a>
+      <a href="../../../zh/papers/ai/index.html"><span>AI 算法</span> <span class="count">23129</span></a>
+      <a href="../../../zh/papers/other/index.html"><span>其它计算机科学</span> <span class="count">1422</span></a>
+      <a href="../../../zh/papers/community/index.html"><span>技术社区讨论</span> <span class="count">90</span></a>
+    </nav>
+  </aside>
+  <div class="content">
+    <div class="filter-row">
+      <input class="filter" type="search" placeholder="筛选下方条目…" aria-label="筛选下方条目…">
+<label class="only-toggle"><input type="checkbox" data-only="notable"> 只看值得关注（4 星以上）</label>    </div>
+    <p class="alias-hint muted" hidden data-text="同时匹配：{terms}"></p>
+    <p class="filter-count muted" hidden data-text="本页匹配 {n} 条"></p>
+    <p class="filter-empty muted" hidden>本页没有符合条件的条目（筛选只在本页内进行）。 <button type="button" class="filter-clear">清除筛选</button></p>
+    <section class="day">
+<article class="item" id="d528966">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528966" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12479" target="_blank" rel="noopener noreferrer nofollow">Brief introduction to post-quantum cryptography in industrial applications</a>  </h3>
+<p class="note"><span class="label">说明</span>工业应用中后量子密码学的简要介绍</p><p class="summary"><span class="label">简介</span>本文概述后量子密码学（PQC）在物联网、医疗、土木基础设施和国防等工业领域的应用进展。作者介绍了PQC的基本内容及其市场定位，并对部分抗量子方法进行了实现实验，比较了常见PQC算法的性能。文章还讨论了不同类别PQC算法对量子攻击的抵抗力，以及各编程语言中PQC实现的现状，并给出KEM和签名算法的基准测试结果，以帮助根据性能、数据生命周期和敏感度选择合适算法。</p>
+<p class="authors">Mateusz \.Zarski, Jaros{\l}aw Miszczak, Ilias Cherkaoui 等</p></article>
+<article class="item notable" id="d528938">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528938" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12386" target="_blank" rel="noopener noreferrer nofollow">Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks</a>  </h3>
+<p class="note"><span class="label">说明</span>《Say Shibboleth》：通过陷阱识别智能体网络攻击背后的大模型与运行框架</p><p class="summary"><span class="label">简介</span>该论文研究如何从遥测数据中推断智能体网络攻击者所用的大语言模型版本和运行框架（harness）。作者设计了名为「shibboleth 陷阱」的模块化蜜罐服务，诱使攻击者产生可区分的行为，并通过观察后续请求中的效果来探测框架的执行特征。结果显示，在15个候选模型中，结合声明与行为的推断平均top-1准确率约为90%；在四种框架的实验中，固定探测规则识别正确框架的准确率为92%。</p>
+<p class="why"><span class="label label-why">看点</span>提出诱饵陷阱与harness行为探测来识别攻击者所用模型和框架，在15个模型上报告约90%的top-1准确率，并在四种harness上达92%准确率。</p><p class="authors">Dario Pasquini, Reworr, Giuseppe Ateniese 等</p></article>
+<article class="item" id="d528786">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528786" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12377" target="_blank" rel="noopener noreferrer nofollow">Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation</a>  </h3>
+<p class="note"><span class="label">说明</span>检测影子AI：企业终端上未经批准的大语言模型智能体</p><p class="summary"><span class="label">简介</span>本文讨论企业员工未经IT部门批准使用的自主AI智能体（影子AI）问题，提出九类智能体与六层终端痕迹的分类法，并介绍开源Windows检测工具Agent Detector。在一组受控测试中，该工具结合服务身份、配置、安装和执行历史等证据，能够检测出多数未经批准的智能体，而仅依赖行为规则的方法则会把正常的非AI程序也误判为智能体。</p>
+<p class="authors">Jeremy Canale, Fabien Soulis</p></article>
+<article class="item" id="d528782">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528782" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12367" target="_blank" rel="noopener noreferrer nofollow">An Agile Homomorphic Encryption and ML-KEM Scheme for Privacy-Preserving Health Data Processing</a>  </h3>
+<p class="note"><span class="label">说明</span>面向健康数据隐私保护处理的敏捷同态加密与ML-KEM方案</p><p class="summary"><span class="label">简介</span>本文针对健康数据存储与处理中的隐私问题，提出一种结合ML-KEM（后量子密钥封装机制）与BGV（全同态加密方案）的敏捷密码方案，旨在便于在嵌入式场景中高效实现。文中介绍了该方案的参数选取，并通过概念验证实现展示了其可行性。</p>
+<p class="authors">Daniel Resende (SAS-ENSMSE), Nadia El Mrabet (SAS-ENSMSE), Ulrich K{\&#34;u}hne (IP Paris 等</p></article>
+<article class="item notable" id="d564949">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564949" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2841" target="_blank" rel="noopener noreferrer nofollow">SEC: One-Share Everywhere-Short Secret Sharing from Lossless Expanders</a>  </h3>
+<p class="note"><span class="label">说明</span>SEC：基于无损扩张图、每人仅一份分片且处处短的秘密共享方案</p><p class="summary"><span class="label">简介</span>本文提出 SEC，一种基于扩张码、面向 Z 模块的门限秘密共享方案，适用于基于格的分布式密码学。每位参与者只获得一份分片，与参与方数量及门限无关，并满足分片系数与重构向量元素有界。作者证明了其正确性、处处短性与线性，并引入硬核局部泄露抗性作为隐私概念，在 MatrixHint-MLWE 假设下给出证明。</p>
+<p class="why"><span class="label label-why">看点</span>用无损扩展图的唯一邻居剥离构造秩序一致的短份额秘密共享，每方仅一个份额，并给出证明和隐私分析。</p><p class="authors">Muhammad Arzaki, Muhammed F. Esgin, Amin Sakzad 等</p></article>
+<article class="item" id="d528769">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.IT · math.IT</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528769" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12325" target="_blank" rel="noopener noreferrer nofollow">An Explicit Below Half Threshold Bound for the Local Leakage Resilience of Shamir&#39;s Secret Sharing Scheme</a>  </h3>
+<p class="note"><span class="label">说明</span>Shamir秘密共享方案在局部泄露下的显式低于一半阈值界</p><p class="summary"><span class="label">简介</span>本文研究Shamir秘密共享方案在素数域上抵抗任意1比特局部泄露时的重构阈值。作者证明，对足够大的n和每个大于n的素数p，只要t/n不小于0.489，(n,t)方案对任意互异非零求值点都具有exp(-Ω(n))的抗泄露能力。证明方法改进了对偶码列表恢复分析，并依据泄露函数的支撑集大小与偏置组合使用互补的傅里叶估计。</p>
+<p class="authors">Cheng Zhang, Xin Wang, Xiangliang Kong</p></article>
+<article class="item" id="d564951">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Applications</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564951" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2840" target="_blank" rel="noopener noreferrer nofollow">MPCTM: MPC-Based Trajectory Matching on Unmanned Autonomous Systems</a>  </h3>
+<p class="note"><span class="label">说明</span>MPCTM：基于多方安全计算的无人自主系统轨迹匹配方案</p><p class="summary"><span class="label">简介</span>本文提出一种基于多方安全计算（MPC）的隐私保护轨迹匹配协议，用于检测无人自主系统预先规划路径之间可能发生的碰撞，且不泄露超出输出结果之外的信息。作者设计了可捕捉离散采样点之间碰撞的模型，并提出一种更轻量的MPC友好模型，讨论了两种方法在精度与效率之间的权衡。与现有最接近的方案相比，该协议在dealer模式下的在线延迟降低两倍以上（完整模型）和八倍（轻量模型），在自主模式下则慢2.5至3倍，但模型更具表达力且无假阴性。</p>
+<p class="authors">Dominik Roy George, Martin Zbudila, Barry Van Leeuwen</p></article>
+<article class="item" id="d528752">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528752" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12271" target="_blank" rel="noopener noreferrer nofollow">Public, Identifiable, and Effectively Immutable: Ethical Lessons from Research on arXiv</a>  </h3>
+<p class="note"><span class="label">说明</span>公开、可识别且实际上不可撤回：从arXiv研究中得到的伦理启示</p><p class="summary"><span class="label">简介</span>本文讨论研究arXiv论文源文件时出现的伦理问题。arXiv会公开分发论文源文件，这一点让许多作者感到意外。作者由此总结出研究者可能面临的四个高层次困境，并提出四点经验：公开可得性只是伦理思考的起点，研究应减少对暴露信息的放大，披露应与危害、把握程度和可操作性相匹配，同时须考虑信息的实际不可撤回性。</p>
+<p class="authors">Jan Pennekamp, Johannes Lohm\&#34;oller, Peter Mayer 等</p></article>
+<article class="item" id="d528746">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.DC</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528746" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12252" target="_blank" rel="noopener noreferrer nofollow">Lessons Not Learned: Why Cross-Chain Bridges Keep Losing Billions the Same Way</a>  </h3>
+<p class="note"><span class="label">说明</span>《未吸取的教训：跨链桥为何总以同样方式损失数十亿美元》</p><p class="summary"><span class="label">简介</span>该论文收集了2021至2026年间的跨链桥安全事件，发现自2023年以来，报告损失中有88%源于安全态势（包括人员、代码、控制措施和链下基础设施的设置）的缺陷，且几乎都是重复出现的老问题。论文提出了一套桥梁安全评估框架，依据链上证据为每个桥的部署打分，出现致命风险时分数会被压到最低。此外还开发了分析工具用于监测已部署的桥，并提出速率限制与紧急停止机制可限制未知攻击的损失。</p>
+<p class="authors">Mohsen Ahmadvand (Monad Foundation), Piotr Dobaczewski (Monad Foundation), Camille Bouzerand (Monad Foundation)</p></article>
+<article class="item" id="d528740">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528740" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12241" target="_blank" rel="noopener noreferrer nofollow">SNAPRAG: Cost-Efficient Knowledge Extraction Attack on RAG Systems via Adversarial Perturbations</a>  </h3>
+<p class="note"><span class="label">说明</span>SNAPRAG：通过对抗扰动以较低成本从RAG系统提取知识库的攻击方法</p><p class="summary"><span class="label">简介</span>检索增强生成（RAG）系统借助外部知识库改进大模型的回答，但已有研究显示攻击者可通过反复查询提取其中大量私有知识。本文提出SNAPRAG，一种无需外部大模型、可严格设定查询预算的低成本提取攻击，通过离散词元变异算法生成对抗查询，并以自适应相似度阈值校准将查询导向目标数据库的未探索语义区域。实验称提取一半目标知识库所需查询数最多减少6.77倍，在固定预算下最高恢复96.9%，并在五个防御目标中的四个上仍领先。</p>
+<p class="authors">Melih Co\c{s}\u{g}un, Mehmet Emre G\&#34;ursoy, Alptekin K\&#34;up\c{c}\&#34;u 等</p></article>
+<article class="item" id="d528716">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528716" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12161" target="_blank" rel="noopener noreferrer nofollow">GPU-Accelerated Non-Interactive Encrypted Neural Network Training with Batched Diagonal Packing</a>  </h3>
+<p class="note"><span class="label">说明</span>基于 GPU 加速、批量对角打包的非交互式加密神经网络训练</p><p class="summary"><span class="label">简介</span>本文介绍一种在同态加密（CKKS）下训练神经网络的 Rust 实现，并把训练与自举的密文运算放到 GPU 上完成。在主要的 MNIST 模型上，100 次参数更新的实验中，训练时间由 14268.295 秒降至 293.075 秒，相对 CPU 实现约快 48.68 倍，解码后的参数与预测结果完全一致。另一项 GPU 实验完成十轮训练，测试准确率为 90.35%，明文对照为 90.41%。文中也说明，参数一致性仅在 100 次更新时验证，且与 ReBoot 基线的比较有条件限制。</p>
+<p class="authors">Kentaro Mihara</p></article>
+<article class="item notable" id="d528713">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="5/5">★★★★★</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528713" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12155" target="_blank" rel="noopener noreferrer nofollow">StealthyPoison: Manipulating LLM Agent Behavior through Procedural Poisoning of Third-Party Skills</a>  </h3>
+<p class="note"><span class="label">说明</span>StealthyPoison：通过篡改第三方技能的操作流程来操控大模型智能体行为</p><p class="summary"><span class="label">简介</span>论文提出StealthyPoison攻击，在公开注册表中的第三方技能里植入隐蔽的操作流程投毒，篡改决定性规则以导致任务结果错误，同时保持技能的功能与正常执行。攻击在566个目标技能和5244个请求上评估，使投毒技能的首位排名比HotFlip和GCG提高13.6%。论文还报告，这些投毒载荷能迁移到三个未参与构建的受害模型上，并且多数能躲过SkillSpector和GPT-5.4-mini的检测。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于无需目标用户请求即可从第三方技能构造可复用的隐蔽程序性投毒，并结合检索元数据增强；在566个技能、5244个请求及多模型与防御检测上验证，报告显著提升检索置顶率。</p><p class="authors">Jingfen Qiao, Rui Li, Shuaiqun Pan 等</p></article>
+<article class="item" id="d528692">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528692" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12100" target="_blank" rel="noopener noreferrer nofollow">FALC: An Artifact-Centric Life Cycle Model and Research Agenda for AI Forensics</a>  </h3>
+<p class="note"><span class="label">说明</span>FALC：面向人工智能取证的以证据为中心的生命周期模型与研究议程</p><p class="summary"><span class="label">简介</span>本文提出“人工智能取证生命周期”（FALC）模型，与其他生命周期模型不同，它把关注点放在AI系统生命周期中产生的取证证据（artifacts）上。基于该模型，作者整理出一份可用于调查的证据参考清单，收集了涉及AI的犯罪案例及调查时可能提出的问题，并提出了按现有技术可分析性划分的取证专业领域分类。</p>
+<p class="authors">Adrian Johannes Staeves, Mayur Rattan Jaisinghani, Rebekah Overdorf 等</p></article>
+<article class="item" id="d528677">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528677" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.12064" target="_blank" rel="noopener noreferrer nofollow">A Privacy-Preserving UAV-Assisted Secure Wireless Communication and Computing System Based on Fully Homomorphic Encryption</a>  </h3>
+<p class="note"><span class="label">说明</span>基于全同态加密的无人机辅助隐私保护安全无线通信与计算系统</p><p class="summary"><span class="label">简介</span>本文提出一种无人机辅助的安全计算框架，将CKKS全同态加密与多方安全计算相结合，以保护无线通信中计算过程本身的安全。框架利用无人机的灵活性将密钥分发与加密计算解耦，支持加密加权聚合、加密矩阵乘法和加密决策树推理。实验表明，该框架在这些操作上相比BFV、BGV和SHE等方案具有更好的时间效率或空间效率，且加权聚合数值精度高、对不同数据长度稳健。</p>
+<p class="authors">Quanxi Zhou, Wencan Mao, Ye Tao 等</p></article>
+<article class="item" id="d564954">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Applications</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564954" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2839" target="_blank" rel="noopener noreferrer nofollow">Practical Confidential Clustering for Federated Learning using Efficient Secret-Sharing</a>  </h3>
+<p class="note"><span class="label">说明</span>基于高效秘密共享的联邦学习实用机密聚类方法</p><p class="summary"><span class="label">简介</span>该论文提出CCFL框架，用于在联邦学习中进行机密聚类，把相似客户端分组以训练个性化子模型。距离计算和质心更新等聚类步骤在加密域内通过复制秘密共享完成，并结合匿名化服务器打乱和基于多方计算的聚类以保护输入隐私。论文报告在LAN和WAN条件下最高可实现46.7倍的计算加速，并称其隐私与效用的权衡优于或匹配现有个性化联邦学习方法。</p>
+<p class="authors">Cédric Prigent, Sonia Ben Mokhtar</p></article>
+<article class="item" id="d564956">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Attacks and cryptanalysis</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564956" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2838" target="_blank" rel="noopener noreferrer nofollow">DKG: A Dual-Layer Knowledge Graph and LLM Co-Driven Framework for Fully Automated Side-Channel Analysis of Cryptosystems</a>  </h3>
+<p class="note"><span class="label">说明</span>DKG：面向密码系统全自动侧信道分析的双层知识图谱与大模型协同框架</p><p class="summary"><span class="label">简介</span>本文提出DKG框架，由双层知识图谱与大语言模型共同驱动，用于自动完成密码系统的侧信道密钥恢复。图谱上层为配置组件，下层为诊断策略，并通过跨层关系连接，从161份文献中无需人工标注即可自动构建。在覆盖AES、DES和SM4、涉及智能卡、FPGA和MCU的八个数据集上，搭配DeepSeek-V3.2的DKG端到端密钥恢复成功率为97.5%，文本检索增强的ReAct-RAG仅为68.8%。</p>
+<p class="authors">Wenquan Zhou, An Wang, Yaoling Ding 等</p></article>
+<article class="item" id="d528631">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528631" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11971" target="_blank" rel="noopener noreferrer nofollow">Harness Matters: Measuring and Dissecting Security Resilience in Web Agents</a>  </h3>
+<p class="note"><span class="label">说明</span>执行框架很重要：衡量并剖析网页智能体的安全韧性</p><p class="summary"><span class="label">简介</span>该论文研究网页智能体的执行框架（harness）如何影响其安全性。作者将框架划分为目标理解、网页感知、推理规划和动作执行四个阶段，并构建了名为WebTrap Farm的评估框架，涵盖恶意用户提示、恶意提示注入和欺骗性网页设计三类攻击。结果显示，现有框架仍易受典型攻击影响，且框架与后端模型都会显著影响安全结果。</p>
+<p class="authors">Xinyi Wu, Jiagui Chen, JiaYi Dong 等</p></article>
+<article class="item" id="d564957">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564957" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2837" target="_blank" rel="noopener noreferrer nofollow">Adaptive Leaky LWE and Its Security</a>  </h3>
+<p class="note"><span class="label">说明</span>自适应泄漏LWE及其安全性</p><p class="summary"><span class="label">简介</span>本文研究带噪声线性泄漏的LWE问题（Leaky LWE）的一种自适应变体。泄漏矩阵可依赖挑战及此前所有泄漏回答，作者在明确的范数、平滑与采样条件下，将高斯秘密LWE归约到该问题，适用于多项式轮数。归约保持公开矩阵的分布及其相关预言机的访问，并支持矩形泄漏矩阵与数域任意阶上的非球形离散高斯分布。</p>
+<p class="authors">Chuanqi Zhang, Muhammed F. Esgin, Ron Steinfeld</p></article>
+<article class="item" id="d528603">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CL · cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d528603" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11902" target="_blank" rel="noopener noreferrer nofollow">Spectral Unlearning: Transformer Structure-Preserving Updates for Language Models</a>  </h3>
+<p class="note"><span class="label">说明</span>谱无监督学习：面向语言模型的保持Transformer结构的更新方法</p><p class="summary"><span class="label">简介</span>本文针对大语言模型的机器遗忘问题，即在尽量保留模型效用的同时去除特定知识或行为。作者提出谱遗忘框架，将标准遗忘目标与考虑矩阵结构的优化方法相结合，并证明该谱更新对应于由线性层和归一化输入输出构成的Transformer的最速下降方向。在记忆、隐私和效用三个维度上的评估中（以调和平均数汇总），该方法优于多种基线，并弥合了大部分与重训练参考模型之间的差距。</p>
+<p class="authors">Sung Il Choi, Junhao Cai, Dohun Kim 等</p></article>
+<article class="item" id="d528581">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528581" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11861" target="_blank" rel="noopener noreferrer nofollow">Scaling Adaptive Prompt Injection Attacks with Agent Swarms</a>  </h3>
+<p class="note"><span class="label">说明</span>用智能体群扩展自适应提示注入攻击</p><p class="summary"><span class="label">简介</span>这篇论文研究AI智能体面临的提示注入攻击。作者设计了一个合成评测数据集，以随机的非恶意动作作为对抗目标，用来衡量模型遵循指令层级的能力。结果显示，能力更强的智能体攻击者仍能可靠地诱使模型执行工具输出中的指令，即使是在公开基准上表现稳健的模型也是如此。作者认为，前沿防御可能需要主动的自动化红队测试。</p>
+<p class="authors">Alexey Kurakin, Vishal Karande, Alex Bie 等</p></article>
+<article class="item notable" id="d528580">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · math.NT</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528580" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11859" target="_blank" rel="noopener noreferrer nofollow">Doubly-Efficient Private Information Retrieval from Modular Forms</a>  </h3>
+<p class="note"><span class="label">说明</span>基于模形式的双高效隐私信息检索</p><p class="summary"><span class="label">简介</span>本文提出多服务器隐私信息检索（PIR）新协议，服务器在次线性时间内作答，且每台服务器仅需额外存储 n+1 比特的预处理数据。两服务器设定下，服务器时间达到 n^0.82，存储由 O(n√log n) 降至 n+1 比特。多服务器情形下，协议在服务器时间上也优于既有同类方案。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于将匹配向量技术推广到指数中的二次计算，并借助模形式构造傅里叶稀疏函数；摘要报告在双服务器与多服务器设定下改进了服务器时间并把存储降至n+1比特。</p><p class="authors">Alexandra Henzinger, Seyoon Ragavan</p></article>
+<article class="item notable" id="d564958">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564958" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2836" target="_blank" rel="noopener noreferrer nofollow">Doubly-Efficient Private Information Retrieval from Modular Forms</a>  </h3>
+<p class="note"><span class="label">说明</span>基于模形式的双高效私有信息检索</p><p class="summary"><span class="label">简介</span>本文提出一类信息论安全的多服务器私有信息检索协议，在每个服务器仅额外使用一比特空间的前提下，实现次线性的服务器查询时间。以两服务器为例，其查询时间达到 n^0.82，与现有最优方案相当，但存储从 O(n√log n) 位降至 n+1 位。论文还利用模形式与复分析构造所需的傅里叶稀疏函数。</p>
+<p class="why"><span class="label label-why">看点</span>以模形式和价数公式构造傅里叶稀疏锥-delta函数，推广矩阵向量方法，给出仅需n+1比特存储的双高效PIR，并在s=2,3,10时改进服务器时间指数。</p><p class="authors">Alexandra Henzinger, Seyoon Ragavan</p></article>
+<article class="item" id="d528556">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528556" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11817" target="_blank" rel="noopener noreferrer nofollow">VeilTune: Secure Fine-Tuning of Private LoRA Adapters on Public Pretrained Language Models</a>  </h3>
+<p class="note"><span class="label">说明</span>VeilTune：在公开预训练语言模型上安全微调私有 LoRA 适配器的协议</p><p class="summary"><span class="label">简介</span>该论文指出，现有安全微调协议会向数据拥有方泄露与适配器相关的中间结果，单个训练步即可据此复制适配器。作者提出 VeilTune，据称是首个完全在安全多方计算中用反向传播微调预训练语言模型的协议。在四个少样本任务上，VeilTune 的准确率据称较 SecP-Tuning 有明显提升，在 SST-2 上取得端到端加速和通信量下降。</p>
+<p class="authors">Huiyu Xie, Tanping Zhou, Tao Hu 等</p></article>
+<article class="item" id="d528550">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528550" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11800" target="_blank" rel="noopener noreferrer nofollow">Ultrasound-Assisted Biometric Watermarking Against Face Video Deepfakes</a>  </h3>
+<p class="note"><span class="label">说明</span>基于超声的生物特征水印，用于防范人脸视频深度伪造</p><p class="summary"><span class="label">简介</span>该论文提出了一种名为UltraGuard的生物特征视频水印方法，用于保护人脸视频免受深度伪造。系统利用智能手机自带的扬声器和麦克风发出超声信号并采集生物特征，再与视频内容的时空动态特征融合，编码为水印并实时嵌入视频。作者称该方法可在传输和传播过程中防范伪造与篡改等恶意攻击，并可部署于用户移动设备上提供实时保护。</p>
+<p class="authors">Guodong Liu, Lei Wang, Dongxu Liu 等</p></article>
+<article class="item" id="d528533">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">quant-ph · cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528533" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11754" target="_blank" rel="noopener noreferrer nofollow">Advantage Distillation in Paired-State Quantum Key Distribution</a>  </h3>
+<p class="note"><span class="label">说明</span>成对量子态量子密钥分发中的优势蒸馏</p><p class="summary"><span class="label">简介</span>本文研究成对量子态的回环量子密钥分发中的优势蒸馏方法，由固定光学站与轻便便携终端配合工作。该方法利用两个独立公开奇偶校验，在最小连通图上挑选一致的三组两比特记录块，并分析接受概率、残余误差与保留率。文中还给出了模块化安全定理，用于界定在校验信息披露和块接受之后，攻击者可获得的额外猜测优势。</p>
+<p class="authors">Luis Adri\&#39;an Lizama-P\&#39;erez, Jos\&#39;e Mauricio L\&#39;opez-Romero</p></article>
+<article class="item" id="d528514">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.MA</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528514" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11720" target="_blank" rel="noopener noreferrer nofollow">ShadowBench-MCP: Measuring Shadow Invocations in MCP-Style Tool Routing</a>  </h3>
+<p class="note"><span class="label">说明</span>ShadowBench-MCP：衡量 MCP 式工具路由中的影子调用</p><p class="summary"><span class="label">简介</span>该论文研究 LLM 智能体作为工具路由器时的一种风险：在不要求恶意操作的前提下，任务保持的请求变体可能使路由器选择更危险的执行路径，从而跳过验证、溯源、审计等安全工具。作者提出 ShadowBench-MCP 基准与指标体系，并在一个路由器的初步实验中发现，偏重效率的策略下影子调用率为 29.2%，加入策略约束后降至 4.2%。作者强调这只是单一路由器的早期证据。</p>
+<p class="authors">Eyhab Al-Masri, Wenjun Yang</p></article>
+<article class="item" id="d528504">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528504" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11701" target="_blank" rel="noopener noreferrer nofollow">Using the Planted Clique Conjecture for Cryptography: Public-Key Encryption from Planted Clique and Noisy k-mathsfLIN Over Expanders</a>  </h3>
+<p class="note"><span class="label">说明</span>利用平板团猜想实现公钥加密：基于平板团与扩展图上噪声k-LIN的方案</p><p class="summary"><span class="label">简介</span>本文提出一种公钥加密方案，在标准平板团猜想（参数为n^{log^α n}，α∈(0,1)）以及扩展图上噪声k-LIN的一个较温和的困难性猜想下，可证明抵抗多项式规模的攻击者。这两个猜想都是NP完全问题的自然平均情形变体，已研究数十年。该方案回答了Applebaum、Barak与Wigderson（STOC&#39;10）一项开创性工作中提出的一个开放问题。</p>
+<p class="authors">Riddhi Ghosal, Isaac M Hair, Aayush Jain 等</p></article>
+<article class="item" id="d564959">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Public-key cryptography</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564959" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2835" target="_blank" rel="noopener noreferrer nofollow">Multi-Hop Functional Encryption</a>  </h3>
+<p class="note"><span class="label">说明</span>多跳函数加密：在多阶段加密计算中可控地释放中间结果的新原语</p><p class="summary"><span class="label">简介</span>本文提出多跳函数加密（MHFE）这一新密码原语，用于在递归、多阶段的工作流中对加密数据进行计算，并支持可控地释放中间输出。每个计算节点拥有只能揭示该节点输出的受限密钥，计算可在可转发的加密状态上继续向下游进行。作者给出了基于模拟范式的安全性定义，并基于任意IND安全的标准函数加密，首次为所有多项式规模电路给出通用的、模拟安全的公钥MHFE构造。</p>
+<p class="authors">Pratish Datta, Jiaxin Guan, Alexis Korb 等</p></article>
+<article class="item" id="d528474">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.NI</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528474" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11627" target="_blank" rel="noopener noreferrer nofollow">Attack Injection to Vehicle Reactions: Extensible Closed-Loop Adversarial Evaluation Framework</a>  </h3>
+<p class="note"><span class="label">说明</span>攻击注入对车辆反应的影响：可扩展的闭环对抗评估框架</p><p class="summary"><span class="label">简介</span>该论文提出一个可扩展的闭环对抗评估框架，基于交通与无线网络仿真平台VaN3Twin构建，并附带标注数据集。框架包含76种可配置攻击配置，按欧洲电信标准化协会（ETSI）消息格式组织为九组攻击套件。实验表明，被篡改的消息会影响车辆运动，并可能通过后续消息间接影响其他车辆。</p>
+<p class="authors">Mohamed Gaber, Tahsin Wahid, Mohammad Mamun 等</p></article>
+<article class="item notable" id="d528469">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528469" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11618" target="_blank" rel="noopener noreferrer nofollow">Delegating Computation with Approximate Arithmetic: Interactive Proofs for Wizards</a>  </h3>
+<p class="note"><span class="label">说明</span>用近似算术委托计算：面向“巫师”的交互式证明</p><p class="summary"><span class="label">简介</span>本文研究复数域上算术电路的交互式证明，证明者与验证者都使用浮点等近似运算。目标是证明所声称的输出与精确输出接近，并把经典的GKR协议扩展到这种近似设定。作者声称这是首批证明双方都进行近似计算的、双重高效的交互式证明。</p>
+<p class="why"><span class="label label-why">看点</span>用单位根标记门并以随机单位根组合两个声明，把GKR扩展到复数近似算术；摘要报告对所有对数空间一致分层电路给出证明，并给出多项式开销。</p><p class="authors">Aritra Das, Debayan Gupta, Arup Mondal 等</p></article>
+<article class="item" id="d564962">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Public-key cryptography</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564962" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2833" target="_blank" rel="noopener noreferrer nofollow">The Closest Vector Problem on Gadget Lattices: Efficient Algorithms and Voronoi Geometry</a>  </h3>
+<p class="note"><span class="label">说明</span>门控格上的最近向量问题：高效算法与沃罗诺伊几何</p><p class="summary"><span class="label">简介</span>本文研究密码学、纠错码等领域常用的门控格（gadget lattice）上的最近向量问题（CVP），针对幂次门控格、CRT门控格及其对偶格，给出适用于任意实数目标向量的算法。作者提出针对奇偶校验幂次门控格的确定性线性时间精确求解器，并分析了现有译码器的表现。对偶格部分，文中构造了钝超基，给出多项式时间精确算法，并刻画了沃罗诺伊胞的面结构。</p>
+<p class="authors">Daniele Micciancio</p></article>
+<article class="item" id="d564963">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Implementation</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564963" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2832" target="_blank" rel="noopener noreferrer nofollow">An Agile Homomorphic Encryption and ML-KEM Scheme for Privacy-Preserving Health Data Processing</a>  </h3>
+<p class="note"><span class="label">说明</span>用于隐私保护健康数据处理的敏捷同态加密与ML-KEM方案</p><p class="summary"><span class="label">简介</span>本文提出一种敏捷密码方案，结合ML-KEM与BGV同态加密，以便在嵌入式场景中高效实现，用于在加密状态下处理健康数据。文中描述了该方案的参数选择，并通过概念验证实现展示了其可行性。</p>
+<p class="authors">Daniel RESENDE, Nadia El Mrabet, Ulrich Kühne</p></article>
+<article class="item" id="d564964">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Attacks and cryptanalysis</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564964" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2831" target="_blank" rel="noopener noreferrer nofollow">Twisted Towers: A Faster and Fully Costed SexTNFS Attack</a>  </h3>
+<p class="note"><span class="label">说明</span>扭曲塔：更快且完整计价的 SexTNFS 攻击</p><p class="summary"><span class="label">简介</span>本文研究针对 BLS12-381 目标群离散对数的特殊 exTNFS 攻击，给出一套（6,2）设计，并以统一的指令级模型为各步骤计价。设计基于显式扭曲塔结构，使关系与理想按四元组出现，从而加快计算。作者还指出 TNFS 系数立方体的产出估计会把单位倍数当作不同关系计数。文中所有估计均基于声明的启发式假设，未进行全尺寸运行，BLS12-381 的实际安全性不变。</p>
+<p class="authors">Gautam Botrel</p></article>
+<article class="item notable" id="d528452">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="5/5">★★★★★</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528452" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11571" target="_blank" rel="noopener noreferrer nofollow">Treating the Model as an Untrusted Component: Deterministic Policy Enforcement, Human Approval and Taint Tracking Against Prompt Injection in Tool-Using Agents, with Validation on Open-Weights Models</a>  </h3>
+<p class="note"><span class="label">说明</span>把模型视为不可信组件：工具调用智能体中针对提示注入的确定性策略执行、人工审批与污点追踪（含开源权重模型验证）</p><p class="summary"><span class="label">简介</span>论文研究使用工具的大语言模型智能体如何防御提示注入攻击。作者比较了提示层防护与模型外部的确定性策略监控、人工审批和污点追踪等方法，并在包含13项任务、12个工具的可执行环境中，用独立于各防御方法的效果评估器进行检验。在Qwen2.5-1.5B和Qwen2.5-7B两个开源权重模型上的真实实验显示，任务约束监控器将攻击成功率降至很低水平，但仍有局限。</p>
+<p class="why"><span class="label label-why">看点</span>将模型视为不可信组件，用确定性执行监控、人工审批与污点追踪对抗工具代理的提示注入；在两个开源模型上实测。</p><p class="authors">Mustafa S. Aljumaily, Nawar S. Alseelawi, Raghad Alshabandar</p></article>
+<article class="item" id="d564967">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564967" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2849" target="_blank" rel="noopener noreferrer nofollow">γ₁₁: Unequal Triangles and Adapted References — the macadamia 0050</a>  </h3>
+<p class="note"><span class="label">说明</span>γ₁₁：不等三角形与适配参考型——macadamia 0050</p><p class="summary"><span class="label">简介</span>本文是关于十一维 Hermite 常数系列研究的第九个 macadamia 的论文，研究的完美型 P=0050:024468269 秩为 9、行列式为 8192/9，最小值为 4。作者证明，在满足条件的格链中，若秩为 9 的成员由 P 适配标记，则 det L≥972。证明借助计算机辅助的有限检验完成，并将问题归约为一个五参数根问题。</p>
+<p class="authors">Rémi Géraud-Stewart, David Naccache</p></article>
+<article class="item" id="d564968">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564968" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2830" target="_blank" rel="noopener noreferrer nofollow">γ₁₁: One Selected Contact, Two Linked Blocks — the macadamia 0030</a>  </h3>
+<p class="note"><span class="label">说明</span>γ₁₁：一个选定的接触点与两个相连的块——macadamia 0030</p><p class="summary"><span class="label">简介</span>本文是完成 γ₁₁=4/∜972 证明的五篇配套论文之一，该结论在根论文中提出并收录于《A Focus on Hermite Constant 11》。论文考察一个在 Λ₁₀ 下的 9 维完美形式 0030:030301719，选取参考格的一个接触点，利用两个八维块共享的非对角列，应用一个行列式-迹定理，并以三个标量参数的有理覆盖完成证明。证明借助计算机完成，所有叶节点均在精确有理算术中校验。</p>
+<p class="authors">Rémi Géraud-Stewart, David Naccache</p></article>
+<article class="item" id="d564969">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564969" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2829" target="_blank" rel="noopener noreferrer nofollow">γ₁₁: Reduction by Sections — the macadamias 0019 and 0017</a>  </h3>
+<p class="note"><span class="label">说明</span>γ₁₁：截面约化——macadamias 0019 与 0017</p><p class="summary"><span class="label">简介</span>本文是系列论文中的一篇，研究第 11 维 Hermite 常数的取值 γ₁₁=4/∜972 相关问题，涉及秩为 11、10、9 的格链，其中秩 9 的格位于 4 487 813 个完美形式之一之上。本文处理其中未解决的十个 macadamias 中的两个：0019:030884313 与 0017:001746552。作者证明，对于其秩 9 成员被该形式标记的每条可接受格链，均有行列式不小于 972。方法为截面约化，并借助计算机完成有限验证。</p>
+<p class="authors">Rémi Géraud-Stewart, David Naccache</p></article>
+<article class="item notable" id="d564187">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d564187" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2828" target="_blank" rel="noopener noreferrer nofollow">γ₁₁: A Finite Spectral Relaxation — the macadamia 0008</a>  </h3>
+<p class="note"><span class="label">说明</span>γ₁₁：有限谱松弛——macadamia 0008</p><p class="summary"><span class="label">简介</span>本文研究格的一个几何常数 γ₁₁=4/¹¹√972，把问题归结为一系列秩为11、10、9的格链条件。针对其中一个编号为0008的完美形式，作者证明所有以其标记的可接受链都满足 det L≥972。证明借助计算机辅助完成，通过有限的精确算术检验排除了剩余情形。</p>
+<p class="why"><span class="label label-why">看点</span>将γ11下界归约为有限谱松弛，并用计算机辅助证明排除一个特定形式的链情形，证明依赖有理证书并在两种精确算术中重放。</p><p class="authors">Rémi Géraud-Stewart, David Naccache</p></article>
+<article class="item notable" id="d563497">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d563497" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2827" target="_blank" rel="noopener noreferrer nofollow">γ₁₁: Contact Geometry — the macadamias 0001, 0014, 0059 and 0015</a>  </h3>
+<p class="note"><span class="label">说明</span>γ₁₁ 的接触几何：宏果 0001、0014、0059 与 0015</p><p class="summary"><span class="label">简介</span>这篇论文是 γ₁₁ 系列的一部分，研究 Hermite 常数 γ₁₁ 的取值问题。作者针对四个称为宏果（macadamia）的完美形式，即 0001、0014、0059 和 0015，采用同一方法：利用形式的接触几何结构，给出行列式下界 det L ≥ 972。证明借助计算机辅助完成，所有有限检验都附有证书档案记录，比较均基于明确的有理数。</p>
+<p class="why"><span class="label label-why">看点</span>用接触几何方法解决了Hermite常数γ₁₁的四个遗留候选格，提出统一证明框架，证明依托计算机辅助验证。</p><p class="authors">Rémi Géraud-Stewart, David Naccache</p></article>
+<article class="item" id="d543230">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d543230" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2826" target="_blank" rel="noopener noreferrer nofollow">A Focus on Hermite Constant 11</a>  </h3>
+<p class="note"><span class="label">说明</span>关于第11维赫米特常数的论文：证明的汇编与证书方法</p><p class="summary"><span class="label">简介</span>本文汇编了关于第10、11、12维赫米特常数系列研究中第11维的论证。论文通过将假设中的格子归约为秩为11、10、9的截面链，并借助全局有限计算与证书验证，排除了绝大多数候选形式。文中给出了四类证书的数学内容、数据格式与检验规则，并说明了有效证书如何排除对应形式。最终得到的界为γ₁₁=4/∜972的11次方根形式，其成立依赖于所述的分类、普查与有限检验结果。</p>
+<p class="authors">Rémi Géraud-Stewart, David Naccache</p></article>
+<article class="item" id="d528438">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.LG</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528438" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11539" target="_blank" rel="noopener noreferrer nofollow">PRISM: Causal Counterfactual Minimization of Agent Tool Privileges via Information Bottleneck Role Induction</a>  </h3>
+<p class="note"><span class="label">说明</span>PRISM：基于信息瓶颈角色归纳的智能体工具权限反事实最小化</p><p class="summary"><span class="label">简介</span>本文把角色工程的对象从人类用户转向大语言模型智能体，提出PRISM方法，以应对智能体通过模型上下文协议（MCP）获得完整工具权限时出现的过度授权问题。方法在沙箱中进行结构化干预，学习判断工具对任务是否必要的反事实模型，并通过信息瓶颈将轨迹压缩为离散隐变量，再依据率失真曲线的拐点确定角色数量。在AgentDojo、τ-bench和ToolEmu三个公开基准上，每个角色的授权工具数量减少78.3%，任务成功率为78.2%，反事实必要性判断准确率为88.7%，影响范围降至15.9%。</p>
+<p class="authors">Yang Luo, Qingni Shen, Tairui Wang 等</p></article>
+<article class="item" id="d543231">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d543231" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2825" target="_blank" rel="noopener noreferrer nofollow">The Hermite Constants in Dimensions 10, 11 and 12</a>  </h3>
+<p class="note"><span class="label">说明</span>论文：第10、11、12维的赫米特常数</p><p class="summary"><span class="label">简介</span>本文介绍一组共七篇论文，旨在确立第10维与第11维赫米特常数的精确值（分别为4^10/768和4^11/972）以及第12维的值4/√3。论证依据是秩为9的完美型分类及明确列出的计算输入，分维度逐步推导。第12维的上界由Mordell不等式给出，并与Coxeter–Todd格相匹配。</p>
+<p class="authors">Rémi Géraud-Stewart, David Naccache</p></article>
+<article class="item notable" id="d528421">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528421" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11506" target="_blank" rel="noopener noreferrer nofollow">On the Relative Security of Prompt Injection: Mechanised Definitions, Defences and Verdicts for LLM Agents</a>  </h3>
+<p class="note"><span class="label">说明</span>提示注入的相对安全性：面向LLM智能体的形式化定义、防御与判定</p><p class="summary"><span class="label">简介</span>本文针对会读取不可信内容（如邮件、网页）的LLM智能体，提出以参考智能体为基准的“相对安全”概念，即智能体的每一项泄露都应是参考智能体本已存在的泄露。作者提出名为PlanTERS的框架，包含小型智能体语言、与运行时监控器的组合方式以及不同观察能力的攻击者模型。文中证明了“栅栏定理”，并在Isabelle/HOL中对带栅栏、预算、审批、循环和双LLM的智能体进行了相对安全性的证明或反驳。</p>
+<p class="why"><span class="label label-why">看点</span>提出基于相对安全性的LLM智能体提示注入形式化框架PlanTERS，并给出栅栏定理，在Isabelle/HOL中机械化证明。</p><p class="authors">Brijesh Dongol</p></article>
+<article class="item notable" id="d528414">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528414" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11498" target="_blank" rel="noopener noreferrer nofollow">EVAX: Towards a Practical, Pro-active &amp; Adaptive Architecture for High Performance &amp; Security</a>  </h3>
+<p class="note"><span class="label">说明</span>EVAX：面向高性能与安全的实用、主动、自适应处理器架构</p><p class="summary"><span class="label">简介</span>该论文提出一种端到端方案，用于防御已知的微架构攻击（如推测执行、故障注入、隐蔽信道和侧信道攻击）及其规避变体。方法是仅在检测到攻击时才启用防御，使现有防御的性能开销降低超过95%，并借助生成式框架EVAX训练机器学习检测器和设计安全性能计数器。论文报告InvisiSpec开销降至1.26%，Fencing降至3.45%，误报率约为每百万条指令4次。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于按需启用防御并用生成式框架训练检测器；摘要报告对InvisiSpec和Fencing开销大幅降低，并在多类攻击上检测。</p><p class="authors">Samira Mirbagher Ajorpaz, Daniel Moghimi, Jeffrey Neal Collins 等</p></article>
+<article class="item" id="d528406">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.LG</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528406" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11477" target="_blank" rel="noopener noreferrer nofollow">Robust and Private Swarm Learning via Zero-Knowledge Validator Admission and Consensus Aggregation</a>  </h3>
+<p class="note"><span class="label">说明</span>基于零知识验证者准入与共识聚合的鲁棒隐私群体学习</p><p class="summary"><span class="label">简介</span>该论文提出一种群体学习框架，要求验证者先通过零知识证明证明其私有数据经过正确的参考模型处理，才能加入学习任务，且不泄露原始样本。验证者随后通过类Tendermint的拜占庭容错共识，为每个提交的梯度确定掩码和基于质量的聚合权重。在多个非独立同分布基准上，该框架在干净数据下与FedAvg相当；在梯度缩放攻击下，CIFAR-100上保留了干净准确率的94%，FashionMNIST上超过99%，而FedAvg分别仅为2.1%和11%。</p>
+<p class="authors">Marco Arazzi, Mert Cihangiroglu, Antonino Nocera</p></article>
+<article class="item" id="d528397">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528397" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11455" target="_blank" rel="noopener noreferrer nofollow">Coding Agents Propagate Vulnerabilities in Code Bases</a>  </h3>
+<p class="note"><span class="label">说明</span>编程智能体会在代码库中传播漏洞</p><p class="summary"><span class="label">简介</span>本文研究基于大模型的编程智能体在已有代码中出现漏洞时，是否会在新写的代码中生成相似漏洞。作者通过96项后端实现任务和20组真实C/C++项目任务进行评估。结果显示，已有代码不安全时，智能体写出漏洞代码的比例明显升高，并会把已有漏洞当作模板沿用。</p>
+<p class="authors">Chenhao Sun, Niels M\&#34;undler-Sasahara, Mark Vero 等</p></article>
+<article class="item notable" id="d543232">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d543232" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2824" target="_blank" rel="noopener noreferrer nofollow">Incrementally Verifiable Oracle Aided Computation</a>  </h3>
+<p class="note"><span class="label">说明</span>可增量验证的预言机辅助计算：为依赖外部信息与专家判断的AI任务构建短证明</p><p class="summary"><span class="label">简介</span>本文研究可增量验证计算（IVC）方案，使证明者在每个计算步骤后能高效更新一个简短证明，而无需保留或重新计算之前的执行过程。论文在学习带误差（LWE）假设下，为依赖外部信息的预言机辅助计算构造了IVC方案，并分别针对稳健计算与带签名预言机的情形给出私有可验证或公开可验证的构造，还给出了一个下界结果。</p>
+<p class="why"><span class="label label-why">看点</span>将IVC扩展到依赖外部预言机的计算，提出鲁棒性与签名预言机两种设定下的构造，并给出下界；基于LWE假设。</p><p class="authors">Shafi Goldwasser, Yael Tauman Kalai</p></article>
+<article class="item notable" id="d528392">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.CR · cs.MM</span><time datetime="2026-11-09">2026年11月9日</time>
+<a class="permalink" href="../../../zh/go.html#d528392" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.11438" target="_blank" rel="noopener noreferrer nofollow">When Coding Agents Get Arms: Safety Risks Across the Digital-Physical Boundary</a>  </h3>
+<p class="note"><span class="label">说明</span>当编码智能体获得机械臂：数字与物理边界上的安全风险</p><p class="summary"><span class="label">简介</span>该论文提出ArmedAgent，这是首个系统性基准，用于评估让编码智能体无需示例或再训练即可零样本控制真实机械臂时的安全风险。基准涵盖鲁棒性、恶意使用和间接提示注入三类问题，共36项任务、5个场景，在仿真中评测并在物理机械臂上验证。测试多个前沿模型后，论文认为当前系统存在显著的安全风险。</p>
+<p class="why"><span class="label label-why">看点</span>首次系统评估零样本机器人控制编码代理的安全风险，覆盖恶意使用与间接注入，在仿真并于实体机械臂上验证，影响面较广。</p><p class="authors">Yiming Sun, Mi Zhang</p></article>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <section class="risk-notice" aria-labelledby="risk-title">
+      <h2 id="risk-title">风险提示与免责声明</h2>
+      <ol>
+<li>本站内容由程序从互联网上的公开来源（政府与监管机构网站、论文预印本平台、技术社区等）自动采集整理，本站不保证资料的完整性、准确性、及时性或持续可用；原始来源可能随时修改、撤回或删除。</li><li>每条的说明、简介、星级评价和看点均由人工智能自动生成，未经人工逐条审核，可能存在误译、遗漏、过时或错误；日期、比率、金额虽经程序与原文核对，仍可能有误。</li><li>一切以原文和发布机构的正式文本为准；译文和摘要仅供参考，不具有法律效力。</li><li>本站不构成任何法律、税务、会计、投资或其他专业意见，也不构成买卖任何资产（包括加密资产）的要约、招揽或推荐。作出任何决定前，请咨询具备资格的专业人士。</li><li>加密资产价格波动剧烈，可能损失全部本金；各国家和地区的监管要求不同且经常变化，相关活动在部分地区可能受限或违法。</li><li>星级只依据论文标题和摘要粗略判断，不代表对论文质量、结论正确性或作者的评价。</li><li>本站与所列政府机构、监管机构、论文作者及第三方网站均无关联；外部链接的内容由其运营者负责，相关著作权和商标权归原权利人所有。</li><li>本站按现状提供，内容可能随时更新、更正或删除而不另行通知。因使用或依赖本站信息造成的任何直接或间接损失，本站概不负责。</li>      </ol>
+    </section>
+    <p class="muted">Thank you to arXiv for use of its open access interoperability.</p>
+    <p class="muted">简介更新至 2026年11月15日 · <a href="../../../zh/sources.html">来源与覆盖</a></p>
+    <p class="muted contact">发现翻译、分类、日期或链接有误，或有其他建议，欢迎来信： <a href="mailto:contact@ditinglab.org">contact@ditinglab.org</a></p>
+  </div>
+</footer>
+</body>
+</html>

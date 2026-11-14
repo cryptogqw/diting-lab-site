@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 算法 · 2026年11月3日（周二） · 諦聽 Diting Lab</title>
+<meta name="description" content="技术论文与全球加密监管速览">
+<link rel="alternate" hreflang="zh-Hans" href="../../../zh/papers/ai/2026-11-03-3.html">
+<link rel="alternate" hreflang="ja" href="../../../ja/papers/ai/2026-11-03-3.html">
+<link rel="alternate" hreflang="en" href="../../../en/papers/ai/2026-11-03-3.html">
+<link rel="alternate" hreflang="x-default" href="../../../index.html">
+<link rel="alternate" type="application/atom+xml" title="AI 算法 · 2026年11月3日（周二） · 諦聽 Diting Lab" href="../../../zh/papers/ai/feed.xml"><link rel="icon" href="../../../assets/brand/favicon-32.png?v=8f6b178017" type="image/png" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.svg?v=8f6b178017" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/brand/apple-touch-icon.png?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/style.css?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/fonts/fonts.css?v=8f6b178017"><link rel="stylesheet" href="../../../assets/themes/nightcity.css?v=8f6b178017"><script src="../../../assets/site.js?v=8f6b178017" defer></script>
+</head>
+<body class="theme-nightcity">
+<header class="site-header">
+  <div class="wrap header-grid">
+    <a class="brand" href="../../../zh/index.html">
+      <img class="brand-logo" src="../../../assets/brand/logo.svg?v=8f6b178017" alt="諦聽 Diting Lab" width="149" height="40">
+    </a>
+    <nav class="main-nav">
+      <a href="../../../zh/index.html">首页</a>
+      <a href="../../../zh/papers/index.html" aria-current="page">论文</a>
+      <a href="../../../zh/laws/index.html">法规与监管</a>
+      <a href="../../../zh/about.html">关于</a>
+    </nav>
+    <nav class="lang-switch" aria-label="选择语言">
+      <a href="../../../zh/papers/ai/2026-11-03-3.html" data-lang="zh" lang="zh-Hans" aria-current="true">中文</a>
+      <a href="../../../ja/papers/ai/2026-11-03-3.html" data-lang="ja" lang="ja">日本語</a>
+      <a href="../../../en/papers/ai/2026-11-03-3.html" data-lang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="stale-note" hidden data-src="../../../assets/built.json">本站已超过 12 小时没有更新（正常每 3 小时更新一次），下面的内容可能不是最新的。</p><div class="page-head">
+  <h1 class="page-title">AI 算法 · 2026年11月3日（周二）</h1>
+<p class="lede">机器学习、人工智能、自然语言处理、计算机视觉、多智能体。</p><a class="feed-link" href="../../../zh/papers/ai/feed.xml">RSS 订阅</a></div>
+<div class="layout">
+  <aside class="side">
+    <nav class="chips">
+      <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">194</span></a>
+      <a href="../../../zh/papers/cryptography/index.html"><span>密码学与安全</span> <span class="count">2391</span></a>
+      <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">3530</span></a>
+      <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">305</span></a>
+      <a href="../../../zh/papers/ai/index.html" aria-current="page"><span>AI 算法</span> <span class="count">23129</span></a>
+      <a href="../../../zh/papers/other/index.html"><span>其它计算机科学</span> <span class="count">1422</span></a>
+      <a href="../../../zh/papers/community/index.html"><span>技术社区讨论</span> <span class="count">90</span></a>
+    </nav>
+  </aside>
+  <div class="content">
+    <div class="filter-row">
+      <input class="filter" type="search" placeholder="筛选下方条目…" aria-label="筛选下方条目…">
+<label class="only-toggle"><input type="checkbox" data-only="notable"> 只看值得关注（4 星以上）</label>    </div>
+    <p class="alias-hint muted" hidden data-text="同时匹配：{terms}"></p>
+    <p class="filter-count muted" hidden data-text="本页匹配 {n} 条"></p>
+    <p class="filter-empty muted" hidden>本页没有符合条件的条目（筛选只在本页内进行）。 <button type="button" class="filter-clear">清除筛选</button></p>
+    <section class="day">
+<article class="item" id="d437041">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437041" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04376" target="_blank" rel="noopener noreferrer nofollow">Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs</a>  </h3>
+<p class="note"><span class="label">说明</span>让MoE大模型端到端FP4强化学习的训练与推理策略对齐</p><p class="summary"><span class="label">简介</span>本文研究混合专家（MoE）大语言模型的端到端FP4强化学习后训练。作者发现，适用于稠密模型的FP4恢复方法在MoE场景下并不比朴素FP4基线更好，并分析原因在于路由器的离散专家选择使训练与推理策略对齐对恢复技术是否对称应用高度敏感。基于此，作者提出MoeResQ，在训练端和推理端实施对称的量化恢复修正，恢复了训练与推理的对齐，并显著缩小了与全精度的精度差距。</p>
+<p class="authors">Hei Yi Mak, Hoang Le, Mehran Taghian Jazi 等</p></article>
+<article class="item" id="d437040">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437040" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04374" target="_blank" rel="noopener noreferrer nofollow">IGSW: Multi-Weather Urban Scene Reconstruction with Intrinsic-Decoupled Gaussian Splatting</a>  </h3>
+<p class="note"><span class="label">说明</span>IGSW：基于本征解耦高斯泼溅的多天气城市场景重建</p><p class="summary"><span class="label">简介</span>该论文提出IGSW框架，用于自动驾驶所需的4D场景多天气编辑与重建。方法分两阶段：先将背景高斯外观分解为跨天气共享的反照率与法线，以及天气相关的辐照度与残差；再通过结构保持门控抑制不可靠的教师图像区域，并以逐高斯的天气迁移变量增强目标天气外观。在nuScenes和Waymo上的实验显示，该方法在内容相似度、语义一致性和时间误差方面表现较优，同时保留了明显的天气相关光照与大气效果。</p>
+<p class="authors">Zhongquan Wang, Long Cao, Peijia Xie 等</p></article>
+<article class="item" id="d437039">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437039" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04371" target="_blank" rel="noopener noreferrer nofollow">Embodied AI for Scientific Discovery: From Physical Action to Scientific Evidence</a>  </h3>
+<p class="note"><span class="label">说明</span>面向科学发现的具身人工智能：从物理动作到科学证据</p><p class="summary"><span class="label">简介</span>该综述探讨机器人学习与科学人工智能如何融合，使学习系统通过物理接口选择、执行和解释科学实验。论文把实验视为部分可观测的过程，并围绕操作、认知和证据三层闭合组织文献。文中还对28个工作流进行证据映射，并提出区分动作、有效实验、实验活动和已确认结论的评估方法。</p>
+<p class="authors">Wenhao Xu, Changwei Wang, Shunpeng Chen 等</p></article>
+<article class="item" id="d437038">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.MA</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437038" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04370" target="_blank" rel="noopener noreferrer nofollow">Distributed Marginal Return: A Communication-Efficient Algorithm for Multi-Agent Weapon Target Assignment</a>  </h3>
+<p class="note"><span class="label">说明</span>分布式边际收益：一种面向多智能体武器目标分配的高通信效率算法</p><p class="summary"><span class="label">简介</span>该论文针对分布式多智能体系统中的武器目标分配问题，提出分布式边际收益（DMR）算法，将拍卖-共识框架加以推广。DMR让智能体依据边际收益计算出价，并通过共识协议解决冲突，使多个互不冲突的提案可并行接受，以较少通信实现协同优化。论文证明了互不冲突出价的边际收益具有可加性，并称仿真表明该算法在解的质量和通信效率上均优于基线算法。</p>
+<p class="authors">Kamal Mammadov, Glen Pearce, Helen Krause 等</p></article>
+<article class="item" id="d437037">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437037" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04369" target="_blank" rel="noopener noreferrer nofollow">Benchmarking Unsupervised Jamming Detection in 5G Open RAN</a>  </h3>
+<p class="note"><span class="label">说明</span>5G开放无线接入网中无监督干扰检测的基准测试</p><p class="summary"><span class="label">简介</span>本文比较了用于5G网络干扰检测的无监督方法。研究在十个不同的5G环境中，使用关键性能指标遥测数据，对统计集成方法（SEM）与Vanilla、LSTM和VAE等自编码器基线进行评估。结果显示，SEM在各环境中的综合评分与F1分数排名一致，但当检测器标记的样本远少于干扰实际占比时，排名的可靠性会下降。</p>
+<p class="authors">Sneihil Gopal, Fernando J. Cintron, and Richard A. Rouil</p></article>
+<article class="item" id="d437036">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437036" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04368" target="_blank" rel="noopener noreferrer nofollow">RAFT: Reasoning-Aligned Fine-Tuning Improves Robustness of VLA Post-Training</a>  </h3>
+<p class="note"><span class="label">说明</span>RAFT：推理对齐微调，提升视觉-语言-动作模型后训练的鲁棒性</p><p class="summary"><span class="label">简介</span>论文提出推理对齐微调（RAFT），这是一种两阶段的后训练方法：先在任务相关的推理标注上训练低秩适配器，再冻结适配器，在动作示范数据上微调策略。在实体DROID机器人上，RAFT在分布外场景的成功率为75.0%，普通微调为27.9%；在多阶段双臂YAM任务上平均成功率为70.0%。在仿真的抓取放置与开抽屉任务中，RAFT在视觉、物体和指令变化下的成功率也有所提高。</p>
+<p class="authors">Shresth Grover, Andrey Kolobov, Dhruv Shah</p></article>
+<article class="item" id="d437034">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437034" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04358" target="_blank" rel="noopener noreferrer nofollow">EndoS3:Endoscopic Semantic Splatting SLAM</a>  </h3>
+<p class="note"><span class="label">说明</span>EndoS3：内窥镜语义高斯溅射SLAM（同时定位、建图与语义理解的方法）</p><p class="summary"><span class="label">简介</span>该论文提出EndoS3，一种基于高斯溅射的语义SLAM框架，利用实例掩码同时完成相机位姿跟踪、可形变重建和语义建图。方法包括区分静态与动态实例的运动分解模块，以及按实例大小和非刚性程度分配控制节点的模块。论文还发布了带RGB-D帧、相机位姿和实例标注的离体胆囊切除数据集CRCD++。结果显示，EndoS3在CRCD++和SemSup数据集上的跟踪、重建和语义建图表现优于现有方法。</p>
+<p class="authors">Mona Sheikh Zeinoddin, Benjamin Wright, Zafer Tandogdu 等</p></article>
+<article class="item" id="d437032">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">eess.SY · cs.AI · cs.SY</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437032" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04354" target="_blank" rel="noopener noreferrer nofollow">Large Language Models for Forecasting of Electricity Price Spikes</a>  </h3>
+<p class="note"><span class="label">说明</span>用大语言模型读取市场通知，预测电价尖峰</p><p class="summary"><span class="label">简介</span>本文研究大语言模型能否通过阅读澳大利亚国家电力市场的通知，改进短时段电价尖峰预测。研究覆盖该市场的五个地区，模型提取通知特征后用梯度提升模型输出尖峰概率。在2022年7月至2024年7月的开发回测中，通知特征未能降低60分钟预测的Brier分数；在24小时尺度上有改善，但基于规则的特征效果几乎相同，无法将改善归因于通知内容。在2026年8月至10月的留出检验中，60分钟和24小时的假设均未得到证实，结论不确定。</p>
+<p class="authors">Liang Lin, Jianguo Zhu, Gang Lei 等</p></article>
+<article class="item" id="d437031">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.RO</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437031" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04352" target="_blank" rel="noopener noreferrer nofollow">ReSMap: Recasting Satellite Priors for Robust and Accurate Online HD Map Construction</a>  </h3>
+<p class="note"><span class="label">说明</span>ReSMap：利用卫星先验构建稳健、准确的在线高精地图</p><p class="summary"><span class="label">简介</span>该论文提出ReSMap框架，将车载摄像头与卫星图像融合，用于在线构建高精地图。卫星图像可离线缓存，不依赖实时传感器，因此在摄像头故障时可作为冗余信息。框架通过预测后融合模块和对象中心的多模态查询解码器实现融合。论文称其在nuScenes各划分和范围设置下达到当前最优性能，在摄像头故障场景下同样达到最优。</p>
+<p class="authors">Kyungmin Kim, Sumin Lee, Sungoh Jeong 等</p></article>
+<article class="item" id="d437030">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437030" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04349" target="_blank" rel="noopener noreferrer nofollow">Sparse Internal Control of Language Models</a>  </h3>
+<p class="note"><span class="label">说明</span>语言模型的稀疏内部控制：通过少量内部节点引导模型行为</p><p class="summary"><span class="label">简介</span>本文提出稀疏内部控制框架，在推理时对语言模型的少量内部节点施加干预，以引导目标行为。作者设计了两种节点选择方法（Driver-OMP 与 Coverage-Driver），并提出包含六个维度的控制评估方案。在间接宾语识别、MMLU 选择题、情感引导和拒答引导等任务上的探索性实验，展示了通过稀疏内部干预引导任务相关行为的可行性。</p>
+<p class="authors">Xizhe Zhang</p></article>
+<article class="item" id="d437029">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.MA</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437029" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04348" target="_blank" rel="noopener noreferrer nofollow">When Is Fresh AI Stock Analysis Worth It? Allocating a Limited Research Budget Across Price Updates, Deep Forecast Refreshes, and Editorial Reviews of Top Stock Picks</a>  </h3>
+<p class="note"><span class="label">说明</span>何时值得重新做AI股票分析：在价格更新、深度预测刷新与头部个股编辑审核之间分配有限研究预算</p><p class="summary"><span class="label">简介</span>该论文比较了四种AI股票研究更新方式：仅更新价格、加入价格冲击保护的目标复用、机械重置旧预测增长路径，以及生成全新的多智能体报告。作者基于203只股票的8,120份报告，在模拟10万美元账户、计入交易成本和计算费用后，以Top 10组合评估各方法：短期内受保护复用的平均收益高于标普500ETF（SPY），全新报告表现最好；但将持有期延长至近六个月时结果反转。</p>
+<p class="authors">Russlan Ramdowar</p></article>
+<article class="item notable" id="d437028">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · stat.ML</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437028" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04344" target="_blank" rel="noopener noreferrer nofollow">Proper Agnostic Learning of Affine Halfspaces under Log-Concave Marginals</a>  </h3>
+<p class="note"><span class="label">说明</span>对数凹边缘分布下仿射半空间的适当不可知学习</p><p class="summary"><span class="label">简介</span>本文针对全维对数凹边缘分布下的仿射半空间，提出一种适当的常数因子不可知学习算法。算法使用独立的带标签样本，对任意二元标签返回一个仿射半空间，其误差至多为 C·OPT+ε。样本与实数运算复杂度关于维度、精度倒数和失败概率倒数的对数呈多项式关系。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于给出对数凹边缘分布下真正（proper）的常数因子不可知学习器，并以全局与平衡限制分歧比较作为核心几何结果，证明给出紧的多项式复杂度界。</p><p class="authors">Zhijie Zheng</p></article>
+<article class="item" id="d437027">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437027" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04342" target="_blank" rel="noopener noreferrer nofollow">Beyond Fine-Tuning: Evaluating Prompt Engineering and Prompt Tuning for Roman Urdu Hate Speech Detection</a>  </h3>
+<p class="note"><span class="label">说明</span>超越微调：评估提示工程与提示调优在罗马乌尔都语仇恨言论检测中的效果</p><p class="summary"><span class="label">简介</span>该论文针对罗马乌尔都语这一低资源语言的仇恨言论检测，系统比较了提示工程与提示调优两类方法。研究在约72,771条社交媒体评论的PURUT数据集上，使用GPT-3.5、LLaMA-3、Mistral-7B和多语言BERT进行实验。结果显示，少样本提示始终优于零样本提示，混合提示配置的F1分数最高可达0.87。</p>
+<p class="authors">Toneema Zubair, Muhammad Junaid Asif, Faisal Kamiran 等</p></article>
+<article class="item" id="d437026">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.IT · math.IT · stat.ML</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437026" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04341" target="_blank" rel="noopener noreferrer nofollow">Pairwise Distortion Distribution with Graph-Based Importance Sampling for Quantization Error and Intrinsic Dimension Estimation</a>  </h3>
+<p class="note"><span class="label">说明</span>基于图的重要性采样与成对失真分布，用于量化误差与内在维度估计</p><p class="summary"><span class="label">简介</span>本文研究如何估计数据的内在维度，这一维度决定数据在压缩、量化等任务中的实际表现。作者扩展了已有的成对失真分布方法，给出随机码本量化失真的上界，并用基于图的自适应重要性采样提高上下界的可计算性。基于这些界，文中定义了新的内在维度概念，可从未知数据源中经验估计，并通过若干人工和实际分布进行说明。</p>
+<p class="authors">Xi Chen, Carl Nuzman, Shirin Jalali</p></article>
+<article class="item" id="d437025">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.SE</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437025" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04338" target="_blank" rel="noopener noreferrer nofollow">Patching the Protocol: A Taxonomy of Pre-Registration Repairs in LLM-Proposer Experiments</a>  </h3>
+<p class="note"><span class="label">说明</span>修补协议：LLM提议者实验中预注册修复的分类</p><p class="summary"><span class="label">简介</span>本文研究在涉及大语言模型生成内容的机器学习实验中，预注册协议在执行时需要修补的情况。作者以三个案例为例，每个协议各发生一次缺陷修复，并据此提出按缺陷类别与时间点划分的分类框架及一份九项检查清单。文章认为，此类研究的可信度更取决于修补是否可审计，而非是否发生修补。</p>
+<p class="authors">Peter Chen, Ni Zhang, Siyuan Zhang</p></article>
+<article class="item" id="d437024">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437024" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04337" target="_blank" rel="noopener noreferrer nofollow">Mitigating Spatial Blindness in Multiple Instance Learning for Whole-Slide Image Analysis</a>  </h3>
+<p class="note"><span class="label">说明</span>缓解全切片图像分析多示例学习中的空间盲区</p><p class="summary"><span class="label">简介</span>该论文针对全切片图像的多示例学习，指出模型常只利用组织成分而很少利用空间结构，即“空间盲区”。作者提出ResTopoMIL：先冻结已学好的成分预测器，再训练带坐标重分配分离损失的图残差模块。在受控空间任务上，分阶段训练的AUC为0.987，同一架构联合训练仅为0.684；在四个分类和五个生存基准上，其中八项任务的主要指标均值有所提升。</p>
+<p class="authors">Xiangyu Li, Jincheng Li, Xing Xie 等</p></article>
+<article class="item" id="d437022">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437022" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04330" target="_blank" rel="noopener noreferrer nofollow">CORA: Teacher-Guided Causal O-RAN Adaptation for Jamming Detection</a>  </h3>
+<p class="note"><span class="label">说明</span>CORA：面向干扰检测的教师引导因果O-RAN自适应方法</p><p class="summary"><span class="label">简介</span>该论文提出CORA框架，用强化学习把回溯式检测器的信息迁移给因果式检测器，训练和部署都不需要标签。部署时去掉教师，冻结的控制器以因果方式运行。在十种5G O-RAN测试平台配置上，PPO控制器将平均召回率从0.687提高到0.771，DQN误报减少61%，同时取得与最佳静态配置相当的F2分数。</p>
+<p class="authors">Sneihil Gopal, Richard A. Rouil</p></article>
+<article class="item" id="d437021">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437021" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04327" target="_blank" rel="noopener noreferrer nofollow">Anchor: Augmented Cross-Layer Recurrent State for Long-Context Retrieval in Test-Time Training</a>  </h3>
+<p class="note"><span class="label">说明</span>Anchor：用于测试时训练中长上下文检索的跨层增强循环状态</p><p class="summary"><span class="label">简介</span>该论文研究把预训练 Transformer 线性化为滑窗注意力与固定大小循环记忆的混合模型。作者发现检索能力集中在少数锚定层，其余层的状态信息相似，据此提出 Anchor 方法：仅在锚定层放置 TTT 记忆，并让跨层循环状态被多层读取。在 Llama-3.1-8B 和 Mistral-7B 上，Anchor 的召回率和 MMLU 准确率均优于 LoLCATs，同时保留教师模型 91%–95% 的 MMLU 准确率，端到端延迟最多降低 4.3 倍。</p>
+<p class="authors">Vimal William, Yuanzhe Li, Danella Zhao 等</p></article>
+<article class="item" id="d527290">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d527290" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.09993" target="_blank" rel="noopener noreferrer nofollow">Retrieval-Grounded Multi-View Reasoning for Clinically Reliable Radiology Report Generation</a>  </h3>
+<p class="note"><span class="label">说明</span>基于检索证据的多视角推理，用于临床可靠的胸片报告生成</p><p class="summary"><span class="label">简介</span>该论文针对胸片报告自动生成中检索到的相似报告与当前影像临床不一致、诊断标签不平衡的问题，提出RG-MVR框架，结合检索证据接地、自适应多视角证据推理和临床提示学习。在MIMIC-CXR数据集上临床标签F1为0.483，BLEU-4为0.118；在22例外部探索性队列中临床标签一致性明显下降（F1为0.071），但医生认为其无依据的时间比较和设备相关表述少于基线模型，作者认为仍需更广泛的外部验证。</p>
+<p class="authors">Wanshu Fan, Zeyu Wang, Zheng Tong 等</p></article>
+<article class="item" id="d437020">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437020" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04323" target="_blank" rel="noopener noreferrer nofollow">FP4Quant: Efficient 4-Bit Communication Compression for Model-Parallel LLM Training</a>  </h3>
+<p class="note"><span class="label">说明</span>FP4Quant：面向模型并行大语言模型训练的高效4位通信压缩</p><p class="summary"><span class="label">简介</span>这篇论文提出FP4Quant框架，用于压缩大语言模型模型并行训练中的通信数据，将其降至4位浮点（FP4）格式。框架包括微分组双尺度FP4量化、线程束协作的子字节打包，以及用于减小量化误差的两级FWHT流程。在NVIDIA H100 GPU上以Qwen-7B进行的实验显示，相比BF16端到端吞吐量最高提升1.56倍，并呈现吞吐量与模型质量之间的权衡。</p>
+<p class="authors">Man Liu, Xingchen Liu, Hairui Zhao 等</p></article>
+<article class="item" id="d437019">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.MA</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437019" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04321" target="_blank" rel="noopener noreferrer nofollow">ATC: Agent Trajectory Control for Role-Contract Enforcement in Black-Box Multi-Agent Systems</a>  </h3>
+<p class="note"><span class="label">说明</span>ATC：黑箱多智能体系统中用于角色契约执行的智能体轨迹控制</p><p class="summary"><span class="label">简介</span>论文指出，多智能体大模型系统中，智能体可能在多轮对话中越出自身角色，例如验证者开始做规划。作者将这种行为形式化为角色漂移，并提出智能体轨迹控制（ATC）方法，把每个角色的职权写成契约，在消息进入共享对话前进行检查和约束。该方法作用于消息而非生成器，因此适用于内部表示不可获取的智能体，实验显示其在任务表现和角色一致性上优于多个基线。</p>
+<p class="authors">Maisha Maliha, Vishal Pramanik, Sumit Kumar Jha</p></article>
+<article class="item" id="d437018">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.SE</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437018" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04320" target="_blank" rel="noopener noreferrer nofollow">Planning-Coding Separation in LLM-Based Code Generation: An Empirical Study</a>  </h3>
+<p class="note"><span class="label">说明</span>基于大语言模型的代码生成中规划与编码的分离：一项实证研究</p><p class="summary"><span class="label">简介</span>这篇论文研究在基于大语言模型的代码生成中，规划和编码由不同模型分别承担时的表现。作者尝试了多种规划模型与编码模型的组合，并考察了对编码模型进一步训练的影响。结果显示，多数组合与同一模型兼任两项工作的效果相当，较强的规划者搭配较强的编码者通常效果更好。</p>
+<p class="authors">Wentao Wang, Zeyu Sun, Ruwei Pan 等</p></article>
+<article class="item" id="d437017">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.DB · cs.CL</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437017" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04318" target="_blank" rel="noopener noreferrer nofollow">Text-to-SQL Models Make Choices Without Saying So</a>  </h3>
+<p class="note"><span class="label">说明</span>文本转SQL模型在未说明的情况下做出计算选择</p><p class="summary"><span class="label">简介</span>文本转SQL系统可能在用户请求留有计算口径选择（如统计行数还是去重实体）时，自行决定而不加说明，从而返回看似合理却与分析者意图不符的结果。论文提出SpecBridge，通过只改变这一选择来构造三组请求并运行答案进行评估。在204个经人工验证的测试中，模型在被明确要求时通常能算出各种解释，但面对开放请求时，只有15%至58%的可行测试能同时给出两种结果，且常不提及该选择。作者还提出先判断请求是否存在开放选择、再对每种解释分别作答的方法，据称可在不换用更强模型的情况下提升覆盖率。</p>
+<p class="authors">Yichen Xu, Shipei Lin, Chenhao Ma</p></article>
+<article class="item" id="d437016">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437016" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04317" target="_blank" rel="noopener noreferrer nofollow">SteelHuman: Predicting Operator Estimates of Steel-Scrap Composition from Sparse RGB Views</a>  </h3>
+<p class="note"><span class="label">说明</span>SteelHuman：从稀疏RGB视角预测操作员估计的废钢成分</p><p class="summary"><span class="label">简介</span>该研究提出一种利用手持相机从多个稀疏视角拍摄废钢堆图像、以冻结的DINOv2特征聚合来预测废钢成分的方法，用以替代依赖人工判断的耗时评估。在600个堆料上，其预测与操作员估计的总变差距离为13.4%；其中重熔废钢（HMS）各厚度类别间的分配误差较大，引入依赖图像的分配后可将HMS内部误差从25.1%降至11.2%。该特征在公开的DOES数据集上的分类准确率达93.97%。</p>
+<p class="authors">Jovan Kamchev, Zoran Ivanovski</p></article>
+<article class="item" id="d437015">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.MA</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437015" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04315" target="_blank" rel="noopener noreferrer nofollow">Drift No More: Spectral Locking for Long-Horizon Open-Weight Multi-Agent AI</a>  </h3>
+<p class="note"><span class="label">说明</span>《Drift No More》：面向长时程开源权重多智能体AI的谱锁定方法</p><p class="summary"><span class="label">简介</span>该论文针对长时程多智能体系统中的任务漂移、角色漂移和状态过时问题，提出一种无需训练的干预方法ATLAS。它在生成词元之前直接调整隐藏状态，使其朝向任务、角色与共享状态共同的高一致性特征方向。在多项长时程测试中，ATLAS的表现优于提示、检索、记忆和激活引导等基线方法。</p>
+<p class="authors">Vishal Pramanik, Maisha Maliha, Susmit Jha 等</p></article>
+<article class="item" id="d437014">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI · cs.CL</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437014" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04313" target="_blank" rel="noopener noreferrer nofollow">Coarse Semantic Blocks for Efficient Training-Free Sparse Attention</a>  </h3>
+<p class="note"><span class="label">说明</span>用于高效免训练稀疏注意力的粗粒度语义块</p><p class="summary"><span class="label">简介</span>本文提出一种免训练的稀疏注意力方法，为每个提示构建键索引，以加速预填充和解码。方法将键聚类为大型语义块，每个查询通过为块中心打分来选择块，并只关注其中的原始键和值。选择相同块的查询会一起处理，因此预填充仍然较快。在 NVIDIA H200 上评估两个混合大模型，计入索引构建与使用成本，512K 词元时整模型相比稠密注意力预填充加速 2.3 至 2.4 倍、解码加速 1.7 至 2.0 倍。</p>
+<p class="authors">Sosuke Kobayashi, Shoichiro Yamaguchi, Seiya Tokui</p></article>
+<article class="item notable" id="d437012">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d437012" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04309" target="_blank" rel="noopener noreferrer nofollow">What Is the Influence of Task Order in Continual Learning? An Empirical Study and Order-Aware Evaluation for Motion Forecasting</a>  </h3>
+<p class="note"><span class="label">说明</span>持续学习中任务顺序有什么影响？运动预测的实证研究与顺序感知评估</p><p class="summary"><span class="label">简介</span>本文研究持续学习中任务顺序的影响，以 INTERACTION 数据集的四个道路布局任务为例进行运动预测实验，覆盖全部 24 种任务顺序、四种算法和三次训练重复。结果显示，任务顺序占当前任务误差和反向迁移变化的 65% 至 91%，其中绝大部分来自起始任务的身份。作者建议基准测试应声明其顺序分布，并同时报告按顺序、按起始任务和最终误差等指标。</p>
+<p class="why"><span class="label label-why">看点</span>提出以声明的任务顺序分布评估持续学习算法，并以288次运行量化顺序效应，揭示起始任务的主导作用。</p><p class="authors">Zirui Li, Yunlong Lin, Haohan Yang 等</p></article>
+<article class="item" id="d437011">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.ML · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437011" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04307" target="_blank" rel="noopener noreferrer nofollow">Nearly Linear-Time Follow-the-Perturbed-Leader for Weakly Observable Graph Bandits</a>  </h3>
+<p class="note"><span class="label">说明</span>在弱可观测图赌博机问题上实现近线性时间的扰动领导者跟随算法</p><p class="summary"><span class="label">简介</span>本文研究带有有向弱可观测反馈图的在线学习问题，提出一种扰动领导者跟随（FTPL）策略。该策略同时保证对抗与随机两种环境下的最优性，且期望时间复杂度接近线性。作者设计了基于图的新型损失估计器，结合强制探索、条件几何重采样和带代理概率的自适应学习率。</p>
+<p class="authors">Jongyeong Lee, Hyundam Yoo</p></article>
+<article class="item" id="d437010">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437010" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04305" target="_blank" rel="noopener noreferrer nofollow">Weather Adaptive Autonomous Driving</a>  </h3>
+<p class="note"><span class="label">说明</span>天气自适应的自动驾驶目标检测阈值校准</p><p class="summary"><span class="label">简介</span>论文研究雨、雾、雪、沙尘等恶劣天气下，冻结的摄像头目标检测器应如何选择置信度阈值，以平衡漏检与误报。作者以SeqCRC的保形风险控制校准为基线，在每种天气条件下分别校准阈值，使漏检比例控制在预设范围内。作者还提出一个可校准的权衡参数λ，用于选择期望代价最优的决策规则。</p>
+<p class="authors">Nicholas Taylor, Alexander Picon, Sudip Dhakal</p></article>
+<article class="item" id="d437009">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437009" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04303" target="_blank" rel="noopener noreferrer nofollow">FlowTranslator: Training-Free In-Image Machine Translation with Flow-Based Editing</a>  </h3>
+<p class="note"><span class="label">说明</span>FlowTranslator：基于流匹配编辑的免训练图内机器翻译</p><p class="summary"><span class="label">简介</span>图内机器翻译是把图片中的文字替换成译文，同时保留周围视觉内容。本文提出免训练框架FlowTranslator，先用OCR模型和大语言模型生成翻译提示，再注入基于文生图扩散模型的流程中，并引入区域耦合释放与耦合扩展两种轨迹控制以提升译文生成的准确性与自然度。在EasyOCR回读评测中，其平均PRIM BLEU和COMET分别为20.6和57.2，优于训练式基线UniTranslator；在整图ScenePair照片译为中文的任务上，精确匹配准确率为40.1%。</p>
+<p class="authors">Zhixian Li, Xingsong Ye, Yongkun Du 等</p></article>
+<article class="item" id="d437008">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.IR</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437008" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04301" target="_blank" rel="noopener noreferrer nofollow">OSGR: Observation-Support Graph Reasoning for Earth Observation Question Answering</a>  </h3>
+<p class="note"><span class="label">说明</span>OSGR：面向对地观测问答的观测支持图推理方法</p><p class="summary"><span class="label">简介</span>该论文提出OSGR框架，用于回答对地观测档案上的地理查询。它把检索与推导问题拆成离线的符号概念推演和在线的关系条件化定位两个阶段，借助观测支持图找出有效的支持路径，并用时空兼容核实例化具体观测条目。在Earth-Bench和DisasterM3-Reason上，GPT-4o的准确率从49.3%提升到63.7%，执行步骤比率从2.9降至2.5。</p>
+<p class="authors">Dazhou Yu, Zerong Wang, Riyang Bao 等</p></article>
+<article class="item" id="d437007">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437007" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04300" target="_blank" rel="noopener noreferrer nofollow">CLOCs-R: Radar-Assisted Camera-LiDAR Fusion for Long-Range Object Detection</a>  </h3>
+<p class="note"><span class="label">说明</span>CLOCs-R：用雷达辅助相机与激光雷达融合进行远距离目标检测</p><p class="summary"><span class="label">简介</span>该论文针对自动驾驶中远距离三维目标检测的难题，在CLOCs候选框融合框架上加入雷达信息，对相机与激光雷达的候选结果重新打分。在aiMotive数据集的白天晴朗子集上，雷达在30至50米段提升了鸟瞰图平均精度（0.857提升至0.870）；超过50米后提升很小，与仅使用激光雷达的SECOND基线在统计上持平。</p>
+<p class="authors">Richard Beuck, John Nguyen, Sudip Dhakal</p></article>
+<article class="item" id="d437005">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.HC · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437005" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04296" target="_blank" rel="noopener noreferrer nofollow">SEAM: Situated Executable Associative Memory for a Co-located Community</a>  </h3>
+<p class="note"><span class="label">说明</span>SEAM：面向同地社区的情境化可执行联想记忆系统</p><p class="summary"><span class="label">简介</span>这篇论文提出了一个名为SEAM的社交应用原型，用于构建社区共享记忆。成员发布任意时刻的内容，系统分析片段之间的关联，提炼群体知识，并以情境化、联想式的方式回复。部分记忆可作为指令改变系统行为，让成员能够对其编程。研究者在一个同地社区中让46人进行为期两周的开放式使用，并随后与14人举办了后续工作坊。</p>
+<p class="authors">Keru Wang, Michael Xu, Ken Perlin 等</p></article>
+<article class="item" id="d437004">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437004" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04295" target="_blank" rel="noopener noreferrer nofollow">Reciprocity Can Erase Direction:tructural Boundaries and Controlled Utility of Magnetic Graph Networks</a>  </h3>
+<p class="note"><span class="label">说明</span>互惠性可能抹去方向：磁性图网络的结构边界与可控效用</p><p class="summary"><span class="label">简介</span>本文研究磁性图网络中相位编码方向信息时，学习到的图结构可能在预测前抹去方向机制的问题。作者在基于支持集的磁性拉普拉斯算子上给出精确恒等式与结构界限，并构造方向相反但节点特征和对称幅度相同的配对传播示例，证明方向抹除表示只能达到机会水平。合成实验表明，相位在单向环上可完美区分方向，而在互惠环和完全支持集上则失效，但该结果仅属于机制测试，并不代表临床方向学习能力。</p>
+<p class="authors">Dawei Han, Zicheng Wang, Yaoxing Ren 等</p></article>
+<article class="item notable" id="d437003">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.ML · cs.LG · math.OC</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437003" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04292" target="_blank" rel="noopener noreferrer nofollow">How Risky Is Your Data-Driven Policy?</a>  </h3>
+<p class="note"><span class="label">说明</span>你的数据驱动策略风险有多大？</p><p class="summary"><span class="label">简介</span>本文研究数据驱动策略的风险，以训练样本、策略随机化与未来结果上损失的条件风险价值（CVaR）来衡量。与知晓真实分布的预言机相比，遗憾可分解为样本后遗憾和样本风险溢价两部分。文中给出溢价何时消失、相对样本后遗憾有多大的条件，并给出样本平均近似方法在两种情形下的收敛速率。有限样本数值例子显示，溢价约占遗憾的74%至97%。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于将数据驱动策略的遗憾分解为事后遗憾与样本风险溢价，并刻画溢价何时消失及相对大小；作者报告了理论界限与有限样本数值例子。</p><p class="authors">Omar Besbes, Alon Rieger</p></article>
+<article class="item" id="d437000">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">q-bio.BM · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d437000" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04287" target="_blank" rel="noopener noreferrer nofollow">Predicting protein structures at any folding stage from sequence</a>  </h3>
+<p class="note"><span class="label">说明</span>从序列预测蛋白质处于任意折叠阶段的结构</p><p class="summary"><span class="label">简介</span>本文提出FoldScape，一种以序列为条件的深度学习框架，可在指定折叠比例Q下生成Cα构象系综。模型通过分层滑窗回归残基间一维距离并结合整流流解码器重建三维链结构，训练数据来自粗粒化折叠轨迹和全原子机械拉伸展开轨迹。在20个人类蛋白上，FoldScape覆盖的折叠坐标范围约为种子变化的AlphaFold 3系综的十倍，而AlphaFold 3更擅长刻画天然态附近结构，两者互补。</p>
+<p class="authors">Lisheng Zhang, Qingsong Li, Zinan Xie 等</p></article>
+<article class="item" id="d436999">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436999" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04286" target="_blank" rel="noopener noreferrer nofollow">GroundSeek-CXR: Retrospective Evaluation-Guided Active Observation Framework for Multi-Label Chest Radiography Diagnosis</a>  </h3>
+<p class="note"><span class="label">说明</span>GroundSeek-CXR：基于回顾性评估的胸片多标签诊断主动观察框架</p><p class="summary"><span class="label">简介</span>该论文提出GroundSeek-CXR框架，用于胸部X光多标签诊断。模型通过在最终诊断结果基础上回顾性评估每一次观察和停止决策来学习，而非仅依据当前即时效果。实验显示其优于现有方法，并在异常图像样本F1指标上比即时评分偏好学习提高4.48%。</p>
+<p class="authors">Yihang Fu, Xinyu Liu, Qing Xu 等</p></article>
+<article class="item" id="d436997">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436997" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04279" target="_blank" rel="noopener noreferrer nofollow">Bidirectional Centered Score Matching for Discrete Diffusion Distillation</a>  </h3>
+<p class="note"><span class="label">说明</span>双向中心化分数匹配：离散扩散模型的蒸馏方法</p><p class="summary"><span class="label">简介</span>离散扩散模型常用逐词 KL 目标进行蒸馏，但在激进的少步蒸馏下监督信号可能不足。本文提出双向中心化分数匹配（BCSM），在每个位置上构造 O(K) 规模的双向活跃集，将两两比较降为 O(K²) 并分解为 O(K) 目标，还引入了跨时间步的转移对齐。实验显示，该方法在质量与效率之间取得较好平衡，单步推理时可减少至多 6 倍的 NFE。</p>
+<p class="authors">Peng Tu, Baoyou Chen, Haoyuan Xia 等</p></article>
+<article class="item" id="d436996">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436996" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04277" target="_blank" rel="noopener noreferrer nofollow">Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training</a>  </h3>
+<p class="note"><span class="label">说明</span>Harness-S：从兄弟执行框架中学习以训练可泛化的智能体</p><p class="summary"><span class="label">简介</span>该论文研究如何改进智能体的执行框架（harness）。作者提出Harness-S方法，用一组方向各异的兄弟框架在基础框架失败时补救任务，并把这些补救行为迁移到单一策略中。在AppWorld、SWE-Gym和DBBench上，训练后的策略在原始基础框架下的表现明显优于仅用策略训练的方法。</p>
+<p class="authors">Kangning Zhang, Wenxiang Jiao, Bowen Fang 等</p></article>
+<article class="item" id="d436994">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AR</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436994" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04273" target="_blank" rel="noopener noreferrer nofollow">Deep Learning Compilers: Architecture, Optimization, and Empirical Characterization</a>  </h3>
+<p class="note"><span class="label">说明</span>深度学习编译器：架构、优化与实证评估</p><p class="summary"><span class="label">简介</span>本文系统分析深度学习编译器的架构演进、编译流程、优化技术和研究方向，将其划分为前端、中端和后端三个阶段。作者以 PyTorch/TorchInductor 在 NVIDIA RTX A6000 上进行实验，发现编译收益高度依赖工作负载特征，融合友好的计算图最高加速 8.21 倍，编译开销需数千次执行才能摊销，动态形状编译可使累计形状切换成本降低约 70%，但稳态性能略有下降。</p>
+<p class="authors">Jinghao Wen, Ruixuan Wang, Xun Jiao</p></article>
+<article class="item" id="d436993">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.AP · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436993" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04269" target="_blank" rel="noopener noreferrer nofollow">Integrating Machine Learning and Uncertainty Quantification for Real-Time Decision-Making in Digital Twins: A System-Centric Review and Perspective</a>  </h3>
+<p class="note"><span class="label">说明</span>面向数字孪生实时决策的机器学习与不确定性量化集成：系统视角综述与展望</p><p class="summary"><span class="label">简介</span>本文是一篇叙述性综述，探讨数字孪生如何借助机器学习、不确定性量化与持续验证支持实时决策。文章归纳了优化型、策略型和知识型三类决策路径，并指出机器学习在代理建模、反馈信息转化和决策生成中的作用。作者主张从以模型为中心转向以系统为中心的研究视角，并建议未来研究关注系统级协同设计与持续适应。</p>
+<p class="authors">Yi-Ping Chen, Ying-Kuan Tsai, Seul Lee 等</p></article>
+<article class="item" id="d436992">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436992" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04268" target="_blank" rel="noopener noreferrer nofollow">Weight-Space Programming for Improving Image-Restoration Diffusion Models: Technical Conjectures and a Recursive Improvement Loop</a>  </h3>
+<p class="note"><span class="label">说明</span>面向图像修复扩散模型的权重空间编程：技术猜想与递归改进循环</p><p class="summary"><span class="label">简介</span>本文提出用大语言模型直接编辑扩散式图像修复模型的权重，无需梯度、配对数据或微调，以提升去模糊、超分辨率、去噪和修复等任务的质量。作者提出三项待验证的技术猜想：模型能定位质量缺陷所在的层，编辑少量权重方向可提升PSNR与感知质量，并可通过诊断、编辑、评估的循环逐轮累积改进。</p>
+<p class="authors">Zhuoran Zheng, Doubao</p></article>
+<article class="item" id="d436991">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436991" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04264" target="_blank" rel="noopener noreferrer nofollow">Reliability Stress Testing of RAG Retrieval under Query-Relevant Corpus Poisoning</a>  </h3>
+<p class="note"><span class="label">说明</span>查询相关语料投毒下RAG检索可靠性压力测试</p><p class="summary"><span class="label">简介</span>本文研究检索增强生成（RAG）系统中，外部文本在被检索器纳入模型上下文之前的风险。作者在BEIR的SciFact和NFCorpus数据集上，通过注入与查询相关的投毒文档进行压力测试，发现经典检索器的nDCG@10下降40.2%至61.5%，主要原因是全查询锚定。研究仅测量检索层的失效，不涉及下游指令遵循。</p>
+<p class="authors">Janet Sung, Kainan Zhou, Gangzhen Qian 等</p></article>
+<article class="item notable" id="d436990">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436990" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04262" target="_blank" rel="noopener noreferrer nofollow">Sketch-Omni: Instance-Level Sketch-Based Visual Prompting for Perception MLLMs</a>  </h3>
+<p class="note"><span class="label">说明</span>Sketch-Omni：面向感知型多模态大模型的实例级草图视觉提示</p><p class="summary"><span class="label">简介</span>该论文提出 Sketch-Omni，是作者所知首个能够处理草图并以草图为提示的感知型多模态大模型。模型既可在草图上用文字提示进行定位、指代与可供性识别，也可用一个物体的草图在照片中定位该物体，即使照片中有多个同类实例。训练数据由边缘检测和实例配对方法自动构建，并通过照片引导的关系对齐进行训练。实验显示其在草图提示定位任务上的 F1 为 91.4，高于最强通用模型的 81.8。</p>
+<p class="why"><span class="label label-why">看点</span>首次面向草图的感知多模态模型，用边缘检测和实例配对自动构造训练数据，并在多任务上报告优于通用模型。</p><p class="authors">Dongyu Wang, Dar-Yen Chen, Zhiming Hong 等</p></article>
+<article class="item" id="d436989">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CL</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436989" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04260" target="_blank" rel="noopener noreferrer nofollow">Neologism Inoculation Prompting</a>  </h3>
+<p class="note"><span class="label">说明</span>新词接种提示：用一个新造的词替代英文提示，以减少模型的不良行为</p><p class="summary"><span class="label">简介</span>接种提示是一种降低前沿模型不良行为（如奖励黑客）的方法，即在指明该行为的提示下用有害样本训练模型。作者提出新词接种提示（NIP），用一个在冻结模型上训练的新词元替代英文提示，并在部署时移除。研究发现，NIP 在奖励黑客上有效，效果优于其他接种方法，与梯度路由相当但更简单；但在谄媚和骚扰上失效。</p>
+<p class="authors">David Demitri Africa, Cameron Holmes</p></article>
+<article class="item" id="d436988">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436988" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04257" target="_blank" rel="noopener noreferrer nofollow">ProGeo-RC: Prototype-guided Semantic Reliability and Geometric Error Calibration for Semi-supervised Cardiac Image Segmentation</a>  </h3>
+<p class="note"><span class="label">说明</span>ProGeo-RC：用于半监督心脏图像分割的原型引导语义可靠性与几何误差校准方法</p><p class="summary"><span class="label">简介</span>该论文提出ProGeo-RC框架，用于在标注数据有限的情况下进行医学图像分割。它结合基于原型的语义可靠性估计和基于符号距离场的几何约束，用于校准伪标签并优化边界。在ACDC和MVAA-CT数据集上，该方法优于代表性的半监督分割方法。</p>
+<p class="authors">Yunfei Zhu, Wenfeng Zhang, Pan Zeng 等</p></article>
+<article class="item" id="d436987">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI · stat.ML</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436987" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04256" target="_blank" rel="noopener noreferrer nofollow">OmniST: Topology-Invariant Spatiotemporal Forecasting with Guaranteed-Coverage Uncertainty at Unseen Sensor Locations</a>  </h3>
+<p class="note"><span class="label">说明</span>OmniST：可处理未见传感器位置的拓扑不变时空预测模型</p><p class="summary"><span class="label">简介</span>该论文提出OmniST，一种与节点数量无关的时空预测模型，其计算不依赖固定大小的邻接矩阵。结合归纳式分割共形校准，它能在任意（包括训练中未出现的）传感器位置给出具有覆盖率保证的预测区间，并在传感器增减时保持该保证。在德里空气质量数据上，30天PM2.5平均绝对误差为31.0 ug/m3，移除40%站点时性能下降最多1.1%。</p>
+<p class="authors">Praveg Vashishtha</p></article>
+<article class="item" id="d436986">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436986" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04254" target="_blank" rel="noopener noreferrer nofollow">P-SER: Physical Consistency-Constrained Scattering Expandable Representation for Class-Incremental HRRP Target Recognition</a>  </h3>
+<p class="note"><span class="label">说明</span>P-SER：面向类增量HRRP目标识别的物理一致性约束散射可扩展表示方法</p><p class="summary"><span class="label">简介</span>本文针对高分辨距离像（HRRP）目标识别中随视角变化明显、且无法保存历史数据时的类增量识别问题，提出P-SER框架。该方法利用和通道与方位差通道的复数HRRP及观测几何重建主要散射点，据此构建类级散射原型与样本级显著性先验，并用原语散射体字典辅助判别舰船与反射器组。实验表明，在不保留旧类样本的情况下，P-SER具有有竞争力的识别性能。</p>
+<p class="authors">Fangyi Wang, Peng Zhao, Haipeng Wang</p></article>
+<article class="item" id="d436985">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d436985" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04249" target="_blank" rel="noopener noreferrer nofollow">COMPREHEND: Ultra-Fine-Grained Benchmark Understanding by Entailment Hierarchy</a>  </h3>
+<p class="note"><span class="label">说明</span>COMPREHEND：基于蕴含层级的超细粒度基准理解方法</p><p class="summary"><span class="label">简介</span>本文提出COMPREHEND方法，为用户提示自动构建超细粒度的蕴含层级，用完整句子替代传统分类体系中过于笼统的聚类名称，以便更精确地划分提示类别。在WildBench上，与当前先进的分类体系构建方法EvalTree相比，其蕴含/忠实度指标由22.6提升至41.7，信息性指标由16.3提升至39.1。</p>
+<p class="authors">Sivaraaman Balakrishnan, Prakriti Shetty, Jeremiah Hong 等</p></article>
+<article class="item" id="d436984">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.DB · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436984" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04248" target="_blank" rel="noopener noreferrer nofollow">Navigating Runtime Dynamism in Semantic Query Serving</a>  </h3>
+<p class="note"><span class="label">说明</span>在语义查询服务中应对运行时动态性</p><p class="summary"><span class="label">简介</span>本文针对基于大语言模型的语义查询在运行时的动态变化问题，提出了名为SeqoFlow的运行时框架。该框架能同时调整查询计划并调度并发的语义查询，并通过轻量级的推测性估计捕捉运行时成本。实验表明，与现有系统、自适应查询处理技术和传统调度策略相比，SeqoFlow能显著降低端到端延迟。</p>
+<p class="authors">Hengrui Zhang, Xupeng Miao</p></article>
+<article class="item" id="d436983">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436983" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04244" target="_blank" rel="noopener noreferrer nofollow">CounterSketch: Physics-Grounded Counterfactual Reasoning for Sketch-to-Video Generation</a>  </h3>
+<p class="note"><span class="label">说明</span>CounterSketch：基于物理的素描转视频反事实推理</p><p class="summary"><span class="label">简介</span>该论文提出 CounterSketch 框架，将“如果……会怎样？”这类自然语言问题转化为符合物理规律的素描动画。框架结合视觉语言模型的场景理解、因果事件链推理、基于约束的轨迹生成与验证，并将验证后的轨迹投影为物体运动边界框，用于引导素描视频合成。在 CounterSketchBench（80 个问题）上的实验显示，基于物理的轨迹比直接由视觉语言模型预测的结果提供了更强的运动引导。</p>
+<p class="authors">Hien Trinh, Tan-Hiep To, Dinh-Khoi Vo 等</p></article>
+<article class="item" id="d436982">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436982" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04242" target="_blank" rel="noopener noreferrer nofollow">Improving Diffusion-Based Augmentation for Data-Scarce Image Classification via Mask-Guided Reference Attention and Repulsive Noise Optimization</a>  </h3>
+<p class="note"><span class="label">说明</span>改进基于扩散模型的数据增强：面向数据稀缺图像分类的掩码引导参考注意力与排斥性噪声优化</p><p class="summary"><span class="label">简介</span>该论文针对数据稀缺的图像分类问题，提出一种采样端框架，包含两部分：掩码引导参考注意力，借助零样本分割仅让参考特征作用于目标前景；排斥性噪声优化，使初始噪声轨迹偏离适配模型的主导生成模式，以提升合成图像的多样性。实验显示在长尾单样本设置下有稳定提升，在CUB-LT IF100上最高提升2.50和2.94个点，并在少样本和背景偏移评估中表现稳健。</p>
+<p class="authors">Hyun-Jic Oh, GaYeon Koh, Won-Ki Jeong</p></article>
+<article class="item" id="d436981">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436981" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04241" target="_blank" rel="noopener noreferrer nofollow">AceAction-5M: Hierarchical Goals for Generalist Action Learning Across 3D Game Worlds</a>  </h3>
+<p class="note"><span class="label">说明</span>AceAction-5M：面向三维游戏世界通用动作学习的分层目标数据集</p><p class="summary"><span class="label">简介</span>该论文提出AceAction，一个基于多款三维游戏人类实际操作记录的数据集，用于学习技能组合与子目标切换。数据围绕完整任务组织，将总体指令、有序子目标和局部技能指令与视觉观察及键鼠操作对齐。作者用视觉语言模型流程标注子目标并组合任务指令，经审核的500条轨迹通过率为95.8%。</p>
+<p class="authors">Kailing Li, Ruoxuan Zhang, Zheyuan Zhou 等</p></article>
+<article class="item" id="d436979">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436979" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04239" target="_blank" rel="noopener noreferrer nofollow">LIRA: A More Interpretable Dynamic Loss-Informed Rank Allocation for Low-Rank Adaptation</a>  </h3>
+<p class="note"><span class="label">说明</span>LIRA：一种可解释性更强的、基于损失信息的动态低秩适配秩分配方法</p><p class="summary"><span class="label">简介</span>该论文提出LIRA方法，用于低秩适配（LoRA）中的动态秩分配。它依据各层近期LoRA因子变化引起的局部损失扰动估计量来评分，使每次秩调整的依据更易理解。在RoBERTa-base的GLUE基准测试中，LIRA的表现优于所报告的统一LoRA及自适应秩基线方法。</p>
+<p class="authors">Sihao Wang, Bozheng Li, Xuemiao Xu 等</p></article>
+<article class="item" id="d436978">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d436978" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04235" target="_blank" rel="noopener noreferrer nofollow">TCINet: Tissue-Conditioned Adaptive Cross-Branch Interaction Network for Nuclei Instance Segmentation</a>  </h3>
+<p class="note"><span class="label">说明</span>TCINet：基于组织条件的自适应跨分支交互细胞核实例分割网络</p><p class="summary"><span class="label">简介</span>该论文提出一种用于细胞核实例分割的单阶段模型TCINet，通过任务专用特征适配器和组织条件的跨分支交互模块，分别处理细胞核存在、水平垂直和细胞类型三个分支之间的信息交互，并利用预测的组织概率进行调控。在PanNuke数据集的标准三折交叉验证中，多类别和二分类全景质量分数分别为0.519和0.692；在MoNuSeg上的零样本测试检测F1分数为0.876。消融实验显示，加入该交互模块后PanNuke第0折的mPQ由0.505提升至0.525。</p>
+<p class="authors">Zhenghang Qian, Yang Liu, Yanzhi Yu 等</p></article>
+<article class="item" id="d436977">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436977" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04233" target="_blank" rel="noopener noreferrer nofollow">LINDA: Low Resource Foot Ulcer Segmentation using Local Similarity and Iterative Neural Dynamics</a>  </h3>
+<p class="note"><span class="label">说明</span>LINDA：利用局部相似性与迭代神经动力学的低资源足部溃疡分割方法</p><p class="summary"><span class="label">简介</span>足部溃疡是导致下肢截肢的主要原因之一，低收入和中等收入地区尤其缺乏专科医生和计算设备。本文提出LINDA，一种紧凑模型，以图像的局部自相似性图作为结构先验，融合进ResNet-34编码器，并用小型液态时间常数模块经四步迭代细化边界。在FUSeg 2021数据集上，LINDA的Dice、IoU和HD95指标均优于对比模型，且参数量仅为25.70M。</p>
+<p class="authors">Trishaani Acharjee, Sudip Chakrabarty, Rajdeep Chatterjee 等</p></article>
+<article class="item" id="d436976">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436976" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04231" target="_blank" rel="noopener noreferrer nofollow">Constructing a Regional Slang Lexicon for Electricity Demands via Soft-Label Bidirectional Anchoring and Active Learning</a>  </h3>
+<p class="note"><span class="label">说明</span>基于软标签双向锚定与主动学习构建电力服务方言俚语词典</p><p class="summary"><span class="label">简介</span>本文提出一种弱监督框架，利用方言锚点词和电力领域种子词，从真实微信留言中构建地方俚语词典，用于处理电网客户服务中的非标准表达。研究在云南玉溪的11,177条微信消息上进行，结合点互信息、Sentence-BERT语义相似度与结巴分词词性度量筛选候选词，并采用主动学习与大模型评估。结果显示方言精确率达到1.0且无误报，最终得到25至33个词条的初步词典，其中4至5个与电力相关。</p>
+<p class="authors">Rong Chang, Lijing Shi, Zhaoxiang Zang</p></article>
+<article class="item" id="d436975">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436975" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04230" target="_blank" rel="noopener noreferrer nofollow">Exact Optimality Certification of QPLIB 2096 through Complete Set Partitioning</a>  </h3>
+<p class="note"><span class="label">说明</span>通过完整集合划分对 QPLIB 2096 进行精确最优性认证</p><p class="summary"><span class="label">简介</span>本文对固定的 QPLIB_2096 实例给出精确的计算证明，确认其全局最小值为 7,025,720。作者将原问题中的变量对应到 25 个物品的无序对上，把三角不等式解释为划分约束，把二次约束解释为单个划分块内边权总和的上界，从而转化为集合划分问题。通过穷举枚举得到 14,981 个可行块，并构造对偶价格向量，得到与该划分相匹配的下界，从而给出原问题与对偶问题的精确见证。结论仅针对该实例，不推及其他实例的性能。</p>
+<p class="authors">Jingyang Du, Zixiong Yi, Yang Shen</p></article>
+<article class="item" id="d436974">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d436974" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04228" target="_blank" rel="noopener noreferrer nofollow">DualWorldBench: Can Agents Plan Deliveries across Symbolic and Grounded Worlds?</a>  </h3>
+<p class="note"><span class="label">说明</span>DualWorldBench：智能体能否在符号世界与具身世界中规划配送路线？</p><p class="summary"><span class="label">简介</span>该论文提出DualWorldBench，一个用于评估多模态智能体规划能力的统一基准，包含TextWorld（符号化时序规划）、SimWorld（基于图像或文本输入的具身路径规划）和DualWorld-VQA（感知、场景理解与规划的诊断测试）。实验显示，智能体能够局部理解环境，却难以将其整合为全局一致且可行的多目标规划。</p>
+<p class="authors">Yang Chen, Bin Wen, Danyang Peng 等</p></article>
+<article class="item" id="d436973">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436973" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04226" target="_blank" rel="noopener noreferrer nofollow">DiMuRe: Diagnosis-Guided Multilevel Recovery for Robotic Task Execution</a>  </h3>
+<p class="note"><span class="label">说明</span>DiMuRe：面向机器人任务执行的诊断引导多级恢复框架</p><p class="summary"><span class="label">简介</span>论文提出DiMuRe框架，用于机器人在任务执行中遇到扰动时的恢复：根据阶段相关的证据和方法前提条件，选择复用原有程序或预定义的恢复技能（包括有界的视觉-语言-动作抓取）。原程序退出后，多模态大语言模型可根据图像和执行反馈生成纠正代码，并通过局部验证检查每次恢复尝试的结果。作者还提出LIBERO-Disturb基准用于评估执行中扰动下的鲁棒性与恢复能力。在801个预定扰动的Encore开发案例上，局部DiMuRe的完整任务成功率为77.65%，原程序为58.68%；完整DiMuRe为81.90%。</p>
+<p class="authors">Renkai Yi, Yuwei Wu, Haoyu Zhang 等</p></article>
+<article class="item" id="d436972">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.IR · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436972" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04225" target="_blank" rel="noopener noreferrer nofollow">IntentGEO: Intent-aware Generative Engine Optimization for Recommendation</a>  </h3>
+<p class="note"><span class="label">说明</span>IntentGEO：面向推荐的意图感知生成式引擎优化</p><p class="summary"><span class="label">简介</span>大语言模型在聊天机器人、电商和用户生成内容平台中越来越多地参与推荐，因此需要生成式引擎优化（GEO）来提高商品在生成回答中的曝光度。本文提出IntentGEO框架，考察同一份商品描述在不同用户需求和决策阶段下的曝光效果，发现现有方法的收益随意图而变化，且基于学习的提示优化可能不如手写种子提示，会逐渐偏向通用宣传策略。为此，作者提出AMO方法，将推荐指令固定为核心，并从引用反馈中学习附加策略。</p>
+<p class="authors">Runlin Lei, Shiqi Zhang, Xiaokui Xiao 等</p></article>
+<article class="item" id="d436971">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.DC · cs.AI · cs.AR</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436971" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04222" target="_blank" rel="noopener noreferrer nofollow">GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts</a>  </h3>
+<p class="note"><span class="label">说明</span>GC-MoE：借助 CUDA Green Contexts 将专家并行的 token 分发与 FP8/FP4 分组 GEMM 重叠执行</p><p class="summary"><span class="label">简介</span>本文提出 GC-MoE，一个面向 NVIDIA Hopper 与 Blackwell GPU 的开源 FP8/FP4 混合专家（MoE）推理算子。它利用 CUDA Green Contexts 将 GPU 划分为小的通信分区和大的计算分区，使分发与矩阵运算可以独立调优并重叠执行。在 8 块 H20 GPU 上，GC-MoE 使 DeepSeek-V4.1-Flash 解码平均加速 1.188 倍；在 8 块 B300 GPU 上，对 GLM-5.2 与 DeepSeek-V4.1-Flash 加速 1.106 倍，并在全部 54 个测试点上优于 Mega MoE。</p>
+<p class="authors">Yong Li, Kan Liu, and Tao Lan</p></article>
+<article class="item" id="d436970">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436970" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04221" target="_blank" rel="noopener noreferrer nofollow">Mamba3R: Fixed-Capacity Selective State Memory for Long-Sequence 3D Reconstruction</a>  </h3>
+<p class="note"><span class="label">说明</span>Mamba3R：用于长序列三维重建的固定容量选择性状态记忆方法</p><p class="summary"><span class="label">简介</span>这篇论文提出Mamba3R，一种状态记忆适配器，在冻结预训练循环模型主干和任务头的情况下，通过训练约128万个适配器参数来提升长序列三维重建的精度。它在公开室内外数据集和机器人采集的行进数据上，降低了轨迹误差并提高了表面与深度的累积精度，部分指标提升最多达40%。在机器人平台RTX 4060上，离线回放的平均速度为每秒11.7帧，占用5.1 GiB显存。</p>
+<p class="authors">Zhenxiang Xiong, Tianchen Deng, Nailin Wang 等</p></article>
+<article class="item" id="d436969">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436969" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04219" target="_blank" rel="noopener noreferrer nofollow">Reliability-Role Collaborative Learning for Semi-Supervised Cardiac Image Segmentation</a>  </h3>
+<p class="note"><span class="label">说明</span>可靠性-角色协同学习：半监督心脏图像分割</p><p class="summary"><span class="label">简介</span>该论文提出R2CL框架，用于半监督心脏图像分割。它依据双网络对未标注像素的置信度关系，把未标注区域分为互不确定、置信度不一致和互相可靠三类，分别用于熵正则化、定向知识迁移和可靠监督锚点。框架还通过原型对比学习增强边界模糊区域的特征区分能力，并利用高置信度区域补充上下文监督。论文报告在多个数据集上区域重叠与边界相关指标均有稳定提升，其中在前景稀疏的MVAA-CT数据集上优势更明显。</p>
+<p class="authors">Zhongrui Xie, Wenfeng Zhang, Wei Hu 等</p></article>
+<article class="item" id="d436968">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436968" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04218" target="_blank" rel="noopener noreferrer nofollow">Shared Context Candidate Scoring with Jointly Adapted Readout Networks</a>  </h3>
+<p class="note"><span class="label">说明</span>基于共享上下文与联合适配读出网络的候选答案打分</p><p class="summary"><span class="label">简介</span>论文提出Q64系统，针对同一文档的多次提问，复用文档计算结果，并联合训练残差适配器与候选答案读出网络来为候选答案打分。在一个综合评测集上，联合适配将四个基准的宏平均准确率从66.46%提升到74.32%，仍低于原生27B基线的75.68%。在合成的多问题工作负载中，冷请求中位延迟为2.237秒，低于原生基线的5.383秒，但单问题短请求无此优势。</p>
+<p class="authors">Jingyang Du, Yiben Fu, Yang Shen</p></article>
+<article class="item" id="d436967">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436967" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04217" target="_blank" rel="noopener noreferrer nofollow">LENS: Reliability-Aware Stock Prediction via LLM-Extracted Priors and News-Driven Semantic Graphs</a>  </h3>
+<p class="note"><span class="label">说明</span>LENS：基于大模型抽取先验与新闻语义图、考虑可靠性的股票预测</p><p class="summary"><span class="label">简介</span>这篇论文提出LENS框架，用于预测股票收益并排序。它用大模型从多次运行中抽取公司关系图，并按置信度加权聚合以降低不一致的边；同时基于新闻构建语义图，用指数衰减的时间聚合捕捉市场变化，再通过门控融合模块平衡两张图。在S&amp;P 500和NASDAQ 100上，相比最强基线，AR@5和SR@5均有明显提升。</p>
+<p class="authors">Hao Zhou, Tiejun Ma, Luis Felipe Costa Sperb</p></article>
+<article class="item" id="d436966">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436966" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04216" target="_blank" rel="noopener noreferrer nofollow">LiSA: Linear Stochastic Attention for Long-Range Visual Modeling</a>  </h3>
+<p class="note"><span class="label">说明</span>LiSA：用于长程视觉建模的线性随机注意力</p><p class="summary"><span class="label">简介</span>该论文提出线性随机注意力（LiSA），一种即插即用的线性注意力模块，通过基于截断随机游走的随机扩散过程实现更高阶的token交互。LiSA引入自适应局部性，偏向语义相近的邻居以保留细粒度结构，并保持训练稳定高效。作者在分类、语义分割和目标检测任务上进行了大量实验，结果优于现有先进方法。</p>
+<p class="authors">Sahar Dastani, Fereshteh Shakeri, Samuel Barbeau 等</p></article>
+<article class="item" id="d436965">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436965" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04215" target="_blank" rel="noopener noreferrer nofollow">Tokenizer Myths and Where To Find Them</a>  </h3>
+<p class="note"><span class="label">说明</span>分词器的三个误区及其出处：比较语言模型时的常见误判</p><p class="summary"><span class="label">简介</span>这篇论文讨论语言模型分词器研究中的三个常见误区，包括每字节比特数（BPB）是否与分词器和词表大小无关、较低的BPB是否意味着更好的模型，以及不同“与分词器无关”的指标是否结果一致。作者用未训练的模型做实验，证明BPB会偏向某些分词器和词表大小，且在真实模型上与下游表现只有弱相关。文章还提出“分词器三难困境”，认为选择评估指标就等于选择研究问题。</p>
+<p class="authors">Rylan Schaeffer, Sanmi Koyejo</p></article>
+<article class="item notable" id="d436964">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.ML · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436964" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04211" target="_blank" rel="noopener noreferrer nofollow">Two-Layer Random ReLU Networks Can Separate Disjoint Classes</a>  </h3>
+<p class="note"><span class="label">说明</span>两层随机ReLU网络能够分离互不相交的两类数据</p><p class="summary"><span class="label">简介</span>本文研究两类数据（不一定凸或线性可分）何时能被有限ReLU网络和随机ReLU特征以正间隔分开。论文证明，确定性情形下正间隔分离等价于存在有限闭凸覆盖，且恰好两个隐藏层即可满足。对于随机情形，论文给出在高概率下通过两层独立随机ReLU层实现正间隔仿射分离的条件，并指出所需宽度与球面差锥截面的高斯宽度平方成正比，该依赖关系是尖锐的。</p>
+<p class="why"><span class="label label-why">看点</span>证明双隐层ReLU网络可实现正间隔分离，并给出随机ReLU特征下的宽度界，且为二次依赖的紧界，理论贡献明确。</p><p class="authors">Yichen Liu, Jianbin Yang</p></article>
+<article class="item notable" id="d436963">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.ML · cs.LG · math.OC</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436963" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04207" target="_blank" rel="noopener noreferrer nofollow">Point interpolation and distributional universality in flow-based generative models</a>  </h3>
+<p class="note"><span class="label">说明</span>基于流的生成模型中的点插值与分布普适性</p><p class="summary"><span class="label">简介</span>本文研究基于流的生成模型中，由参数化 Lipschitz 向量场族生成的推前测度对概率测度的逼近问题，灵感来自神经常微分方程的表达能力。针对 Wasserstein 距离，文章建立了有限样本点插值与分布逼近之间的定量关系，并基于传输映射的 L^p 逼近给出普适性判据。针对全变差距离，文章证明逐坐标动力学在维数 d≥2 时不足够，并给出基于一维 Sobolev 逼近与剪切型混合的充分条件。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于建立有限样本点插值与分布逼近之间的定量关系，并给出基于传输映射Lp逼近的普适性判据；摘要报告了Wasserstein与全变差两种度量下的结果，影响主要限于理论子领域。</p><p class="authors">Antonio \&#39;Alvarez-L\&#39;opez, Jingpu Cheng, Liyan Zhang 等</p></article>
+<article class="item" id="d436962">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436962" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04203" target="_blank" rel="noopener noreferrer nofollow">Toward User-Centered Agentic Recommendation: When Does Platform Competition Benefit Users?</a>  </h3>
+<p class="note"><span class="label">说明</span>以用户为中心的智能体推荐：平台竞争何时对用户有利？</p><p class="summary"><span class="label">简介</span>本文提出一种以用户为中心的智能体推荐范式，由用户智能体比较多个竞争平台智能体给出的推荐，并将其互动建模为重复博弈。平台可能夸大商品描述，而用户只能依据已消费商品的反馈评估平台可信度。研究发现，扩大资源访问并不必然提升用户福利，并给出了可信度评估能使用户从更广泛访问中获益的条件。</p>
+<p class="authors">Kehan Zheng, Deyao Hong, Qian Li 等</p></article>
+<article class="item" id="d436961">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436961" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04200" target="_blank" rel="noopener noreferrer nofollow">Impact of Input Resolution in Mammographic Mass Detection: A Controlled Multi-Architecture Study</a>  </h3>
+<p class="note"><span class="label">说明</span>输入分辨率对乳腺X线肿块检测的影响：多架构受控研究</p><p class="summary"><span class="label">简介</span>该研究在VinDr-Mammo数据集上训练了18个深度学习肿块检测模型，每个模型在六种输入分辨率（512×416至1600×1280像素）下训练，共108组组合，并保持预处理和评估流程一致。结果显示，分辨率提高后，中位mAP50从0.626升至0.660，最佳结果为0.709，由DINO与ConvNeXt-S骨干网络实现。提升主要体现在小肿块上，最小三分之一病灶的中位mAP50提高0.074，而中、大肿块分别仅提高0.007和0.032。</p>
+<p class="authors">Kaan Buyukdemirci, Emine Ulku Saritas</p></article>
+<article class="item" id="d436960">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436960" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04199" target="_blank" rel="noopener noreferrer nofollow">An Information Budget for Label-Noise Memorization, and What Statistical Complexity Tracks: A Study with Multilayer Perceptrons</a>  </h3>
+<p class="note"><span class="label">说明</span>标签噪声记忆的信息预算，以及统计复杂度所追踪的内容：多层感知机研究</p><p class="summary"><span class="label">简介</span>该论文以多层感知机为对象，研究网络记住了多少标签噪声及其时机，并分析统计复杂度对预测描述的贡献。作者在89次MNIST实验中检验了预设假设，发现归一化记忆信息随训练样本上的记忆比例上升，在带有新噪声标签的留出样本上接近零，并接近Fano界。统计复杂度作为停止规则时，仅在低噪声下与既有规则相当，检测被污染样本的能力弱于简单的无标签评分。结论仅限于该架构、两个小型数据集和合成噪声。</p>
+<p class="authors">Nancy Baygorrea C., Ot\&#39;avio da Fonseca Martins Gomes</p></article>
+<article class="item" id="d436959">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436959" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04196" target="_blank" rel="noopener noreferrer nofollow">DoGNAVY-Exploit: Harnessing Parallel Open-Weight Agents for Stage-Aware Vulnerability Exploitation</a>  </h3>
+<p class="note"><span class="label">说明</span>DoGNAVY-Exploit：利用并行开放权重智能体进行分阶段感知的漏洞利用</p><p class="summary"><span class="label">简介</span>该论文提出多智能体框架 DoGNAVY-Exploit，用于把已知漏洞转化为可用的攻击程序。它将长链路利用拆分为可验证的阶段性目标，每阶段只提供相关专家知识，并由规划者提出多条攻击路线、执行者并行测试，共享结构化记忆。在 Cybench、CVE-Bench 和 ExploitGym 等基准环境中，使用开放权重模型 GLM-5.2 等取得较高通过率。</p>
+<p class="authors">Yuxuan Wang, Dadi Guo, Weijie Guo 等</p></article>
+<article class="item" id="d436958">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436958" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04195" target="_blank" rel="noopener noreferrer nofollow">SettleSplat: Monocular Gaussian Mapping under In-View Scene Changes</a>  </h3>
+<p class="note"><span class="label">说明</span>SettleSplat：单目视角下视野内场景变化的高斯建图</p><p class="summary"><span class="label">简介</span>本文提出SettleSplat，一种单目在线建图系统，用于在相机视野内物体被移动的场景变化下维护最新的三维高斯地图。方法将逐像素不确定性提升为高斯动态性场，剔除瞬时动态物体；对于持续存在的变化，利用由无参数渲染深度不确定性加权的几何矛盾，区分真实变化与优化不足的区域。在Bonn和Co-Fusion数据集上，该方法在整幅图像和变化区域上均优于现有基线，同时保持相当的速度。</p>
+<p class="authors">Anh Thuan Tran, Xiyun Song, Yubin Zhou 等</p></article>
+<article class="item" id="d436957">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · stat.ML</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436957" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04193" target="_blank" rel="noopener noreferrer nofollow">Statistical Machine Learning for Medicinal Plant Leaves Classification</a>  </h3>
+<p class="note"><span class="label">说明</span>用于药用植物叶片分类的统计机器学习方法</p><p class="summary"><span class="label">简介</span>本文提出MEDIPI方法，从药用植物叶片照片中提取52个可解释特征（涵盖形状、纹理、颜色及新的散点统计特征），并按形状、边缘类型、物种三级层次进行分类。作者同时发布了包含31种斯里兰卡药用植物共1,099张叶片图像的开源R包MedLEA。在该数据集上，层次化随机森林取得100%的总体准确率；但在数据来源不同的训练与测试之间，准确率大幅下降至23%至50%。</p>
+<p class="authors">Jayani P. Gamage, Thiyanga S. Talagala</p></article>
+<article class="item" id="d436956">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d436956" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04192" target="_blank" rel="noopener noreferrer nofollow">Where Did the Update Go? Certifying Declared Change Envelopes for Model Updates</a>  </h3>
+<p class="note"><span class="label">说明</span>更新去哪了？为模型更新的已声明变更范围做认证</p><p class="summary"><span class="label">简介</span>论文提出“已声明变更范围”的概念：开发者在训练前承诺一个输入区域，区域外发生的决策变化被视为泄漏。作者用无标签流量上的任意时刻有效检验来认证泄漏，并在1.5B至72B参数的模型上测量LoRA、全量微调、偏好优化、强化学习和知识编辑等更新的泄漏情况。结果显示，窄域更新泄漏严重，将输出蒸馏到无标签提示上可使部分更新达到约5%的泄漏认证水平。</p>
+<p class="authors">Muhammad Usama, Muhammad Saad Qadir</p></article>
+<article class="item" id="d436955">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436955" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04185" target="_blank" rel="noopener noreferrer nofollow">What Does 4-Bit Microscaling Cost a Wearable Activity Recognizer?</a>  </h3>
+<p class="note"><span class="label">说明</span>4 位微缩放量化对可穿戴活动识别器的代价是什么？</p><p class="summary"><span class="label">简介</span>本文研究两种 4 位块缩放数值格式（MXFP4 与 NVFP4）在小型可穿戴传感器模型上的精度代价。作者用腕部加速度数据训练一个约 16 万参数的一维卷积网络，识别四种篮球动作，并按球员分组做五折交叉验证。结果显示，权重与激活同时量化为 4 位时，NVFP4 的 macro-F1 损失明显小于 MXFP4；作者认为，MXFP4 的主要损失来自缩放因子的选取方式。</p>
+<p class="authors">Megan Healy, Hossein Valavi</p></article>
+<article class="item" id="d436954">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.HC · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436954" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04183" target="_blank" rel="noopener noreferrer nofollow">Agentic Path Maps: Exposing an Agent&#39;s Traversal Through the Garden of Forking Paths</a>  </h3>
+<p class="note"><span class="label">说明</span>代理路径图：展示智能体在“分叉路径花园”中的执行路线</p><p class="summary"><span class="label">简介</span>论文针对AI智能体执行含糊任务时做出的选择，提出向用户展示未被采用的替代路径的方法。作者先梳理了传递替代路径的设计空间，再通过48人的数据分析领域用户研究，考察展示替代路径数量对用户理解的影响。结果显示，用户很少主动考虑替代路径，但当替代路径被可视化呈现时，对AI的过度依赖有所减少。</p>
+<p class="authors">Madeleine Grunde-McLaughlin, Hafsah Usman, Daniel Mitroshkov 等</p></article>
+<article class="item" id="d436953">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.DC · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436953" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04182" target="_blank" rel="noopener noreferrer nofollow">When the Consumer Is an Agent: Execution-Grounded Service-Level Agreements</a>  </h3>
+<p class="note"><span class="label">说明</span>当使用者是智能体时：基于执行结果的服务等级协议</p><p class="summary"><span class="label">简介</span>本文提出“执行结果约束的完成合同”，把任务完成视为服务等级结果。独立控制平面在限定截止时间内观察服务状态谓词，决定是否认定完成并引导恢复。作者在多供应商的实时数据服务中，用异构模型和人为注入的传输延迟，评估了放置与删除策略。结果表明，任务完成可由对服务状态的独立观察来判定，而非依赖智能体的自我评估。</p>
+<p class="authors">Michal Orzechowski, Renata G. Slota, Jacek Kitowski</p></article>
+<article class="item" id="d436952">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436952" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04181" target="_blank" rel="noopener noreferrer nofollow">Clocks all the way down: does sequence-processing AI need endogenous temporal structure?</a>  </h3>
+<p class="note"><span class="label">说明</span>时钟层层相扣：序列处理AI是否需要内生的时间结构？</p><p class="summary"><span class="label">简介</span>该论文探讨主流序列处理AI依赖输入驱动、缺少独立内部时间参考，而生物大脑持续产生节律活动的差异是否具有计算意义。作者列出四类可能由内生时间结构支持的功能，并通过延迟消融实验发现，打乱延迟会明显损害序列检索能力，瞬时传输则会使容量本身崩溃。论文还提出一个可证伪的假设及三个研究方向。</p>
+<p class="authors">Meysam Hashemi, Alireza Valizadeh, Viktor Jirsa</p></article>
+<article class="item" id="d436951">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.SE</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d436951" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04180" target="_blank" rel="noopener noreferrer nofollow">Validation-Gated ML Pipeline Synthesis with Expert-Grounded Self-Evolving Skills</a>  </h3>
+<p class="note"><span class="label">说明</span>基于验证门控与专家经验自进化技能的机器学习流水线自动合成</p><p class="summary"><span class="label">简介</span>本文提出EvoML，一个用于端到端自动构建机器学习流水线的智能体框架。它通过验证门控机制逐阶段推进，每个阶段的输出需通过结构、执行与语义检查，并利用在运行中不断演化的专家技能库。在八个数据集、六类机器学习任务上，EvoML实现了完全自动化，并在全部数据集上取得最佳最终模型质量。</p>
+<p class="authors">Zixiao Zhao, Jing Sun, Zhe Hou 等</p></article>
+<article class="item" id="d430363">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430363" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04173" target="_blank" rel="noopener noreferrer nofollow">ReconDreamer#: Self-Evolving Closed-Loop Synergy of Reconstruction and Generation for Dynamic Driving Scenes</a>  </h3>
+<p class="note"><span class="label">说明</span>ReconDreamer#：面向动态驾驶场景的重建与生成自演化闭环协同方法</p><p class="summary"><span class="label">简介</span>该论文提出ReconDreamer#框架，让生成模型与重建模型相互迭代、彼此增强，以缩小合成的新轨迹数据与真实传感器观测之间的差距，并引入基于几何先验的自适应地面模型提升渲染质量。作者在Waymo、nuScenes、PandaSet和EUVS基准上进行了评估。在Waymo数据集6米横向偏移下，相较ReconDreamer++，NTA-IoU提升8.8%，NTL-IoU提升3.0%，FID降低15.1%。</p>
+<p class="authors">Songling Liu, Guosheng Zhao, Xiaofeng Wang 等</p></article>
+<article class="item" id="d430362">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">math.OC · cs.LG · stat.ML</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430362" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04171" target="_blank" rel="noopener noreferrer nofollow">Descending Everest, Part II: Oracle Complexity of Minimizing a Sum of Convex (L₀,L₁₎-Smooth Functions</a>  </h3>
+<p class="note"><span class="label">说明</span>下降珠峰第二部分：最小化凸 (L0,L1) 光滑函数之和的谕示复杂度</p><p class="summary"><span class="label">简介</span>该论文研究n个凸 (L0,L1) 光滑函数平均值的最小化问题，即每个函数的Hessian范数由其梯度范数的仿射函数界定。作者给出了期望意义下达到函数值精度ε所需谕示调用次数的上界与下界，二者在对数因子意义下均为 n(1+(L1R)^{2/3}) + 根号下(n(L0+L1²δ)R²/ε + n(L1R)²) 的量级。上界由所提方法YETI达到，下界由针对任意一阶方法的困难实例族构造得到。</p>
+<p class="authors">Mikhail Rudomanov, Ivan Fomin, Alexander V. Gasnikov 等</p></article>
+<article class="item notable" id="d430361">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430361" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04169" target="_blank" rel="noopener noreferrer nofollow">Length Is Cheap, Competition Is Not: Attention Predicts Context Rot in Retrieval</a>  </h3>
+<p class="note"><span class="label">说明</span>长度不贵，竞争才贵：注意力可预测检索中的上下文腐化</p><p class="summary"><span class="label">简介</span>该论文研究语言模型在长输入检索任务中为何失败。作者在五个开源模型上测试发现，单纯增加无关填充文本几乎不影响准确率，而加入与证据格式相同、却给被查询键提供竞争值的陈述，会显著降低准确率。研究指出，证据上剩余的注意力质量与性能损失关系最密切，并公开了探测工具与全部试验数据。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于将检索中的上下文退化归因于注意力竞争而非长度；摘要报告在五个开源模型、12.6万次试验上的结果，并公开了探针与测量数据。</p><p class="authors">Yinuo Liu</p></article>
+<article class="item" id="d430359">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430359" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04164" target="_blank" rel="noopener noreferrer nofollow">What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context Rewriting</a>  </h3>
+<p class="note"><span class="label">说明</span>自回归视频解码中的可见上下文重写：基于表示引导的免训练方法ReCR</p><p class="summary"><span class="label">简介</span>该论文提出ReCR方法，将自回归长视频生成中的历史帧选择视为测试时的显式决策。方法利用解码器内部表示，从已生成历史中挑选与全局状态匹配、避免与近期内容冗余、覆盖时间边界并丰富空间布局的上下文单元，再映射到紧凑因果轴上用于生成下一段。在长时程文本生成视频基准上，ReCR在相同可见token预算下持续改善多种自回归骨干模型。</p>
+<p class="authors">Lixuan He, Jihyeon Je, Yang You 等</p></article>
+<article class="item" id="d430358">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430358" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04158" target="_blank" rel="noopener noreferrer nofollow">On the Feature Evolution of Temporal Difference Learning</a>  </h3>
+<p class="note"><span class="label">说明</span>时序差分学习中的特征演化研究</p><p class="summary"><span class="label">简介</span>本文研究时序差分（TD）学习中神经网络特征如何在不完整的神经更新下形成与传播，使用有限宽度的两层ReLU价值网络，在构造的平滑随机MDP族上进行分析。作者证明信息性的TD更新能获得二次贝尔曼信号，并在有限样本下取得相对仅更新输出层的SGD更严格的预测风险改进。文中还给出了预测误差的瞬态界以及探索后承诺算法的遗憾界。</p>
+<p class="authors">Shangzhe Li, Dechen Zhang, Difan Zou 等</p></article>
+<article class="item" id="d430357">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.ML · cs.LG · math.ST</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430357" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04157" target="_blank" rel="noopener noreferrer nofollow">Nonparametric GARCH: An Iterated Neural Estimator</a>  </h3>
+<p class="note"><span class="label">说明</span>非参数GARCH：一种迭代神经网络估计方法</p><p class="summary"><span class="label">简介</span>本文研究GARCH类过程的非参数估计与预测，提出一种迭代神经网络估计器，交替估计递推映射并更新未观测的条件方差。文中给出了有限样本误差界，并说明该估计器在对数因子意义上达到极小极大最优速率。在平稳性和混合条件下，文章还给出了样本外方差预测及期望超额高斯准似然（QLIKE）损失的有限样本界。模拟与实证结果显示该方法在非线性和时变波动率下具有竞争力。</p>
+<p class="authors">Ruizhi Deng, Guohao Shen, Ngai Hang Chan</p></article>
+<article class="item" id="d430356">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430356" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04155" target="_blank" rel="noopener noreferrer nofollow">Improving PI-RADS Prediction and Prostate Cancer Detection from Multiparametric MRI with Anatomical Guidance</a>  </h3>
+<p class="note"><span class="label">说明</span>利用解剖结构引导提升多参数MRI的PI-RADS预测与前列腺癌检测</p><p class="summary"><span class="label">简介</span>本文研究在多参数MRI中加入前列腺分区掩膜，是否能提升PI-RADS评分预测和临床显著性前列腺癌检测的效果。作者在多种三维网络架构上进行了实验。结果显示，解剖结构引导总体上提高了模型表现，并在外部数据集上得到进一步验证。</p>
+<p class="authors">Seungbin Park, Thibault Heintz, Rachit Saluja 等</p></article>
+<article class="item" id="d430355">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CY · cs.HC</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430355" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04153" target="_blank" rel="noopener noreferrer nofollow">Palimpsestic Accountability in the US Federal AI Inventories</a>  </h3>
+<p class="note"><span class="label">说明</span>美国联邦人工智能清单中的“羊皮纸式”问责：同一套问题随版本反复改写</p><p class="summary"><span class="label">简介</span>该论文比较了美国联邦人工智能用例清单2023至2025年的三个版本，把同一系统在不同版本中的条目对应起来，只比较两个版本都要求回答的问题。研究发现，清单条目从710条增至3611条，空白答复减少，但问责内容通过问题范围调整、机构分类限制报告内容以及答案被覆盖等方式被反复改写，人类监督的说明很少。作者因此提出“羊皮纸式问责”的概念，并建议采用版本化记录、说明每次重新分类的理由等做法。</p>
+<p class="authors">Dipto Das, Syed Ishtiaque Ahmed, Aditya Vashistha 等</p></article>
+<article class="item notable" id="d430354">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d430354" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04152" target="_blank" rel="noopener noreferrer nofollow">PACT: Certifying What Is Written in Parallel Decoding of Diffusion Language Models</a>  </h3>
+<p class="note"><span class="label">说明</span>PACT：为扩散语言模型并行解码中实际写入的词元提供可信保证</p><p class="summary"><span class="label">简介</span>扩散语言模型可以在一次前向计算中并行写入多个词元以加速生成。本文指出，现有提交规则在采样时没有检查实际写入的词元，而答案质量取决于这些词元的可靠性。作者提出无需训练的PACT方法，先采样词元，再为将要写入的词元集合提供保证，并拉开每一步写入位置的间距。实验在LLaDA和Dream系列的四个模型及多个基准上进行，PACT以更少的前向计算次数达到已有方法的质量。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于先采样再对将写入的token集合做认证，并证明同等保证下无法提交更多位置；摘要报告在LLaDA、Dream等四个模型与五个基准上以更少前向传播达到已发表规则的质量。</p><p class="authors">Yanchao Li, Yusu Zhang, Jiaqing Xie 等</p></article>
+<article class="item" id="d430352">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430352" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04147" target="_blank" rel="noopener noreferrer nofollow">AdSteer: Native Advertising in Large Language Model Generation</a>  </h3>
+<p class="note"><span class="label">说明</span>AdSteer：大语言模型生成中的原生广告方法</p><p class="summary"><span class="label">简介</span>大语言模型服务成本高，需要新的变现方式。本文提出AdSteer，一种轻量的解码阶段广告框架，通过自适应调整词元概率，把与语境相符的广告自然地融入回答中。在GEM-Bench的三个应用场景实验中，其综合得分平均比最强基线高14.1%，总词元数比基于改写的方法平均少22.5%。</p>
+<p class="authors">Shuhang Lin, Chuhao Zhou, Zhenyu Wang 等</p></article>
+<article class="item" id="d430351">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d430351" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04146" target="_blank" rel="noopener noreferrer nofollow">RGDM: Robust Graph Diffusion Model</a>  </h3>
+<p class="note"><span class="label">说明</span>RGDM：稳健图扩散模型，一种能从被对抗攻击破坏的图中生成干净合成图结构的生成方法</p><p class="summary"><span class="label">简介</span>论文提出稳健图扩散模型（RGDM），用于生成带标签的合成图结构（节点与边），以便无缝并入给定的图。RGDM由稳健图自编码器（RGAE）和潜在扩散模型（LDM）组成，并采用边选择机制和潜在特征上的低秩正则化。实验显示，在原始受攻击图与合成图结构合并而成的增强图上训练的图神经网络，在半监督节点分类中对多种图对抗攻击的稳健性有明显提升。</p>
+<p class="authors">Yancheng Wang, Ping Li, Dongfang Sun 等</p></article>
+<article class="item" id="d430350">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.MA</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430350" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04142" target="_blank" rel="noopener noreferrer nofollow">Interpretable Early Termination of Web Navigation Agents via Closed Sequential Pattern Mining</a>  </h3>
+<p class="note"><span class="label">说明</span>基于闭合序列模式挖掘的网页导航智能体可解释提前终止</p><p class="summary"><span class="label">简介</span>本文针对基于开源语言模型的网页导航智能体，提出用闭合序列模式挖掘（BIDE+）分析执行轨迹前K步，生成一套便于人工审阅的失败特征库，并归纳为四类失败分类及对应修复建议。作者在1,544条MiniWoB++轨迹上评估，K=3时在排除错误的配置下F1达到0.717，并在测试集中于三步内识别出88%的失败，据此提出的提前终止策略可节省26.3%的token，精确率为92%。</p>
+<p class="authors">Sergio Talavera, Magdalini Eirinaki</p></article>
+<article class="item" id="d430349">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.LG</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430349" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04141" target="_blank" rel="noopener noreferrer nofollow">Where Do Distilled Students Store Thinking?</a>  </h3>
+<p class="note"><span class="label">说明</span>蒸馏学生模型把思考能力存在了哪里？</p><p class="summary"><span class="label">简介</span>小型学生模型在处理大型推理模型的长篇解答时表现会下降，因此有研究通过按比例 λ 将推理模型与短答案模型插值来缩短解答。本文比较了三组教师配对在各 λ 下学生的 LoRA 适配器，发现适配器更新子空间在教师停止思考、解答明显变短处变化最大。作者找出一个与类思考行为（反思性标记、独白格式和长解答）相关的共享子空间，移除它基本能关闭该行为。</p>
+<p class="authors">Taeyeong Kim, Jaemin Jung, Ahhyun Kim 等</p></article>
+<article class="item" id="d430348">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">astro-ph.IM · cs.CV</span><time datetime="2026-11-03">2026年11月3日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d430348" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04139" target="_blank" rel="noopener noreferrer nofollow">COSMIO: A Benchmark for Cross-Survey Modality Imputation</a>  </h3>
+<p class="note"><span class="label">说明</span>COSMIO：跨巡天模态插补基准</p><p class="summary"><span class="label">简介</span>大型天文巡天中，每个天体只被部分巡天观测到，且各巡天的分辨率、波段和噪声不同。本文提出跨巡天模态插补问题，并构建了基于 LSST、Euclid 和 Roman 的对齐观测基准 COSMIO。实验显示，现有插补方法迁移到巡天场景时效果较差；在稀有事件（强引力透镜）场景下，性能进一步下降，并影响下游透镜检测任务。</p>
+<p class="authors">Dichang Zhang, Yixuan Shao, Jiaqi Deng 等</p></article>
+<article class="item" id="d430346">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CL · cs.DC</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430346" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04137" target="_blank" rel="noopener noreferrer nofollow">LoopKV: Loop-Aware KV Cache Compression for Serving Looped Transformers</a>  </h3>
+<p class="note"><span class="label">说明</span>LoopKV：面向循环Transformer服务的循环感知KV缓存压缩方法</p><p class="summary"><span class="label">简介</span>循环Transformer通过对每个token重复使用同一模块多次来提升精度而不增加参数，但每个循环各自保存的KV缓存会占用大量显存并限制批量大小。LoopKV在离线阶段对各（循环，层）单元的量化敏感度进行一次性分析，为每个单元选择4位存储、2位存储或复用最后一个循环的KV，并在预测误差与存储预算下最小化读取量。在Ouro-1.4B模型上，其内存优化方案比统一4位量化（KIVI-4）少占用35%的KV存储，在延迟服务目标下吞吐量达到KIVI-4的1.7至2.2倍。</p>
+<p class="authors">Tianle Zhou, Yang Zhang, Tianyu Wu 等</p></article>
+<article class="item" id="d430344">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430344" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04126" target="_blank" rel="noopener noreferrer nofollow">GlucoAgent: Personalized Glucose Forecasting from Multimodal Personal Context</a>  </h3>
+<p class="note"><span class="label">说明</span>GlucoAgent：基于多模态个人信息的个性化血糖预测</p><p class="summary"><span class="label">简介</span>该论文提出 GlucoAgent，一个基于大语言模型的智能体系统。它针对每次预测，编写并运行代码分析个人的连续血糖监测、智能手表、饮食记录和健康档案等多模态数据，并给出预测结果、理由及依据。在 CGMacros 数据集上，其平均 RMSE 为 22.5 mg/dL，优于 Chronos-2 的 23.5 mg/dL；加入多模态数据后，它的误差降低幅度也明显大于 Chronos-2，在餐后时段的 60 分钟预测中尤为明显。</p>
+<p class="authors">Xingzhi Sun, Hyo Jin Kim, Zhiyuan Wang 等</p></article>
+<article class="item" id="d430343">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">astro-ph.GA · cs.CV · physics.data-an</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430343" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04123" target="_blank" rel="noopener noreferrer nofollow">An automated photometric pipeline for measuring the corotation radius of spiral galaxies</a>  </h3>
+<p class="note"><span class="label">说明</span>一种用于测量旋涡星系共转半径的自动化测光流程</p><p class="summary"><span class="label">简介</span>该论文提出一种自动化测光方法，通过追踪年轻与年老恒星群体之间的方位相位差，识别旋涡星系的共转半径。作者将方法与已发表文献的测量结果进行了对比，在90个有参考值的星系中，该流程正确给出共转半径的比例为80.0%，并达到0.58的调和平均值，据论文称为所比较方法中的最高值。</p>
+<p class="authors">Kimia Yazdani, Sahel Mesforoush, Wayne B. Hayes</p></article>
+<article class="item" id="d430340">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-03">2026年11月3日</time>
+<a class="permalink" href="../../../zh/go.html#d430340" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.04113" target="_blank" rel="noopener noreferrer nofollow">The Evolution Strategies Paradox: Better Models from Worse Perturbations</a>  </h3>
+<p class="note"><span class="label">说明</span>进化策略悖论：从更差的扰动中得到更好的模型</p><p class="summary"><span class="label">简介</span>本文研究进化策略（ES）等基于扰动的方法如何用于微调数十亿参数的大语言模型。研究发现一种悖论：训练中所有扰动后的子模型表现都比父模型差，但父模型却持续提升。作者从局部奖励地形和ES估计器的性质解释这一现象：高维探索会使表现变差，却仍能指出好的方向，聚合这些方向即可实现局部改进。</p>
+<p class="authors">Roberto Dailey, Kajetan Schweighofer, Jamieson Warner 等</p></article>
+    </section>
+    <nav class="pager">
+<a href="../../../zh/papers/ai/2026-11-03.html">第 1 页</a><a href="../../../zh/papers/ai/2026-11-03-2.html">第 2 页</a><a href="../../../zh/papers/ai/2026-11-03-3.html" aria-current="page">第 3 页</a><a href="../../../zh/papers/ai/2026-11-03-4.html">第 4 页</a><a href="../../../zh/papers/ai/2026-11-03-5.html">第 5 页</a><a href="../../../zh/papers/ai/2026-11-03-6.html">第 6 页</a>    </nav>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <section class="risk-notice" aria-labelledby="risk-title">
+      <h2 id="risk-title">风险提示与免责声明</h2>
+      <ol>
+<li>本站内容由程序从互联网上的公开来源（政府与监管机构网站、论文预印本平台、技术社区等）自动采集整理，本站不保证资料的完整性、准确性、及时性或持续可用；原始来源可能随时修改、撤回或删除。</li><li>每条的说明、简介、星级评价和看点均由人工智能自动生成，未经人工逐条审核，可能存在误译、遗漏、过时或错误；日期、比率、金额虽经程序与原文核对，仍可能有误。</li><li>一切以原文和发布机构的正式文本为准；译文和摘要仅供参考，不具有法律效力。</li><li>本站不构成任何法律、税务、会计、投资或其他专业意见，也不构成买卖任何资产（包括加密资产）的要约、招揽或推荐。作出任何决定前，请咨询具备资格的专业人士。</li><li>加密资产价格波动剧烈，可能损失全部本金；各国家和地区的监管要求不同且经常变化，相关活动在部分地区可能受限或违法。</li><li>星级只依据论文标题和摘要粗略判断，不代表对论文质量、结论正确性或作者的评价。</li><li>本站与所列政府机构、监管机构、论文作者及第三方网站均无关联；外部链接的内容由其运营者负责，相关著作权和商标权归原权利人所有。</li><li>本站按现状提供，内容可能随时更新、更正或删除而不另行通知。因使用或依赖本站信息造成的任何直接或间接损失，本站概不负责。</li>      </ol>
+    </section>
+    <p class="muted">Thank you to arXiv for use of its open access interoperability.</p>
+    <p class="muted">简介更新至 2026年11月15日 · <a href="../../../zh/sources.html">来源与覆盖</a></p>
+    <p class="muted contact">发现翻译、分类、日期或链接有误，或有其他建议，欢迎来信： <a href="mailto:contact@ditinglab.org">contact@ditinglab.org</a></p>
+  </div>
+</footer>
+</body>
+</html>
