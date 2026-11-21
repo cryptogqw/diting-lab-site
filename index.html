@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>諦聽 Diting Lab</title>
+<link rel="icon" href="assets/brand/favicon-32.png?v=8f6b178017" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/favicon.svg?v=8f6b178017" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png?v=8f6b178017">
+<link rel="stylesheet" href="assets/style.css?v=8f6b178017">
+<link rel="stylesheet" href="assets/fonts/fonts.css?v=8f6b178017"><link rel="stylesheet" href="assets/themes/nightcity.css?v=8f6b178017"><script>
+(function () {
+  // 默认跟随浏览器语言：按浏览器的偏好顺序取第一个支持的语言；本次浏览中手动切换过的优先
+  var langs = ["zh", "ja", "en"], pick = null;
+  try { pick = sessionStorage.getItem("diting-lang"); } catch (e) {}
+  if (langs.indexOf(pick) < 0) {
+    pick = "en";
+    var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = String(prefs[i]).toLowerCase().slice(0, 2);
+      if (langs.indexOf(code) >= 0) { pick = code; break; }
+    }
+  }
+  location.replace(pick + "/index.html");
+})();
+</script>
+</head>
+<body class="theme-nightcity">
+<main class="wrap chooser">
+  <h1><img class="brand-logo" src="assets/brand/logo.svg?v=8f6b178017" alt="諦聽 Diting Lab" width="224" height="60"></h1>
+  <ul>
+<li><a href="zh/index.html" lang="zh-Hans">中文</a></li><li><a href="ja/index.html" lang="ja">日本語</a></li><li><a href="en/index.html" lang="en">English</a></li>  </ul>
+</main>
+</body>
+</html>

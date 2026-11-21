@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>密码学与安全 · 2026年11月19日（周四） · 諦聽 Diting Lab</title>
+<meta name="description" content="技术论文与全球加密监管速览">
+<link rel="alternate" hreflang="zh-Hans" href="../../../zh/papers/cryptography/2026-11-19.html">
+<link rel="alternate" hreflang="ja" href="../../../ja/papers/cryptography/2026-11-19.html">
+<link rel="alternate" hreflang="en" href="../../../en/papers/cryptography/2026-11-19.html">
+<link rel="alternate" hreflang="x-default" href="../../../index.html">
+<link rel="alternate" type="application/atom+xml" title="密码学与安全 · 2026年11月19日（周四） · 諦聽 Diting Lab" href="../../../zh/papers/cryptography/feed.xml"><link rel="icon" href="../../../assets/brand/favicon-32.png?v=8f6b178017" type="image/png" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.svg?v=8f6b178017" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/brand/apple-touch-icon.png?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/style.css?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/fonts/fonts.css?v=8f6b178017"><link rel="stylesheet" href="../../../assets/themes/nightcity.css?v=8f6b178017"><script src="../../../assets/site.js?v=8f6b178017" defer></script>
+</head>
+<body class="theme-nightcity">
+<header class="site-header">
+  <div class="wrap header-grid">
+    <a class="brand" href="../../../zh/index.html">
+      <img class="brand-logo" src="../../../assets/brand/logo.svg?v=8f6b178017" alt="諦聽 Diting Lab" width="149" height="40">
+    </a>
+    <nav class="main-nav">
+      <a href="../../../zh/index.html">首页</a>
+      <a href="../../../zh/papers/index.html" aria-current="page">论文</a>
+      <a href="../../../zh/laws/index.html">法规与监管</a>
+      <a href="../../../zh/about.html">关于</a>
+    </nav>
+    <nav class="lang-switch" aria-label="选择语言">
+      <a href="../../../zh/papers/cryptography/2026-11-19.html" data-lang="zh" lang="zh-Hans" aria-current="true">中文</a>
+      <a href="../../../ja/papers/cryptography/2026-11-19.html" data-lang="ja" lang="ja">日本語</a>
+      <a href="../../../en/papers/cryptography/2026-11-19.html" data-lang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="stale-note" hidden data-src="../../../assets/built.json">本站已超过 12 小时没有更新（正常每 3 小时更新一次），下面的内容可能不是最新的。</p><div class="page-head">
+  <h1 class="page-title">密码学与安全 · 2026年11月19日（周四）</h1>
+<p class="lede">arXiv 安全与密码类（cs.CR）和 IACR 密码学预印本。</p><a class="feed-link" href="../../../zh/papers/cryptography/feed.xml">RSS 订阅</a></div>
+<div class="layout">
+  <aside class="side">
+    <nav class="chips">
+      <a href="../../../zh/papers/crypto/index.html"><span>加密货币与区块链</span> <span class="count">213</span></a>
+      <a href="../../../zh/papers/cryptography/index.html" aria-current="page"><span>密码学与安全</span> <span class="count">2651</span></a>
+      <a href="../../../zh/papers/quantum/index.html"><span>量子计算</span> <span class="count">4068</span></a>
+      <a href="../../../zh/papers/finance/index.html"><span>量化金融</span> <span class="count">353</span></a>
+      <a href="../../../zh/papers/ai/index.html"><span>AI 算法</span> <span class="count">26089</span></a>
+      <a href="../../../zh/papers/other/index.html"><span>其它计算机科学</span> <span class="count">1581</span></a>
+      <a href="../../../zh/papers/community/index.html"><span>技术社区讨论</span> <span class="count">105</span></a>
+    </nav>
+  </aside>
+  <div class="content">
+    <div class="filter-row">
+      <input class="filter" type="search" placeholder="筛选下方条目…" aria-label="筛选下方条目…">
+<label class="only-toggle"><input type="checkbox" data-only="notable"> 只看值得关注（4 星以上）</label>    </div>
+    <p class="alias-hint muted" hidden data-text="同时匹配：{terms}"></p>
+    <p class="filter-count muted" hidden data-text="本页匹配 {n} 条"></p>
+    <p class="filter-empty muted" hidden>本页没有符合条件的条目（筛选只在本页内进行）。 <button type="button" class="filter-clear">清除筛选</button></p>
+    <section class="day">
+<article class="item" id="d755482">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CC · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755482" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26169" target="_blank" rel="noopener noreferrer nofollow">Products of Distinguisher Hulls</a>  </h3>
+<p class="note"><span class="label">说明</span>区分器凸包的乘积</p><p class="summary"><span class="label">简介</span>论文研究两个分布的区分器凸包在独立乘积下的行为，其中区分器是规模有界的布尔电路。作者由Dwork与Tankala的超模拟器定理（FOCS 2026）推导出一个几何结论，并给出关于区分器凸包近似乘积包含的不同证明。该构造用非自适应采样代替了自适应分数修正。</p>
+<p class="authors">John Paul Steinberger, Zhe Zhang</p></article>
+<article class="item" id="d755471">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755471" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26131" target="_blank" rel="noopener noreferrer nofollow">SCARVA: Interpretable Agentic Reasoning in Software Supply-Chain Analysis</a>  </h3>
+<p class="note"><span class="label">说明</span>SCARVA：软件供应链分析中可解释的智能体推理框架</p><p class="summary"><span class="label">简介</span>复杂应用可能从依赖项继承安全漏洞，但有漏洞的依赖项不一定危及应用本身。该论文提出 SCARVA 框架，由分析智能体（ANALYST）进行软件安全评估，并记录其每次工具调用、文件访问和网络请求；随后由一个或多个独立的裁判智能体（JUDGE）审查结果，生成有证据支撑的报告。在 54 个人工标注案例上的评估显示，表现最佳的分析模型 Qwen 3.8 平衡准确率达 82%，人工标注显示 Claude Opus 5.5 作为裁判与标注者在 94% 的论断检查上一致。</p>
+<p class="authors">Tim Barsch, Bruno Nogueira, Tobias Wienand 等</p></article>
+<article class="item" id="d755468">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755468" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26117" target="_blank" rel="noopener noreferrer nofollow">ChronoPatch: Black-Box Energy-Latency Attacks on Vision-Language Models</a>  </h3>
+<p class="note"><span class="label">说明</span>ChronoPatch：针对视觉语言模型的黑盒能耗-延迟攻击</p><p class="summary"><span class="label">简介</span>该论文提出ChronoPatch，一种只需观察最终回复即可实施的黑盒攻击，通过对抗性视觉输入使视觉语言模型生成更长的回复，从而增加推理延迟与能耗。论文在四个开源模型和三个商业API上进行了实验，结果显示推理延迟与GPU能耗均明显上升，且输出的重复性增加。作者据此指出，这类基于生成过程的可用性风险在仅能获取最终回复的情况下依然存在，并呼吁为已部署的生成式AI服务设计感知生成过程的防护措施。</p>
+<p class="authors">Jiawei Xing, Li Wang, Xiangtao Meng 等</p></article>
+<article class="item notable" id="d755457">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755457" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26100" target="_blank" rel="noopener noreferrer nofollow">Causal Overtaking in Fair Transaction Ordering</a>  </h3>
+<p class="note"><span class="label">说明</span>公平交易排序中的因果超越攻击</p><p class="summary"><span class="label">简介</span>该论文研究公平交易排序协议中的一种攻击：被攻陷的副本观察到目标交易后，通过多个客户端入口提交同一笔带签名的响应交易副本，使响应交易在目标交易之前执行。作者对包括Themis在内的一类基于接收顺序的协议进行了形式化，分析了攻击可行的时序与网络条件，并证明仅靠接收证据的机制无法总是同时保证先提交优先并防止响应交易超越。论文还提出并分析了一种缓解方案，并通过基于AWS和WonderProxy延迟数据的模拟进行评估。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于指出多入口提交可使响应交易先于目标执行，并证明纯接收证据机制无法同时保证优先级与防抢跑；摘要报告了形式化分析与基于AWS、WonderProxy延迟的仿真。</p><p class="authors">Haozhe Feng, Di Wu, Jian Liu</p></article>
+<article class="item" id="d755453">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755453" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26094" target="_blank" rel="noopener noreferrer nofollow">Phantom of the Masquerade: Graph Neural Network-Based Detection of Masquerade Attacks in Controller Area Networks</a>  </h3>
+<p class="note"><span class="label">说明</span>幻影伪装：基于图神经网络检测控制器局域网中的伪装攻击</p><p class="summary"><span class="label">简介</span>论文针对车载与工业控制器局域网（CAN）缺乏内置安全机制、易受伪装攻击的问题，提出基于图神经网络的检测框架PhantoMasq。该方法将CAN流量建模为消息序列图，并加入从信号行为提取的轻量统计特征，以图卷积网络进行图级分类。在ROAD数据集上，对五种伪装攻击的平均AUC-ROC介于0.831至0.999之间，且在相同滑动窗口设置下优于一种先进的图嵌入基线方法。</p>
+<p class="authors">Nehal Ameen, Pablo Moriano, Irfan Ahmed</p></article>
+<article class="item" id="d755426">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · eess.SP</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755426" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26023" target="_blank" rel="noopener noreferrer nofollow">Detecting Formation-Preserving GNSS Spoofing of UAV Swarms through Transmitter Parallax in Pseudorange and Doppler</a>  </h3>
+<p class="note"><span class="label">说明</span>通过伪距与多普勒中的发射机视差检测保持编队的无人机群GNSS欺骗</p><p class="summary"><span class="label">简介</span>无人机群通常通过比对位置与已知编队来发现GNSS欺骗，但保持编队的欺骗可以绕过这一检查。本文提出一种似然比检验，利用每架无人机已有的伪距和多普勒测量，从近距离发射机造成的信号到达时间视差中识别攻击痕迹，无需额外天线。仿真结果显示，该方法对GNSS-WASP等攻击有较高的检测率，并能识别单发射机和地面阵列欺骗。</p>
+<p class="authors">Minseok Park, Joon Soo Yoo</p></article>
+<article class="item notable" id="d755396">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755396" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25945" target="_blank" rel="noopener noreferrer nofollow">BlockJack: Cross-Tenant Redirection Fault Attacks on Paged KV Cache Address Translation in LLM Serving</a>  </h3>
+<p class="note"><span class="label">说明</span>BlockJack：针对大模型服务中分页KV缓存地址转换的跨租户重定向故障攻击</p><p class="summary"><span class="label">简介</span>本文提出BlockJack，这是首个针对大语言模型推理中KV缓存地址转换的故障攻击。攻击通过破坏vLLM中的块表条目，使一个请求的KV缓存读取被重定向到另一租户请求的数据块，且不修改模型参数、提示或已缓存的KV状态。论文在多个模型上验证了信息泄露与回答被操纵两类影响，并演示了借助Rowhammer实现的物理可行性，还评估了分配校验作为防御手段的效果。</p>
+<p class="why"><span class="label label-why">看点</span>首次把故障攻击针对LLM推理中分页KV缓存的地址转换层，将块表条目破坏导致跨租户重定向；摘要报告在七个模型和248个医疗场景上验证，并涉及Rowhammer物理可行性。</p><p class="authors">Qifan Wang, Jeremy Boy, Jonas Sander 等</p></article>
+<article class="item" id="d755388">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755388" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25929" target="_blank" rel="noopener noreferrer nofollow">Question, Then Affirm: Restoring Commitment Does Not Restore Refusal</a>  </h3>
+<p class="note"><span class="label">说明</span>先提问后确认：恢复立场并不能恢复拒绝</p><p class="summary"><span class="label">简介</span>该论文发现，图像生成的安全防护可以在不改变消息含义的情况下被绕过。直接陈述的有害命题会被拦截，但把同一命题改写为问句并加上对勾后，系统仍会生成图像，而图像实际上仍认可原命题。作者将这一现象称为延迟语义承诺（DSC），并在300个测试案例上比较了gpt-image-2的表现。</p>
+<p class="authors">Haoyang Xu, Qirui Wang, Liuwan Zhu</p></article>
+<article class="item" id="d755343">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755343" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25832" target="_blank" rel="noopener noreferrer nofollow">RAVEN: A Self-RAG Based Agent for Threat Classification and Response</a>  </h3>
+<p class="note"><span class="label">说明</span>RAVEN：基于自反思检索增强生成的威胁分类与响应智能体</p><p class="summary"><span class="label">简介</span>本文提出RAVEN，一个辅助安全运营中心分析人员的智能体框架，用于自动化安全告警调查的初始阶段。系统采用自反思检索增强生成方法对安全事件进行初步分类，并允许分析人员通过交互式查询逐步细化结果。论文称其能结合目标企业基础设施的知识生成情境化的修复建议，而非通用缓解策略。作者报告了原型系统在三组各含400个网页攻击载荷（SQL注入、跨站脚本、服务端模板注入）测试集上的初步结果，以及一个缓解方案生成的定性案例。</p>
+<p class="authors">Pironti Francesco Aurelio, Arena Luigi, Blefari Francesco 等</p></article>
+<article class="item" id="d755331">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755331" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25809" target="_blank" rel="noopener noreferrer nofollow">ALIoTh: Orchestrating Multi-Agent LLMs for Autonomous IoT Penetration Testing</a>  </h3>
+<p class="note"><span class="label">说明</span>ALIoTh：编排多智能体大语言模型实现物联网自动化渗透测试</p><p class="summary"><span class="label">简介</span>本文提出ALIoTh框架，利用多个基于大语言模型的智能体，通过LangGraph协调，并结合自我检索增强生成（Self-RAG）机制，自动识别并利用物联网和工业物联网环境中的漏洞。框架覆盖网络与设备枚举、漏洞评估、载荷生成、反向Shell部署及权限提升等完整攻击流程，并让专家智能体获取物联网安全知识以增强推理能力。</p>
+<p class="authors">Pironti Francesco Aurelio, Arena Luigi, Blefari Francesco 等</p></article>
+<article class="item" id="d755325">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.SE</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755325" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25790" target="_blank" rel="noopener noreferrer nofollow">On the Reliability of CyberGym Evaluation: Task Material Consistency and Reference-Target Identity</a>  </h3>
+<p class="note"><span class="label">说明</span>关于 CyberGym 评测可靠性：任务材料一致性与参考目标身份</p><p class="summary"><span class="label">简介</span>本文审查 CyberGym 漏洞复现评测的可靠性。该评测以概念验证输入在漏洞版本崩溃、修复版本不崩溃作为判定依据。作者对全部 1,507 个任务的材料一致性做了审计，其中 338 个任务（22.4%）被标记为存在不一致。作者还检查了一次完整运行中最终输入的身份，发现部分通过判定实际指向非目标缺陷，并指出目标命中要求会使通过率从 85.3% 降至 78.8%。</p>
+<p class="authors">Yule Ding, Hongzhen Wu</p></article>
+<article class="item" id="d755293">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755293" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25718" target="_blank" rel="noopener noreferrer nofollow">Hardening JavaScript Programs against LLM-Based Vulnerability Detection</a>  </h3>
+<p class="note"><span class="label">说明</span>防范基于大语言模型的漏洞检测：加固 JavaScript 程序</p><p class="summary"><span class="label">简介</span>JavaScript 程序通常以源代码发布，攻击者可以直接分析其中的漏洞，而基于大语言模型的漏洞检测智能体使这种分析更加容易。本文提出 AntiAgent 防御方法，在发布前对程序进行变换，以阻碍检测智能体的分析。在真实 JavaScript 应用上，针对包括 Claude Code 和 Codex 在内的四种检测智能体，该方法使其检测到的漏洞数量减少 52.0%-60.7%，并在项目测试中保持程序语义不变。</p>
+<p class="authors">Zhenhao Tian, Jintong Yu, Jingwei Feng 等</p></article>
+<article class="item" id="d755268">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755268" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25669" target="_blank" rel="noopener noreferrer nofollow">Ask in the Crowd: Differentially Private LLM Inference via Dummy-Augmented Shuffling</a>  </h3>
+<p class="note"><span class="label">说明</span>在人群中提问：基于虚假查询混洗的差分隐私大模型推理</p><p class="summary"><span class="label">简介</span>本文提出DP-SPD框架，用于在大模型即服务场景中保护用户查询隐私。该方法把真实查询与客户端生成的虚假查询混在一起，打乱顺序后再发送给服务器，使服务器难以识别用户的真实意图。同时利用查询间的共享前缀复用Transformer的键值缓存，以提高推理效率。</p>
+<p class="authors">Zhihao Liu, Zixiong Guo, Shuo Shao 等</p></article>
+<article class="item" id="d755266">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755266" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25664" target="_blank" rel="noopener noreferrer nofollow">GPU-Accelerated Secure Inference for Drug--Target Interaction Prediction</a>  </h3>
+<p class="note"><span class="label">说明</span>基于GPU加速的药物—靶点相互作用安全推理</p><p class="summary"><span class="label">简介</span>本文提出一种在两台服务器上安全计算药物—靶点相互作用预测的方法，使预测过程中药物信息不被任何一方获知。作者设计了更适合多方安全计算的轻量模型SlimDTA，减少需要通信的非线性运算，并构建GPU框架，线性层用加法秘密共享、非线性层用函数秘密共享实现。该方案在iDASH 2026竞赛赛道三中获得第一名，平均每次预测耗时不到10毫秒，安全预测结果与明文模型的差异在0.02%以内。</p>
+<p class="authors">Sikha Pentyala, Steven Golob, Daniil Filienko 等</p></article>
+<article class="item" id="d755251">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.CV</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755251" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25640" target="_blank" rel="noopener noreferrer nofollow">Erasing the Wrong Thing: Conditional Attribute Leakage and Concept Erasure in Shared Foundation-Model Embeddings</a>  </h3>
+<p class="note"><span class="label">说明</span>擦除错误的东西：共享基础模型嵌入中的条件属性泄露与概念擦除</p><p class="summary"><span class="label">简介</span>本文研究医学影像嵌入在共享时可能泄露敏感属性的问题。作者证明，当任务标签与敏感标签相关时，全局线性保护与任务条件线性保护无法同时成立，并提出任务条件版LEACE（TC-LEACE）方法，在每个任务层内强制线性保护。实验在CelebA的85组属性对及胸片数据上进行，结果显示LEACE后条件泄露仍然存在，TC-LEACE能恢复大部分任务效用损失，同时把条件泄露控制在可接受范围内。</p>
+<p class="authors">Haijun He, Fei Li, Donghong Ji 等</p></article>
+<article class="item" id="d755234">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.HC</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755234" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25608" target="_blank" rel="noopener noreferrer nofollow">MetaScanner: An Empirical Study and Proactive Defense against Deceptive UI Attacks in Social VR</a>  </h3>
+<p class="note"><span class="label">说明</span>MetaScanner：社交VR中欺骗性界面攻击的实证研究与主动防御</p><p class="summary"><span class="label">简介</span>本文提出四种新型欺骗性界面攻击，可在社交VR平台中悄悄诱使用户在不知情的情况下执行非预期操作。作者在VRChat上实现了这些攻击，并通过一项经伦理审查批准、共30名参与者的用户研究验证了其有效性。研究还提出了主动分析系统MetaScanner，用于在用户接触前扫描虚拟世界中的脚本和交互对象，识别可疑或欺骗性元素。测试表明，它能检测出全部四种攻击场景，并且在38个真实资产上平均扫描耗时5秒。</p>
+<p class="authors">Junhee Lee, Seungwon Woo, Minseok Kim 等</p></article>
+<article class="item" id="d755229">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755229" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25599" target="_blank" rel="noopener noreferrer nofollow">Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents</a>  </h3>
+<p class="note"><span class="label">说明</span>Tether：面向智能体系统级监控的已验证有状态策略引擎</p><p class="summary"><span class="label">简介</span>该论文提出 Tether 框架，在运行时对自主 AI 智能体执行的 shell 命令或程序所产生的副作用实施有状态安全策略。它在隔离沙箱中执行每个拟定操作，根据观察到的系统调用推断操作语义，并仅在符合策略时允许其继续。策略以 Lean 4 中的嵌入式 DSL 定义，可用于形式化验证全局安全不变式。论文称，在编码智能体基准测试中，同一策略可阻止 100% 的范围内攻击，良性误报率低于 5%。</p>
+<p class="authors">Meghana Aparna Sistla, Alaia Solko-Breslin, Somesh Jha 等</p></article>
+<article class="item" id="d755223">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755223" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25590" target="_blank" rel="noopener noreferrer nofollow">Measuring Hallucination in Large Language Models for Cyber Threat Intelligence: An Exploratory Study</a>  </h3>
+<p class="note"><span class="label">说明</span>衡量网络威胁情报中大语言模型的幻觉：一项探索性研究</p><p class="summary"><span class="label">简介</span>本文对基于大语言模型的网络威胁情报任务（如摘要和问答）中的幻觉问题进行探索性测量。作者提出可复现的框架HalluVision，用微调的命名实体识别模型提取领域实体，并用多种相似度指标评估事实一致性。研究使用4,940篇真实网络安全文章测量两个商用模型和一个开源权重模型的输出，并以100条人工标注结果和两种既有忠实度检测器进行验证。结果显示语义相似度与人工判断一致，基于实体的指标一致性有限。</p>
+<p class="authors">Seungho Song, Donggyu Lee, Jaehan Kim 等</p></article>
+<article class="item" id="d755208">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755208" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25562" target="_blank" rel="noopener noreferrer nofollow">AZOWL AgentOps: Task-Scoped Governance for Deployed Agent Applications</a>  </h3>
+<p class="note"><span class="label">说明</span>AZOWL AgentOps：面向已部署智能体应用的任务范围治理</p><p class="summary"><span class="label">简介</span>该论文提出 AZOWL AgentOps，用于部署智能体并委派工作时的共享治理。已接受的工作带有稳定标识符，把发起者的权限、指定执行者、所需审批和结果证据关联起来。作者在四组配对试点中用28次合成运行，将 AZOWL 组件与配置好的 LangGraph 应用进行比较。两种配置都未在对话中记录业务任务，并拒绝了未授权的智能体转交；批准的投递地址变更后，写入次数均为零。</p>
+<p class="authors">Taeoh Hong</p></article>
+<article class="item" id="d755207">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.MM · eess.IV</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755207" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25561" target="_blank" rel="noopener noreferrer nofollow">Passing NPCR Without Diffusion: Exact Signatures, a Detection Benchmark and an Audit of Published Image Ciphers</a>  </h3>
+<p class="note"><span class="label">说明</span>不靠扩散也能通过NPCR检测：精确特征、检测基准与对已发表图像加密方案的审计</p><p class="summary"><span class="label">简介</span>该论文指出，NPCR（明文单像素改变后密文字节变化的比例）常被当作扩散性证据，但不同机制都可能得到接近的数值。作者区分了无传播、单轮线性链式扩散和独立密文三种情况，并给出精确计数与统计特征。论文还审计了二十一个已发表方案，并发布了可将这些特征应用于公开结果表的检查工具，但它不用于认证安全性。</p>
+<p class="authors">Mua&#39;ad Alfarajat</p></article>
+<article class="item" id="d755204">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755204" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25555" target="_blank" rel="noopener noreferrer nofollow">UniReFP: Robust Unified Fingerprinting for Vision Models against Cross-Task Repurposing Attacks</a>  </h3>
+<p class="note"><span class="label">说明</span>UniReFP：面向跨任务再利用攻击的视觉模型统一鲁棒指纹方法</p><p class="summary"><span class="label">简介</span>本文指出一种新的模型修改攻击——跨任务模型再利用攻击，它会使现有模型指纹方法失效。作者提出UniReFP统一指纹框架，在共享的类别级语义空间中验证所有权，并通过在替代分类器上优化分组指纹来生成所有权证据。实验表明，该方法在跨任务再利用攻击、常见模型修改攻击及其组合下均表现更优。</p>
+<p class="authors">Ziye Geng, Guang Yang, Yihang Chen 等</p></article>
+<article class="item" id="d755180">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d755180" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25509" target="_blank" rel="noopener noreferrer nofollow">LingSante MedGuard Technical Report</a>  </h3>
+<p class="note"><span class="label">说明</span>LingSante MedGuard：面向医疗AI风险检测的统一护栏模型技术报告</p><p class="summary"><span class="label">简介</span>本文提出LingSante MedGuard，一种能力增强的医疗AI护栏模型，通过整合医疗护栏教师模型与六个专业能力专家的监督，用于识别医疗回答中的安全、合规与伦理风险。研究采用离线监督微调与多教师在线策略蒸馏进行训练，并提出包含11个风险检测子集的LingSante MedGuardBench基准。在4B、9B、27B规模下，平均基准F1分别为82.3%、82.4%和87.4%；4B模型在检索增强评估下的MedHallu与MedHALT-NOTA平均准确率为73.9%。</p>
+<p class="authors">LingSante MedGuard Team</p></article>
+<article class="item" id="d749368">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749368" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25479" target="_blank" rel="noopener noreferrer nofollow">Side-Channel Analysis of the RP2350 Challenge 2</a>  </h3>
+<p class="note"><span class="label">说明</span>RP2350挑战赛2的侧信道分析：对一项加固AES实现的独立安全评估</p><p class="summary"><span class="label">简介</span>本文对RP2350侧信道分析挑战中经过加固的AES实现进行了独立分析，包括泄漏检测、明文相关性分析和密钥提取。作者指出该实现存在与挑战方声明相悖的安全弱点，并公开分析以促进更多公众审查。</p>
+<p class="authors">Nikhil Tattikota, Vincent Immler</p></article>
+<article class="item notable" id="d749361">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="5/5">★★★★★</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749361" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25470" target="_blank" rel="noopener noreferrer nofollow">ToolPulse: Side-Channel Eavesdropping on Tool-Using LLM Agents</a>  </h3>
+<p class="note"><span class="label">说明</span>ToolPulse：针对调用工具的大模型智能体的缓存侧信道窃听</p><p class="summary"><span class="label">简介</span>该论文指出，商用大模型推理在云端进行，但工具在用户本机执行并常依赖共享系统库，因此可通过缓存侧信道监测智能体的工具调用。作者比较了Flush+Reload与Prime+Probe，并提出ToolPulse框架，其中工具恢复攻击在11个大模型（Codex与Claude Code）上的最低F1分数超过93%。文中还展示了任务画像与触发点定位两种攻击，在约20名用户共享的服务器噪声下仍保持较高准确率。</p>
+<p class="why"><span class="label label-why">看点</span>首次利用共享系统库的缓存侧信道窃听远程智能体的工具调用，攻击在11个LLM上验证，F1超过93%，并在高噪声服务器上仍保持准确率。</p><p class="authors">Zihao Dan, Jinyu Zhang, Jinzhao Lian 等</p></article>
+<article class="item" id="d749342">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749342" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25435" target="_blank" rel="noopener noreferrer nofollow">VisualJevBench: A Benchmark and Black-Box Attacks for Visual Typed Decision Models</a>  </h3>
+<p class="note"><span class="label">说明</span>VisualJevBench：视觉类型化决策模型的基准测试与黑盒攻击</p><p class="summary"><span class="label">简介</span>本文针对能输出结构化决策而非自由文本的类型化决策模型（TDM）在图像输入下的对抗鲁棒性，提出了VisualJevBench基准，包含800张图像和3200个问题，涵盖八个场景与四类视觉攻击面。作者还提出了自适应黑盒参数搜索方法ABPS，利用类型化输出反馈寻找有效的图像篡改方式，可生成针对特定图像的攻击，也可生成迁移到新图像和新场景的通用攻击。在jev-1.14.0上的实验显示，特定图像攻击的攻击成功率最高达69.6%，通用攻击在未见图像上的平均攻击成功率为33.15%，几何变换在跨场景迁移中的平均攻击成功率为40.09%。</p>
+<p class="authors">Li Zeng, Yeqi Zeng, Hengkai Liang 等</p></article>
+<article class="item" id="d749331">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749331" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25412" target="_blank" rel="noopener noreferrer nofollow">ChainAgent: Automated Chainable Vulnerability Discovery in PHP Web Applications</a>  </h3>
+<p class="note"><span class="label">说明</span>ChainAgent：PHP 网页应用中可串联漏洞的自动化发现框架</p><p class="summary"><span class="label">简介</span>这篇论文提出了 ChainAgent，一个由大语言模型驱动、目标导向的智能体框架，用于在 PHP 网页应用源代码中同时发现漏洞串联（攻击链）的组成部分及其能力依赖关系。研究基于对 386 条真实网页攻击链的实证分析设计该框架。在 15 个 PHP 应用上，ChainAgent 对目标组件的召回率为 42.02%–44.63%，正确的目标依赖边数量最多为通用编码智能体 Codex 的 4.4 倍。另外在 30 个真实 PHP 应用中，它发现了 20 个漏洞和 13 条攻击链，其中 9 条可实现远程代码执行。</p>
+<p class="authors">Xinyi Wang, Yeting Li, Shizhe Cui 等</p></article>
+<article class="item notable" id="d749300">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.AR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749300" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25339" target="_blank" rel="noopener noreferrer nofollow">From FIPS to FPGA with LLM Agents: Measuring What Tests and Reviews Miss in Post-Quantum Cryptographic Hardware</a>  </h3>
+<p class="note"><span class="label">说明</span>用LLM智能体从FIPS到FPGA：测量测试与审查在后量子密码硬件中遗漏的问题</p><p class="summary"><span class="label">简介</span>该论文提出一套由LLM智能体驱动的七阶段验证门控流程，用于生成后量子密码（ML-KEM-768/ML-DSA-65）加速器的RTL代码，并将其移植到Zynq UltraScale+ FPGA板卡上。论文通过网表变异测试、缺陷回放和形式化检查，审计这些由智能体自身生成的测试与审查证据。结果显示，现有仿真测试仅能杀死76%的变异体，而针对性补充测试后解封装的杀伤率从48%提升至74%。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于用篡改变异体和形式化检查审计LLM生成硬件的验证流程，并在ML-KEM/ML-DSA加速器上给出量化结果，影响主要限于硬件安全验证领域。</p><p class="authors">Jungmin Park, Eunha Kim, Wooseop Kim 等</p></article>
+<article class="item notable" id="d749291">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="5/5">★★★★★</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749291" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25324" target="_blank" rel="noopener noreferrer nofollow">Verified Netlist-to-RTL Recovery with LLM Agents</a>  </h3>
+<p class="note"><span class="label">说明</span>借助大语言模型代理从网表还原可验证的RTL代码</p><p class="summary"><span class="label">简介</span>论文提出LOCA（逻辑锥攻击），利用大语言模型将匿名门级网表按逻辑锥切分，由并行代理分别改写，再组装成紧凑的RTL代码。只保留经证明与网表等价的结果，并以压缩率衡量质量。在21组模型与设计组合中，LOCA成功还原17组，而整体网表提示方式仅成功6组。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于将网表按逻辑锥分组交由并行LLM代理重写并以等价性证明筛选，在21组模型-设计组合上恢复17组，对比整网表提示的6组。</p><p class="authors">Ahmet Efe, Recep Bugra Uludag, Ulya R. Karpuzcu</p></article>
+<article class="item" id="d749285">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CR · cs.DC</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749285" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25301" target="_blank" rel="noopener noreferrer nofollow">SplitReAlign: Partition-Aware Representation Realignment for Split Federated Unlearning</a>  </h3>
+<p class="note"><span class="label">说明</span>SplitReAlign：面向分割联邦遗忘的分区感知表示重对齐方法</p><p class="summary"><span class="label">简介</span>该论文针对分割联邦学习中的类别遗忘问题提出SplitReAlign框架。它为客户端和服务器构建端点专属的判别子空间并通过共享语义锚点协调，选择性地重对齐被遗忘的表示，同时惩罚活动子空间之外的变化。在CIFAR-10和CIFAR-100的异构客户端分布实验中，该方法在六种设置下与重新训练结果的平均差距最小。</p>
+<p class="authors">Jia Chen, Yecheng Lv, Xinrong Hu 等</p></article>
+<article class="item" id="d749273">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749273" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25272" target="_blank" rel="noopener noreferrer nofollow">TRACE-5G: Trust-Aware Runtime Attestation and Continuous Enforcement for 5G User Equipment</a>  </h3>
+<p class="note"><span class="label">说明</span>TRACE-5G：面向5G用户设备的可信感知运行时证明与持续管控</p><p class="summary"><span class="label">简介</span>该论文指出，标准5G认证协议只验证用户身份而不检查终端完整性，现有的设备证书和TPM度量启动检查也无法发现接入后运行的未授权软件。作者提出TRACE-5G，借助IMA、TPM与Keylime持续验证终端运行时软件状态，并据此控制网络访问。在srsRAN/Open5GS测试平台上的实验显示，可信终端在9至12秒内获得完整接入，不可信终端的升级被持续拒绝。</p>
+<p class="authors">Al Nahian Bin Emran, Rajendra Paudyal, Rajendra Upadhyay 等</p></article>
+<article class="item" id="d749257">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.CV</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749257" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25226" target="_blank" rel="noopener noreferrer nofollow">Reject and Report: Forgery-Evident Undetectable Watermarks for Generative Image Models</a>  </h3>
+<p class="note"><span class="label">说明</span>拒绝并报告：面向生成式图像模型的可识别伪造、不可检测水印</p><p class="summary"><span class="label">简介</span>本文提出Tripwire-WM，一种可识别伪造的不可检测水印框架，用于追溯生成式图像模型的输出。它把生成图像的语义承诺编码到初始潜噪声的幅值中，伪造图像虽带有有效水印，但承诺与内容不符，检测器因此既拒绝也报告其为伪造。论文称该方法基于PRC水印与Gaussian Shading++并保持其不可检测性。</p>
+<p class="authors">Yihan Wang, Haochen Sun, Xi He 等</p></article>
+<article class="item" id="d749245">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749245" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25195" target="_blank" rel="noopener noreferrer nofollow">User Perceptions of Deceptive In-Vehicle Infotainment User Interfaces</a>  </h3>
+<p class="note"><span class="label">说明</span>用户如何看待车载信息娱乐界面中的欺骗性设计</p><p class="summary"><span class="label">简介</span>该论文研究车载信息娱乐系统中的暗黑模式（诱导用户做出不利选择的界面设计）。研究以Android Automotive OS为对象，通过审核四家车企的模拟器发现17种暗黑模式，并开展两项用户研究，比较不同实现方式及培训前后用户的判断。研究认为，设计越隐蔽，越不容易引起用户怀疑，因此监管应关注暗黑模式的具体实现方式，而不仅是是否存在。</p>
+<p class="authors">Pedram MohajerAnsari (1), Iwinosa Aideyan (1), Anna Galeano (1) 等</p></article>
+<article class="item" id="d749227">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749227" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25142" target="_blank" rel="noopener noreferrer nofollow">Mutable State in Enrich-by-Need Security Protocol Analysis</a>  </h3>
+<p class="note"><span class="label">说明</span>强制性安全协议分析中的可变状态（enrich-by-need 方法）</p><p class="summary"><span class="label">简介</span>本文讨论安全协议分析中一种常被忽略的情形：协议参与方在本地维护可变状态，该状态限制其本地会话可执行的操作，并且会被其他本地会话修改。作者提出在链空间（strand space）符号化协议分析方法中表示这种跨会话可变状态，并将相关思路实现于密码协议形状分析器 CPSA。文中以两条刻画状态的公理加上协议特定规则构成核心理论，可对相关情形给出更精确的协议行为刻画，并有助于设计依赖跨会话可变状态的正确协议。</p>
+<p class="authors">Joshua D Guttman, Paul D Rowe, Eben Blaisdell</p></article>
+<article class="item notable" id="d749205">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.CL</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749205" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25086" target="_blank" rel="noopener noreferrer nofollow">Living off the Local Model: Abusing Browser-Embedded Language Models for Post-Exploitation</a>  </h3>
+<p class="note"><span class="label">说明</span>“借助本地模型”：利用浏览器内置语言模型进行入侵后操作</p><p class="summary"><span class="label">简介</span>论文研究浏览器（如 Chrome 内置的 Gemini Nano）在终端本地运行的语言模型，可能被攻击者用于入侵后的操作。作者称，该模型可仅通过操作系统自带的解释器从主机调用，且下载前的用户激活检查可被模拟点击满足或被绕过。作者还测试了该模型识别主机凭据、检测邮件中的个人信息、分类图像和调用自定义工具的能力，并以此完成了一次无需用户交互的模拟网络行动。</p>
+<p class="why"><span class="label label-why">看点</span>新意在于把浏览器内置本地模型转为后渗透引擎并绕过用户激活检查；摘要报告了凭据识别、PII检测、图像分类等能力测试及端到端模拟行动，影响涉及攻击面。</p><p class="authors">William Fleshman, Joseph Lucas</p></article>
+<article class="item" id="d749203">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-19">2026年11月19日</time>
+<span class="tag tag-code" title="摘要称公开了代码、数据或工具；本站没有检查链接">公开资源</span><a class="permalink" href="../../../zh/go.html#d749203" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25073" target="_blank" rel="noopener noreferrer nofollow">PriTabICL: Differentially Private Tabular In-Context Learning with Task-Aligned Cluster-Wise Synthesis</a>  </h3>
+<p class="note"><span class="label">说明</span>PriTabICL：基于任务对齐聚类合成的差分隐私表格上下文学习</p><p class="summary"><span class="label">简介</span>本文研究如何在表格上下文学习（TabICL）中保护隐私。大语言模型借助提示中的少量标注示例进行预测，但这些示例可能含有敏感个人信息。作者提出PriTabICL框架，先将记录划分为差分隐私聚类，再分别合成数据，并以特征与标签的固定工作负载优先保留与预测相关的统计关系；推理时将查询路由到对应聚类并从其合成数据中采样示例。在四个真实数据集上的实验显示该方法有效，其中PriTabICL-PrivSyn在12组设置中有8组优于全局PrivSyn。</p>
+<p class="authors">Syed Ahzaz Shah, Evan Bramblett, H\&#39;eber H. Arcolezi 等</p></article>
+<article class="item" id="d749196">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.MA</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d749196" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25056" target="_blank" rel="noopener noreferrer nofollow">Attacks and Defenses in Decentralized Multi-Agent Systems with Hop-by-Hop Task Decomposition and Delegation</a>  </h3>
+<p class="note"><span class="label">说明</span>去中心化多智能体系统中的攻击与防御：逐跳任务分解与委派</p><p class="summary"><span class="label">简介</span>本文研究去中心化多智能体大语言模型系统中恶意智能体带来的威胁。作者设计并评估了针对完整性、可用性和机密性的攻击，并提出一种密码学协议，为系统中的每个动作生成不可否认的已验证执行记录，同时开发审计器分析这些记录以检测并归因恶意行为。</p>
+<p class="authors">Matthew D. Laws, Maria Lazou, Alina Oprea 等</p></article>
+<article class="item" id="d727392">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.SI · cs.CR · cs.CY</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d727392" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24899" target="_blank" rel="noopener noreferrer nofollow">&#34;I Don&#39;t Think It&#39;s a Scam&#34;: A First Look at Family Intervention Barriers in Elder Abuse Discussions on Reddit and Baidu Tieba</a>  </h3>
+<p class="note"><span class="label">说明</span>《“我不觉得这是诈骗”》：Reddit与百度贴吧中老年人诈骗讨论里家庭干预障碍初探</p><p class="summary"><span class="label">简介</span>本文分析了Reddit和百度贴吧中关于老年人被诈骗的讨论，考察家人干预时遇到的障碍。研究采用混合方法，对1万多条Reddit帖子和近4000条贴吧帖子进行编码分析。结果显示，多数老人在被提醒后仍表现出抵触或继续参与，家人常因缺乏合法授权而难以介入，且资金追回情况非常有限。</p>
+<p class="authors">Yipeng Wang, Huy Gia Han Vu, Jiaming Liu 等</p></article>
+<article class="item" id="d727348">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d727348" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24765" target="_blank" rel="noopener noreferrer nofollow">LLM-Guided Cyber-Physical Attack Path Identification in Smart Grids</a>  </h3>
+<p class="note"><span class="label">说明</span>基于大语言模型引导的智能电网信息物理攻击路径识别</p><p class="summary"><span class="label">简介</span>本文提出一种基于物理依据的框架，利用大语言模型识别电力系统中的信息物理攻击路径，并以级联故障得出的影响排序作为参考。框架结合系统拓扑与基于STRIDE和MITRE ATT&amp;CK的威胁建模，并与拓扑驱动、威胁驱动及融合方法进行比较。结果显示，结构化的大语言模型威胁建模显著提高了与物理参考的一致性，在IEEE 14节点系统中运行时间相比融合基线减少约75%至85%。</p>
+<p class="authors">Amr Elshazly, Jesse Roberts, Rachad Atat 等</p></article>
+<article class="item notable" id="d727321">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CR · cs.DC</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d727321" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24689" target="_blank" rel="noopener noreferrer nofollow">Stealing Exact Training Data from Other Clients during Federated Learning</a>  </h3>
+<p class="note"><span class="label">说明</span>在联邦学习中从其他客户端窃取精确训练数据</p><p class="summary"><span class="label">简介</span>该论文提出一种针对联邦学习的梯度反演攻击流程，恶意客户端借此从模型更新中还原其他客户端的私有文本。方法通过迭代逐步剥离已精确恢复句子的梯度贡献，使其余句子得以逐轮还原。论文称首次实现精确句子恢复，精确率为100%，在聚合中词元数最多为模型隐藏维度4倍的情况下，可精确恢复多达80.2%的客户端句子。</p>
+<p class="why"><span class="label label-why">看点</span>提出迭代消除聚合梯度纠缠的新攻击流程，在多句聚合上精确恢复客户端句子，结果达80.2%。</p><p class="authors">Omkar Shrikanth, Soham Dambalkar, Parag Jyoti Pal 等</p></article>
+<article class="item" id="d727320">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.SE</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d727320" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24682" target="_blank" rel="noopener noreferrer nofollow">The Limit Is in the Input, Not the Model: State-Dependent Command Safety in Natural-Language Interfaces to Industrial Controllers</a>  </h3>
+<p class="note"><span class="label">说明</span>问题出在输入而非模型：工业控制器自然语言接口中依赖状态的指令安全性</p><p class="summary"><span class="label">简介</span>本文研究用语言模型判断发给工业控制器的指令是否安全时，模型是否拿到了设备当前状态。同一指令在不同状态下可能需要相反的安全判断，因此回答错误可能源于缺少信息。作者提出&#34;可答性审计&#34;，检查模型是否获得决策所需信息，并用成对测试评估，只有两种状态下的答案都正确才计为通过。在作者自建的15对测试中，无状态时模型都无法可靠区分；加入状态后，正确对数从0到13不等。</p>
+<p class="authors">Hemen Taukoor, Zhaoxia Wang, Venky Shankararaman</p></article>
+<article class="item" id="d727316">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.SY · eess.SY</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d727316" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24662" target="_blank" rel="noopener noreferrer nofollow">Gradient-Based Defensive Poisoning Against System Identification Attacks on Cyber-Physical Systems</a>  </h3>
+<p class="note"><span class="label">说明</span>针对信息physical系统辨识攻击的基于梯度的防御性投毒方法</p><p class="summary"><span class="label">简介</span>本文针对网络物理系统（CPS）中的AI驱动辨识攻击，即攻击者被动观测控制器与被控对象信号以学习系统模型。作者在攻击者观测的测量值中注入微小扰动，以降低基于人工神经网络的系统辨识精度。扰动由多个独立训练的辨识模型的输入梯度汇总得到，并限制在携带大部分动态信息的瞬态阶段。在仿真直流电机网络控制系统上，所提扰动比同等均方根幅值的随机投毒造成更大的预测误差，且差距随幅值增大而扩大；结果还表明该投毒信号对N4SID辨识方法也有效。</p>
+<p class="authors">Gon\c{c}alo Fernandes, Jos\&#39;e Cec\&#39;ilio, Victor Mattos 等</p></article>
+<article class="item" id="d727303">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d727303" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24623" target="_blank" rel="noopener noreferrer nofollow">Robust, Lightweight Locally Differentially Private Histogram Estimation and the Role of Dropout Attacks</a>  </h3>
+<p class="note"><span class="label">说明</span>稳健的轻量级本地差分隐私直方图估计，以及丢弃攻击的作用</p><p class="summary"><span class="label">简介</span>本文针对本地差分隐私中恶意客户端篡改输出的问题，提出一种三消息的轻量验证框架，用明文求值证明把篡改限制为选择性丢弃。在 PI-RAPPOR 和 Hadamard Response 的评测设置下，每个客户端的平均在线延迟低于 500 毫秒。作者还给出了误差上界，并提出无需客户端密码学的服务器端一致性检查方法。</p>
+<p class="authors">Haochen Sun, Jacob Imola, Xi He</p></article>
+<article class="item notable" id="d727290">
+<div class="pick-badge" title="星级是 AI 根据标题和摘要的粗略评价：按新颖性、证据强度、影响面打分，再换算成 1–5 星。换算门槛于 2026 年 10 月用约 2 万篇论文校准后固定、每月复核，不按比例硬性分配；校准时约 2% 的论文为 5 星、12% 为 4 星。网站只标出 4–5 星的「值得关注」，并附一句看点；没有标记不代表论文不好。评价没有读全文，看点只转述作者在摘要中的说法，不评价证明和实验是否严格、充分，本站没有核实；星级仅供挑选时参考，不是对论文质量的定论。「公开资源」表示摘要里写明公开了代码、数据或工具，本站没有检查链接能否访问。"><span class="stars" aria-label="4/5">★★★★☆</span> 值得关注</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../zh/go.html#d727290" title="固定链接" aria-label="固定链接">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24586" target="_blank" rel="noopener noreferrer nofollow">Playing the SMR Game with Existential Honesty</a>  </h3>
+<p class="note"><span class="label">说明</span>以存在性诚实假设玩转状态机复制（SMR）博弈</p><p class="summary"><span class="label">简介</span>本文研究在没有诚实多数验证者的情况下，如何保证状态机复制协议的安全性。作者假设存在一个身份未知、始终在线的诚实全节点，让客户端把收到的证书转交全节点并等待后再确认交易，从而在任意验证者策略下实现始终安全。文中还形式化并刻画了验证者通过贿赂实施交易审查的程度。</p>
+<p class="why"><span class="label label-why">看点</span>在无诚实验证者的理性拜占庭设定下，通过中继证书与诚实全节点构建总是安全的终结层，并给出审查的紧界刻画，证明与分析较为扎实。</p><p class="authors">Zeta Avarikioti, Odysseas Sofikitis, Christos Stefo</p></article>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <section class="risk-notice" aria-labelledby="risk-title">
+      <h2 id="risk-title">风险提示与免责声明</h2>
+      <ol>
+<li>本站内容由程序从互联网上的公开来源（政府与监管机构网站、论文预印本平台、技术社区等）自动采集整理，本站不保证资料的完整性、准确性、及时性或持续可用；原始来源可能随时修改、撤回或删除。</li><li>每条的说明、简介、星级评价和看点均由人工智能自动生成，未经人工逐条审核，可能存在误译、遗漏、过时或错误；日期、比率、金额虽经程序与原文核对，仍可能有误。</li><li>一切以原文和发布机构的正式文本为准；译文和摘要仅供参考，不具有法律效力。</li><li>本站不构成任何法律、税务、会计、投资或其他专业意见，也不构成买卖任何资产（包括加密资产）的要约、招揽或推荐。作出任何决定前，请咨询具备资格的专业人士。</li><li>加密资产价格波动剧烈，可能损失全部本金；各国家和地区的监管要求不同且经常变化，相关活动在部分地区可能受限或违法。</li><li>星级只依据论文标题和摘要粗略判断，不代表对论文质量、结论正确性或作者的评价。</li><li>本站与所列政府机构、监管机构、论文作者及第三方网站均无关联；外部链接的内容由其运营者负责，相关著作权和商标权归原权利人所有。</li><li>本站按现状提供，内容可能随时更新、更正或删除而不另行通知。因使用或依赖本站信息造成的任何直接或间接损失，本站概不负责。</li>      </ol>
+    </section>
+    <p class="muted">Thank you to arXiv for use of its open access interoperability.</p>
+    <p class="muted">简介更新至 2026年11月21日 · <a href="../../../zh/sources.html">来源与覆盖</a></p>
+    <p class="muted contact">发现翻译、分类、日期或链接有误，或有其他建议，欢迎来信： <a href="mailto:contact@ditinglab.org">contact@ditinglab.org</a></p>
+  </div>
+</footer>
+</body>
+</html>

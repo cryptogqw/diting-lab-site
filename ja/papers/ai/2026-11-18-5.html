@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI アルゴリズム · 2026年11月18日（水） · 諦聽 Diting Lab</title>
+<meta name="description" content="技術論文と世界の暗号資産規制をひと目で">
+<link rel="alternate" hreflang="zh-Hans" href="../../../zh/papers/ai/2026-11-18-5.html">
+<link rel="alternate" hreflang="ja" href="../../../ja/papers/ai/2026-11-18-5.html">
+<link rel="alternate" hreflang="en" href="../../../en/papers/ai/2026-11-18-5.html">
+<link rel="alternate" hreflang="x-default" href="../../../index.html">
+<link rel="alternate" type="application/atom+xml" title="AI アルゴリズム · 2026年11月18日（水） · 諦聽 Diting Lab" href="../../../ja/papers/ai/feed.xml"><link rel="icon" href="../../../assets/brand/favicon-32.png?v=8f6b178017" type="image/png" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.svg?v=8f6b178017" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/brand/apple-touch-icon.png?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/style.css?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/fonts/fonts.css?v=8f6b178017"><link rel="stylesheet" href="../../../assets/themes/nightcity.css?v=8f6b178017"><script src="../../../assets/site.js?v=8f6b178017" defer></script>
+</head>
+<body class="theme-nightcity">
+<header class="site-header">
+  <div class="wrap header-grid">
+    <a class="brand" href="../../../ja/index.html">
+      <img class="brand-logo" src="../../../assets/brand/logo.svg?v=8f6b178017" alt="諦聽 Diting Lab" width="149" height="40">
+    </a>
+    <nav class="main-nav">
+      <a href="../../../ja/index.html">ホーム</a>
+      <a href="../../../ja/papers/index.html" aria-current="page">論文</a>
+      <a href="../../../ja/laws/index.html">法令・規制</a>
+      <a href="../../../ja/about.html">このサイトについて</a>
+    </nav>
+    <nav class="lang-switch" aria-label="言語を選択">
+      <a href="../../../zh/papers/ai/2026-11-18-5.html" data-lang="zh" lang="zh-Hans">中文</a>
+      <a href="../../../ja/papers/ai/2026-11-18-5.html" data-lang="ja" lang="ja" aria-current="true">日本語</a>
+      <a href="../../../en/papers/ai/2026-11-18-5.html" data-lang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="stale-note" hidden data-src="../../../assets/built.json">本サイトは 12 時間以上更新されていません（通常は 3 時間ごと）。以下の内容は最新でない可能性があります。</p><div class="page-head">
+  <h1 class="page-title">AI アルゴリズム · 2026年11月18日（水）</h1>
+<p class="lede">機械学習、人工知能、自然言語処理、コンピュータビジョン、マルチエージェント。</p><a class="feed-link" href="../../../ja/papers/ai/feed.xml">RSS で購読</a></div>
+<div class="layout">
+  <aside class="side">
+    <nav class="chips">
+      <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">213</span></a>
+      <a href="../../../ja/papers/cryptography/index.html"><span>暗号・セキュリティ</span> <span class="count">2651</span></a>
+      <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">4068</span></a>
+      <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">353</span></a>
+      <a href="../../../ja/papers/ai/index.html" aria-current="page"><span>AI アルゴリズム</span> <span class="count">26089</span></a>
+      <a href="../../../ja/papers/other/index.html"><span>その他の計算機科学</span> <span class="count">1581</span></a>
+      <a href="../../../ja/papers/community/index.html"><span>技術コミュニティの議論</span> <span class="count">105</span></a>
+    </nav>
+  </aside>
+  <div class="content">
+    <div class="filter-row">
+      <input class="filter" type="search" placeholder="下の項目を絞り込み…" aria-label="下の項目を絞り込み…">
+<label class="only-toggle"><input type="checkbox" data-only="notable"> 注目論文（★4 以上）のみ表示</label>    </div>
+    <p class="alias-hint muted" hidden data-text="次の表記も検索：{terms}"></p>
+    <p class="filter-count muted" hidden data-text="このページで {n} 件が該当"></p>
+    <p class="filter-empty muted" hidden>このページに条件に合う項目はありません（絞り込みはこのページ内のみ）。 <button type="button" class="filter-clear">絞り込みを解除</button></p>
+    <section class="day">
+<article class="item" id="d719906">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.AI · cs.GT</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719906" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23403" target="_blank" rel="noopener noreferrer nofollow">Tracking Representations in LLM Reasoning Traces for Iterated Games</a>  </h3>
+<p class="note"><span class="label">説明</span>反復ゲームにおけるLLMの推論過程で表現を追跡する研究</p><p class="summary"><span class="label">要約</span>本論文は、不完全情報の反復ゲームで大規模言語モデル（LLM）エージェントがどのように意思決定を行うかを調べたものです。機械的解釈可能性の手法を用い、モデルが思考の連鎖（CoT）の過程でゲームの内部表現を形成し、繰り返し修正していくことを示しています。モデルが誤った信念に早々に確定すると、ほとんど回復しないことも報告されています。この失敗は推論の文章と各層の活性化の両方に現れるとされています。</p>
+<p class="authors">Chaipat Tirapongprasert, Rajarshi Das, Parijat Dube</p></article>
+<article class="item" id="d719905">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.AR</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719905" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23398" target="_blank" rel="noopener noreferrer nofollow">HardwareDx: A Foundational Graph Model System for Datacenter Machine Repairs</a>  </h3>
+<p class="note"><span class="label">説明</span>HardwareDx：データセンター機器修理のための基盤グラフモデルシステム</p><p class="summary"><span class="label">要約</span>本論文は、グラフ基盤モデルを用いてデータセンターの自動保守を行う、AIベースのハードウェア診断システムHardwareDx（Hardware Diagnoser）を紹介しています。単一のモデルで複数のプラットフォームを診断でき、新しいハードウェア製品の導入も早められるとしています。Googleの本番規模で展開され、GPUプラットフォームで生産停止時間を18.3%、TPUで16.1%削減したと報告されています。また、品質保証（QA）時間はGPUで28.3%、TPUで25.1%短縮されたとしています。</p>
+<p class="authors">Yuanlin Wen, Elan Markowitz, Zubo Gu ほか</p></article>
+<article class="item notable" id="d719904">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI · stat.ML</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719904" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23397" target="_blank" rel="noopener noreferrer nofollow">Which Tokens, in What Order, and How Fast? A Theoretical Analysis of On-Policy Distillation Objectives</a>  </h3>
+<p class="note"><span class="label">説明</span>どのトークンを、どの順序で、どれだけ速く学習するか——同一方策蒸留の目的関数に関する理論分析</p><p class="summary"><span class="label">要約</span>本論文は、同一方策蒸留（OPD）において目的関数の選択が、どのトークンを優先し、どの順序で、どれだけ効率よく学習させるかを決めることを理論的に分析している。系列レベルのOPDには将来の一致に対する偏り（future agreement bias）があり、これにより後方の位置で先に教師と一致し、前方の位置では教師の下で確率の低いトークンを選びやすくなることを示している。また、前方KLダイバージェンスは良好な最適化地形を持つ一方、逆KLなど他のf-ダイバージェンスは学生と教師が大きく離れていても勾配消失が起こりうることを証明している。</p>
+<p class="why"><span class="label label-why">注目点</span>系列レベルOPDの将来一致性バイアスと逆順学習を明らかにし、ダイバージェンスの選択が勾配最適化に影響することを示す。理論分析に基づき、言語モデルの事後学習で検証。</p><p class="authors">Hubert Strauss, Liam Fowl, Noam Razin</p></article>
+<article class="item" id="d719902">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719902" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23388" target="_blank" rel="noopener noreferrer nofollow">QDA: Closed-Loop LLM Quantization Design with Agents</a>  </h3>
+<p class="note"><span class="label">説明</span>QDA：エージェントによる閉ループ型LLM量子化設計</p><p class="summary"><span class="label">要約</span>本論文は、LLMエージェントがモデルと精度ごとに学習後量子化のレシピを設計するシステムQDAを提案している。候補を数分で原モデルとの出力KLダイバージェンスにより評価し、有望なものは長い生成で繰り返しループなどの失敗を確認する。4つの推理モデルでは、W4A16、W4A8、W3A16において最強の公開レシピより平均で精度が向上し、1回の探索に64 GPU時間を要するとしている。</p>
+<p class="authors">Xingyang Li, Tianlang Zhao, Song Han ほか</p></article>
+<article class="item" id="d719900">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719900" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23386" target="_blank" rel="noopener noreferrer nofollow">Chorus: Shared N-gram Embeddings with Layer-wise Adaptation</a>  </h3>
+<p class="note"><span class="label">説明</span>Chorus：層ごとの適応を伴う共有 N-gram 埋め込み手法</p><p class="summary"><span class="label">要約</span>言語モデルは、連続する短いトークン列に対応する学習済みベクトルの表（N-gram 埋め込み表）を使うことで、計算コストを抑えつつ容量を増やせます。従来は層ごとに別々の表を持つため、メモリを多く使い、層同士で知識を共有できませんでした。Chorus は1組の表をネットワーク全体で共有し、各層が隠れ状態に応じた係数で埋め込みを調整し、自前の射影層を通して読み取ります。論文では表のパラメータを 87% 減らしても既存手法と同等の性能を示し、比較した各設定で Engram、TN-gram、FactorEngram を上回ったと報告しています。</p>
+<p class="authors">Stephen Chung, Wenyu Du</p></article>
+<article class="item" id="d719899">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cond-mat.stat-mech · cs.SE</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719899" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23375" target="_blank" rel="noopener noreferrer nofollow">Where the Tokens Go: Heat, Entropy and Error in Agentic Coding</a>  </h3>
+<p class="note"><span class="label">説明</span>「Where the Tokens Go」：コーディングエージェントにおける熱・エントロピー・誤りの熱力学的分析</p><p class="summary"><span class="label">要約</span>本論文は、AIコーディングエージェントが生成するトークンをコストとみなし、それを「仕事」と「熱」に分ける「ソフトウェア熱力学」の理論を提案します。単一分子の引き伸ばしと折りたたみの実験に倣い、エージェントに変更の実施と取り消しを繰り返させ、各モデル呼び出しのトークン数を数えています。成功した実行のトークンの約80％は要求された変更を残さないモデル呼び出しで生成されたと報告されています。</p>
+<p class="authors">Al\&#39;an Aspuru-Guzik, Varinia Bernales</p></article>
+<article class="item" id="d699791">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699791" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23229" target="_blank" rel="noopener noreferrer nofollow">Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching</a>  </h3>
+<p class="note"><span class="label">説明</span>アンビエントLLM：温度マッチングによるデータ効率の良い教師あり微調整</p><p class="summary"><span class="label">要約</span>本論文は、事後学習データが事前学習データより大幅に少なく過学習やデータ分布の裾の忘却が起きやすい問題に対し、Ambient SFTという教師あり微調整の枠組みを提案する。事前学習モデルの凍結版を雑音を含む教師とみなし、微調整モデルが高温条件下の条件付き分布で事前学習モデルの高温分布と一致するよう求める。温度パラメータは事前学習モデルへの信頼度を制御する。領域適応、指示微調整、推論の各タスクで標準のSFTを上回り、平均相対改善は最大21%とされる。</p>
+<p class="authors">Giannis Daras, Marios Papachristou, Adam Klivans ほか</p></article>
+<article class="item" id="d699790">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699790" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23228" target="_blank" rel="noopener noreferrer nofollow">Spool: Low-Latency Streaming Inference for Hybrid Vision-Language Models</a>  </h3>
+<p class="note"><span class="label">説明</span>Spool：ハイブリッド視覚言語モデル向けの低遅延ストリーミング推論</p><p class="summary"><span class="label">要約</span>本論文は、過去一定時間の映像フレームに対して素早く質問に答えるための、学習不要のフレームワークSpoolを提案する。フレームごとの再帰層の状態変換をキャッシュして効率的に合成し、バックボーンにフレームを再投入せずに期限切れのフレームを状態から除去する。5つのオープンソースのハイブリッド視覚言語モデルと4つの映像推論ベンチマークで、全20テストにおいてp95の最初のトークンまでの時間が最も短く、精度は平均2.3ポイント向上したと報告している。</p>
+<p class="authors">Rui Ning, Om Chabra, Hari Balakrishnan</p></article>
+<article class="item" id="d699789">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699789" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23226" target="_blank" rel="noopener noreferrer nofollow">FastFrames: Video Generation at Interactive Latency</a>  </h3>
+<p class="note"><span class="label">説明</span>FastFrames：インタラクティブな遅延で動画を生成する手法</p><p class="summary"><span class="label">要約</span>本論文は、画質を損なわずにインタラクティブな遅延を実現する高速な自己回帰型動画拡散モデル群FastFramesを提案します。著者らは、VAEデコードやKVキャッシュ更新など従来は固定的な実装要素とみなされてきた処理が、エンドツーエンドの推論遅延の半分以上を占めることを示し、それらを軽量な代替手段に置き換えました。1.3Bモデルは単一のB200 GPUで1フレーム36ミリ秒、14Bモデルは8基のB200ノードで1フレーム45ミリ秒で動作し、1.3Bモデルは約8倍遅い先進モデルと同等の画質を示しています。</p>
+<p class="authors">Gene Chou, Guandao Yang, Fujun Luan ほか</p></article>
+<article class="item" id="d719898">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719898" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23365" target="_blank" rel="noopener noreferrer nofollow">Training Language Models for Introspective Oversight</a>  </h3>
+<p class="note"><span class="label">説明</span>内省型監視のための言語モデル訓練：モデル自身の行動に関する検証可能な質問に答えられるようにする手法</p><p class="summary"><span class="label">要約</span>本論文は、アシスタントの行動について任意の質問に答える第三者的な観察者役割をモデル内に訓練する「内省型監視（introspective oversight）」を提案している。回答がアシスタントの実際の行動と照合されて正しいほど報酬が与えられる仕組みである。5つの未見の監視評価で、Qwen3.6-27Bをベースに訓練した観察者は平均AUROC 0.907を示し、誠実性訓練（0.864）、トランスクリプト監視（0.828）、アクティベーション・オラクル（0.796）を上回った。さらに、観察者を訓練するとアシスタント自身も監視しやすくなることが報告されている。</p>
+<p class="authors">Alex Lin Wang, Linus Yifeng Tang, Dami Choi ほか</p></article>
+<article class="item" id="d699788">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">hep-th · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699788" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23225" target="_blank" rel="noopener noreferrer nofollow">StringQFT: A Multiuse Textbook Resource for AI-Assisted Theoretical Physics</a>  </h3>
+<p class="note"><span class="label">説明</span>StringQFT：AI支援理論物理学のための多目的教科書リソース</p><p class="summary"><span class="label">要約</span>本論文は、弦理論による量子場の理論の構成を扱う教科書コレクションStringQFTを紹介している。全18巻、190章、3,795ページからなり、ブレーンプローブ、ブレーンウェブ、幾何学的エンジニアリング、F理論の構成などを扱う。あわせて、有限の答えを自動で検査できる問題を含む1,073項目の演習集、教科書の出典とPDFの位置に結び付いた検索用の節データ、19の計算ツールを提供する。</p>
+<p class="authors">Xingyang Yu</p></article>
+<article class="item" id="d719897">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">q-bio.NC · cs.AI · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719897" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23364" target="_blank" rel="noopener noreferrer nofollow">Neural Circuit Architectural Priors for Rat Locomotion</a>  </h3>
+<p class="note"><span class="label">説明</span>ラットの歩行を支える神経回路の構造的事前情報：身体性シミュレーションによる脊髄回路モデル</p><p class="summary"><span class="label">要約</span>本論文は、ラットの行動を模擬する生体力学的な身体モデル Rat v2 と、哺乳類の脊髄回路に基づき細胞種特異的な結合と新しい屈筋・伸筋の神経力学的インターフェースを組み込んだ歩行用ニューラルアーキテクチャ Rat NCAP を提案している。模倣学習を用いずに異なる速度での歩行や歩容の切り替えを学習し、その運動統計、運動学、細胞種特異的な神経活動は実験データと一致したと報告されている。さらに、神経力学的インターフェースが学習性と歩容の質に大きく影響すること、計算機上での細胞種の除去実験で既知の歩容表現型が再現されることも示されている。</p>
+<p class="authors">Nikhil X. Bhattasali, Jaron Cui, Lerrel Pinto ほか</p></article>
+<article class="item" id="d699786">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">math.OC · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699786" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23221" target="_blank" rel="noopener noreferrer nofollow">An inexact stochastic variance-reduced gradient method for constrained convex finite-sum optimization</a>  </h3>
+<p class="note"><span class="label">説明</span>制約付き凸有限和最適化のための非厳密確率的分散低減勾配法</p><p class="summary"><span class="label">要約</span>本論文は、制約付き凸有限和最適化問題のクラスを扱う。制約違反量が決定論的にε以下、期待最適性ギャップがε以下となるε-SFSO解の計算を目指す。非厳密な確率的分散低減勾配（SVRG）法を提案し、従来知られていた一階オラクル計算量を大幅に改善した。目的関数が単一の関数の場合、標準的な凸錐最適化問題を解く新しい決定論的一階法となり、初期の数値実験結果も示される。</p>
+<p class="authors">Zhaosong Lu, Yifeng Xiao</p></article>
+<article class="item" id="d699785">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699785" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23219" target="_blank" rel="noopener noreferrer nofollow">Do LLM Agents Still Need to Be Told How to Self-Improve?</a>  </h3>
+<p class="note"><span class="label">説明</span>LLMエージェントは自己改善の方法を指示される必要があるのか？</p><p class="summary"><span class="label">要約</span>本論文は、凍結された大規模言語モデル（LLM）エージェントに計算資源とツールを与え、文脈ベースの最適化のための自己学習アルゴリズムを自ら構築させる研究です。テストベッドとしてゲームを用い、外部から与えられたループや実世界データなしで自由に実験させています。その結果、十分な能力を持つモデルは自己改善を行い、自己調整学習の古典的枠組みや自己生成カリキュラムに沿った戦略を示しました。さらに、学習されたテキスト成果物が、異なるゲームの長さ・仕組みや三次元ナビゲーションなど外部ベンチマークへ転移することも確認されています。</p>
+<p class="authors">Shobhita Sundaram, Cansu Sancaktar, Phillip Isola</p></article>
+<article class="item" id="d699784">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699784" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23218" target="_blank" rel="noopener noreferrer nofollow">What Does a Bias Head Measure? Non-Identifiability in Head-Level Bias Attribution</a>  </h3>
+<p class="note"><span class="label">説明</span>バイアスヘッドは何を測定しているのか：ヘッド単位のバイアス帰属における非識別性</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルの注意ヘッドを特定して削除することで社会的バイアスを除去する手法群を検証しています。これらの手法は公平性指標での効果によってのみ評価され、ヘッドを選ぶ統計量が実際にバイアスを測っているという証拠はありません。Qwen-2.5-7B-InstructとLlama-3.1-8B-Instructで検討した結果、この統計量の分散の大部分はプロンプトの同一性によって説明され、回答長では説明されないことが示されています。また、検証したどのヘッド集合を消融しても不公平率は下がりませんでした。</p>
+<p class="authors">S.M Seefat Alam</p></article>
+<article class="item notable" id="d699783">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.SE · cs.AI · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699783" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23216" target="_blank" rel="noopener noreferrer nofollow">Higher-Scoring Coding Models Did Not Get More Work Done</a>  </h3>
+<p class="note"><span class="label">説明</span>スコアの高いコーディングモデルで作業量が増えたわけではない</p><p class="summary"><span class="label">要約</span>本論文は、2026年6月に米国の輸出管理指令によりClaude Fable 5の利用が19日間禁止された事態を自然実験として扱っています。禁止期間中、多くの利用者はOpus 4.8に切り替えました。297人のFable 5利用者とOpus 4.8を使い続けた8,908人の開発者のGitHubプルリクエストを比較した結果、Fable 5へのアクセスによる7日間のマージ率の上昇は統計的に有意ではありませんでした。</p>
+<p class="why"><span class="label label-why">注目点</span>政策による利用停止を自然実験として用い、ベンチマーク得点の高さが実際の生産性向上につながるかを検証。作者はDiDで有意な改善は見られなかったと報告。</p><p class="authors">Yining Hua</p></article>
+<article class="item" id="d699782">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699782" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23212" target="_blank" rel="noopener noreferrer nofollow">EviSlide-MIL: Multi-Query Pooling and Shared Prediction for Class-Incremental Whole-Slide Image Classification</a>  </h3>
+<p class="note"><span class="label">説明</span>EviSlide-MIL：クラス増分型全スライド画像分類のための多クエリプーリングと共有予測手法</p><p class="summary"><span class="label">要約</span>本論文は、病理全スライド画像（WSI）をクラス増分学習で分類する手法EviSlide-MILを提案している。各クラスに複数の学習可能なクエリを設けて凍結された画像パッチ特徴を集約し、共有予測モジュールによって段階的なパラメータ増加を抑える。既存クラスのクエリを凍結し、経験再生と知識蒸留を併用して忘却を軽減する。The Cancer Genome Atlasの8種類の腫瘍サブタイプを用いた実験では、多くの学習設定で比較手法より高い性能と少ない忘却を示した。</p>
+<p class="authors">Zhouhan Qian, Sicheng Chen, Chad Wong ほか</p></article>
+<article class="item" id="d699781">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.LG · cs.RO</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699781" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23211" target="_blank" rel="noopener noreferrer nofollow">Multimodal Masked Diffusion Autoencoder for Modeling Impaired Driving</a>  </h3>
+<p class="note"><span class="label">説明</span>運転能力低下のモデル化のためのマルチモーダル・マスク付き拡散オートエンコーダ</p><p class="summary"><span class="label">要約</span>本論文は、マルチモーダル・マスク付き拡散オートエンコーダID-MAEを提案し、能力低下の予測に加えて、マスクされた視線と軌道を再構成する自己教師あり目標を導入しています。また、認知・視覚・感情の十種類の誘発条件を含む、109名・約103時間の運転データからなるドライビングシミュレータデータセットDIVERTを公開しています。DIVERTでの対応ペアAUCは、再構成損失なしの0.590に対し0.706でした。</p>
+<p class="authors">John Gideon, Anshul Gupta, Megan Applegate-Kenton ほか</p></article>
+<article class="item" id="d699780">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699780" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23209" target="_blank" rel="noopener noreferrer nofollow">Learning Grounded Reasoning from Human Gaze</a>  </h3>
+<p class="note"><span class="label">説明</span>人間の視線から根拠に基づく推論を学習する</p><p class="summary"><span class="label">要約</span>本論文は、視覚言語モデルの視覚推論を高めるために人間の視線データをどう活用できるかを検討している。著者らは7,109回の視線試験データを収集し、さまざまな形式の視線ガイダンスで根拠に基づく推論モデルを学習させた。図表理解、視覚探索、計数の評価では、完全な視線系列を教師信号として使うよりも、人間の視線を事前情報として使う方が一貫して優れた結果を示した。これを基に、GGR（Gaze-Guided Reasoner）が提案されている。</p>
+<p class="authors">Gabriel Sarch, Declan Campbell, Nicholas Budny ほか</p></article>
+<article class="item" id="d699778">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699778" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23206" target="_blank" rel="noopener noreferrer nofollow">Reading Scene States: Uncovering Safety Failures in Vision-Language Models</a>  </h3>
+<p class="note"><span class="label">説明</span>シーン状態の読み取り：視覚言語モデルの安全性の欠陥を明らかにする</p><p class="summary"><span class="label">要約</span>本論文は、視覚言語モデルが明示的な有害な目的の要求がなくても、画像内の視覚的な出来事を解釈することで有害な支援を行いうることを指摘しています。著者らは375組の画像と質問からなるSceneSafetyBenchを構築し、8つのモデルで攻撃成功率45.6〜72.3%を示しました。また、S3TAという攻撃手法を提案し、MM-SafetyBenchの7カテゴリで平均71.2%の攻撃成功率を達成したと報告しています。テキストフィルタや視覚的審査による保護は限定的だとしています。</p>
+<p class="authors">Tongxi Wu, Yuyang Cheng, Jiacheng Xian ほか</p></article>
+<article class="item" id="d699777">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI · cs.SE</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699777" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23205" target="_blank" rel="noopener noreferrer nofollow">Fine-Tuning Gemma 4 Edge Models for MATLAB Signal-Processing Code with SFT and QLoRA on a Laptop iGPU</a>  </h3>
+<p class="note"><span class="label">説明</span>ノートPCの内蔵GPUでSFTとQLoRAを用い、MATLAB信号処理コード向けにGemma 4エッジモデルを微調整する研究</p><p class="summary"><span class="label">要約</span>ノートPCの内蔵GPU（iGPU）上で、信号処理のMATLABサブタスク11種を対象とする66件の検査済みサンプルを用いて、Gemma 4エッジモデルのE2BとE4Bを教師あり微調整（SFT）し、LoRAとQLoRAを適用した。その後、8ビット整数モデルをOpenVINOでアダプター付きで展開している。決定論的チェッカーで採点した留保テストでは合格率が向上したと報告されている。アダプターは主に信号処理の慣例に関する誤りを減らす一方、信号やノイズの構成に関する誤りはあまり減らせず、実行時には生成速度が17〜19%低下するとしている。</p>
+<p class="authors">Mehmet Altan Toks\&#34;oz</p></article>
+<article class="item" id="d699776">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699776" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23202" target="_blank" rel="noopener noreferrer nofollow">Agent Trust Infrastructure (ATI): A Federated Identity, Trust, Attestation, and Accountability Architecture for Cross-Organization Autonomous AI Agents</a>  </h3>
+<p class="note"><span class="label">説明</span>エージェント信頼基盤（ATI）：組織横断型自律AIエージェントのための連携型ID・信頼・証明・説明責任アーキテクチャ</p><p class="summary"><span class="label">要約</span>本論文は、エージェントフレームワークに依存しない安全性アーキテクチャATIを提案します。公開鍵基盤、ゼロトラストアーキテクチャ、リモートアテステーションを基盤とし、各組織の対等な認証局（AgentCA）による連携型の信頼を実現します。リクエスト実行前に証明書と承認済みのモデル・ツール・システムプロンプト構成を検証し、3つのポリシーチェックで認可を強制します。8組織の模擬連携環境での評価では、全防護機構を有効にすると攻撃封じ込め率が43%から84%に向上し、リクエストあたりの追加遅延は約174マイクロ秒でした。</p>
+<p class="authors">Viet K. Nguyen, Mohammad I. Husain</p></article>
+<article class="item" id="d699775">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.RO</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699775" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23198" target="_blank" rel="noopener noreferrer nofollow">Learned versus Kinematic Trajectory Prediction under Reduced Observation Frequency</a>  </h3>
+<p class="note"><span class="label">説明</span>観測頻度低下時における学習型と運動学型の軌道予測の比較</p><p class="summary"><span class="label">要約</span>本論文は自動運転における軌道予測を扱い、地図や周辺車両を用いず観測履歴のみを使う場合に、LSTMベースの再帰型ニューラルネットワークが、観測履歴の頻度が下がったときも等速度・等加速度モデルに対する優位を保つかを検討している。Argoverse 2データセットで、履歴を10Hzから5、2、1Hzにダウンサンプリングして実験を行った。結果として、頻度ごとに学習したネットワークの平均変位誤差は頻度低下とともに増加したが、運動学モデルに対する優位は消えなかった。一方、歩行者については等速度モデルの方が高精度であった。</p>
+<p class="authors">Nukhbala Gadzhiev, Alexander Morochko</p></article>
+<article class="item" id="d699774">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699774" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23197" target="_blank" rel="noopener noreferrer nofollow">Structure--Residual Inductive Biases for Language Model Pretraining</a>  </h3>
+<p class="note"><span class="label">説明</span>言語モデル事前学習における「構造-残差」帰納バイアス</p><p class="summary"><span class="label">要約</span>本論文は、言語モデルの事前学習において表現の構造を明示的な帰納バイアスとして扱えるかを検討し、構造と実現の詳細（残差）を分ける原理を提案します。手法として、境界ボトルネック概念（BBC）は境界の担い手を通じて情報を伝え、連続概念（CC）は表現の幾何を正則化します。3億トークンの学習で両者を組み合わせると、GPT-2 MediumのNLLが1.44%改善し、最大200億トークンまで効果が持続したと報告されています。</p>
+<p class="authors">Hai Huang, Bartosz \.Zuk, Rassul Magauin ほか</p></article>
+<article class="item" id="d699772">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.LG · cs.RO</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699772" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23192" target="_blank" rel="noopener noreferrer nofollow">WoRD: Diffusion-Based Posterior Inference for Online Goal Recognition</a>  </h3>
+<p class="note"><span class="label">説明</span>WoRD：拡散モデルによるオンライン目標認識の事後推論</p><p class="summary"><span class="label">要約</span>本論文は、エージェントの部分的な軌道から意図する目標を推定する手法WoRDを提案している。学習済みの軌道事前分布を用い、候補目標ごとに拡散ノイズ除去の連鎖を実行し、閉形式の対数尤度勾配で観測軌道へ誘導したうえで、ベイズの定理により重み付けして目標の較正された事後分布を得る。シミュレーション上のロボット、歩行者、車両の軌道で評価を行っている。</p>
+<p class="authors">Almog Anschel, Sarah Keren</p></article>
+<article class="item" id="d699771">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699771" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23189" target="_blank" rel="noopener noreferrer nofollow">Retrieval-Augmented Correction for Generalist Medical Image Segmentation</a>  </h3>
+<p class="note"><span class="label">説明</span>汎用医用画像セグメンテーションのための検索拡張型修正手法</p><p class="summary"><span class="label">要約</span>本論文はGRACEを提案する。これは検索拡張型の修正モデルで、検証済みの過去症例からなる共有知識ベースを参照して、入力されたセグメンテーションマスクを編集する。解剖構造ごとに修正器を訓練する必要がなく、多臓器データで一度訓練されたモデルを用いる。CT、MRI、超音波を含む18の公開データセットで評価され、入力DSCが0.386の弱いセグメンテーション結果では最大0.35の向上が見られた一方、DSCが0.932の強いセグメンタでは平均変化は小さかった。</p>
+<p class="authors">Vincenzo Marcian\`o, Xiaoming Zhang, Michela Antonelli ほか</p></article>
+<article class="item" id="d699770">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699770" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23187" target="_blank" rel="noopener noreferrer nofollow">Any2Building: Unifying Point Clouds and Images for Building Reconstruction via Shared Spatial Queries</a>  </h3>
+<p class="note"><span class="label">説明</span>Any2Building：共有空間クエリによる点群と画像の統合建物再構築</p><p class="summary"><span class="label">要約</span>本論文は、部分的な点群、俯瞰画像、またはその両方（任意で粗い幾何事前情報を併用）からLoD2建物モデルを再構築する統一モデル「Any2Building」を提案しています。中核は、共通の3次元グリッド内で観測情報を整理する占有ベースの共有空間クエリ表現で、完全な建物表面ボクセルを教師信号としています。あわせて18都市の約100万組の配対サンプルからなる「BuildingWorld-Image」データセットを公開し、複数のベンチマークで既存手法より高い幾何再構築精度を示したと報告しています。</p>
+<p class="authors">Hongye Hou, Zhuoxiao Li, Liu Xiangyu ほか</p></article>
+<article class="item" id="d699768">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699768" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23185" target="_blank" rel="noopener noreferrer nofollow">Polarity Composition Hypothesis: Causal Evidence from Negation in NLI</a>  </h3>
+<p class="note"><span class="label">説明</span>極性合成仮説：NLIにおける否定の因果的証拠</p><p class="summary"><span class="label">要約</span>本論文は、自然言語推論（NLI）において言語モデルが否定をどのように処理するかを調べている。この計算過程の高水準な因果モデルとして「極性合成仮説（Polarity Composition Hypothesis）」を提案している。行動評価では、モデルの予測が概ねこの仮説に従うことが示された。分布的アライメント探索（Distributed Alignment Search）を用いて、仮説の変数に対応する因果的に有効な部分空間を特定し、その表現は否定の形式を越えて転移し、MNLIの一部にも部分的に当てはまるとしている。データセットとコードも公開されている。</p>
+<p class="authors">Nhi Hoai Doan, Tatsuya Hiraoka, Munachiso Samuel Nwadike ほか</p></article>
+<article class="item" id="d699767">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699767" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23179" target="_blank" rel="noopener noreferrer nofollow">Say Less, Hallucinate Less? Diagnosing and Restoring Object Coverage in Preference-Optimized Vision-Language Models</a>  </h3>
+<p class="note"><span class="label">説明</span>言い過ぎを減らせば幻覚も減るのか？選好最適化された視覚言語モデルにおける物体カバレッジの診断と回復</p><p class="summary"><span class="label">要約</span>選好最適化（PO）は大規模視覚言語モデルの物体幻覚を減らす標準的な手法である。本論文は、LLaVA-1.5-7Bの公開PO検査点4つで物体カテゴリの言及が減り、集合レベルの物体F1にも有意な向上がないことを示す。早期終了の分析などを通じて原因を調べ、学習を必要としない基礎モデル参照型の物体カテゴリ回復手法を提案する。これにより3つの検査点の再現率が基礎モデルに近づき、異なる物体の幻覚率も下がった。</p>
+<p class="authors">Hansang Lee</p></article>
+<article class="item" id="d699766">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.LG · q-bio.NC</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699766" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23177" target="_blank" rel="noopener noreferrer nofollow">Déjà View: A Shared Working-Memory Model for Visual Tasks</a>  </h3>
+<p class="note"><span class="label">説明</span>「Déjà View」：視覚課題に共通して使うワーキングメモリモデル</p><p class="summary"><span class="label">要約</span>本論文は、動的な神経活動と画像特徴間の一時的な結びつきを組み合わせた、画像用のワーキングメモリモデルを提案している。同じ学習済みモデルが、どの応答が必要かを示す明示的な手がかりに導かれて五つの課題をすべて実行する。実験では、試された範囲の遅延は試料記憶の成績にほとんど影響せず、見た画像が多いほど誤警報が増えることが示された。</p>
+<p class="authors">Mranmay Shetty, Gabriel Kreiman</p></article>
+<article class="item notable" id="d699765">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.ME · cs.AI · econ.EM</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699765" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23174" target="_blank" rel="noopener noreferrer nofollow">Inference after coding agents</a>  </h3>
+<p class="note"><span class="label">説明</span>コーディングエージェント後の推論：AIが分析を自動で探索すると、検定結果が体系的に過大評価される問題</p><p class="summary"><span class="label">要約</span>本論文は、AIコーディングエージェントが実証研究で人間に近い自由な探索を行い、分析手法を選びながら検定を重ねることで、古典的な統計的推論が損なわれる恐れがあると指摘します。効果が存在しない模擬データで、四つの最先端エージェントに説得力のある結果を求めたところ、54%から98%の割合で有意なp値を報告しました。著者らは、分析後にデータの部分標本で再実行し、その分析が有意に見える場合に選ばれる相対確率を推定して検定を補正する手法を提案しています。模擬実験では、誤って棄却する率を名目水準の5%近くまで下げられることが示されています。</p>
+<p class="why"><span class="label label-why">注目点</span>コーディングエージェントによる新たな選択後推論の問題を提起し、リプレイに基づく補正法を提案。ゼロ効果のシミュレーションでは有意率54%～98%を報告し、二本の出版論文で例示している。</p><p class="authors">Florian Gunsilius, David Van Dijcke, Kaspar W\&#34;uthrich</p></article>
+<article class="item" id="d699764">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699764" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23161" target="_blank" rel="noopener noreferrer nofollow">Attribution Through the Decoder: Prediction-Space Explanations for Structured Outputs</a>  </h3>
+<p class="note"><span class="label">説明</span>デコーダーを通じた帰属：構造化出力のための予測空間での説明</p><p class="summary"><span class="label">要約</span>角度、視線方向、回転などを予測するネットワークは、生の座標を出力し、正規化などの固定デコーダーが最終的な予測に変換します。本論文は、正規化デコーダーの場合に接線方向への射影に帰着する、デコーダー微分を通じて帰属を行う手法を提案しています。デコーダーが無視する変化に入力を帰属させない点が特徴です。合成タスクとMPIIGaze、PASCAL3D+での比較結果が報告されており、一部の手法では改善が見られ、別の手法では有意差が確認されていません。</p>
+<p class="authors">Zaer Bin Zaqy, Brinnae Bent</p></article>
+<article class="item" id="d699763">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699763" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23158" target="_blank" rel="noopener noreferrer nofollow">MoE--LoRA Methods for Multilingual Adaptation: A Systematic Empirical Study</a>  </h3>
+<p class="note"><span class="label">説明</span>多言語適応のためのMoE–LoRA手法：体系的な実証研究</p><p class="summary"><span class="label">要約</span>本論文は、凍結したベースモデル上で8種類の低ランク適応（LoRA）手法を比較し、200の言語、9,000を超える評価設定で検証しています。小規模な探索で有効な構成は見つけられるものの、大規模での相対的な性能は確実には予測できないと報告しています。LoRAは翻訳データでの言語モデルの適合度を安定して向上させる一方、読解では一貫して性能を低下させ、低リソース言語で最も効果があるとされています。著者らは、これらの手法を大規模言語モデルの多言語能力を全般的に高める手段ではなく、目的を絞ったツールとして扱うべきだと結論づけています。</p>
+<p class="authors">Nikit Srivastava, Joel Dag, Ren\&#39;e Speck ほか</p></article>
+<article class="item" id="d699761">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699761" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23155" target="_blank" rel="noopener noreferrer nofollow">TextSphere: Efficient Text-to-Image Generation via Shared Hyperspherical Alignment and Uniformity</a>  </h3>
+<p class="note"><span class="label">説明</span>TextSphere：超球面上の共有アラインメントと一様性に基づく効率的なテキストから画像生成手法</p><p class="summary"><span class="label">要約</span>本論文は、Sphere Encoderに言語条件付けを加えたTextSphereを提案する。事前学習済みCLIPテキスト埋め込みを適応的レイヤー正規化（AdaLN）で取り込み、球面語義アラインメントと一様性（SSAU）目標で異なるモダリティ間の表現差を縮める。CUB-200-2011、MS-COCO-2014、Flickr30kでの実験では、テキスト条件付きベースラインより生成FIDが低く、4〜6ステップの少ないサンプリングで一部の拡散・GANモデルを上回ったと報告している。</p>
+<p class="authors">Yixia Zhang, Girish A. Koushik, Xilu Wang ほか</p></article>
+<article class="item" id="d699760">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699760" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23154" target="_blank" rel="noopener noreferrer nofollow">Learning Stratified Policies for Inference-Time Objectives</a>  </h3>
+<p class="note"><span class="label">説明</span>推論時目標のための階層化ポリシーの学習</p><p class="summary"><span class="label">要約</span>本論文は、k 個のそれぞれ学習されたポリシーが k サンプル推論時目標への回答を一つずつ担う「階層化ポリシー」を提案している。共有の言語モデル基盤上で独立した LoRA アダプタを用い、pass@k を最適化する。複数の推論タスクにおいて、単一ポリシーの基準手法と比べて pass@k が一貫して向上したと報告している。</p>
+<p class="authors">Mridul Mahajan, Xuezhou Zhang, Aldo Pacchiano</p></article>
+<article class="item" id="d699759">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699759" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23153" target="_blank" rel="noopener noreferrer nofollow">VIVID: Beyond Static Multi-Image Reasoning with Localized Visual Differences and Textual Entity Dynamics in Video MLLMs</a>  </h3>
+<p class="note"><span class="label">説明</span>VIVID：局所的な視覚差分と文字実体の動的変化により、静的な多画像推論を超える動画MLLM</p><p class="summary"><span class="label">要約</span>本論文は、フレーム数が限られる動画質問応答において、既存の動画マルチモーダル大規模言語モデルが動画を静的な多画像として扱い、小さな対象の局所的な動きやフレーム間の順序を捉えられない問題を扱います。提案手法VIVIDは、キーフレーム間のパッチ差分によって隣接フレームの変化を保持し、動的選択、動きの関心領域、実体状態の連鎖を組み合わせます。凍結された27Bのバックボーンに0.22%の学習可能パラメータを追加した小型版は、8,083問全体の正答率で11のベースラインを上回りました。</p>
+<p class="authors">Chengqian Ma, Yuanze Zeng, Hongyu Wang ほか</p></article>
+<article class="item" id="d699758">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.LG · cs.MA</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699758" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23149" target="_blank" rel="noopener noreferrer nofollow">Capability Composition in Heterogeneous Teams via Barrier-Guided Diffusion Sampling</a>  </h3>
+<p class="note"><span class="label">説明</span>障壁誘導拡散サンプリングによる異種チームの能力合成</p><p class="summary"><span class="label">要約</span>異種マルチエージェントチームが、個々のメンバーでは実行できないタスクを能力を組み合わせて達成する方法を研究した論文である。協調の条件をチーム軌道への制約として符号化し、各エージェント単独の実演で学習した生成モデルからのサンプリング中にその制約を課す。提案手法は制約を満たすすべてのチーム軌道を生成できることを証明し、2つの協調タスクの数値実験と多ロボット実験系で有効性を示した。エージェントが加入・離脱しても再学習は不要である。</p>
+<p class="authors">Diana Laura Morales, Ruoyu Lin, Magnus Egerstedt ほか</p></article>
+<article class="item notable" id="d699757">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="5/5">★★★★★</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699757" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23144" target="_blank" rel="noopener noreferrer nofollow">π⁴: A Foundation Model for 4D Scene Geometry and Motion</a>  </h3>
+<p class="note"><span class="label">説明</span>π⁴：四次元シーンの幾何と運動のための基盤モデル</p><p class="summary"><span class="label">要約</span>本論文は、単一画像、順不同の画像集合、動画などキャリブレーションされていない実世界のRGB観測から、稠密な幾何、カメラ姿勢、メトリックスケールを復元する統一的な四次元シーン認識の基盤モデル π⁴ を提案している。多画像入力に対しては、2D/3D点トラックと移動物体マスクも出力する。幾何分岐と幾何条件付きの運動分岐を組み合わせ、一度の順伝播で再構成と追跡を同時に行う。著者らは、幾何評価で総合平均順位が最良であり、パラメータ数は約0.5Bだと報告している。</p>
+<p class="why"><span class="label label-why">注目点</span>幾何と運動を統一した4D基盤モデルで、幾何評価の平均順位で最良を報告し、点追跡や移動物体分割でも競争力のある結果を示す。0.5Bパラメータ規模。</p><p class="authors">Yifan Wang, Weiguang Zhao, Ni Yang ほか</p></article>
+<article class="item" id="d699756">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699756" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23143" target="_blank" rel="noopener noreferrer nofollow">TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation</a>  </h3>
+<p class="note"><span class="label">説明</span>TCP4D：ロボット操作のための統一ツール中心点追跡・生成モデル（ツール中心点を追跡し未来の軌道を生成する手法の説明）</p><p class="summary"><span class="label">要約</span>本論文は、ロボット本体に依存しないツール中心点（TCP）の姿勢を行動空間とし、共有の4D場景表現によって映像中のTCP運動の追跡と将来のTCP軌道の生成を行うTCP4Dモデルを提案している。また、既存のRGB映像を、別のロボット向けの実演データへ変換する跨本体データ拡張手法も示している。実験では、追跡の絶対軌道誤差、RoboTwinでの平均成功率、および拡張データとの併用による目標ロボットの成功率向上が報告されている。</p>
+<p class="authors">Haosong Peng, Xiangyang Liu, Zhengshen Zhang ほか</p></article>
+<article class="item" id="d699755">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.SE · cs.AI · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699755" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23142" target="_blank" rel="noopener noreferrer nofollow">Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance</a>  </h3>
+<p class="note"><span class="label">説明</span>ギャップに注意：文書保守のための導入済みマルチエージェントシステム</p><p class="summary"><span class="label">要約</span>本論文は、トリアージエージェント「TriAgent」を中核とするマルチエージェントシステムを提案します。サポートチケットやコードと文書の不一致から手がかりを抽出し、古くなった文書を見つけて修正を支援します。43日間のシャドウモード運用では、499件のチケットを処理し、文書の欠落92件を検出しました。独立したモデルファミリーのLLM評価者パネルによると、TriAgentの検証可能な主張の81.1%が正しいと判定されました。長さの近い組み合わせでは、評価者パネルはTriAgentの回答を70.5%、人間のエンジニアの回答を23.2%で好みました。</p>
+<p class="authors">Lorenzo Masoero</p></article>
+<article class="item" id="d699754">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699754" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23140" target="_blank" rel="noopener noreferrer nofollow">GameRealm: Grounding Visual Learning in Interactive Games</a>  </h3>
+<p class="note"><span class="label">説明</span>GameRealm：インタラクティブなゲームに基づく視覚学習データセット</p><p class="summary"><span class="label">要約</span>本論文は、大規模で豊富な注釈を備えたゲーム映像データセットGameRealmを提案している。1億2000万枚以上のRGBフレームと1000時間のゲームプレイ映像を含み、メトリック深度、カメラパラメータ、同期音声、操作入力、3D点軌跡などの多モーダル教師情報を提供する。単一視点、ステレオ、多視点、パノラマなど多様な視点構成にも対応している。人間による操作とエージェントによる探索を組み合わせた統一的な収集パイプラインも開発され、視覚生成と幾何学習の両方で基盤モデルの性能向上が示されている。</p>
+<p class="authors">Weiguang Zhao, Yifan Wang, Ni Yang ほか</p></article>
+<article class="item" id="d699753">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699753" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23138" target="_blank" rel="noopener noreferrer nofollow">RSI-Prime: Training Models to Train Models</a>  </h3>
+<p class="note"><span class="label">説明</span>RSI-Prime：モデルを訓練するためのモデル訓練</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルが自律的にモデル訓練を行う能力を高めるためのデータセット RSI-Prime を構築しています。七つのタスク分野にわたる350本の完全な実験軌跡を含み、実験上の判断を細かく識別・品質評価したうえで、低品質な行動への教師付けを除外する決定レベルの損失マスキングを適用しています。自律的な事後訓練のベンチマーク PostTrainBench で、RSI-Prime で訓練した GLM-5.3 は元の GLM-5.3 に比べ全体性能が31.95%相対的に向上しました。</p>
+<p class="authors">Dewu Zheng, Yang Ye, Hongyu Zhang ほか</p></article>
+<article class="item" id="d699752">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699752" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23134" target="_blank" rel="noopener noreferrer nofollow">Correcting Flows with Marginal Matching</a>  </h3>
+<p class="note"><span class="label">説明</span>周辺分布の一致による補正フロー（Correcting Flows with Marginal Matching）</p><p class="summary"><span class="label">要約</span>本論文は、単純な分布を常微分方程式によって目標のデータ分布へ徐々に変換する、フローマッチング生成モデルを対象としています。常微分方程式が容易に逆方向へ解けるという性質を利用し、順方向の過程のある時刻でサンプルを、逆方向の過程に対応する周辺分布へ補正する、訓練ベースの予測子-修正子フレームワークを提案しています。著者らは、この手法がデータ分布と学習された分布の距離の上界を小さくすると述べ、CIFAR-10とImageNet-64でサンプル品質を向上させ、計算時間の増加はわずかであることを示しています。</p>
+<p class="authors">Meital Bojan, Nadav Bojan Sellam, Ev Zisselman ほか</p></article>
+<article class="item" id="d699751">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699751" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23130" target="_blank" rel="noopener noreferrer nofollow">A Neural Envelope Method for Rapid Gradient-based Optimum Takeoff Trajectory Design</a>  </h3>
+<p class="note"><span class="label">説明</span>勾配ベースの最適離陸軌道設計を高速化するニューラルエンベロープ手法</p><p class="summary"><span class="label">要約</span>本論文は、都市型航空モビリティにおける電動垂直離着陸機（eVTOL）の離陸軌道最適化を対象とした研究である。物理制約付き敵対的生成ネットワーク（physicsGAN）で制約をすべて満たす可行設計空間を見つけ、その中でニューラルネットワークにより目的関数の凸エンベロープ（ニューラルエンベロープ）を構築する。制約付きの非凸最適化を、制約なしの凸最適化へ変換する方式である。Airbus A3 Vahanaを用いた検証では、参照凸エンベロープとの平均精度が飛行条件空間で99.91%、大域的最適設計で99.84%、平均所要時間は0.04秒と報告されている。physicsGANを用いた勾配ベースおよび大域最適化と比べ、それぞれ平均53倍、162倍高速化されたとしている。</p>
+<p class="authors">Samuel Sisk, Xiaosong Du</p></article>
+<article class="item" id="d699750">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699750" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23129" target="_blank" rel="noopener noreferrer nofollow">Where Should Physics Enter? Information, Identifiability and Calibration in Probabilistic Sea Surface Temperature Forecasting</a>  </h3>
+<p class="note"><span class="label">説明</span>物理情報はどこで導入すべきか：確率的海面水温予報における情報、同定可能性、キャリブレーション</p><p class="summary"><span class="label">要約</span>本論文は、確率的な海面水温（SST）のニューラル予報において、移流拡散の物理的事前分布をどこに組み込めば効果があるかを検討している。ベンガル湾のNOAA OISST v2.1日別データ（1982〜2024年）と、既知の海流を持つ合成ベンチマークで検証を行った。実データでは学習された流速による物理残差に確かな効果は見られず、学習された流速も真の海流を回復できなかった。主な問題は、どのモデルにも共通する予報リードタイム依存の校正のずれであり、リードごとの分散係数の調整で被覆率とCRPSが改善された。</p>
+<p class="authors">Parmitha Vangapandu, Jonnakuti Pavan Kumar, Sathwik Narkedimilli ほか</p></article>
+<article class="item" id="d699749">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CL · cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699749" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23127" target="_blank" rel="noopener noreferrer nofollow">The Illusion of Grounding: Do Vision-Language Models Weigh Retrieved Text and Images Like an Ideal Observer?</a>  </h3>
+<p class="note"><span class="label">説明</span>視覚言語モデルは理想的観測者のように検索テキストと画像を重み付けしているか？</p><p class="summary"><span class="label">要約</span>本論文は、COCOとVisual Genomeから作成した20万件の画像質問データセットGIB-200Kを紹介し、検索ノイズ、画像のぼけ、テキストと画像の矛盾といった制御された条件を加えています。著者らはベイズ的な手がかり統合から、テキストを過重視する知識慣性と画像を過重視する感覚捕捉を定義し、その重みを推定しています。4つのオープンモデルの評価では、クリーン入力の正解率は92.5%から94.2%で、不利な条件では41.3%から59.9%に低下しました。</p>
+<p class="authors">Basavaraj R M, Harshal Chandel</p></article>
+<article class="item" id="d699747">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699747" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23124" target="_blank" rel="noopener noreferrer nofollow">Get Hint-Augmented GRPO Done Right Through Activation Steering</a>  </h3>
+<p class="note"><span class="label">説明</span>活性化ステアリングで提示付きGRPOを正しく行う手法</p><p class="summary"><span class="label">要約</span>論文は、GRPOが問題の難易度を超えると全回答が0点となり学習できない問題を指摘する。著者は提示（ヒント）の役割を行動の誘導と捉え、学習時に調整可能なステアリングベクトルを最適化し、推論時にはヒントなしでその活性値を注入するASHを提案する。四つの大規模言語モデルと数学ベンチマークで、pass@kの向上が報告されている。</p>
+<p class="authors">Khiem Le, Ting Hua, Nitesh V. Chawla</p></article>
+<article class="item" id="d699746">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699746" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23119" target="_blank" rel="noopener noreferrer nofollow">Dynamic Task Allocation with Dialogue</a>  </h3>
+<p class="note"><span class="label">説明</span>対話による動的タスク割り当て：部分観測下でコミュニケーションを用いる多エージェント協調手法</p><p class="summary"><span class="label">要約</span>本論文は、部分観測の条件下で対話を通じて環境や協力者に関する不確実性を減らしつつ、明示的な確率的信念に基づいて意思決定を行う、通信を組み込んだベイズ型タスク割り当ての枠組みを提案している。動的に到着するタスクを加えたOvercooked環境で評価され、通信エージェントは完全観測と部分観測の両方で素のLLMエージェントを上回った。部分観測でタスクの複雑さが増すと、通信のないベースラインより平均0.585の高速化を示し、平均18タイムステップ早く完了した。</p>
+<p class="authors">Matthew Groholski, Weiwei Gu, Nakul Gopalan</p></article>
+<article class="item notable" id="d699745">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699745" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23118" target="_blank" rel="noopener noreferrer nofollow">Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D</a>  </h3>
+<p class="note"><span class="label">説明</span>学習型シミュレータの監査：ANYmal D四足ロボットのRobotic World Model（RWM）の検証</p><p class="summary"><span class="label">要約</span>本論文は、四足ロボットANYmal D向けの学習型シミュレータを端から端まで監査したものです。対象はRobotic World Model（RWM）の動力学モデルと、その後継であるRWM-Uの不確実性推定です。GPUを使わずにモデルを再構築し、多数の学習済みシミュレータや圧縮版を比較し、手作りのMuJoCoモデル上で方策を検証しました。モデル自身の予測を用いた学習は長期の予測で優れ、一步先の評価だけでは設計判断を誤ることがあると報告されています。対象は一種のロボット、一つの歩容、シミュレーションデータに限られ、実機は含まれません。</p>
+<p class="why"><span class="label label-why">注目点</span>学習型シミュレータを端から端まで監査し、一歩先の評価が多段予測の判断を誤らせることを示した点が新しい。ANYmal D上の101個のモデルで検証、影響は単一ロボットに限られる。</p><p class="authors">Joyjeet Singh</p></article>
+<article class="item" id="d699743">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699743" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23115" target="_blank" rel="noopener noreferrer nofollow">Nunchi: Ears Help Eyes in Multi-Party Conversations</a>  </h3>
+<p class="note"><span class="label">説明</span>Nunchi：多人数会話で耳が目を助ける注視対象推定</p><p class="summary"><span class="label">要約</span>この論文は、多人数会話で人がどの相手を見ているかを判定する問題を扱います。視線の幾何情報だけでは、人数が増えると曖昧になることが指摘されています。著者らは、同期した音声、書き起こし、注視対象ラベルを含む3,340サンプル（1,578クリップ）のベンチマークSORBETを構築しました。さらに、書き起こしと視線・話者モデルの出力からテキストプロンプトを作り、視覚言語モデルに注視対象を判定させるNunchiを提案しており、既存の最良手法を4.8ポイント上回ります。</p>
+<p class="authors">JunYeong Park, Shijing Wang, Seonwook Park ほか</p></article>
+<article class="item" id="d699742">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699742" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23113" target="_blank" rel="noopener noreferrer nofollow">LUTBench: Benchmarking Text-Driven Photographic Look Transfer</a>  </h3>
+<p class="note"><span class="label">説明</span>LUTBench：テキスト駆動の写真ルック変換のベンチマーク</p><p class="summary"><span class="label">要約</span>本論文は、テキストによる写真ルック変換手法を共通の基準で比較するためのベンチマーク LUTBench を提案しています。91 種の3次元ルックアップテーブル（3D LUT）を収集し、それぞれを1つの写真ルックとして、MIT-Adobe FiveK の写真5,000枚に適用して455,000組の入力・目標画像ペアを作成しています。16の手法で評価した結果、テキストとの整合性が高くても目標への忠実度が高いとは限らず、教師ありの多くの手法は既知・未知のルックの両方で忠実度を向上させることが示されています。</p>
+<p class="authors">Chuanzhi Xu, Boyu Wei, Chengkun Yue ほか</p></article>
+<article class="item notable" id="d699741">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699741" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23112" target="_blank" rel="noopener noreferrer nofollow">Large-scale Neuron Community Discovery Reveals Neuron-Sparse Behaviors in Language Models</a>  </h3>
+<p class="note"><span class="label">説明</span>大規模ニューロン群発見による言語モデルのニューロン疎行動の解明</p><p class="summary"><span class="label">要約</span>本論文は、言語モデル（Llama-3.1-8B）内で複数のプロンプトにわたって繰り返し現れるニューロン群を、教師なしで発見する手法を提案している。これらのニューロン群は、対象となる層の中で特定の計算に対して因果的に必要かつ十分とされる。約1000万のプロンプトを用いて数千の候補群を発見し、3つの因果テストで評価した。文法の一致、固定句、文脈内コピー、加算、乗算などを支える群が見つかり、各群を最大128ニューロンに制限した場合でも、保留プロンプトの一部はニューロン疎な形で説明できることが示された。</p>
+<p class="why"><span class="label label-why">注目点</span>プロンプト横断で再利用されるニューロン群を教師なしで発見する手法を提案し、保持out提示に対する3つの因果テストで検証している。解釈可能性研究への影響が見込まれる。</p><p class="authors">Igor Shilov, Thomas Fel, Tal Haklay ほか</p></article>
+<article class="item" id="d699740">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699740" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23111" target="_blank" rel="noopener noreferrer nofollow">Event-Based Dynamic Lip Region Estimation During Speech</a>  </h3>
+<p class="note"><span class="label">説明</span>音声発話中の唇領域をイベントカメラで動的に推定する研究</p><p class="summary"><span class="label">要約</span>本論文は、イベントカメラの疎なイベントデータから、手作業やデータセットで切り取られた関心領域に頼らず、画面全体で唇領域の密な熱マップを予測する手法を提案している。モデルは、無状態の高速経路と状態を持つ低速経路からなる二経路の連続時間再帰ネットワークを用いる。未知の4人の話者に対する唇の精度は69.5%で、対象の切り替えは毎秒2.1回だった。実イベントセンサーでは、シミュレーションイベントのみで学習したモデルが唇で58.0%に達し、CNNの43.2%を上回った。</p>
+<p class="authors">Hamze Hammami, Omar Eldardeer, Francesco Rea</p></article>
+<article class="item" id="d699739">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699739" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23108" target="_blank" rel="noopener noreferrer nofollow">FMT: Lossless Image Compression in a Fixed Number of Parallel Steps</a>  </h3>
+<p class="note"><span class="label">説明</span>FMT：固定数の並列ステップで行う可逆画像圧縮</p><p class="summary"><span class="label">要約</span>本論文は、可逆画像フォーマットFMT（固定ステップ多重スケールツリー）を提案している。画像を粗い段階から細かい段階へ進む木構造で格納し、各ステップ内の値は互いに独立しているため、GPUで一度に予測し並列rANSレーンで復号できる。そのため、画像の大きさによらず固定数の逐次ステップで復号が終わる。この木の上に、ネットワークを使わない規則から大規模ネットワークまでのビット精度一致の符号化器群を構築している。著者らによれば、同じGPUで動かした比較対象のどれよりも、ネットワークなしの版はNVIDIAのHTJ2Kより大きさと速度の両面で優れ、大規模版は同じA100上の学習型コーデックより9〜61倍速くKodak画像を復号し、サイズは同等かそれ以下である。</p>
+<p class="authors">Ammar Ali</p></article>
+<article class="item" id="d699738">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699738" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23106" target="_blank" rel="noopener noreferrer nofollow">Natural Language Programming: Rethinking Language, Memory, and Cognition in the Era of Generative AI</a>  </h3>
+<p class="note"><span class="label">説明</span>自然言語プログラミング：生成AI時代における言語・記憶・認知の再考</p><p class="summary"><span class="label">要約</span>本論文は、従来の自然言語処理の理論的拡張として「自然言語プログラミング（NLPg）」を提案している。プロンプトを、目標・制約・推論状態を外在化する動的な認知的人工物として捉え、対話的な認知プログラミングとして位置づける。分散認知や拡張された心の理論に基づき「対話的ワーキングメモリ」の概念を導入し、既存の記憶アーキテクチャ（BTMA、SKGE、RMR）をこの枠組みに対応づけている。計算言語学やAI媒介型知識システムへの含意も議論されている。</p>
+<p class="authors">Giovanni Adorni, Daniele Grosso</p></article>
+<article class="item" id="d699737">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699737" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23096" target="_blank" rel="noopener noreferrer nofollow">Hidden-State Similarity Predicts Re-Elicitation After Inoculation Prompting</a>  </h3>
+<p class="note"><span class="label">説明</span>隠れ状態の類似度が接種プロンプト後の挙動の再出現を予測する</p><p class="summary"><span class="label">要約</span>本論文は、有害な狭いタスクでの微調整がモデルの有害な振る舞いを学習分布外へ一般化させる現象を扱う。接種プロンプトは訓練中に望ましくない振る舞いを明示的に引き出すことでこの効果を抑えるが、評価時のプロンプトに訓練文脈の手がかりが含まれると、その振る舞いが再び現れうる。研究では、接種プロンプトとの文字列上の類似度は不完全な予測因子であり、接種文脈が生む活性化状態と似た状態を誘発するプロンプトほど、抑制された振る舞いを再び引き出しやすいことを示した。</p>
+<p class="authors">Rose N. Kwon, Samy Mammeri, Sabyasachi Sahoo ほか</p></article>
+<article class="item" id="d699736">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cond-mat.dis-nn · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699736" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23093" target="_blank" rel="noopener noreferrer nofollow">What&#39;s in a Tree ? Hierarchical n-gram models as controlled approximators of language</a>  </h3>
+<p class="note"><span class="label">説明</span>木構造 n-gram モデル：言語を制御可能に近似するモデル</p><p class="summary"><span class="label">要約</span>本論文は、2次と3次のテンソルを階層的に組み合わせて条件付き確率を構成する自己回帰型の n-gram 生成モデル「tree-grams」を提案している。パラメータ n は最大文脈窓を、ランクパラメータ d はモデルの容量を制御する。既存の n-gram 基準モデルより優れ、Transformer ベースの深層言語モデルとも競合する性能を示したと報告している。</p>
+<p class="authors">Aritra Das, Francesco Cagnetta, Darshil Doshi ほか</p></article>
+<article class="item" id="d699735">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.SE · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699735" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23091" target="_blank" rel="noopener noreferrer nofollow">BugGen 2.0: Rethinking the Roles of LLMs for Scalable RTL Bug Synthesis</a>  </h3>
+<p class="note"><span class="label">説明</span>BugGen 2.0：拡張可能なRTLバグ合成における大規模言語モデルの役割の再設計</p><p class="summary"><span class="label">要約</span>本論文は、既知の位置と観測可能な失敗を持つRTLバグのデータセットを生成するBugGen 2.0を提案している。構造解析、対象選択、検証は決定的アルゴリズムが担い、大規模言語モデルは局所的な意味的書き換えに専念する。四つのOpenTitanモジュールとFabScalarでの同一モデル比較では、BugGen 1.0に対して6.8～15.4倍、Fireflyに対して1.5～7.9倍のトークン使用量削減が報告されている。</p>
+<p class="authors">Minh Luu, Michael Quinn, Aakash Tyagi ほか</p></article>
+<article class="item" id="d699734">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699734" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23088" target="_blank" rel="noopener noreferrer nofollow">Event-Based Person Detection for Maritime UAV Search</a>  </h3>
+<p class="note"><span class="label">説明</span>イベントカメラを用いた海上UAV捜索における人物検出</p><p class="summary"><span class="label">要約</span>本論文は、海上捜索救助で無人機（UAV）が水中の人物を検出する際に、イベントカメラを活用できるかを検討したものです。v2eシミュレータで公開のMOBDroneレスキュー映像から合成イベントデータを生成し、循環型ビジョントランスフォーマーRVT-Tを、露光を合わせて学習したYOLOv8nおよびRT-DETR-R18と比較しています。100ミリ秒の合成露光では、RVT-TのAP50:95は15.63%で、YOLOv8nの6.89%、RT-DETR-R18の9.44%を上回りました。露光時間を50から200ミリ秒に延ばすと、フレームベースの検出精度は段階的に低下します。Jetson Orin Nano上での検証では、RVT-Tは精度を維持し、1サンプルあたり約136ミリ秒、2.02ジュールで処理できることが示されています。</p>
+<p class="authors">Zijie Ning, Patrick Vandewalle</p></article>
+<article class="item" id="d699733">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699733" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23085" target="_blank" rel="noopener noreferrer nofollow">Transfer Once, Ask Locally: Compact Audio-Visual Memory for On-Device Question Answering</a>  </h3>
+<p class="note"><span class="label">説明</span>一度送信し、ローカルで質問する：オンデバイス質問応答のためのコンパクトな音声映像メモリ</p><p class="summary"><span class="label">要約</span>この論文は、学習を必要とせず、クエリに依存しないトークン剪定の枠組みを提案し、送信前にコンパクトで再利用可能なメモリを構築します。映像の時空間ブロックと対応する音声ウィンドウを協力ゲームのプレイヤーとみなし、モンテカルロShapley値によって重要度を推定し、高スコアの部分のトークン埋め込みを保持します。このメモリは一度だけ送信すれば、その後のローカルな質問で繰り返し使用できます。</p>
+<p class="authors">Qitong Wang, Jihui Jin, Divya Kothandaraman ほか</p></article>
+<article class="item" id="d699732">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699732" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23081" target="_blank" rel="noopener noreferrer nofollow">Learning to Undo: Transfer Reinforcement Learning under State Space Transformations</a>  </h3>
+<p class="note"><span class="label">説明</span>逆変換を学ぶ：状態空間変換下での転移強化学習</p><p class="summary"><span class="label">要約</span>本論文は、強化学習において2つのマルコフ決定過程（ソースとターゲット）の間で知識を転移させることが有益となる条件を研究している。ターゲットの状態空間に撤去写像（undo map）を適用するとソースが正確に復元される場合を扱い、両タスクから集めた状態特徴量の統計を一致させてこの写像を学習し、ソース方策をターゲットへ転移するアルゴリズムを提案している。写像が線形で、ソースが線形Q*可実現性を満たす場合、ターゲットで白紙から学習する手法より標本複雑度が厳密に優れることを理論的に示している。連続制御タスクとAtariゲームでも、提案手法が有意に高い標本効率を示すと報告している。</p>
+<p class="authors">Mridul Mahajan, Aldo Pacchiano, Xuezhou Zhang</p></article>
+<article class="item notable" id="d699731">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · math.OC</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699731" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23080" target="_blank" rel="noopener noreferrer nofollow">Colombo: A Frontier-to-Frontier Autoresearch System for Oracle-Based Optimization</a>  </h3>
+<p class="note"><span class="label">説明</span>Colombo：オラクルベース最適化のためのフロンティアからフロンティアへの自律研究システム</p><p class="summary"><span class="label">要約</span>本論文は、自己組織化するAI研究者Colombo を提案し、まずオラクルベース最適化に適用する。複雑性アトラスは、既知の前進と未解決の境界を示す生きた地図として機能する。敵対的共上昇により、アルゴリズムと困難な問題族を相互に挑戦させながら開発し、Lean による形式的認証と独立審査で数学的主張を検証する。著者らによれば、アトラス内の50以上の設定で最適または準最適なレートを確立している。</p>
+<p class="why"><span class="label label-why">注目点</span>自己組織型のAI研究システムを提案し、オラクル型最適化で多数の設定について紧界を示し、Leanで形式検証する点が新しい。</p><p class="authors">Haihan Zhang, Wendao Wu, Chenheng Zhang ほか</p></article>
+<article class="item" id="d699730">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699730" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23078" target="_blank" rel="noopener noreferrer nofollow">UnrealEvent: Synthetic Dataset Generation and Annotation for Event-Based Vision</a>  </h3>
+<p class="note"><span class="label">説明</span>UnrealEvent：イベントベース視覚のための合成データセット生成・アノテーションツール</p><p class="summary"><span class="label">要約</span>本論文は、Unreal Engine 5.5上に実装された合成データセット生成パイプライン「UnrealEvent」を提案します。レンダリングしたシーンをイベント表現に変換し、手作業なしでYOLO形式の境界ボックス注釈を生成します。この手法で作成した合成データセットを用い、eTraMデータセット上でYOLOv8検出器を合成データ学習、実データでのゼロショット評価、実データでの微調整の各設定で評価しています。合成データ内では良好な性能を示す一方、特に歩行者で合成と実データの間に大きな差があり、少量の実データによる微調整で実データ上の性能は向上したとしています。</p>
+<p class="authors">Yentel Schoovaerts, Zijie Ning, and Patrick Vandewalle</p></article>
+<article class="item" id="d699729">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699729" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23076" target="_blank" rel="noopener noreferrer nofollow">Pareto-Informed Smart &#34;Predict, then Optimize&#34; for Multi-Objective Combinatorial Problems</a>  </h3>
+<p class="note"><span class="label">説明</span>多目的組合最適化のための、パレート情報を用いた「予測してから最適化」手法</p><p class="summary"><span class="label">要約</span>本論文は、物流や経路設計、資源配分など、相反する複数の目的のバランスをとる必要がある計画問題を対象としています。単一目的向けの SPO+ 損失関数をパレート認識型に拡張し、真のパレートフロンティアから、サンプリングした選好ベクトルに対応する目標決定を作成して、その目標に対する後悔を最小化します。多目的最短経路問題と多目的ナップサック問題での実験では、従来の二段階平均二乗誤差基準や、スカラー化に基づく SPO+ 手法よりも優れた結果が示されています。</p>
+<p class="authors">Aabhash Dhakal, Tim Lachner</p></article>
+<article class="item" id="d699728">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.AI · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699728" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23074" target="_blank" rel="noopener noreferrer nofollow">Runtime Verification of Multiple Natural Language Criteria for Agent Governance</a>  </h3>
+<p class="note"><span class="label">説明</span>エージェント統治のための複数自然言語基準の実行時検証</p><p class="summary"><span class="label">要約</span>本論文は、エージェントの出力が多数の自然言語基準を満たすか、違反するか、適用外かを並列に判定するツリーアテンション検証器VFMを提案します。CriteriaBank（約39.4万件）で事前学習し、微調整したVFM-4Bは合成ガバナンスベンチマークでGPT-5.4を上回り、DynaBenchではDynaGuard-4Bより高い精度で失敗を検出したと報告されています。</p>
+<p class="authors">Silviu Pitis, Parand A. Alamdari, Jessica Tang ほか</p></article>
+<article class="item" id="d699727">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">stat.ML · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699727" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23072" target="_blank" rel="noopener noreferrer nofollow">Amortizing Tempered Sampling with Corrected Self-Training</a>  </h3>
+<p class="note"><span class="label">説明</span>補正付き自己学習によるテンパリング・サンプリングの償却</p><p class="summary"><span class="label">要約</span>本論文は、正規化されていない分布から繰り返しサンプルを得るコストを下げるニューラルサンプラーの学習法を提案しています。一連のテンパリングされた目標分布に沿って補正付き自己学習を行い、重要度サンプリングとマルコフ連鎖モンテカルロ法でサンプルを補正し、リプレイバッファに保存します。特別な例として逐次スコアサンプラー（SSS）を導入しており、提案分布はエネルギー勾配への回帰で学習されたスコアベース拡散モデルです。複数のベンチマークで競争力のあるサンプリング精度を示し、いくつかの対象では既存のサンプラーより実行時間が短く、エネルギー評価回数も少ないとされています。</p>
+<p class="authors">Hoang-Viet Nguyen, Hai-Dang Dau, Alexandre H. Thi\&#39;ery</p></article>
+<article class="item" id="d699726">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699726" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23068" target="_blank" rel="noopener noreferrer nofollow">The Resolution Hypothesis: Agent Evolution&#39;s Key Is Identifying Improvements</a>  </h3>
+<p class="note"><span class="label">説明</span>解決仮説：エージェント進化の鍵は改善の見極めにある</p><p class="summary"><span class="label">要約</span>本論文は「解決仮説」を提唱し、エージェントの進化が止まる原因は、提案手法がより良いプロンプトやスキル、記憶などの成果物を生成できないことではなく、ノイズのある評価では改善を確実に見分けられないことにあると述べています。7つの進化手法と6つのモデルで千万回を超えるLLM呼び出しを行い検証しました。候補の選択はランダムと変わらず、手法間の数ポイント程度の差は同じ手法の二回の独立実行の差より小さいとされています。</p>
+<p class="authors">Yuanhao Zeng, Shaocheng Lan, Ao Lu ほか</p></article>
+<article class="item" id="d699725">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.MA</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699725" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23067" target="_blank" rel="noopener noreferrer nofollow">Values Shape What Self-Improving Coding Agents Build</a>  </h3>
+<p class="note"><span class="label">説明</span>価値観が自己改善型コーディングエージェントの作るものをどう形作るか</p><p class="summary"><span class="label">要約</span>本論文は、自己改善型コーディングエージェントの永続的な指示ファイルに短い価値観の記述を加えると、性能だけでなく作成されるものも変わるかを調べています。シュワルツの基本的人間価値理論から、変化への開放性、保守、自己高揚、自己超越の4つの高次価値を用い、複数の反復的な自己改善の間、各実行で価値観を固定して評価しました。その結果、開放性の価値は保留データでの性能を高め、価値観によって解法のサイズ、複雑さ、手法が異なることが示され、エージェント自身に価値観を修正させると価値観の間の差は小さくなりました。</p>
+<p class="authors">Jason Liang, Dylan Waldner, Risto Miikkulainen</p></article>
+<article class="item" id="d699724">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.SY · eess.SY</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699724" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23063" target="_blank" rel="noopener noreferrer nofollow">Deep Reinforcement Learning for Heat Pump and Underfloor Heating Control: An End-to-End Case Study</a>  </h3>
+<p class="note"><span class="label">説明</span>ヒートポンプと床暖房制御のための深層強化学習：エンドツーエンドの事例研究</p><p class="summary"><span class="label">要約</span>本論文は、床暖房（UFH）とヒートポンプ（HP）を組み合わせたシステムを、エネルギー消費と室内の快適性を同時に最適化するよう制御する深層強化学習（DRL）ベースのコントローラーを提示する。まずシミュレーションで各種アルゴリズムと制御方策を比較し、実住宅のデジタルツインで学習させた最良のエージェントを、追加のオンライン微調整なしで実際の建物に導入した。その結果、室内温度は設定された快適範囲内に保たれ、HPの供給温度と床暖房バルブの開度が動的に調整されたことが示されている。</p>
+<p class="authors">Antonio Manjavacas, David Su\&#39;arez-Caro, Alejandro Campoy-Nieves ほか</p></article>
+<article class="item" id="d699723">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699723" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23056" target="_blank" rel="noopener noreferrer nofollow">RFW-S: Everyday Deformable Objects with Independent Simulation Verification</a>  </h3>
+<p class="note"><span class="label">説明</span>RFW-S：独立したシミュレーション検証を備えた日常の変形可能物体データセット</p><p class="summary"><span class="label">要約</span>本論文はRFW-Sを紹介する。85,365ではなく83,365件のシミュレーション検証済みアセットを含む大規模データセットで、485の日常カテゴリを軟体固体、布シート、シェル、衣類、バッグの5つの構造ファミリーに分けている。参照誘導型の3D生成、構造を考慮した物理モデリング、LLM支援のパラメータ推定と校正を統合した自動化パイプラインを構築した。パラメータ校正とは異なる相互作用で物体の挙動を評価する独立検証フレームワークを提案し、把持成功率と物体の損傷、壊れやすい物体の操作を用いたsim-to-real再生により物理的リアリズムを示している。</p>
+<p class="authors">Jiarui Guo, Saining Zhang, Jiaying Wan ほか</p></article>
+<article class="item" id="d719895">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.MA</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719895" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23362" target="_blank" rel="noopener noreferrer nofollow">TRACE-MAS: Diagnosing and Repairing Collaboration Failures in Multi-Agent Systems</a>  </h3>
+<p class="note"><span class="label">説明</span>TRACE-MAS：マルチエージェントシステムの協調障害の診断と修復</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルに基づくマルチエージェントシステム（MAS）において、障害がエージェント間の相互作用（メッセージ交換やタスク依存関係）から生じる点に着目しています。提案手法TRACE-MASは、正常な軌跡から協調実行のパターンを学習し、状態変化、メッセージ遷移、依存関係の逸脱を検出します。さらに、発生源を考慮した帰属分析で責任のある要素を特定し、協調を回復する最小限の介入を選択します。5つのベンチマークでの実験により、既存の防御手法を上回る結果が示されています。</p>
+<p class="authors">Zekai Chen, Yihan Sun, Xunkai Li ほか</p></article>
+<article class="item" id="d699722">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CV · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699722" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23055" target="_blank" rel="noopener noreferrer nofollow">FrameRouter: Frame Budget Routing for Long-Video Understanding on Video-MME-v2 and Beyond</a>  </h3>
+<p class="note"><span class="label">説明</span>FrameRouter：長尺動画QAでフレーム予算を問題ごとに振り分ける手法</p><p class="summary"><span class="label">要約</span>論文は、Video-MME-v2のような長尺動画質問応答ベンチマークが全問題に同じフレーム数を割り当てている点を指摘し、問題ごとに必要な視覚的根拠が大きく異なることを示します。提案手法FrameRouterは、学習を必要としないテスト時フレームワークで、証拠需要ルーター、予算制約付きの割り当て規則、固定されたフレームサンプリング方策群を組み合わせ、平均予算を保ったまま問題ごとに異なるフレーム数を割り当てます。Video-MME-v2などの複数のベンチマークで長尺動画QAの性能向上が報告されています。</p>
+<p class="authors">Bingjun Luo, Jialin Guo, Siqi Li</p></article>
+<article class="item" id="d699721">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI · cs.GR</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699721" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23054" target="_blank" rel="noopener noreferrer nofollow">ReTouchGS: Ultralight Render-free Aesthetic Color Enhancement and Transfer for 3D Gaussian Splatting</a>  </h3>
+<p class="note"><span class="label">説明</span>ReTouchGS：参照画像不要・レンダリング不要で3Dガウススプラッティングの美的色補正と色転送を行う手法</p><p class="summary"><span class="label">要約</span>本論文は、事前学習済みの3Dガウススプラッティング（3DGS）モデルに対し、参照画像なしで美的な色補正を行う枠組みReTouchGSを提案している。モデルとそのカメラパラメータから場景単位の色変換テーブル（LUT）を予測する。さらに、同一場景の編集済み視点1枚を用いて色転送も可能である。複数視点での評価用にReTouch3Dベンチマークも設計されている。</p>
+<p class="authors">Chuanzhi Xu, Boyu Wei, Chengkun Yue ほか</p></article>
+<article class="item" id="d699719">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699719" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23051" target="_blank" rel="noopener noreferrer nofollow">Refin3R: Geometry-Guided Refinement for Feed-Forward 3D Reconstruction</a>  </h3>
+<p class="note"><span class="label">説明</span>Refin3R：フィードフォワード型3D再構成のための幾何学的ガイド付き精緻化手法</p><p class="summary"><span class="label">要約</span>本論文は、フィードフォワード型3D再構成モデルが出力する稠密な点群マップを改善するRefin3Rを提案する。Structure-from-Motion（SfM）で得られた点を幾何学的な事前情報として用い、SfMの幾何情報を画像グリッド全体へ広げ、複数視点の3D点を使って各ビューを共同で精緻化する二分岐構造を採用している。ScanNet++、ETH3D、Tanks&amp;Templesや、ドメイン外の人物・手術シーンで、点群マップの精度が既存のフィードフォワード手法および幾何学的ガイド手法を上回り、最も強い幾何学的ガイド手法より高速に動作すると報告している。</p>
+<p class="authors">Jongmin Lee, Jaeyeong Kim, Seungryong Kim</p></article>
+<article class="item notable" id="d699718">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.RO · cs.LG · cs.SY</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699718" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23050" target="_blank" rel="noopener noreferrer nofollow">Magflow: Differentiable Simulation of Industrial-Grade 6D Magnetic Levitation</a>  </h3>
+<p class="note"><span class="label">説明</span>Magflow：工業用6自由度磁気浮上の微分可能シミュレーション</p><p class="summary"><span class="label">要約</span>本論文は、電磁力を手作業の近似ではなく物理に基づいて直接計算する、完全微分可能でGPU並列化されたシミュレータMagflowを提案しています。このシミュレータの物理のみで学習させた、工業グレードの6自由度磁気浮上システム向けの初のニューラル制御器を示しています。学習済み制御器は、4 kHzで実時間制約を満たしながら、シミュレーションから実機へゼロショットで転移すると報告されています。</p>
+<p class="why"><span class="label label-why">注目点</span>微分可能なGPU並列シミュレータを提案し、純粋にシミュレーションで学習した工業用6D磁気浮上の初のニューラル制御器を、実機へゼロショット転移し4kHzで検証したと報告。</p><p class="authors">Philipp Hartmann, Jannick Strangh\&#34;oner, Klaus Neumann</p></article>
+<article class="item" id="d699717">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">physics.soc-ph · cond-mat.stat-mech · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699717" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23049" target="_blank" rel="noopener noreferrer nofollow">Reversing the text is not reversing the path: a fixed-text measure without a zero, and an assembly-order comparison that vanishes identically</a>  </h3>
+<p class="note"><span class="label">説明</span>テキストを逆順にすることは経路を逆転させることではない：ゼロ点のない固定テキスト指標と、恒等的にゼロとなる組み立て順序の比較</p><p class="summary"><span class="label">要約</span>本論文は、ゆらぎの定理に由来するエントロピー生成の式を、単一の固定テキストに適用する方法を検討しています。元のテキストと逆順テキストの対数確率の差を用いる指標には理論的なゼロ点がないと指摘し、文の全順列における反対称性からゼロ点を構成しています。さらに、マスク型モデルにおける左から右と右から左という二つの組み立て順序の比較量を扱い、条件付き分布が同時分布から得られる場合にはこの量が恒等的にゼロになることを示しています。</p>
+<p class="authors">Y.-H. Taguchi</p></article>
+<article class="item" id="d699716">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699716" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23048" target="_blank" rel="noopener noreferrer nofollow">Wall-to-wall maps of canopy height and aboveground carbon across the Atlantic Forest</a>  </h3>
+<p class="note"><span class="label">説明</span>大西洋森林の林冠高と地上部炭素量の全域マップ：深層学習とLiDARデータによる作成研究</p><p class="summary"><span class="label">要約</span>本論文は、深層学習ネットワークでSentinel-2、Sentinel-1、ALOS PALSARの衛星データとALOS標高データを融合し、2024年のブラジル大西洋森林について林冠高（10m）と地上部炭素密度（30m）の全域マップを作成した研究である。サンパウロ州の機載LiDARのテストパッチでの二乗平均平方根誤差は、10mで3.05m、30mで2.58mであった。サンパウロ州外の2つのLiDAR地点でも検証されている。同じ画素でMetaと世界資源研究所の全球プロダクトは、その2倍を超える誤差を示した。論文は、炭素会計に用いる前に全球プロダクトの現地検証が必要だと結論づけている。</p>
+<p class="authors">Matheus Pinheiro Ferreira, Thiago Carmuega Raba\c{c}al, Giulio Brossi Santoro ほか</p></article>
+<article class="item notable" id="d699715">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699715" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23045" target="_blank" rel="noopener noreferrer nofollow">ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents</a>  </h3>
+<p class="note"><span class="label">説明</span>ForecastGym：予測エージェントのためのライブ・制御可能・再生可能なベンチマーク</p><p class="summary"><span class="label">要約</span>本論文は、四つの商用ウェブ検索APIが予測市場の未決着の質問に対して返す結果を二日ごとに記録し、結果判明後にその固定された証拠をオフラインで再生する手法ForecastGymを提案します。同一の証拠取得方針の下で、モデル、記憶機構、検索ソースを比較できます。初版は150問、614の証拠状態、131k件の検索結果を含みます。また、固定された証拠の上では、受測した大規模言語モデルがいずれも市場より予測精度が低いことを示しています。</p>
+<p class="why"><span class="label label-why">注目点</span>新規性は、ウェブ検索結果を時点ごとに凍結し再生できる点にあり、予測エージェントの公平な比較を可能にする。150問・131k件の検索結果で、LLM、市場、検索API、メモリ方式を比べたと報告している。</p><p class="authors">Yicheng Tao, Yuante Li, Zipei Fan</p></article>
+<article class="item" id="d699714">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">eess.IV · cs.CV · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699714" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23042" target="_blank" rel="noopener noreferrer nofollow">Uncovering the Invisible in Routine Radiology: Cross-Modal Detection of MRI-Verified Soft-Tissue Pathologies from CBCT via Physics-Guided 3D Self-Supervised Learning</a>  </h3>
+<p class="note"><span class="label">説明</span>日常の放射線画像に潜む見えない軟部組織病変を、物理誘導型3D自己教師あり学習でCBCTからMRI確認ベースに検出する研究</p><p class="summary"><span class="label">要約</span>日常的な円錐ビームCTは石灰化組織の描出に優れる一方、軟部組織の異常は肉眼では見分けにくく、発見にはMRIが必要になることが多い。本研究は顎関節を対象に、CBCTとMRIの対データ212組を用いて、二段階の物理誘導型深層学習の枠組みを提案する。患者単位で分けた交差検証で、MRIで確認された滑膜液貯留に対しROC AUC 0.793を示し、標準的なL2損失で事前学習した同じ構造のモデルはランダム推測に近い結果となった。</p>
+<p class="authors">Evgeny Alves Limarenko</p></article>
+<article class="item" id="d699713">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699713" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23040" target="_blank" rel="noopener noreferrer nofollow">Variance Restoration over Covariance Rank: Memory-Budgeted Analytic Continual Learning</a>  </h3>
+<p class="note"><span class="label">説明</span>共分散のランクより分散を復元する：メモリ予算下の解析的継続学習</p><p class="summary"><span class="label">要約</span>本論文は、解析的継続学習におけるメモリと精度のトレードオフを扱います。固定メモリの下で、クラスごとの統計量と正確な対角分散を保持し、非対角の共分散はストリーミングの低ランク因子で近似します。Woodburyの恒等式で正規方程式を解き、密な共分散を用いる手法と0.09ポイント以内の差で一致しつつ、永続状態を約90.7%削減したと報告しています。</p>
+<p class="authors">Elena Voss, Pixel Nomand, Marcus Hale ほか</p></article>
+<article class="item" id="d699712">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699712" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23038" target="_blank" rel="noopener noreferrer nofollow">When Anchors Shift the Target: Advantage-Gated Adaptation for Diffusion Reinforcement Learning</a>  </h3>
+<p class="note"><span class="label">説明</span>アンカーが目標を動かすとき：拡散モデル強化学習のための優位性ゲート付き適応法</p><p class="summary"><span class="label">要約</span>本論文は、拡散モデルやフローマッチングモデルを報酬付きの生成結果に基づいて強化学習で適応させる前向き過程の手法を扱います。既存手法は移動する方策コピーのキャッシュ予測で学習を安定させますが、それが正の報酬フィードバックの学習対象も変えてしまうと指摘しています。提案手法のAdvantage-Gated Adaptation（AGA）は、正のサンプルには標準的な目標フィッティングを用い、負のサンプルには移動方策の予測点における凹目標の一次接線を用いて、パラメータ不要のゲート関数ω(a)=max(-a,0)で両者を切り分けます。組成的生成、テキスト描画、選好整合の実験で、AGAが報酬と品質のトレードオフを一貫して改善することが示されています。</p>
+<p class="authors">Pu Cao, Min Zhou, Ying Shu ほか</p></article>
+<article class="item" id="d699711">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699711" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23037" target="_blank" rel="noopener noreferrer nofollow">Automated Annotation-Free Synthetic Data Generation for Underwater Litter Detection: A Comparison of Generative Approaches</a>  </h3>
+<p class="note"><span class="label">説明</span>水中ゴミ検出のための注釈不要な合成データ生成：生成手法の比較</p><p class="summary"><span class="label">要約</span>本論文は、実際の水中画像にゴミの物体を挿入し、元の背景を保ったまま、注釈なしで学習データを自動生成するパイプラインを提案します。ラベルはサンプリングされた境界ボックスから直接得られ、人手による注釈は必要ありません。コピー＆ペースト、Stable Diffusionによる修復、DALL-Eによる画像条件付き生成の三手法を比較し、SeaClear水中ゴミデータセットで検出性能への影響を評価しています。結果として、DALL-Eは五つの領域のうち四つで検出性能を向上させました。</p>
+<p class="authors">Amala Mary Vincent, Bart De Schutter</p></article>
+<article class="item" id="d699710">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CL · cs.DC</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699710" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23035" target="_blank" rel="noopener noreferrer nofollow">Storing the Gemma 4 K=V Cache Once: Exact Global-KV Memory Savings in a Paged Serving Engine with Unchanged Attention Kernels</a>  </h3>
+<p class="note"><span class="label">説明</span>Gemma 4 の K=V キャッシュを一度だけ保存：ページ式推論エンジンにおけるグローバル KV メモリの正確な削減（アテンションカーネルは変更なし）</p><p class="summary"><span class="label">要約</span>Gemma 4 31B のグローバルアテンション層では value が key の射影から得られる構造を利用し、1,024 個の値からなる KV 行を 640 個の値の一行として保存する手法を提案しています。変更されていないページ式アテンションカーネルが、重なり合う 2 つのストライドビューで key と value をそれぞれ読み取ります。vLLM のプロトタイプでは出力がエミュレーションと bit 単位で一致し、32K〜64K トークンでのデコード時 KV メモリは 1.34〜1.40 倍に減少しました。</p>
+<p class="authors">Kushagra Bainsla</p></article>
+<article class="item" id="d699709">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699709" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23034" target="_blank" rel="noopener noreferrer nofollow">M3OPD-Reasoner: An Open Recipe for Post-Training Multimodal Reasoning with Multi-Teacher On-Policy Distillation</a>  </h3>
+<p class="note"><span class="label">説明</span>M3OPD-Reasoner：多教師オンポリシー蒸留によるマルチモーダル推論の事後学習の公開手法</p><p class="summary"><span class="label">要約</span>本論文は、画像STEM、画像知覚、動画の3つの推論領域にわたる視覚言語モデルの事後学習のための公開手法M3OPD-Reasonerを提案します。監督付き微調整用のM3OPD-SFT-1.35Mと、検証可能な報酬による強化学習用のM3OPD-RL-193Kの2つのデータセットを構築しました。Qwen3.5-9Bを出発点とした複数の学習手法を比較し、GSPOで直接学習した領域別教師モデルをMOPDで一つの生徒モデルに蒸留する方法が最良であると結論づけています。さらにその生徒モデルに混合データの強化学習を加えた主要モデルM3OPD-Reasoner-9Bを示しています。すべてのデータ、学習コード、各段階のチェックポイントが公開されています。</p>
+<p class="authors">Nguyen Quang Trung, Hoang Phan, Shuo Sun ほか</p></article>
+<article class="item notable" id="d699708">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699708" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23030" target="_blank" rel="noopener noreferrer nofollow">Check Your Blind Spots: Decision-Guided Perception by Probing the Planner with Hypothetical Objects</a>  </h3>
+<p class="note"><span class="label">説明</span>死角を確認する：仮想物体で計画器を探る意思決定誘導型知覚</p><p class="summary"><span class="label">要約</span>本論文は、低解像度の草案からまず計画器に仮想物体を挿入して判断が変わる位置を探し、その位置と現在の行動を支える検出結果だけを高解像度で検証するDGSPという手法を提案している。三つの運転データセットでは、画素数の約4分の1で全画面高解像度知覚と同じ行動を約98%のフレームで再現したと報告している。</p>
+<p class="why"><span class="label label-why">注目点</span>新規性は、計画器に仮想物体を挿入して得る決定感度場で高解像度処理を指示する点にある。二種の計画器で整フレームと同一行動を示し、三つの運転データセットで報告されている。</p><p class="authors">Hoang Pham Cong, Long D. Nguyen, Ho Viet Duc Luong ほか</p></article>
+<article class="item" id="d699707">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699707" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23026" target="_blank" rel="noopener noreferrer nofollow">TPHC: Improving Hyper-Connections with Tensor-Parallel Grouped Updates</a>  </h3>
+<p class="note"><span class="label">説明</span>TPHC：テンソル並列グループ更新によるハイパーコネクションの改善</p><p class="summary"><span class="label">要約</span>本論文はTPHCを提案し、テンソル並列のシャードとハイパーコネクションの複数ストリームを組み合わせ、各ストリームが異なるサブレイヤー出力の混合を受け取れるようにする。残差ストリームの更新表現力を高め、アテンションやFFNのパラメータ・演算量は増やさない。8Bモデルでは4ストリーム時にmHCより学習時間が9%長く、16ストリームでも19%増にとどまる。1.1Bモデルでは、同じストリーム数においてmHCより検証損失を下げ、6つの常識推論ベンチマークの平均ゼロショット精度を向上させた。</p>
+<p class="authors">Xinying Hu, You Wu, Haoyi Wu ほか</p></article>
+<article class="item" id="d699706">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699706" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23025" target="_blank" rel="noopener noreferrer nofollow">When a Larger Guidance Scale Repairs Text-to-Video Failures and When It Does Not</a>  </h3>
+<p class="note"><span class="label">説明</span>ガイダンス係数を上げるとテキスト動画の失敗が直る場合と直らない場合</p><p class="summary"><span class="label">要約</span>本論文は、テキストから動画を生成する拡散モデルで分類器フリーガイダンス係数を上げることが、プロンプトの無視を修正できるかを測定した研究です。Mochiでの実験では、珍しい構図には有効で、否定表現にはほぼ効かず、動画の後半に起こる事象には効果がないことが示されています。去噪の最初の四分の一で読み取れる「需要度」という指標により、事前に効果を予測でき、その条件と簡単な判断基準が示されています。</p>
+<p class="authors">Taewon Kang, Matthias Zwicker</p></article>
+<article class="item" id="d699704">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699704" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23012" target="_blank" rel="noopener noreferrer nofollow">PeriaTrace: Tooth-Level Grounding Diagnosis and Patient-Facing Explanations from Periapical Radiographs</a>  </h3>
+<p class="note"><span class="label">説明</span>PeriaTrace：根尖周X線写真による歯単位の位置特定診断と患者向け説明</p><p class="summary"><span class="label">要約</span>本論文は、歯単位の診断、画像根拠に基づく報告書作成、患者向けの平易な説明と受診上の助言という3段階からなるPeriaTraceフレームワークを提案している。内部データセットと2つの外部臨床コホートの計12,877枚の根尖周X線写真で開発・評価された。内部評価では、マクロDice係数85.35%、BLEU-4 0.6504、歯の位置特定とFDI番号付与の統合F1スコア94.37%を達成した。</p>
+<p class="authors">Zhenhuan Zhou, Yuchen Zhang, Jingbo Zhu ほか</p></article>
+<article class="item" id="d699703">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699703" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23010" target="_blank" rel="noopener noreferrer nofollow">PhysScope: Agentic Multimodal Physics Reasoning with Grounded Visual Memory</a>  </h3>
+<p class="note"><span class="label">説明</span>PhysScope：根拠付き視覚メモリを用いたマルチモーダル物理推論エージェント</p><p class="summary"><span class="label">要約</span>視覚言語モデルは物理の図を正しく読み取れても、その成立する状態や条件の外で法則を適用してしまい、前提の誤りが後の計算に波及することがあります。本論文はPhysScopeを提案します。これはモデルの重みを更新せずに推論時に働く視覚的な枠組みで、こうした適用範囲の不一致を自己修正できるようにします。PhysAlignでは評価した6つの視覚言語モデルすべてで直接解答より高い得点を示し、分布外のPhysUniBenchでも解答精度が大きく向上したと報告されています。</p>
+<p class="authors">Haoyang Liu, Kecheng Liang, Xinyu Li ほか</p></article>
+<article class="item" id="d699702">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699702" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23007" target="_blank" rel="noopener noreferrer nofollow">Tracking Ethological Behaviors of Broiler Chickens Through Computer Vision (YoloV11) Using an Android Mobile Device</a>  </h3>
+<p class="note"><span class="label">説明</span>Androidモバイル端末とコンピュータビジョン（YOLOv11）によるブロイラーの行動追跡</p><p class="summary"><span class="label">要約</span>本研究は、気候制御された鶏舎でブロイラーの行動を自動分類するコンピュータビジョンモデルを開発・評価したものです。座る、立つ、餌を食べるの3クラスに注釈を付けた公開動画を用い、YOLOv11をTFLiteに変換してAndroidアプリに実装しました。静止姿勢（座る）は識別精度が高く、動的な行動（餌を食べる）は低い結果でした。未見の画像では、座る98.04%、立つ83.33%、餌を食べる67.65%の精度が示されています。</p>
+<p class="authors">Ryan Davi Oliveira de Meneses, Glauber da Rocha Balthazar</p></article>
+<article class="item" id="d719894">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.SC · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d719894" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23361" target="_blank" rel="noopener noreferrer nofollow">A Survey on the Use of Machine Learning within Computer Algebra</a>  </h3>
+<p class="note"><span class="label">説明</span>計算代数における機械学習の利用に関するサーベイ</p><p class="summary"><span class="label">要約</span>本論文は、計算代数（Computer Algebra）の分野で機械学習を用いる研究を概観し、既存の計算代数アルゴリズムの最適化と記号計算の直接実行の両面を扱います。系統的文献レビューの手法により、円筒代数分解、グレブナー基底計算、記号積分などの応用を取り上げ、決定木からTransformerに至る各種手法を比較しています。計算代数のベンチマークデータセットが不足している点が課題として挙げられ、説明可能なAIツールが判断への信頼構築に役立つ可能性も指摘されています。</p>
+<p class="authors">Uzma Shafiq, Matthew England, Nayyar Zaidi</p></article>
+<article class="item notable" id="d699701">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699701" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.23001" target="_blank" rel="noopener noreferrer nofollow">NVIDIA Kumo Tabular: Pushing the Accuracy-Efficiency Frontier for Tabular Prediction</a>  </h3>
+<p class="note"><span class="label">説明</span>NVIDIA Kumo Tabular：表形式予測における精度と効率のフロンティアを押し広げる研究</p><p class="summary"><span class="label">要約</span>Kumo Tabular は、分類と回帰のための表形式基盤モデルのシリーズで、S（2700万パラメータ）、M（6100万）、L（2億1400万）の3サイズがあります。Kumo の事前分布から生成された人工の表のみで事前学習されており、新しい表に対して追加の学習なしで予測を行えます。TabArena など8つのベンチマークで L 版が1位となり、すべての比較で精度はモデルサイズとともに向上しました。予測速度も比較対象のモデルより速いと報告されています。</p>
+<p class="why"><span class="label label-why">注目点</span>表形式基盤モデルにアーキテクチャ改良を加え、複数のベンチマークで首位と報告し、モデル規模拡大で精度が向上するとしている。</p><p class="authors">Jingang Qu, Valter Hudovernik, Martin Jurkovi\v{c} ほか</p></article>
+<article class="item" id="d699700">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.ET · cs.LG</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699700" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22998" target="_blank" rel="noopener noreferrer nofollow">Residual-Guided Lightweight Reinforcement Learning for Risk-Aware Trajectory Selection with a Frozen World Model</a>  </h3>
+<p class="note"><span class="label">説明</span>凍結世界モデルを用いたリスク考慮型軌道選択のための残差誘導型軽量強化学習</p><p class="summary"><span class="label">要約</span>本論文は、自動運転において候補軌道を選ぶ問題を扱い、凍結された世界モデルと固定の候補軌道群の上で動く軽量な軌道選択手法を提案している。近接方策最適化（PPO）により候補選択と有界な軌道残差を組み合わせた方策を微調整し、文脈条件付きのランキングネットワークで候補の選好を学習する。nuScenesの検証セットによる開ループ評価では、強化学習による選択を行わないRiskWorldベースラインに比べ、平均ユークリッド軌道誤差（L2）が3.99%低減したと報告している。</p>
+<p class="authors">Jiaqi Wu, Yongqi Dong, Yijie Zhong ほか</p></article>
+<article class="item notable" id="d699699">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699699" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22996" target="_blank" rel="noopener noreferrer nofollow">The Rhythm of Generated Video: Latent Chunking Leaves Periodic Traces in Compressed Bitstreams</a>  </h3>
+<p class="note"><span class="label">説明</span>生成動画のリズム：潜在チャンク化が圧縮ビットストリームに残す周期的痕跡</p><p class="summary"><span class="label">要約</span>因果的動画オートエンコーダは時間方向のストライドにより、予測しにくい内容を潜在チャンクの境界に集中させ、その結果、レート歪み最適化エンコーダがビットを周期的に配分することを示した。ピクセルを復号せずに、CogVideoX と Wan2.2 では 4 フレーム周期、LTX-Video では 8 フレーム周期のパルスが観測され、内容を揃えた実写カメラ映像にはこれが見られない。学習を要しないピーク比統計量により、生成動画と実写動画を AUC 0.84〜0.94 で区別でき、フレームサイズの系列から 4 種の商用生成器も識別できる。</p>
+<p class="why"><span class="label label-why">注目点</span>新規性は、生成動画の時間ストライドと符号化ビットレートの周期性を結びつけ、圧縮ビットストリームから検出する点にある。摘要は複数の生成器と符号化方式でAUCと分類精度を報告し、画素ベースの基準手法を上回ったとする。</p><p class="authors">Chen Ye Gan, Bryan Zhen Zhang, Gene Wen ほか</p></article>
+<article class="item" id="d699698">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699698" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22995" target="_blank" rel="noopener noreferrer nofollow">CAST: Calibrating Correspondences for Training-Free Biomedical In-Context Segmentation</a>  </h3>
+<p class="note"><span class="label">説明</span>CAST：学習不要の生体医用文脈内セグメンテーションのための対応関係キャリブレーション手法</p><p class="summary"><span class="label">要約</span>本論文は、凍結されたDINOv3バックボーンを用いた学習不要のフレームワークCASTを提案し、生体医用画像における細粒度の対応関係を校正する。安定性テストは大域と局所パッチの両レベルで特徴の信頼性を高め、一貫性テストは候補の対応関係が局所構造の文脈に支持されるかを評価する。2D・3D分割、被験者間・モダリティ間転移を含む8つの生体医用ベンチマークで、CASTは最強の全体ベースラインをDiceで12.34ポイント上回り、6つのボリューム設定すべてで首位となった。</p>
+<p class="authors">Mingze Jiang, Jiashu Han, Haonan Chen ほか</p></article>
+<article class="item" id="d699697">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.MA · cs.SE</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699697" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22991" target="_blank" rel="noopener noreferrer nofollow">RagHarnessDebugger: Jev-Guided Agentic RAG in Contract Inference Repair Auditing</a>  </h3>
+<p class="note"><span class="label">説明</span>RagHarnessDebugger：契約推論の修復監査における、Jevに基づくエージェント型RAGのデバッグ枠組み</p><p class="summary"><span class="label">要約</span>本論文は、契約推論のためのハーネスで検索拡張生成（RAG）システムの各修復判断を記録し、その記録を監査してデバッグを行うRagHarnessDebuggerを提案している。ContractNLIの秘密保持契約を用いた実験では、開発用と再現用の契約セットで、BM25のみの基線より精度が3.6ポイントと3.7ポイント向上したと報告されている。</p>
+<p class="authors">Moriya Dechtiar, Daniel Martin Katz, Michael J. Bommarito II ほか</p></article>
+<article class="item" id="d699696">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.HC · cs.AI</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699696" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22989" target="_blank" rel="noopener noreferrer nofollow">How Web Research Agents Interpret User Priorities</a>  </h3>
+<p class="note"><span class="label">説明</span>ウェブ調査エージェントはユーザーの優先事項をどう解釈するか</p><p class="summary"><span class="label">要約</span>本論文は、OpenAI と Anthropic のモデルで動く2つのウェブ調査エージェントが、利用者の示した優先事項をどう解釈するかを調べたものです。マイクロソフトとアルファベットを事業面で比較させる36回の実行で、成長や耐性への注目を求める条件と、優先事項を与えない条件を比べました。その結果、同じ優先事項でも報告の判断基準は異なっていたため、評価では判断基準を確かめるべきだと論じ、利用者が基準を確認・調整できる画面設計を提案しています。</p>
+<p class="authors">Robin Sharma, Parisa Suchdev</p></article>
+<article class="item notable" id="d699695">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · q-bio.QM</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699695" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22988" target="_blank" rel="noopener noreferrer nofollow">Structured AI ideation yields physical strategies for epithelial barrier repair</a>  </h3>
+<p class="note"><span class="label">説明</span>構造化されたAIアイデア創出が上皮バリア修復の物理的戦略をもたらす</p><p class="summary"><span class="label">要約</span>本論文は、研究目標を再定式化し、学問分野の境界を越えて関連要素を探索することで新たな研究方向を生成するAIシステム「Abelio」を紹介しています。Abeliioが提案した、膜に係留したポリエチレングリコール（PEG）とコレステロールで固定した相補的DNAによる2つの物理的介入法を、損傷したCaco-2単層細胞で独立に検証しました。PEGは膜表面に依存した形でバリア機能を維持し、相補的DNAは配列特異的かつ随時可逆的な修復を可能にしたと報告しています。</p>
+<p class="why"><span class="label label-why">注目点</span>構造化されたAI発想システムAbelioが分野横断的要素選択で仮説を生成し、PEGと相補DNAによる上皮バリア修復を実験で検証したと報告している。</p><p class="authors">Geonho Nah, Johyun Park, Kyung-Ah Cho ほか</p></article>
+<article class="item" id="d699694">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV</span><time datetime="2026-11-18">2026年11月18日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d699694" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22981" target="_blank" rel="noopener noreferrer nofollow">SpikWM: Efficient End-to-End Spiking World Modeling for Visual Planning</a>  </h3>
+<p class="note"><span class="label">説明</span>SpikWM：視覚プランニングのための効率的なエンドツーエンド・スパイキング世界モデル</p><p class="summary"><span class="label">要約</span>本論文は、スパイキングニューラルネットワークを用いて画像観測と目標条件に基づく視覚プランニングを行う、スパイキング潜在世界モデルSpikWMを提案している。領域符号化、双極性スパイク行動符号化、因果膜予測により運動の手がかりや行動の違いを保持する。Push-T、Two-Room、Reacher、OGBench-Cubeの4課題で平均成功率を報告し、2つのスパイキング基準手法より高い結果を示した。同一の計画予算下では、LeWMと比べて推定演算エネルギーを75.6%削減したとしている。</p>
+<p class="authors">Shuhan Ye, Hongbin Yu, Chong Wang ほか</p></article>
+<article class="item" id="d699692">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CL · cs.AI · cs.CY</span><time datetime="2026-11-18">2026年11月18日</time>
+<a class="permalink" href="../../../ja/go.html#d699692" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.22975" target="_blank" rel="noopener noreferrer nofollow">Large Language Models Have Not Yet Transformed Science</a>  </h3>
+<p class="note"><span class="label">説明</span>大規模言語モデルはまだ科学を変えていない</p><p class="summary"><span class="label">要約</span>本論文は、2015年から2025年にかけての5分野、250万編の全文論文を分析し、語彙、構造、認識論、社会の各側面にわたる傾向を追跡しています。一部の語の出現頻度の変化を除き、2023年以前の傾向の大半は、検出可能な明確な断絶がほとんどないまま続いていました。注目すべき例外として、コンピュータサイエンスの共著チームの拡大がアジアで著しく加速したこと、また生物医学分野の主題の多様性の低下は、主に論文形式の標準化を反映していたことが挙げられます。著者らは、大規模言語モデルの普及が進むなか、世界の科学の健全性を監視するための実証的な基盤を築いたと述べています。</p>
+<p class="authors">Ron Bekkerman, Nichole Li, Bahareh Kargar ほか</p></article>
+    </section>
+    <nav class="pager">
+<a href="../../../ja/papers/ai/2026-11-18.html">1 ページ目</a><a href="../../../ja/papers/ai/2026-11-18-2.html">2 ページ目</a><a href="../../../ja/papers/ai/2026-11-18-3.html">3 ページ目</a><a href="../../../ja/papers/ai/2026-11-18-4.html">4 ページ目</a><a href="../../../ja/papers/ai/2026-11-18-5.html" aria-current="page">5 ページ目</a><a href="../../../ja/papers/ai/2026-11-18-6.html">6 ページ目</a>    </nav>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <section class="risk-notice" aria-labelledby="risk-title">
+      <h2 id="risk-title">リスクに関する注意事項・免責事項</h2>
+      <ol>
+<li>本サイトの内容は、インターネット上の公開情報源（政府・規制当局のウェブサイト、論文プレプリントサーバー、技術コミュニティなど）からプログラムが自動で収集・整理したものです。情報の完全性、正確性、適時性および継続的な利用可能性は保証しません。元の情報源は予告なく変更・撤回・削除されることがあります。</li><li>各項目の説明、要約、星の評価および注目点は人工知能が自動生成したもので、人による個別の確認は行っていません。誤訳、欠落、古い情報や誤りを含む可能性があります。日付・比率・金額はプログラムで原文と照合していますが、誤りが残る可能性があります。</li><li>すべて原文および発行機関の正式な文書が優先します。翻訳と要約は参考情報であり、法的効力はありません。</li><li>本サイトは法律、税務、会計、投資その他の専門的助言ではなく、暗号資産を含むいかなる資産の売買の申込み、勧誘または推奨でもありません。判断の前に必ず資格のある専門家にご相談ください。</li><li>暗号資産は価格変動が非常に大きく、元本のすべてを失うおそれがあります。規制は国・地域によって異なり頻繁に変わるため、関連する行為が一部の地域で制限または違法となる場合があります。</li><li>星の評価は論文のタイトルと要旨のみに基づく大まかな判断であり、論文の質、結論の正しさまたは著者を評価するものではありません。</li><li>本サイトは掲載している政府機関、規制当局、論文の著者および第三者のウェブサイトとは一切関係がありません。外部リンク先の内容はその運営者の責任であり、著作権・商標権は各権利者に帰属します。</li><li>本サイトは現状のまま提供され、内容は予告なく更新・訂正・削除されることがあります。本サイトの情報の利用または依拠により生じたいかなる直接的・間接的損害についても、一切の責任を負いません。</li>      </ol>
+    </section>
+    <p class="muted">Thank you to arXiv for use of its open access interoperability.</p>
+    <p class="muted">要約の更新 2026年11月21日 · <a href="../../../ja/sources.html">情報源と収録範囲</a></p>
+    <p class="muted contact">翻訳・分類・日付・リンクの誤りやご意見は、こちらまでお知らせください： <a href="mailto:contact@ditinglab.org">contact@ditinglab.org</a></p>
+  </div>
+</footer>
+</body>
+</html>
