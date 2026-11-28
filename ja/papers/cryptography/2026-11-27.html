@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>暗号・セキュリティ · 2026年11月27日（金） · 諦聽 Diting Lab</title>
+<meta name="description" content="技術論文と世界の暗号資産規制をひと目で">
+<link rel="alternate" hreflang="zh-Hans" href="../../../zh/papers/cryptography/2026-11-27.html">
+<link rel="alternate" hreflang="ja" href="../../../ja/papers/cryptography/2026-11-27.html">
+<link rel="alternate" hreflang="en" href="../../../en/papers/cryptography/2026-11-27.html">
+<link rel="alternate" hreflang="x-default" href="../../../index.html">
+<link rel="alternate" type="application/atom+xml" title="暗号・セキュリティ · 2026年11月27日（金） · 諦聽 Diting Lab" href="../../../ja/papers/cryptography/feed.xml"><link rel="icon" href="../../../assets/brand/favicon-32.png?v=8f6b178017" type="image/png" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.svg?v=8f6b178017" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/brand/apple-touch-icon.png?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/style.css?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/fonts/fonts.css?v=8f6b178017"><link rel="stylesheet" href="../../../assets/themes/nightcity.css?v=8f6b178017"><script src="../../../assets/site.js?v=8f6b178017" defer></script>
+</head>
+<body class="theme-nightcity">
+<header class="site-header">
+  <div class="wrap header-grid">
+    <a class="brand" href="../../../ja/index.html">
+      <img class="brand-logo" src="../../../assets/brand/logo.svg?v=8f6b178017" alt="諦聽 Diting Lab" width="149" height="40">
+    </a>
+    <nav class="main-nav">
+      <a href="../../../ja/index.html">ホーム</a>
+      <a href="../../../ja/papers/index.html" aria-current="page">論文</a>
+      <a href="../../../ja/laws/index.html">法令・規制</a>
+      <a href="../../../ja/about.html">このサイトについて</a>
+    </nav>
+    <nav class="lang-switch" aria-label="言語を選択">
+      <a href="../../../zh/papers/cryptography/2026-11-27.html" data-lang="zh" lang="zh-Hans">中文</a>
+      <a href="../../../ja/papers/cryptography/2026-11-27.html" data-lang="ja" lang="ja" aria-current="true">日本語</a>
+      <a href="../../../en/papers/cryptography/2026-11-27.html" data-lang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="stale-note" hidden data-src="../../../assets/built.json">本サイトは 12 時間以上更新されていません（通常は 3 時間ごと）。以下の内容は最新でない可能性があります。</p><div class="page-head">
+  <h1 class="page-title">暗号・セキュリティ · 2026年11月27日（金）</h1>
+<p class="lede">arXiv のセキュリティ・暗号分野（cs.CR）と IACR 暗号学プレプリント。</p><a class="feed-link" href="../../../ja/papers/cryptography/feed.xml">RSS で購読</a></div>
+<div class="layout">
+  <aside class="side">
+    <nav class="chips">
+      <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">238</span></a>
+      <a href="../../../ja/papers/cryptography/index.html" aria-current="page"><span>暗号・セキュリティ</span> <span class="count">3050</span></a>
+      <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">4480</span></a>
+      <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">392</span></a>
+      <a href="../../../ja/papers/ai/index.html"><span>AI アルゴリズム</span> <span class="count">29013</span></a>
+      <a href="../../../ja/papers/other/index.html"><span>その他の計算機科学</span> <span class="count">1743</span></a>
+      <a href="../../../ja/papers/community/index.html"><span>技術コミュニティの議論</span> <span class="count">122</span></a>
+    </nav>
+  </aside>
+  <div class="content">
+    <div class="filter-row">
+      <input class="filter" type="search" placeholder="下の項目を絞り込み…" aria-label="下の項目を絞り込み…">
+<label class="only-toggle"><input type="checkbox" data-only="notable"> 注目論文（★4 以上）のみ表示</label>    </div>
+    <p class="alias-hint muted" hidden data-text="次の表記も検索：{terms}"></p>
+    <p class="filter-count muted" hidden data-text="このページで {n} 件が該当"></p>
+    <p class="filter-empty muted" hidden>このページに条件に合う項目はありません（絞り込みはこのページ内のみ）。 <button type="button" class="filter-clear">絞り込みを解除</button></p>
+    <section class="day">
+<article class="item notable" id="d919850">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Secret-key cryptography</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d919850" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3078" target="_blank" rel="noopener noreferrer nofollow">HCENC: How to Design an Efficient Committing Beyond-Birthday-Bound Accordion from a Block Cipher with n-Bit Blocks and Keys</a>  </h3>
+<p class="note"><span class="label">説明</span>HCENC：n ビットのブロック暗号から効率的なコミット可能な生日限界超えのアコーディオン方式を設計する方法</p><p class="summary"><span class="label">要約</span>本論文は、可変長入力のための可調整暗号モード（アコーディオン）である HCENC を提案します。HCENC は HCTR を一般化したもので、n ビットのブロックと鍵をもつブロック暗号、n ビット AXU ハッシュ関数、CENC の鍵ストリーム生成器から構成されます。理想暗号モデルにおいて、約 2^n/w ブロックまで強い可調整擬似ランダム置換であることを証明しています。また、AES を用いた具体的な実装で 116 ビットの CMT-1 と CMT-4 が得られることを示しています。</p>
+<p class="why"><span class="label label-why">注目点</span>新規性は、n位ブロック・鍵の暗号から承認型のbeyond-birthday-bound accordionを構成し、理想暗号モデルで強い可調疑似ランダム置換を示す点にある。摘要は計算コストの小ささと機械検証済みの証明に言及している。</p><p class="authors">Roberto Avanzi</p></article>
+<article class="item" id="d919855">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Implementation</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d919855" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3077" target="_blank" rel="noopener noreferrer nofollow">Beyond Stepwise Transformation: MILP Model for Low-Area Implementations of Linear Layers</a>  </h3>
+<p class="note"><span class="label">説明</span>逐次変換を超えて：線形層の低面積実装のためのMILPモデル</p><p class="summary"><span class="label">要約</span>本論文は、軽量対称鍵暗号の線形層について、既存の逐次変換手法が探索空間を制限しうる点を指摘しています。著者らは、XOR2回路を出発点として、限定された候補空間内で2入力、3入力、4入力のXORゲートを同時に選択する混合整数線形計画法（MILP）モデルを提案しています。AESのMixColumnsについて、STM 130 nmライブラリで236.99 GEの実装を得て、従来の243 GEを改善したと報告しています。また、5000以上の32×32 MDS行列では、初期のXOR2回路に比べ平均面積を最大約28%、既存の逐次多入力実装に比べ約8%削減したとしています。</p>
+<p class="authors">Pengju Zhao, Qun Liu, Jingwen Chen ほか</p></article>
+<article class="item notable" id="d916024">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="5/5">★★★★★</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Secret-key cryptography</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916024" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3076" target="_blank" rel="noopener noreferrer nofollow">Exact Post-Quantum Security Analysis of Ascon Authenticated Encryption under Nonce Misuse</a>  </h3>
+<p class="note"><span class="label">説明</span>ノンスの誤用下におけるAscon認証暗号の厳密な耐量子安全性解析</p><p class="summary"><span class="label">要約</span>本論文は、NIST SP 800-232として標準化された軽量認証暗号Ascon AEADを、ノンス再利用の状況下で量子ランダム置換モデルにより耐量子安全性の観点から分析している。機密性と真正性について、min{2^(κ/2), 2^(c/3)}までの安全性を証明し、鍵長への依存を従来の2^(κ/3)から2^(κ/2)へ改善した。また、量子探索を用いた攻撃を構成し、この安全性上界が指数部において厳密であることを示している。</p>
+<p class="why"><span class="label label-why">注目点</span>新しい表現によりAscon AEADを初期化関数とtweakable block cipherに分解し、Hosoyamadaの鍵長依存を改善、対応する量子攻撃でタイトな界を示すと報告。</p><p class="authors">Rentaro Shiba, Tetsu Iwata</p></article>
+<article class="item" id="d916025">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916025" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3075" target="_blank" rel="noopener noreferrer nofollow">Lightning-fast Two-Party Secure Sampling Protocol for Arbitrary Public Discrete Distributions</a>  </h3>
+<p class="note"><span class="label">説明</span>任意の公開離散分布に対する高速な二者間安全サンプリングプロトコル</p><p class="summary"><span class="label">要約</span>本論文は、乱数を明かさずに任意の公開離散分布からサンプリングできる二者間安全計算プロトコルを提案している。目標分布を、テーブルで表現可能な混合分布と決定的変換による表現に変換し、その近似表現からサンプルの算術シェアを生成する。近似誤差は表現の構築段階でのみ生じる。静的な半正直敵対者モデルでの安全性を証明し、五種類の離散分布で評価している。</p>
+<p class="authors">Masanobu Kii</p></article>
+<article class="item" id="d916026">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916026" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3074" target="_blank" rel="noopener noreferrer nofollow">Aggregation techniques for the SPoCK scheme</a>  </h3>
+<p class="note"><span class="label">説明</span>SPoCK方式の集約技術：複数の証明者が同じ秘密を知っていることを示す暗号手法</p><p class="summary"><span class="label">要約</span>前の研究では、秘密を明かさずに二者が共通の秘密を持つことを第三者に示せる暗号プリミティブ「SPoCK（Specialized Proof of Confidential Knowledge）」が定式化された。本論文は複数の証明者と複数の秘密に対応する新しい方式を提案する。二組の証明者が同一秘密から生成した証明であることを示す Multi-SPoCK と、複数の秘密の証明を一つにまとめる Aggregate Multi-SPoCK を定義し、BLS多重署名に基づくペアリングを用いた構成と、適切な計算論的仮定の下での安全性証明を示している。</p>
+<p class="authors">Tarak Ben Youssef</p></article>
+<article class="item notable" id="d916027">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916027" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3073" target="_blank" rel="noopener noreferrer nofollow">Extending the Security of Arithmetic Masking to All Finite Cyclic Groups via Fourier Analysis</a>  </h3>
+<p class="note"><span class="label">説明</span>フーリエ解析による算術マスキングの安全性の全有限巡回群への拡張</p><p class="summary"><span class="label">要約</span>本論文は、秘密を模Nの整数の各シェアに分割したときの、シェアのハミング重みの同時分布と、秘密が一様なときの分布との全変動距離を扱う。著者らは、任意のN≥2と固定されたk≥3について、この距離が秘密の値によらず一様に、nの特定の負のべき乗で減少することを示す。ここでnはNの二を底とする対数の切り上げである。証明はブール立方体上のフーリエ解析と、{0,…,N−1}を長さが二のべき乗の区間に分解する手法を用いる。これによりBiswasらの研究にあった、法が二のべき乗に近いという制限が取り除かれ、一般上界の指数は維持される。</p>
+<p class="why"><span class="label label-why">注目点</span>算術マスキングの安全性境界を、二のべき近傍の法から全ての有限巡回群へ拡張した。ブール立方体上のフーリエ解析と二のべき長の区間分解を用い、全てのNに対する全変動距離の界を与えたと報告。</p><p class="authors">Ishan Kumthekar</p></article>
+<article class="item" id="d916028">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916028" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3072" target="_blank" rel="noopener noreferrer nofollow">A Generalization of A Randomized AKS-Class Primality Proving Algorithm via Twisted Polynomials</a>  </h3>
+<p class="note"><span class="label">説明</span>ねじれ多項式を用いたランダム化AKS型素数判定アルゴリズムの一般化</p><p class="summary"><span class="label">要約</span>本論文は、Kummer型商環における線形因子と係数の次数を変えることで、Bernsteinの組合せ的素数性証明書を拡張する研究である。係数の周期と拡大次数を分離し、補助因子の代わりに直接の周期判定を用いる。結果は所定の仮定のもとで証明書の判定基準を強化するが、Bernsteinの本質的に四次のアルゴリズムより小さい一般の計算量指数を示すものではない。</p>
+<p class="authors">Haining Fan</p></article>
+<article class="item notable" id="d916029">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Secret-key cryptography</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916029" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3071" target="_blank" rel="noopener noreferrer nofollow">Near-n-Bit Preimage and Second-Preimage Security of the JH Mode</a>  </h3>
+<p class="note"><span class="label">説明</span>JH モードの近 n ビット原像・第二原像安全性</p><p class="summary"><span class="label">要約</span>本論文は理想置換モデルにおいて JH モードの原像耐性と第二原像耐性を再検討し、従来の直接的な境界が誕生日のスケルトンにとどまっていることを示す。メンガーの定理とポテンシャル関数を用いて新たな境界を導き、2^64 ビット以下のメッセージについて約 2^(n-2√(2n)-O(log n)) 回の問い合わせまで無視できる優位性を与える。JH-512 の幅では、重みなし証明書により原像成功確率が 2^431 回まで 1/2 未満であることを示す。Lean 4 による形式化も含まれる。</p>
+<p class="why"><span class="label label-why">注目点</span>理想置換モデルでJHモードの原像・第二原像の安全性を、Mengerの定理とポテンシャル関数により誕生日限界からほぼn ビットの水準へ改善し、Lean 4で形式化している。</p><p class="authors">Changlun Li, Hongli Li, Yijun Yuan ほか</p></article>
+<article class="item notable" id="d916032">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916032" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3070" target="_blank" rel="noopener noreferrer nofollow">On Perfect Additive Randomized Encodings</a>  </h3>
+<p class="note"><span class="label">説明</span>完全な加法的ランダム化符号化の存在をめぐる否定的結果</p><p class="summary"><span class="label">要約</span>本論文は加法的ランダム化符号化（ARE）を扱います。各入力を局所的に符号化し、その符号化の総和だけから関数値を復号しつつ、入力について他に何も漏らさない仕組みです。著者らは、有限アーベル群上のOR関数について、完全な安全性と完全な正しさを併せ持つAREが存在しないことを示します。また素数p&gt;2のZ_p上のXOR関数についても、符号化確率が有理数であるという仮定の下で同様の結論を示します。さらに、特定の制約の下で完全な正しさを持つ不完全安全なAREや、ヒストグラム上で非自明な誤り率を持つ完全安全なAREの排除も扱い、シャッフルモデルのプロトコルにも同じ結果が及ぶことを述べています。</p>
+<p class="why"><span class="label label-why">注目点</span>新規性は有限アーベル群上でORの完全ARE、ZpでのXORの完全AREの存在を否定する点にあり、証明による結果で、分野の理論的理解に寄与する。</p><p class="authors">Yuval Ishai, Eyal Kushilevitz, Sahar Alon Yerushalmi</p></article>
+<article class="item" id="d916034">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916034" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3069" target="_blank" rel="noopener noreferrer nofollow">Stable Private Intersection with Consistency</a>  </h3>
+<p class="note"><span class="label">説明</span>一貫性を備えた安定的なプライベート積集合（SPICy）</p><p class="summary"><span class="label">要約</span>本論文は、プライベート集合積（PSI）のためのフレームワーク SPICy を提案します。双方が複数回の積集合計算において、コミットした入力集合に拘束されるようにし、要素の省略による偽陰性や出力の偏りを防ぎます。MiniPSI を基盤とし、新しい原始的手法である相互不経意PRF（MOPRF）を導入して、完全入力一貫性を実現し、オンライン通信は1ラウンドで済みます。2⁷から2¹⁰サイズの集合で、オンライン実行時間はMiniPSIの1.7〜1.9倍、通信量は約4.5倍と報告されています。</p>
+<p class="authors">Manya Garg, Debayan Gupta, Arup Mondal ほか</p></article>
+<article class="item notable" id="d916037">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Attacks and cryptanalysis</span><time datetime="2026-11-27">2026年11月27日</time>
+<a class="permalink" href="../../../ja/go.html#d916037" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/3068" target="_blank" rel="noopener noreferrer nofollow">Parity Leakage and Sparse-Mask Sampling in Distorted-McEliece Pseudorandom Codes</a>  </h3>
+<p class="note"><span class="label">説明</span>歪められたMcEliece疑似乱数符号における偶奇性の漏洩とスパースマスクのサンプリング</p><p class="summary"><span class="label">要約</span>Dyseryn、Francati、Venturiが提案した二値公開鍵疑似乱数符号について、完全な支持集合の場合には偶奇性によって公開鍵が一様行列と区別できることを示し、その分布歪みMcEliece公開鍵仮定を否定している。支持集合が制限される条件、疎な歪みが双対符号語に与える影響、マスクのサンプリング手法も分析されている。ただし、暗号文レベルの仮定は否定されていないと述べられている。</p>
+<p class="why"><span class="label label-why">注目点</span>DFV公開鍵仮定が全台集合の場合に偶奇性の漏洩で成り立たないことを示し、台集合の制約条件と複数のマスク抽出法を分析する。</p><p class="authors">Yongge Wang</p></article>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <section class="risk-notice" aria-labelledby="risk-title">
+      <h2 id="risk-title">リスクに関する注意事項・免責事項</h2>
+      <ol>
+<li>本サイトの内容は、インターネット上の公開情報源（政府・規制当局のウェブサイト、論文プレプリントサーバー、技術コミュニティなど）からプログラムが自動で収集・整理したものです。情報の完全性、正確性、適時性および継続的な利用可能性は保証しません。元の情報源は予告なく変更・撤回・削除されることがあります。</li><li>各項目の説明、要約、星の評価および注目点は人工知能が自動生成したもので、人による個別の確認は行っていません。誤訳、欠落、古い情報や誤りを含む可能性があります。日付・比率・金額はプログラムで原文と照合していますが、誤りが残る可能性があります。</li><li>すべて原文および発行機関の正式な文書が優先します。翻訳と要約は参考情報であり、法的効力はありません。</li><li>本サイトは法律、税務、会計、投資その他の専門的助言ではなく、暗号資産を含むいかなる資産の売買の申込み、勧誘または推奨でもありません。判断の前に必ず資格のある専門家にご相談ください。</li><li>暗号資産は価格変動が非常に大きく、元本のすべてを失うおそれがあります。規制は国・地域によって異なり頻繁に変わるため、関連する行為が一部の地域で制限または違法となる場合があります。</li><li>星の評価は論文のタイトルと要旨のみに基づく大まかな判断であり、論文の質、結論の正しさまたは著者を評価するものではありません。</li><li>本サイトは掲載している政府機関、規制当局、論文の著者および第三者のウェブサイトとは一切関係がありません。外部リンク先の内容はその運営者の責任であり、著作権・商標権は各権利者に帰属します。</li><li>本サイトは現状のまま提供され、内容は予告なく更新・訂正・削除されることがあります。本サイトの情報の利用または依拠により生じたいかなる直接的・間接的損害についても、一切の責任を負いません。</li>      </ol>
+    </section>
+    <p class="muted">Thank you to arXiv for use of its open access interoperability.</p>
+    <p class="muted">要約の更新 2026年11月28日 · <a href="../../../ja/sources.html">情報源と収録範囲</a></p>
+    <p class="muted contact">翻訳・分類・日付・リンクの誤りやご意見は、こちらまでお知らせください： <a href="mailto:contact@ditinglab.org">contact@ditinglab.org</a></p>
+  </div>
+</footer>
+</body>
+</html>

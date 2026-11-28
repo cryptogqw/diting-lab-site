@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>暗号・セキュリティ · 2026年11月19日（木） · 諦聽 Diting Lab</title>
+<meta name="description" content="技術論文と世界の暗号資産規制をひと目で">
+<link rel="alternate" hreflang="zh-Hans" href="../../../zh/papers/cryptography/2026-11-19.html">
+<link rel="alternate" hreflang="ja" href="../../../ja/papers/cryptography/2026-11-19.html">
+<link rel="alternate" hreflang="en" href="../../../en/papers/cryptography/2026-11-19.html">
+<link rel="alternate" hreflang="x-default" href="../../../index.html">
+<link rel="alternate" type="application/atom+xml" title="暗号・セキュリティ · 2026年11月19日（木） · 諦聽 Diting Lab" href="../../../ja/papers/cryptography/feed.xml"><link rel="icon" href="../../../assets/brand/favicon-32.png?v=8f6b178017" type="image/png" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.svg?v=8f6b178017" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/brand/apple-touch-icon.png?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/style.css?v=8f6b178017">
+<link rel="stylesheet" href="../../../assets/fonts/fonts.css?v=8f6b178017"><link rel="stylesheet" href="../../../assets/themes/nightcity.css?v=8f6b178017"><script src="../../../assets/site.js?v=8f6b178017" defer></script>
+</head>
+<body class="theme-nightcity">
+<header class="site-header">
+  <div class="wrap header-grid">
+    <a class="brand" href="../../../ja/index.html">
+      <img class="brand-logo" src="../../../assets/brand/logo.svg?v=8f6b178017" alt="諦聽 Diting Lab" width="149" height="40">
+    </a>
+    <nav class="main-nav">
+      <a href="../../../ja/index.html">ホーム</a>
+      <a href="../../../ja/papers/index.html" aria-current="page">論文</a>
+      <a href="../../../ja/laws/index.html">法令・規制</a>
+      <a href="../../../ja/about.html">このサイトについて</a>
+    </nav>
+    <nav class="lang-switch" aria-label="言語を選択">
+      <a href="../../../zh/papers/cryptography/2026-11-19.html" data-lang="zh" lang="zh-Hans">中文</a>
+      <a href="../../../ja/papers/cryptography/2026-11-19.html" data-lang="ja" lang="ja" aria-current="true">日本語</a>
+      <a href="../../../en/papers/cryptography/2026-11-19.html" data-lang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="stale-note" hidden data-src="../../../assets/built.json">本サイトは 12 時間以上更新されていません（通常は 3 時間ごと）。以下の内容は最新でない可能性があります。</p><div class="page-head">
+  <h1 class="page-title">暗号・セキュリティ · 2026年11月19日（木）</h1>
+<p class="lede">arXiv のセキュリティ・暗号分野（cs.CR）と IACR 暗号学プレプリント。</p><a class="feed-link" href="../../../ja/papers/cryptography/feed.xml">RSS で購読</a></div>
+<div class="layout">
+  <aside class="side">
+    <nav class="chips">
+      <a href="../../../ja/papers/crypto/index.html"><span>暗号資産・ブロックチェーン</span> <span class="count">238</span></a>
+      <a href="../../../ja/papers/cryptography/index.html" aria-current="page"><span>暗号・セキュリティ</span> <span class="count">3050</span></a>
+      <a href="../../../ja/papers/quantum/index.html"><span>量子コンピューティング</span> <span class="count">4480</span></a>
+      <a href="../../../ja/papers/finance/index.html"><span>計量ファイナンス</span> <span class="count">392</span></a>
+      <a href="../../../ja/papers/ai/index.html"><span>AI アルゴリズム</span> <span class="count">29013</span></a>
+      <a href="../../../ja/papers/other/index.html"><span>その他の計算機科学</span> <span class="count">1743</span></a>
+      <a href="../../../ja/papers/community/index.html"><span>技術コミュニティの議論</span> <span class="count">122</span></a>
+    </nav>
+  </aside>
+  <div class="content">
+    <div class="filter-row">
+      <input class="filter" type="search" placeholder="下の項目を絞り込み…" aria-label="下の項目を絞り込み…">
+<label class="only-toggle"><input type="checkbox" data-only="notable"> 注目論文（★4 以上）のみ表示</label>    </div>
+    <p class="alias-hint muted" hidden data-text="次の表記も検索：{terms}"></p>
+    <p class="filter-count muted" hidden data-text="このページで {n} 件が該当"></p>
+    <p class="filter-empty muted" hidden>このページに条件に合う項目はありません（絞り込みはこのページ内のみ）。 <button type="button" class="filter-clear">絞り込みを解除</button></p>
+    <section class="day">
+<article class="item" id="d755482">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CC · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755482" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26169" target="_blank" rel="noopener noreferrer nofollow">Products of Distinguisher Hulls</a>  </h3>
+<p class="note"><span class="label">説明</span>区別器ハルの積に関する論文</p><p class="summary"><span class="label">要約</span>本論文は、2つの分布の区別器ハル（区別器の受理確率の組の凸包）が、サイズ制限付きブール回路に対する独立な積でどのように振る舞うかを研究している。Dworkと Tankala によるスーパーシミュレータ定理（FOCS 2026）から幾何学的な帰結を導き、区別器ハルの近似的な積包含について、従来とは大きく異なる証明を与えている。その構成では、適応的なスコア補正の代わりに非適応的サンプリングを用いている。</p>
+<p class="authors">John Paul Steinberger, Zhe Zhang</p></article>
+<article class="item" id="d800396">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800396" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2952" target="_blank" rel="noopener noreferrer nofollow">Beyond Leaderless: Randomized Consensus Against Mobile Crashes</a>  </h3>
+<p class="note"><span class="label">説明</span>リーダーレスを超えて：移動するクラッシュに耐えるランダム化コンセンサス</p><p class="summary"><span class="label">要約</span>本論文は、攻撃者がレプリカ間を移動して繰り返しクラッシュさせる状況でも、Simplexコンセンサスの単純な構造と良好時の低遅延を保ちながら終了性を確保する、マルチリーダー固定ビューSimplex（ML-FVS）プロトコルを提案しています。各リーダーが提案を放送でき、投票期限には各レプリカが見た提案の集合に投票します。投票後に明らかになる隠ししきい値ビーコンが優先順位を定め、各投票を最も優先度の高い提案に解決します。定数のクラッシュ予算とΔ遅延のビザンチン侵入に対し、リーダーが初めて誠実なビューにおいて期待遅延O(Δ)を得ると述べています。</p>
+<p class="authors">Ittai Abraham, Kaya Alpturer, Pranav Garimidi ほか</p></article>
+<article class="item" id="d755471">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755471" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26131" target="_blank" rel="noopener noreferrer nofollow">SCARVA: Interpretable Agentic Reasoning in Software Supply-Chain Analysis</a>  </h3>
+<p class="note"><span class="label">説明</span>SCARVA：ソフトウェアサプライチェーン分析における解釈可能なエージェント型推論</p><p class="summary"><span class="label">要約</span>複雑なアプリケーションは依存関係から脆弱性を引き継ぐことがあるが、脆弱な依存関係が必ずしもアプリケーションを危険にさらすとは限らない。本論文は、解釈可能なレポートを生成するためのフレームワーク SCARVA を提案する。分析エージェント（ANALYST）がソフトウェアのセキュリティ評価を行い、そのすべてのツール呼び出し、ファイルアクセス、Web リクエストを記録する。その後、独立した1つ以上の判定エージェント（JUDGE）が結果を検査し、証拠に基づくレポートを作成する。54件の手作業で整備した事例での評価では、最良の分析モデル Qwen 3.8 が平衡精度82%に達し、人手による注釈では Claude Opus 5.5 が判定エージェントとして論断検査の94%で注釈者と一致した。</p>
+<p class="authors">Tim Barsch, Bruno Nogueira, Tobias Wienand ほか</p></article>
+<article class="item" id="d755468">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755468" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26117" target="_blank" rel="noopener noreferrer nofollow">ChronoPatch: Black-Box Energy-Latency Attacks on Vision-Language Models</a>  </h3>
+<p class="note"><span class="label">説明</span>ChronoPatch：視覚言語モデルに対するブラックボックスの電力・遅延攻撃</p><p class="summary"><span class="label">要約</span>本論文は、最終的な応答のみを観測できる条件で実行可能なブラックボックス攻撃ChronoPatchを提案します。敵対的な画像入力によって視覚言語モデルの生成を長引かせ、推論遅延とGPU電力消費を増加させます。4つのオープンソースモデルと3つの商用APIでの実験では、遅延と消費電力の増加、出力の反復性の上昇が示されました。著者は、このような生成ベースの可用性リスクが最終応答のみへのアクセス下でも残ることを指摘し、導入済みの生成AIサービス向けに生成過程を考慮した防御策の必要性を訴えています。</p>
+<p class="authors">Jiawei Xing, Li Wang, Xiangtao Meng ほか</p></article>
+<article class="item notable" id="d755457">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755457" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26100" target="_blank" rel="noopener noreferrer nofollow">Causal Overtaking in Fair Transaction Ordering</a>  </h3>
+<p class="note"><span class="label">説明</span>公平な取引順序付けにおける因果的追い越し攻撃</p><p class="summary"><span class="label">要約</span>本論文は、公平な取引順序付けプロトコルに対する攻撃を扱う。侵害されたレプリカが標的取引を観測した後、複数のクライアント経路から同一の署名付き対応取引のコピーを送信し、対応取引が標的より先に実行される可能性を示す。著者らはThemisを含む受信順序ベースのプロトコル群を形式化し、攻撃が成立する時間条件とネットワーク条件を分析するとともに、受信証拠のみでは先行提出の優先性と追い越し防止を常に両立できないことを証明する。緩和策も提案し、AWSとWonderProxyの遅延測定に基づくシミュレーションで評価している。</p>
+<p class="why"><span class="label label-why">注目点</span>新規性は、複数入口からの提出により応答取引が目標より先に実行されうることを指摘し、受信証拠だけでは優先性と防止を両立できないと示す点にある。摘要はAWSとWonderProxyの遅延によるシミュレーションを報告している。</p><p class="authors">Haozhe Feng, Di Wu, Jian Liu</p></article>
+<article class="item" id="d755453">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755453" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26094" target="_blank" rel="noopener noreferrer nofollow">Phantom of the Masquerade: Graph Neural Network-Based Detection of Masquerade Attacks in Controller Area Networks</a>  </h3>
+<p class="note"><span class="label">説明</span>ファントム・マスカレード：グラフニューラルネットワークによるコントローラエリアネットワークのなりすまし攻撃検知</p><p class="summary"><span class="label">要約</span>本論文は、コントローラエリアネットワーク（CAN）に標準の保護機能がないため車両や産業システムがなりすまし攻撃にさらされる問題を扱い、グラフニューラルネットワークに基づく検知フレームワーク「PhantoMasq」を提案している。CANの通信を信号の統計的特徴を加えたメッセージ列グラフとしてモデル化し、グラフ畳み込みネットワークでグラフ単位の分類を行う。ROADデータセットでは、5種類のなりすまし攻撃に対する平均AUC-ROCが0.831から0.999の範囲であり、同じスライディングウィンドウ条件で先進的なグラフ埋め込み手法より高い性能を示したと報告している。</p>
+<p class="authors">Nehal Ameen, Pablo Moriano, Irfan Ahmed</p></article>
+<article class="item" id="d755426">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · eess.SP</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755426" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.26023" target="_blank" rel="noopener noreferrer nofollow">Detecting Formation-Preserving GNSS Spoofing of UAV Swarms through Transmitter Parallax in Pseudorange and Doppler</a>  </h3>
+<p class="note"><span class="label">説明</span>擬似距離とドップラーにおける送信機の視差による、編隊を維持するUAV群へのGNSS欺瞞の検出</p><p class="summary"><span class="label">要約</span>無人機群は、報告された位置と既知の編隊を照合することでGNSS欺瞞を検出するが、編隊を維持する欺瞞はこの検査を回避できる。本論文は、各ドローンが既に測定している擬似距離とドップラーから、近接した送信機による信号到着時刻の視差を読み取る尤度比検定を提案し、追加のアンテナは不要とする。シミュレーションでは、GNSS-WASPに対する検出率が高く、単一送信機および地上アレイによる欺瞞も検出できることが示されている。</p>
+<p class="authors">Minseok Park, Joon Soo Yoo</p></article>
+<article class="item" id="d800397">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800397" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2951" target="_blank" rel="noopener noreferrer nofollow">SoK: A Unified Framework for Analyzing Coercion Resistance in Electronic Voting</a>  </h3>
+<p class="note"><span class="label">説明</span>電子投票における強制耐性を統一的に分析する枠組み（体系的整理）</p><p class="summary"><span class="label">要約</span>本論文は、さまざまな電子投票プロトコルの強制耐性（coercion resistance）を体系的に分析するための統一的な枠組みを提案します。各種プロトコルに共通の構文を定義し、検証可能性と投票の秘匿性の標準的な定義をそれに合わせて適用し、既存プロトコルを比較しています。さらに、腐敗の上限、腐敗の形態、強制の段階、時間的制約、強制的なやり取りの回数という五つの軸で強制耐性の設定を分類し、概念間の強弱関係を示しています。</p>
+<p class="authors">Wonseok Choi, Won Kim, Changmin Lee</p></article>
+<article class="item" id="d800398">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800398" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2950" target="_blank" rel="noopener noreferrer nofollow">LNRPIR: High Throughput PIR with Flexible Communication-Computation Trade-offs</a>  </h3>
+<p class="note"><span class="label">説明</span>LNRPIR：通信と計算のトレードオフを柔軟に調整できる高スループット秘密情報検索</p><p class="summary"><span class="label">要約</span>秘密情報検索（PIR）は、問い合わせ内容を漏らさずにサーバーからデータを取得する暗号技術です。本論文は、中程度のオンライン通信量で高いサーバースループットを実現し、通信と計算のトレードオフを柔軟に調整できるLNRPIR方式を提案しています。報告では、8 GBのデータベースから256バイトのレコードを取得する際、クライアントヒントモデルのVIA-Cより2.541倍高速で、オンライン通信量は10.473 KBです。サイレント前処理モデルのInsPIReと比べ、8 GBのデータベースでオンライン通信オーバーヘッドは17.074倍低く、オンライン計算時間はInsPIReの1.885倍です。主にLWEからNTRU、LWEからVNTRU、NTRUからRLWEへの3種類の暗号文変換技術に依拠しています。</p>
+<p class="authors">Liren Xu, Zhe Li</p></article>
+<article class="item notable" id="d755396">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755396" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25945" target="_blank" rel="noopener noreferrer nofollow">BlockJack: Cross-Tenant Redirection Fault Attacks on Paged KV Cache Address Translation in LLM Serving</a>  </h3>
+<p class="note"><span class="label">説明</span>BlockJack：LLMサービングにおけるページ式KVキャッシュのアドレス変換を狙ったテナント間リダイレクト故障攻撃</p><p class="summary"><span class="label">要約</span>本論文はBlockJackを提案する。これはLLM推論におけるKVキャッシュのアドレス変換を狙った初の故障攻撃である。vLLMのブロックテーブルの項目を破壊し、あるリクエストのKVキャッシュ読み取りを別テナントのリクエストに割り当てられたブロックへ振り向けるもので、モデルパラメータ、プロンプト、キャッシュ済みKV状態は変更しない。複数のモデルで被害者の情報の露出と回答の操作を確認し、Rowhammerによる物理的な実現可能性を示した。さらに防御策として割り当て検証を評価している。</p>
+<p class="why"><span class="label label-why">注目点</span>LLM推論のページ式KVキャッシュのアドレス変換層を狙った初の故障攻撃で、ブロック表の破壊によりテナント間で読み取りが誤ってリダイレクトされる。摘要は7モデルと248件の医療シーンで結果を報告している。</p><p class="authors">Qifan Wang, Jeremy Boy, Jonas Sander ほか</p></article>
+<article class="item" id="d755388">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755388" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25929" target="_blank" rel="noopener noreferrer nofollow">Question, Then Affirm: Restoring Commitment Does Not Restore Refusal</a>  </h3>
+<p class="note"><span class="label">説明</span>問いかけてから肯定する：立場の復元は拒否の復元にはつながらない</p><p class="summary"><span class="label">要約</span>本論文は、画像生成の安全対策が、メッセージの内容を変えなくても回避されうることを示している。有害な命題を直接述べた標識はブロックされるが、同じ命題を疑問文にしてチェックマークを付けると画像が生成され、その画像は元の主張を支持している。著者はこれを延期された意味的コミットメント（DSC）と呼び、300件のテストでgpt-image-2の挙動を比較している。</p>
+<p class="authors">Haoyang Xu, Qirui Wang, Liuwan Zhu</p></article>
+<article class="item" id="d800400">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800400" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2949" target="_blank" rel="noopener noreferrer nofollow">Homogeneous rotation symmetric bent functions in twelve variables are quadratic</a>  </h3>
+<p class="note"><span class="label">説明</span>12変数の同次回転対称bent関数はすべて二次関数であることの証明</p><p class="summary"><span class="label">要約</span>このIACR ePrint（暗号分野のプレプリント）は、12変数の同次回転対称bentブール関数がすべて二次関数であり、ラベル付き座標では全部で16個であることを示しています。入力を対応する座標の一致パターンでグループ化し、Walsh整除性と平方Walsh和の制約から四次の場合を排除しています。分類と係数の特徴付けはLean 4.36.0で形式検証されたと記されています。</p>
+<p class="authors">Filipe Martins Vono, André Oliveira Naufel de Toledo, Valéria Gonzaga Santos</p></article>
+<article class="item" id="d800401">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800401" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2948" target="_blank" rel="noopener noreferrer nofollow">LaTSEC: Lattice-Based Threshold Signatures with Native Non-Interactive Identifiable Abort and Compact Per-Party Storage</a>  </h3>
+<p class="note"><span class="label">説明</span>LaTSEC：格ベースの閾値署名で、非対話的な識別可能中止をネイティブに備え、各参加者の保存量を抑えた方式</p><p class="summary"><span class="label">要約</span>本論文は、三ラウンドの格ベース閾値署名方式 LaTSEC を提案します。各参加者は小さなノルムの署名シェアを一つ持ち、公開中止鍵と対応づけられます。部分署名はこの鍵で直接検証でき、ゼロ知識証明や追加の対話プロトコルは不要です。既存の方式と比べて各参加者の保存量を大幅に減らしています。正当性、識別可能中止の安全性、閾値不可偽造性を、標準的な MLWE と MSIS の仮定の下で証明しています。さらに、新しいヒント付き MLWE の変種を導入し、標準の MLWE から帰着できることを示しています。60 参加者・128 ビット安全性の設定では、最大 6 人の被害参加者まで耐えられます。</p>
+<p class="authors">Muhammad Arzaki, Muhammed F. Esgin, Markku-Juhani O. Saarinen ほか</p></article>
+<article class="item" id="d755343">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755343" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25832" target="_blank" rel="noopener noreferrer nofollow">RAVEN: A Self-RAG Based Agent for Threat Classification and Response</a>  </h3>
+<p class="note"><span class="label">説明</span>RAVEN：自己反映型RAG に基づく脅威分類・対応エージェント</p><p class="summary"><span class="label">要約</span>本論文は、セキュリティ運用センター（SOC）でのアラート調査の初期段階を自動化するエージェント型フレームワーク「RAVEN」を提案している。自己反映型の検索拡張生成（Self-RAG）により、セキュリティイベントの初期分類を行い、アナリストが対話的に問い合わせて結果を精緻化できる。従来の汎用的な緩和策とは異なり、対象企業のインフラに関する知識を取り込んだ状況依存の修復提案を生成するとされる。著者らは、SQLi、XSS、SSTIの各400件のWebペイロードからなる3つのテストセットでの予備結果と、緩和策生成の定性的事例を報告している。</p>
+<p class="authors">Francesco Aurelio Pironti, Luigi Arena, Francesco Blefari ほか</p></article>
+<article class="item" id="d800402">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Applications</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800402" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2947" target="_blank" rel="noopener noreferrer nofollow">SPECTRA: Sensor Provenance and Execution Through Recursive Arguments</a>  </h3>
+<p class="note"><span class="label">説明</span>SPECTRA：再帰的引数によるセンサー来歴と実行の証明</p><p class="summary"><span class="label">要約</span>本論文はSPECTRAという汎用センサーモデルを提案し、信頼境界をアナログ領域にできるだけ近づけつつ、デジタル領域の各処理段階を証明する仕組みを示す。非一様増分検証可能計算（NIVC）の再帰的引数を用いて形式的に定義し、カメラ画像パイプラインに適用したSPECTRA-CAMを、組み込みのNVIDIA Jetsonからサーバー級ハードウェアまで、さまざまなフレームサイズで評価している。さらに、パイプライン段階の順序を入れ替えるだけで、出力が有効な署名を保ったまま下流の分類器を誤らせうる「パイプライン順序シャッフル攻撃」を提示している。</p>
+<p class="authors">Marco Calipari, Paul Timke Contreras, Mohammad Hamad ほか</p></article>
+<article class="item" id="d755331">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755331" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25809" target="_blank" rel="noopener noreferrer nofollow">ALIoTh: Orchestrating Multi-Agent LLMs for Autonomous IoT Penetration Testing</a>  </h3>
+<p class="note"><span class="label">説明</span>ALIoTh：IoT自動ペネトレーションテストのためのマルチエージェントLLM連携</p><p class="summary"><span class="label">要約</span>本論文は、複数のLLMエージェントをLangGraphで連携させ、Self-RAG（自己検索拡張生成）の仕組みと組み合わせたALIoThフレームワークを提案している。IoTおよび産業用IoT環境の脆弱性を自律的に特定し悪用することを目的とする。ネットワークや機器の列挙、脆弱性評価、ペイロード生成、リバースシェル配備、権限昇格までの一連の工程を計画・実行し、専門エージェントにIoTセキュリティの知識を提供して推論を強化する。</p>
+<p class="authors">Francesco Aurelio Pironti, Luigi Arena, Francesco Blefari ほか</p></article>
+<article class="item" id="d755325">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.SE</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755325" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25790" target="_blank" rel="noopener noreferrer nofollow">On the Reliability of CyberGym Evaluation: Task Material Consistency and Reference-Target Identity</a>  </h3>
+<p class="note"><span class="label">説明</span>CyberGym評価の信頼性について：タスク資料の一貫性と参照対象の同一性</p><p class="summary"><span class="label">要約</span>本論文は、脆弱性再現を評価するCyberGymの信頼性を検証する。同ベンチマークは、概念実証入力が脆弱版では クラッシュし修正版ではクラッシュしないことで成否を判定する。全1,507タスクの資料を監査した結果、22.4%にあたる338タスクに不一致が見つかった。また、一回の完全な実行で得られた最終入力の同一性を調べ、通過判定の一部が対象外の欠陥を示していたことを報告している。</p>
+<p class="authors">Yule Ding, Hongzhen Wu</p></article>
+<article class="item" id="d755293">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755293" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25718" target="_blank" rel="noopener noreferrer nofollow">Hardening JavaScript Programs against LLM-Based Vulnerability Detection</a>  </h3>
+<p class="note"><span class="label">説明</span>LLMベースの脆弱性検出からJavaScriptプログラムを守る手法</p><p class="summary"><span class="label">要約</span>JavaScriptプログラムはソースコードのまま配布されることが多く、攻撃者がその脆弱性を分析できてしまいます。本論文は、リリース前にプログラムを変換して検出エージェントの分析を妨げる防御手法AntiAgentを提案しています。実際のJavaScriptアプリケーションでClaude CodeやCodexを含む4種類の検出エージェントを評価したところ、検出される脆弱性の数を52.0%から60.7%減らし、プロジェクトのテストもすべて通過しました。</p>
+<p class="authors">Zhenhao Tian, Jintong Yu, Jingwei Feng ほか</p></article>
+<article class="item notable" id="d800405">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-19">2026年11月19日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d800405" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2946" target="_blank" rel="noopener noreferrer nofollow">BOCCHI: Compact Blind SNARK via Malformation-Tolerant Ciphertext Aggregation</a>  </h3>
+<p class="note"><span class="label">説明</span>BOCCHI：改ざん耐性のある暗号文集約によるコンパクトなブラインドSNARK</p><p class="summary"><span class="label">要約</span>本論文は、暗号化されたデータに対して検証可能な計算を行うためのコンパクトで効率的なブラインドSNARK「BOCCHI」を提案している。暗号文を直接コミットし、少数の集約値によって開示することで、証明サイズの増大を抑えている。2^22制約において、6.57 MBの証明を115.3秒で生成し、Phalanxと比べて証明サイズは9.3倍小さく、速度は2.54倍速い。</p>
+<p class="why"><span class="label label-why">注目点</span>暗号文を直接コミットし少数の集約で開示する小型のブラインドSNARKを提案し、規範的バインディングとノイズフィルタを導入、CACコンパイラとして定式化。</p><p class="authors">Ye Yu, Kexi Huang</p></article>
+<article class="item" id="d755268">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755268" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25669" target="_blank" rel="noopener noreferrer nofollow">Ask in the Crowd: Differentially Private LLM Inference via Dummy-Augmented Shuffling</a>  </h3>
+<p class="note"><span class="label">説明</span>群衆に紛れて質問する：ダミー付きシャッフルによる差分プライバシー対応のLLM推論</p><p class="summary"><span class="label">要約</span>本論文は、LLM-as-a-Service環境でユーザーのクエリを保護するDP-SPDフレームワークを提案している。実際のクエリをクライアント側で生成したダミークエリの中に隠し、すべてをランダムにシャッフルしてからサーバーへ送信することで、ユーザーの真の意図の特定を困難にする。また、クエリ間の共有プレフィックス構造を利用してTransformerのKVキャッシュを再利用し、推論効率を高める。</p>
+<p class="authors">Zhihao Liu, Zixiong Guo, Shuo Shao ほか</p></article>
+<article class="item" id="d755266">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755266" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25664" target="_blank" rel="noopener noreferrer nofollow">GPU-Accelerated Secure Inference for Drug--Target Interaction Prediction</a>  </h3>
+<p class="note"><span class="label">説明</span>GPU高速化による薬剤・標的相互作用予測のセキュア推論</p><p class="summary"><span class="label">要約</span>2つのサーバー上で、薬剤の情報を両者とも知ることなく薬剤・標的相互作用を安全に予測する手法を提案しています。多者間安全計算に適した軽量モデルSlimDTAを設計し、通信を要する非線形演算を減らしました。線形層は加法秘密分散、非線形層は関数秘密分散を用いてGPU上で実装しています。iDASH 2026コンペティションのトラックIIIで1位となり、平均予測時間は10ミリ秒未満、安全予測の結果は平文モデルとの差が0.02%以内でした。</p>
+<p class="authors">Sikha Pentyala, Steven Golob, Daniil Filienko ほか</p></article>
+<article class="item" id="d755251">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.CV</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755251" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25640" target="_blank" rel="noopener noreferrer nofollow">Erasing the Wrong Thing: Conditional Attribute Leakage and Concept Erasure in Shared Foundation-Model Embeddings</a>  </h3>
+<p class="note"><span class="label">説明</span>誤った対象を消去する：共有基盤モデル埋め込みにおける条件付き属性漏洩と概念消去</p><p class="summary"><span class="label">要約</span>本論文は、医療画像の埋め込みを共有した際に敏感な属性が漏洩しうる問題を扱う。タスクラベルと敏感ラベルが関連している場合、全体的な線形保護とタスク条件付きの線形保護は、非ゼロの線形タスク信号を保ったまま同時には成立しないことを証明している。そのうえで、各タスク層内で線形保護を強制する閉形式の手法TC-LEACEを提案し、CelebAの85組の属性対と胸部X線画像で評価している。LEACE後も条件付き漏洩は残り、TC-LEACEは線形タスク効用の損失の大部分を回復しつつ、条件付き漏洩をLEACEに近い水準に抑えられることを示している。</p>
+<p class="authors">Haijun He, Fei Li, Donghong Ji ほか</p></article>
+<article class="item" id="d755234">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.HC</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755234" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25608" target="_blank" rel="noopener noreferrer nofollow">MetaScanner: An Empirical Study and Proactive Defense against Deceptive UI Attacks in Social VR</a>  </h3>
+<p class="note"><span class="label">説明</span>MetaScanner：ソーシャルVRにおける欺瞞的UI攻撃の実証研究と能動的防御</p><p class="summary"><span class="label">要約</span>本論文は、ソーシャルVRのユーザーを気づかれないまま意図しない操作へ誘導する、四つの新しい欺瞞的UI攻撃を提示しています。VRChat上でこれらの攻撃を実装し、倫理審査を受けた30名の参加者によるユーザー調査で有効性を確認しました。また、ユーザーが接触する前に仮想ワールドのスクリプトや対話型オブジェクトを解析し、不審または欺瞞的な要素を特定する能動的分析システム「MetaScanner」を提案しています。実験では、四つの攻撃シナリオすべてを検出でき、38の実資産の平均スキャン時間は5秒でした。</p>
+<p class="authors">Junhee Lee, Seungwon Woo, Minseok Kim ほか</p></article>
+<article class="item" id="d755229">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755229" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25599" target="_blank" rel="noopener noreferrer nofollow">Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents</a>  </h3>
+<p class="note"><span class="label">説明</span>Tether：エージェントのシステムレベル監視のための検証済みステートフルポリシーエンジン</p><p class="summary"><span class="label">要約</span>本論文は、自律型AIエージェントが実行するシェルコマンドやプログラムの副作用に対して、実行時にステートフルなセキュリティポリシーを適用するフレームワーク Tether を提案している。各操作は使い捨ての隔離サンドボックスで実行され、観測されたシステムコールから操作の意味が推論される。ポリシーと操作の意味は Lean 4 に埋め込まれたDSLで定義され、大域的な安全性の不変条件を形式的に検証できる。コーディングエージェントのベンチマークでは、単一のポリシーで範囲内の攻撃の100%を阻止し、良性の誤検知率は5%未満だと報告されている。</p>
+<p class="authors">Meghana Aparna Sistla, Alaia Solko-Breslin, Somesh Jha ほか</p></article>
+<article class="item" id="d755223">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.AI · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755223" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25590" target="_blank" rel="noopener noreferrer nofollow">Measuring Hallucination in Large Language Models for Cyber Threat Intelligence: An Exploratory Study</a>  </h3>
+<p class="note"><span class="label">説明</span>サイバー脅威インテリジェンスにおける大規模言語モデルの幻覚測定：探索的研究</p><p class="summary"><span class="label">要約</span>本論文は、要約や質問応答などのサイバー脅威インテリジェンス（CTI）タスクにおける大規模言語モデルの幻覚（出典に基づかない誤った内容）を探索的に測定した研究である。再現可能なフレームワーク「HalluVision」を提案し、微調整された固有表現認識モデルで領域固有のエンティティを抽出し、複数の類似度指標で事実の一貫性を評価する。4,940件の実際のサイバーセキュリティ記事を用い、2つの商用モデルと1つのオープンウェイトモデルの出力を測定した。結果として、意味的類似度は人間の判断と一致する一方、エンティティベースの指標の一致は限定的であった。</p>
+<p class="authors">Seungho Song, Donggyu Lee, Jaehan Kim ほか</p></article>
+<article class="item" id="d755208">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755208" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25562" target="_blank" rel="noopener noreferrer nofollow">AZOWL AgentOps: Task-Scoped Governance for Deployed Agent Applications</a>  </h3>
+<p class="note"><span class="label">説明</span>AZOWL AgentOps：デプロイ済みエージェントアプリ向けのタスク単位ガバナンス</p><p class="summary"><span class="label">要約</span>本論文は、エージェントを展開し作業を委任する際の共通ガバナンスとして AZOWL AgentOps を提案します。受理された作業には安定した識別子が付与され、送信者の権限、割り当てられた実行者、必要な承認、結果の証跡を結び付けます。4組の対応試験で、28件の合成実行により AZOWL の構成要素と LangGraph 構成のアプリケーションを比較しています。両構成とも対話内では業務タスクを記録せず、未承認のエージェント引き継ぎを拒否し、承認済みの配送先が変更された場合の書き込みはゼロでした。</p>
+<p class="authors">Taeoh Hong</p></article>
+<article class="item" id="d755207">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.MM · eess.IV</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755207" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25561" target="_blank" rel="noopener noreferrer nofollow">Passing NPCR Without Diffusion: Exact Signatures, a Detection Benchmark and an Audit of Published Image Ciphers</a>  </h3>
+<p class="note"><span class="label">説明</span>拡散なしでもNPCRを通過する問題：正確な特徴量、検出ベンチマーク、公開画像暗号の監査（NPCR＝平文の1画素変更で変化する暗号文バイト比率）</p><p class="summary"><span class="label">要約</span>本論文は、画像暗号の拡散性の根拠としてNPCR（平文の1画素変更により変化する暗号文バイトの割合）が広く報告されているものの、異なる仕組みでも近い値になりうることを指摘します。著者らは、伝播なし、加算またはXORに対する1ラウンドの線形連鎖、独立した暗号文の3つの状況を区別し、正確な計数と統計的特徴を示します。さらに、公開された21の方式を監査し、公表値を特徴量で検証できる確認ツールを公開していますが、安全性の認証を目的とするものではありません。</p>
+<p class="authors">Mua&#39;ad Alfarajat</p></article>
+<article class="item" id="d755204">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CV · cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755204" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25555" target="_blank" rel="noopener noreferrer nofollow">UniReFP: Robust Unified Fingerprinting for Vision Models against Cross-Task Repurposing Attacks</a>  </h3>
+<p class="note"><span class="label">説明</span>UniReFP：タスク横断の再利用攻撃に耐えるビジョンモデル向け統一型ロバスト指紋手法</p><p class="summary"><span class="label">要約</span>本論文は、既存のモデル指紋手法を無効化しうる新しいモデル改変攻撃、すなわちタスク横断型モデル再利用攻撃を初めて指摘しています。これに対し、異なるタスク間で適用できる統一モデル指紋フレームワークUniReFPを提案し、共有されたクラスレベルの意味空間で所有権の証拠を扱います。実験では、タスク横断の再利用攻撃や一般的なモデル改変攻撃、およびそれらの組み合わせに対して優れた性能を示したと報告されています。</p>
+<p class="authors">Ziye Geng, Guang Yang, Yihang Chen ほか</p></article>
+<article class="item" id="d755180">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d755180" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25509" target="_blank" rel="noopener noreferrer nofollow">LingSante MedGuard Technical Report</a>  </h3>
+<p class="note"><span class="label">説明</span>LingSante MedGuard：医療AIのリスク検出を行う統合ガードレールモデルの技術報告</p><p class="summary"><span class="label">要約</span>本論文は、医療AIの回答に含まれる安全性・コンプライアンス・倫理上のリスクを検出するための、能力強化型ガードレールモデルLingSante MedGuardを提案している。医療ガードレールの教師モデルと6つの専門能力エキスパートの監督を一つのモデルに統合し、オフラインの教師ありファインチューニングと多教師によるオンポリシー蒸留で学習させる。11のリスク検出サブセットからなるLingSante MedGuardBenchも導入されている。平均F1は4B、9B、27Bでそれぞれ82.3%、82.4%、87.4%であった。</p>
+<p class="authors">LingSante MedGuard Team</p></article>
+<article class="item" id="d749368">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749368" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25479" target="_blank" rel="noopener noreferrer nofollow">Side-Channel Analysis of the RP2350 Challenge 2</a>  </h3>
+<p class="note"><span class="label">説明</span>RP2350チャレンジ2のサイドチャネル解析：強化されたAES実装に対する独立したセキュリティ評価</p><p class="summary"><span class="label">要約</span>本論文は、RP2350サイドチャネル解析チャレンジにおける強化されたAES実装を独立して分析したものです。漏えいの検出、平文依存性の分析、鍵の抽出を行っています。著者らは、この実装に挑戦者の主張と矛盾する弱点があることを示し、さらなる公的な検証を促すために分析を公開しています。</p>
+<p class="authors">Nikhil Tattikota, Vincent Immler</p></article>
+<article class="item notable" id="d749361">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="5/5">★★★★★</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749361" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25470" target="_blank" rel="noopener noreferrer nofollow">ToolPulse: Side-Channel Eavesdropping on Tool-Using LLM Agents</a>  </h3>
+<p class="note"><span class="label">説明</span>ToolPulse：ツールを使うLLMエージェントへのキャッシュ型サイドチャネル盗聴</p><p class="summary"><span class="label">要約</span>本論文は、商用LLMの推論はクラウドで行われるものの、ツールはユーザーのマシン上で実行され共有システムライブラリに依存することを指摘します。Flush+ReloadとPrime+Probeを比較評価し、キャッシュ型サイドチャネル攻撃の枠組みToolPulseを提案します。ツール復元攻撃は11のLLM（CodexとClaude Code）で作業フローを再構成し、最低F1スコアは93%を超えました。さらに、約20人が共有するサーバーでのノイズ下でも、タスクプロファイリングとトリガー位置特定の両攻撃が高い精度を維持することを示しています。</p>
+<p class="why"><span class="label label-why">注目点</span>リモートのエージェントのツール呼び出しを共有ライブラリのキャッシュ側通道で盗聴する手法で、11のLLMで検証し、F1は93%超と報告されている。</p><p class="authors">Zihao Dan, Jinyu Zhang, Jinzhao Lian ほか</p></article>
+<article class="item" id="d800407">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800407" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2945" target="_blank" rel="noopener noreferrer nofollow">Generic Construction of Public-key Encryption with Bidirectional Keyword Search</a>  </h3>
+<p class="note"><span class="label">説明</span>双方向キーワード検索付き公開鍵暗号の一般的構成</p><p class="summary"><span class="label">要約</span>本論文は、送信者と受信者の双方がキーワード検索用のトラップドアを生成できる双方向キーワード検索付き公開鍵暗号（PEBKS）を扱います。PEBKSと認証付きキーワード検索公開鍵暗号（PAEKS）の密接な関係を示し、非対話型鍵交換と対称鍵の等価述語暗号を用いた一般的な構成法を提案しています。これにより、ペアリングを使わない方式や格子、アイソジニー、符号などに基づく複数の仮定でのインスタンス化が可能になります。また、等価述語暗号に必要な鍵衝突耐性を定義し、疑似ランダム関数の場合にその条件を論じています。</p>
+<p class="authors">Riku Matsui, Keita Emura</p></article>
+<article class="item" id="d749342">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749342" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25435" target="_blank" rel="noopener noreferrer nofollow">VisualJevBench: A Benchmark and Black-Box Attacks for Visual Typed Decision Models</a>  </h3>
+<p class="note"><span class="label">説明</span>VisualJevBench：視覚型付き意思決定モデルのためのベンチマークとブラックボックス攻撃</p><p class="summary"><span class="label">要約</span>本論文は、自由記述ではなく構造化された決定を返す型付き意思決定モデル（TDM）の、画像入力に対する敵対的ロバスト性を評価する。800枚の画像と3,200問からなるVisualJevBenchを提案し、8つのシナリオと4種類の視覚的攻撃面を対象とする。また、型付き出力のフィードバックを用いて有効な画像操作を探索する軽量な手法ABPSを提案し、特定画像向けの攻撃と、新しいシナリオの未見画像・タスクへ転移する汎用攻撃の両方を生成できるとしている。jev-1.14.0での実験では、特定画像攻撃の攻撃成功率は最大69.6%、汎用攻撃の未見画像での平均攻撃成功率は33.15%、幾何学的変換のシナリオ間転移での平均攻撃成功率は40.09%であった。</p>
+<p class="authors">Li Zeng, Yeqi Zeng, Hengkai Liang ほか</p></article>
+<article class="item notable" id="d800408">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="5/5">★★★★★</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Attacks and cryptanalysis</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800408" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2944" target="_blank" rel="noopener noreferrer nofollow">Linear Cryptanalysis of ISO Standard SEED: Exact Trail Optima via Divide-and-Decide Search</a>  </h3>
+<p class="note"><span class="label">説明</span>ISO 標準 SEED の線形解読解析：分割決定探索による線形トレイルの厳密最適値</p><p class="summary"><span class="label">要約</span>本論文は、韓国 KISA が開発し ISO/IEC 18033-3 に規格化されたブロック暗号 SEED の線形解読解析を扱います。著者は、線形トレイルの厳密な最適値を求めるための階層的な認証付き探索枠組み「分割決定（D&amp;D）」を提案しています。3 ～ 7 ラウンドの厳密な最適値を示し、すべての 16 ラウンドのトレイルの重みが少なくとも 112.980 であることを示しています。6 ラウンドのハルに基づき、7 ラウンド SEED に対する初の線形鍵回復攻撃が得られ、コードブック内の線形識別器は 5 ラウンドから 7 ラウンドへ拡張されています。</p>
+<p class="why"><span class="label label-why">注目点</span>分割と決定による厳密探索フレームワークを提案し、SEEDの線形トレイルの厳密な最適値を求め、7ラウンドへの初の線形鍵回復攻撃を報告している。</p><p class="authors">Haonan Hong, Kai Zhang</p></article>
+<article class="item" id="d749331">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749331" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25412" target="_blank" rel="noopener noreferrer nofollow">ChainAgent: Automated Chainable Vulnerability Discovery in PHP Web Applications</a>  </h3>
+<p class="note"><span class="label">説明</span>ChainAgent：PHPウェブアプリにおける連鎖可能な脆弱性の自動発見</p><p class="summary"><span class="label">要約</span>本論文は、大規模言語モデルを用いた目標指向型エージェントフレームワーク「ChainAgent」を提案する。PHPウェブアプリケーションのソースコードから、攻撃連鎖（エクスプロイトチェーン）を構成する要素と、それらの能力の依存関係を同時に発見する手法である。386件の実際のウェブ攻撃連鎖の実証研究に基づいて設計されている。15のPHPアプリケーションでの評価では、目標到達コンポーネントの再現率は42.02%〜44.63%であり、汎用コーディングエージェントCodexの最大4.4倍の正しい依存エッジを回収した。さらに30の実際のPHPアプリケーションで、20件の脆弱性と13件の攻撃連鎖を特定し、そのうち9件でリモートコード実行（RCE）が可能であった。</p>
+<p class="authors">Xinyi Wang, Yeting Li, Shizhe Cui ほか</p></article>
+<article class="item" id="d800409">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800409" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2943" target="_blank" rel="noopener noreferrer nofollow">A Transparent Post-Quantum Zero-Knowledge Argument for R1CS</a>  </h3>
+<p class="note"><span class="label">説明</span>R1CS向けの透明な耐量子ゼロ知識論証</p><p class="summary"><span class="label">要約</span>本論文は、R1CS（Rank-1制約システム）に対する透明性を持つ耐量子型のゼロ知識知識論証を構成する。二つのマスク付きsumcheckにより、n個の制約の充足可能性を、コミットされた短いベクトルに関する線形の主張へ帰着させる。証明のサイズはnの多対数オーダーであり、検証時間は Õ(√n)·poly(λ) に、制約行列の多重線形拡張を評価する時間 T_circ を加えたものとなる。著者らは、対話型プロトコルの完全性と知識健全性、およびプログラマブル・ランダムオラクルモデルにおける古典的なゼロ知識性を証明している。Fiat–Shamir変換後の健全性と量子オラクルに対するゼロ知識性は証明されていない。</p>
+<p class="authors">Vu Hung Tung</p></article>
+<article class="item" id="d800411">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Attacks and cryptanalysis</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800411" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2942" target="_blank" rel="noopener noreferrer nofollow">Differential–Linear Distinguisher Search via Walsh Spectra over Low-Dimensional Mask Subspaces</a>  </h3>
+<p class="note"><span class="label">説明</span>低次元マスク部分空間上のWalsh スペクトルによる差分線形識別器探索</p><p class="summary"><span class="label">要約</span>本論文は、中間出力マスクを効率よく評価するためのスペクトル型差分線形（DL）識別器探索の枠組みを提案する。汎用的な出力マスクから重みが1のハミング相関を用いて低次元部分空間を選び、高速Walsh-Hadamard変換により共有サンプルで各部分空間内の全マスクを同時に評価する。SIMON、SIMECK、SPECK、CHAMなどの32ビット暗号での実験では、ラウンド数の拡大や推定相関の向上が示され、SIMON128で36ラウンドの識別器が得られたとされる。</p>
+<p class="authors">Chenlu Zheng, Liu Zhang, Zilong Wang</p></article>
+<article class="item" id="d800412">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Attacks and cryptanalysis</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800412" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2941" target="_blank" rel="noopener noreferrer nofollow">Recovery Attacks on Distance-Preserving Encrypted Vector Databases</a>  </h3>
+<p class="note"><span class="label">説明</span>距離保存型暗号化ベクトルデータベースに対する復元攻撃</p><p class="summary"><span class="label">要約</span>本論文は、距離比較保存暗号（DCPE）に基づくプライベート検索拡張生成（RAG）システムを対象とする。攻撃Aは、漏洩したスナップショット、公開エンコーダ、補助的な候補コーパスのみを用いて100％のレコード再特定を達成する。攻撃Bは候補コーパスを必要とせず、既知の平文・暗号文ペア1組でDCPEの秘密スケールを解明し、平均コサイン類似度0.997で埋め込みを再構成する。著者らは既存の防御策の保護効果は限定的であるとし、漏洩したDCPEスナップショットは平文の開示として扱うべきだと主張している。</p>
+<p class="authors">Chen Gong, Xiangyu Wang, Dan Zhu ほか</p></article>
+<article class="item notable" id="d749300">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.AR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749300" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25339" target="_blank" rel="noopener noreferrer nofollow">From FIPS to FPGA with LLM Agents: Measuring What Tests and Reviews Miss in Post-Quantum Cryptographic Hardware</a>  </h3>
+<p class="note"><span class="label">説明</span>LLMエージェントによる FIPS から FPGA へ：後量子暗号ハードウェアでテストとレビューが見逃すものの測定</p><p class="summary"><span class="label">要約</span>本論文は、LLMエージェントがRTLを生成しながら検証を行う七段階の検証ゲート型ワークフローを提示し、ML-KEM-768およびML-DSA-65アクセラレータを300 MHzのZynq UltraScale+鍵管理カードへ移植した過程を報告します。ネットリストのミューテーション、欠陥リプレイ、形式的検証によって、生成された証拠の検出力を検証しています。既存のシミュレーションゲートはミューテーションの76%しか検出できず、仕様由来の追加テストで復号の検出率は48%から74%に向上しました。</p>
+<p class="why"><span class="label label-why">注目点</span>LLM生成のハードウェアの検証工程を、改変変異体と形式検証で監査する点が新しく、ML-KEM/ML-DSAアクセラレータで定量的に示している。影響はハードウェアセキュリティ検証分野に主に及ぶ。</p><p class="authors">Jungmin Park, Eunha Kim, Wooseop Kim ほか</p></article>
+<article class="item notable" id="d749291">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="5/5">★★★★★</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749291" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25324" target="_blank" rel="noopener noreferrer nofollow">Verified Netlist-to-RTL Recovery with LLM Agents</a>  </h3>
+<p class="note"><span class="label">説明</span>LLMエージェントによる、検証可能なネットリストからRTLへの復元</p><p class="summary"><span class="label">要約</span>本論文は、LOCA（Logic Cone Attack、論理コーン攻撃）を提案します。匿名化されたゲートレベルのネットリストを論理コーンに分割し、並列のエージェントがそれぞれを書き直して、コンパクトなRTLを組み立てます。等価性が証明されたRTLのみを採用し、圧縮率で品質を測定します。21のモデルと設計の組み合わせのうち、LOCAは17件で復元に成功しましたが、ネットリスト全体を一度に与える方式では6件にとどまりました。</p>
+<p class="why"><span class="label label-why">注目点</span>新規性は、ネットリストを論理コーンに分割し並列LLMエージェントで書き換え、等価性証明で選別する点にあり、21組中17組を復元し整網提示の6組を上回ったと報告。</p><p class="authors">Ahmet Efe, Recep Bugra Uludag, Ulya R. Karpuzcu</p></article>
+<article class="item notable" id="d800413">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="5/5">★★★★★</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800413" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2940" target="_blank" rel="noopener noreferrer nofollow">Short-Input Random Oracles (and PRFs) over Abelian Groups: New Generalisations and Better Bounds</a>  </h3>
+<p class="note"><span class="label">説明</span>アーベル群上の短入力ランダムオラクル（およびPRF）：新たな一般化とより良い上界</p><p class="summary"><span class="label">要約</span>本論文は、公開ランダム置換から構成される短入力拡張型ランダムオラクルを研究し、XORP、LXoP、二置換の和などを含むGXP構成族を提案する。鍵なし設定では、GXPの各メンバーが有限アーベル群上で約N^{3/4}回の問い合わせまで乱数オラクルと区別できないことを示し、鍵あり設定では優位性O(q/N^{3/2})の擬似ランダム性を示す。</p>
+<p class="why"><span class="label label-why">注目点</span>XORP、LXoP、二置換の和などを包含する統一的GXP構造族を提案し、任意の有限アーベル群上で約N^{3/4}問い合わせまでの不可区別性のタイトな界を示したと報告している。</p><p class="authors">Ritam Bhaumik</p></article>
+<article class="item" id="d749285">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CR · cs.DC</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749285" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25301" target="_blank" rel="noopener noreferrer nofollow">SplitReAlign: Partition-Aware Representation Realignment for Split Federated Unlearning</a>  </h3>
+<p class="note"><span class="label">説明</span>SplitReAlign：分割型連合学習のアンラーニングのための分割認識型表現再整列手法</p><p class="summary"><span class="label">要約</span>本論文は、分割連合学習（SFL）におけるクラス単位の忘却問題を扱うSplitReAlignフレームワークを提案している。クライアントとサーバーごとの識別部分空間を共有の意味的アンカーで調整し、忘却対象の表現を選択的に再整列させるとともに、アクティブな部分空間外の変化を罰則で抑える。CIFAR-10とCIFAR-100の異種クライアント分布での実験では、6つの設定すべてで比較手法中、再学習との平均差が最も小さかったと報告されている。</p>
+<p class="authors">Jia Chen, Yecheng Lv, Xinrong Hu ほか</p></article>
+<article class="item" id="d749273">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749273" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25272" target="_blank" rel="noopener noreferrer nofollow">TRACE-5G: Trust-Aware Runtime Attestation and Continuous Enforcement for 5G User Equipment</a>  </h3>
+<p class="note"><span class="label">説明</span>TRACE-5G：5G端末向けの信頼認識型ランタイム証明と継続的制御</p><p class="summary"><span class="label">要約</span>本論文は、標準の5G認証鍵合意プロトコル（5G-AKA）が加入者認証のみを行い、端末の完全性を検証しないことを指摘しています。既存の機器証明書やTPMによる計測起動の確認では、接続後に実行される不正なソフトウェアを検出できません。著者らは、IMA、TPM、Keylimeを用いて端末の実行時ソフトウェア状態を継続的に検証し、その結果でネットワークアクセスを制御するTRACE-5Gを提案しています。srsRAN/Open5GSのテスト環境での実験では、信頼された端末は9〜12秒で完全なアクセスを確立し、信頼されない端末では昇格が一貫して拒否されました。</p>
+<p class="authors">Al Nahian Bin Emran, Rajendra Paudyal, Rajendra Upadhyay ほか</p></article>
+<article class="item notable" id="d800415">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Applications</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800415" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2939" target="_blank" rel="noopener noreferrer nofollow">Anonymous C2PA: Feasibility of Large-Scale Anonymous Image Provenance</a>  </h3>
+<p class="note"><span class="label">説明</span>匿名C2PA：大規模な匿名画像来歴証明の実現可能性</p><p class="summary"><span class="label">要約</span>C2PAは、カメラや編集ソフトが画像に暗号署名を付けて来歴を示す技術標準です。しかし署名者の匿名性がなく、監視のリスクがあります。本論文はC2PA v2.5を形式化し、理想的な匿名画像来歴システムが満たすべき安全性・プライバシー特性を導きます。中核となる手法はリング署名です。任意のサブリングに対応する収縮可能リング署名の新しい構成を示し、漏えいした鍵を既存の署名から除外できるようにします。また、収縮に必要な作業量は収縮させる署名数に比例することを証明しています。</p>
+<p class="why"><span class="label label-why">注目点</span>任意サブリングに対応する新しい縮小可能リング署名を構成し、C2PAを形式化して、大規模普及標準への影響を論じる。</p><p class="authors">Kelsey Merrill, Sarah Scheffler</p></article>
+<article class="item" id="d749257">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.CV</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749257" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25226" target="_blank" rel="noopener noreferrer nofollow">Reject and Report: Forgery-Evident Undetectable Watermarks for Generative Image Models</a>  </h3>
+<p class="note"><span class="label">説明</span>拒否して報告する：生成画像モデル向けの偽造が判別可能な検出不能透かし</p><p class="summary"><span class="label">要約</span>本論文は、生成画像モデルの出力を追跡するための、偽造が判別可能な検出不能透かしの枠組みTripwire-WMを提案する。生成画像の意味内容を、符号ベースの透かしが使わない初期潜在ノイズの大きさに分布を保ったまま埋め込み、偽造画像は有効な透かしを持つものの内容と一致しない承諾を含むため、検出器が拒否かつ偽造として報告できるとしている。PRC透かしとGaussian Shading++を基にし、その検出不能性を保つと論じている。</p>
+<p class="authors">Yihan Wang, Haochen Sun, Xi He ほか</p></article>
+<article class="item" id="d749245">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749245" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25195" target="_blank" rel="noopener noreferrer nofollow">User Perceptions of Deceptive In-Vehicle Infotainment User Interfaces</a>  </h3>
+<p class="note"><span class="label">説明</span>車載インフォテインメントUIの欺瞞的デザインに対するユーザーの認識</p><p class="summary"><span class="label">要約</span>本論文は、車載インフォテインメントシステムにおけるダークパターン（利用者を不利な選択へ誘導する画面設計）を研究しています。Android Automotive OSを対象に、四つの自動車メーカーのエミュレーターを監査して17種類のダークパターンを確認し、実装の違いや講習前後のユーザー評価を比較する二つの利用者調査を行いました。設計が巧妙であるほど利用者は疑いにくく、監督では有無だけでなく具体的な実装も評価すべきだと結論づけています。</p>
+<p class="authors">Pedram MohajerAnsari (1), Iwinosa Aideyan (1), Anna Galeano (1) ほか</p></article>
+<article class="item notable" id="d800416">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800416" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2938" target="_blank" rel="noopener noreferrer nofollow">Post-Quantum Adaptive Multiparty NIKE</a>  </h3>
+<p class="note"><span class="label">説明</span>耐量子・適応的安全な多者間非対話型鍵交換</p><p class="summary"><span class="label">要約</span>本論文は、一群のユーザーが対話なしで共有鍵を確立する多者間非対話型鍵交換（NIKE）を扱う。3者より多い場合の既存構成はすべて難読化不可能性（iO）または多重線形写像に依存しており、適応的安全性を準指数的損失なしに達成する唯一の先行研究は、多項式安全なiOと群作用を用いないq型仮定に基づくものであった。本研究は、標準的・静的・耐量子の多項式仮定に基づく初の適応的安全な多者間NIKE方式を提示し、新たな抽象概念である鍵累積型PRF（KA-PRF）と多項式安全なiOから構成する。</p>
+<p class="why"><span class="label label-why">注目点</span>静的な後量子多項式仮定から構築された初の適応的安全な多者NIKEで、KA-PRFという抽象化と多項式安全なiOを組み合わせると作者は述べる。</p><p class="authors">Shafik Nassar, Brent Waters</p></article>
+<article class="item" id="d749227">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749227" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25142" target="_blank" rel="noopener noreferrer nofollow">Mutable State in Enrich-by-Need Security Protocol Analysis</a>  </h3>
+<p class="note"><span class="label">説明</span>enrich-by-need 型セキュリティプロトコル解析における可変状態（跨セッション状態の扱い）</p><p class="summary"><span class="label">要約</span>本論文は、多くのプロトコルで各参加者がローカルな可変状態を保持し、それが自身のローカルセッションの実行可能な操作を制限し、他のローカルセッションによって変更される点に注目する。著者らは、この跨セッションの可変状態を記号的プロトコル解析手法であるストランド空間（strand space）で表現する方法を示し、その考えを暗号プロトコル形状解析器 CPSA に実装する。中心となる理論は、状態を特徴づける2つの公理とプロトコル固有の規則で表され、関連する場合におけるプロトコル挙動の厳密な特徴づけを与え、跨セッションの可変状態に依存する正しいプロトコルの設計を支援する。</p>
+<p class="authors">Joshua D Guttman, Paul D Rowe, Eben Blaisdell</p></article>
+<article class="item notable" id="d749205">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI · cs.CL</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749205" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25086" target="_blank" rel="noopener noreferrer nofollow">Living off the Local Model: Abusing Browser-Embedded Language Models for Post-Exploitation</a>  </h3>
+<p class="note"><span class="label">説明</span>「ローカルモデルを悪用する」：ブラウザ内蔵言語モデルを侵入後の攻撃に使う研究</p><p class="summary"><span class="label">要約</span>本論文は、Chrome に組み込まれた Gemini Nano など、端末上でローカル動作するブラウザ内蔵言語モデルが攻撃者に悪用される可能性を検討しています。著者らは、オペレーティングシステムに標準搭載されたインタプリタだけでモデルをホストから操作でき、モデルのダウンロード前のユーザー操作確認はクリックの模擬で容易に満たされるか、回避できると報告しています。さらに、ホスト上の認証情報の特定、メール中の個人情報の検出、画像の分類、カスタムツールの呼び出しを評価し、それらを組み合わせてユーザー操作なしの模擬サイバー作戦を実行しました。</p>
+<p class="why"><span class="label label-why">注目点</span>ブラウザ内蔵のローカルモデルを後侵入の攻撃基盤として利用し、ユーザー有効化チェックを回避する点が新しい。摘要では認証情報識別やPII検出などの能力測定と端到端の模擬作戦を報告している。</p><p class="authors">William Fleshman, Joseph Lucas</p></article>
+<article class="item" id="d749203">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.LG</span><time datetime="2026-11-19">2026年11月19日</time>
+<span class="tag tag-code" title="要旨にコード・データ・ツールの公開が記載されています（リンクは未確認）">公開リソース</span><a class="permalink" href="../../../ja/go.html#d749203" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25073" target="_blank" rel="noopener noreferrer nofollow">PriTabICL: Differentially Private Tabular In-Context Learning with Task-Aligned Cluster-Wise Synthesis</a>  </h3>
+<p class="note"><span class="label">説明</span>PriTabICL：タスク整合型クラスタ単位合成による差分プライバシー付き表形式インコンテキスト学習</p><p class="summary"><span class="label">要約</span>本論文は、表形式インコンテキスト学習（TabICL）におけるプライバシー保護を扱います。大規模言語モデルはプロンプト内の少数の正解付きデモンストレーションで予測を行いますが、それらには機微な個人情報が含まれることがあります。提案手法PriTabICLは、レコードを差分プライバシーのクラスタに分割して各クラスタを個別に合成し、特徴量と目的変数の固定ワークロードで予測に関係する統計的関係を優先します。推論時には各クエリを対応するクラスタへ振り分け、その合成データからデモンストレーションを抽出します。四つの実データセットでの実験では有効性が示され、PriTabICL-PrivSynは12の設定のうち8つで全体的なPrivSynを上回りました。</p>
+<p class="authors">Syed Ahzaz Shah, Evan Bramblett, H\&#39;eber H. Arcolezi ほか</p></article>
+<article class="item" id="d800417">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Foundations</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800417" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2937" target="_blank" rel="noopener noreferrer nofollow">Any Friend of Yours: Asynchronous Consensus with Unknown Participants from Local Trust</a>  </h3>
+<p class="note"><span class="label">説明</span>「あなたの友人なら誰でも」：ローカルな信頼に基づく、参加者不明の非同期合意</p><p class="summary"><span class="label">要約</span>本論文は、参加者の身元が不明な開かれたシステムにおいて、非同期の拜占庭合意プロトコルを検討しています。各プロセスは自身の知る相手に対する定足数を宣言し、ローカルな信頼のみに基づいて行動します。可信な配布者や共通参照文字列は想定していません。可検証な信頼性ブロードキャスト、拜占庭合意、コア集合の合意、状態機械複製を構成し、故障に依存する「深さ」によってその保証を特徴づけています。</p>
+<p class="authors">Ignacio Amores-Sesar, Simon Holmgaard Kamp, Juan Villacis</p></article>
+<article class="item" id="d749196">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.MA</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d749196" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.25056" target="_blank" rel="noopener noreferrer nofollow">Attacks and Defenses in Decentralized Multi-Agent Systems with Hop-by-Hop Task Decomposition and Delegation</a>  </h3>
+<p class="note"><span class="label">説明</span>分散型マルチエージェントシステムにおける攻撃と防御：ホップごとのタスク分解と委任</p><p class="summary"><span class="label">要約</span>本論文は、分散型マルチエージェントLLMシステムに潜む悪意のあるエージェントによる脅威を体系的に検討しています。完全性、可用性、機密性に対する攻撃を設計・評価したうえで、システム内の全動作について否認できない検証済み実行記録を生成する暗号プロトコルと、その記録を分析して悪意ある振る舞いを検出・帰属する監査器を提案しています。</p>
+<p class="authors">Matthew D. Laws, Maria Lazou, Alina Oprea ほか</p></article>
+<article class="item" id="d800418">
+  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Cryptographic protocols</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800418" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2936" target="_blank" rel="noopener noreferrer nofollow">Aggregating ML-DSA Signatures Without Recursion: A Cross-Field Argument for the Commitment Hash</a>  </h3>
+<p class="note"><span class="label">説明</span>再帰を用いずにML-DSA署名を集約する：コミットメントハッシュのためのクロスフィールド論証</p><p class="summary"><span class="label">要約</span>本論文は、合意プロトコルで大量のML-DSA（FIPS 204）署名を圧縮する必要がある問題を扱い、再帰を使わない集約手法を提案している。代数的部分と論理的部分をそれぞれ別の体上で証明し、クロスフィールドのパリティ・ブリッジによって二つのコミットメント間のビット単位の整合性を保証する。16コアのAVX2環境では、32,768件のML-DSA-44署名を約2.68秒で集約できたと報告している。</p>
+<p class="authors">Jipeng Zhang, Jiaheng Zhang</p></article>
+<article class="item" id="d727392">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.SI · cs.CR · cs.CY</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d727392" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24899" target="_blank" rel="noopener noreferrer nofollow">&#34;I Don&#39;t Think It&#39;s a Scam&#34;: A First Look at Family Intervention Barriers in Elder Abuse Discussions on Reddit and Baidu Tieba</a>  </h3>
+<p class="note"><span class="label">説明</span>「詐欺だとは思わない」：ReddditおよびBaidu Tiebaの高齢者被害議論における家族介入の障壁に関する初期調査</p><p class="summary"><span class="label">要約</span>本論文は、Reddit と百度貼吧（Baidu Tieba）で高齢者の詐欺被害について交わされた議論を分析し、家族が介入する際の障壁を検討している。混合手法により、Reddit の投稿 13,082 件と貼吧の投稿 3,933 件を分析した。多くの高齢者は警告を受けた後も抵抗したり関与を続けたりしており、家族は本人の同意がないと法的な介入権限を持てない場合があり、資金の回収はきわめて限られていることが示されている。</p>
+<p class="authors">Yipeng Wang, Huy Gia Han Vu, Jiaming Liu ほか</p></article>
+<article class="item" id="d727348">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.AI</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d727348" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24765" target="_blank" rel="noopener noreferrer nofollow">LLM-Guided Cyber-Physical Attack Path Identification in Smart Grids</a>  </h3>
+<p class="note"><span class="label">説明</span>大規模言語モデルを用いたスマートグリッドのサイバーフィジカル攻撃経路の特定</p><p class="summary"><span class="label">要約</span>本論文は、電力系統のサイバーフィジカル攻撃経路を特定するため、大規模言語モデル（LLM）を用いた物理に基づく枠組みを提案する。参照基準として、カスケード故障から導いた影響度ランキングを用いる。枠組みはシステムのトポロジーと、STRIDEおよびMITRE ATT&amp;CKに基づくLLMによる脅威モデリングを統合し、トポロジー駆動型、脅威駆動型、融合型のベースライン手法と比較している。結果として、構造化されたLLMの脅威モデリングは物理的参照との整合性を大きく高め、IEEE 14母線系統では融合型ベースラインに比べて実行時間を約75〜85%削減した。</p>
+<p class="authors">Amr Elshazly, Jesse Roberts, Rachad Atat ほか</p></article>
+<article class="item notable" id="d727321">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.LG · cs.CR · cs.DC</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d727321" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24689" target="_blank" rel="noopener noreferrer nofollow">Stealing Exact Training Data from Other Clients during Federated Learning</a>  </h3>
+<p class="note"><span class="label">説明</span>連合学習中に他のクライアントの正確な学習データを盗む攻撃</p><p class="summary"><span class="label">要約</span>この論文は、連合学習においてモデル更新から非公開テキストを復元する勾配反転攻撃の新しい手法を提案しています。悪意のあるクライアントが反復的に、すでに正確に復元された文の勾配寄与を集計値から差し引き、残りの文を次の反復で復元できるようにします。著者らは、精度100%で文を正確に復元できることを初めて示し、モデルの隠れ次元の最大4倍のトークンを含む集計でも、クライアントの文の最大80.2%を正確に復元したと報告しています。</p>
+<p class="why"><span class="label label-why">注目点</span>集約勾配の絡みを反復的に解く新しい攻撃手法で、複数文の集約から最大80.2%の文を正確に復元したと報告している。</p><p class="authors">Omkar Shrikanth, Soham Dambalkar, Parag Jyoti Pal ほか</p></article>
+<article class="item" id="d727320">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.SE</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d727320" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24682" target="_blank" rel="noopener noreferrer nofollow">The Limit Is in the Input, Not the Model: State-Dependent Command Safety in Natural-Language Interfaces to Industrial Controllers</a>  </h3>
+<p class="note"><span class="label">説明</span>限界は入力にあり、モデルにはない：産業用コントローラの自然言語インターフェースにおける状態依存のコマンド安全性</p><p class="summary"><span class="label">要約</span>産業用コントローラへのコマンドの安全性を言語モデルで判断する際、モデルが機器の現在の状態を受け取っているかを検証した研究です。同じコマンドでも状態によって必要な安全判断が逆になるため、誤答は推論力ではなく情報の欠落に起因する可能性があります。著者らは「回答可能性監査」を提案し、同じコマンドに正反対の答えを要する二つの状態を組み合わせて評価します。両方の答えが正しい場合のみ正解ペアとして数えます。状態なしでは正しく区別できず、状態を加えると正解ペア数は15組中0から13組まで変動しました。</p>
+<p class="authors">Hemen Taukoor, Zhaoxia Wang, Venky Shankararaman</p></article>
+<article class="item" id="d727316">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR · cs.SY · eess.SY</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d727316" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24662" target="_blank" rel="noopener noreferrer nofollow">Gradient-Based Defensive Poisoning Against System Identification Attacks on Cyber-Physical Systems</a>  </h3>
+<p class="note"><span class="label">説明</span>サイバーフィジカルシステムのシステム同定攻撃に対する勾配ベースの防御的ポイズニング</p><p class="summary"><span class="label">要約</span>本論文は、サイバーフィジカルシステム（CPS）に対する、AIを用いたシステム同定攻撃を扱います。攻撃者は制御器と制御対象の信号を受動的に観測してモデルを学習します。著者らは、攻撃者が観測する測定値に微小な摂動を注入し、ニューラルネットワークによる同定精度を低下させる防御手法を提案します。摂動は複数の同定モデルの入力勾配から作られ、動的情報の多くを含む過渡領域に限定されます。DCモーターのネットワーク制御系のシミュレーションでは、同じ二乗平均平方根の大きさのランダムな投毒より大きな予測誤差を生じ、N4SIDによる同定にも効果がありました。</p>
+<p class="authors">Gon\c{c}alo Fernandes, Jos\&#39;e Cec\&#39;ilio, Victor Mattos ほか</p></article>
+<article class="item" id="d727303">
+  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d727303" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24623" target="_blank" rel="noopener noreferrer nofollow">Robust, Lightweight Locally Differentially Private Histogram Estimation and the Role of Dropout Attacks</a>  </h3>
+<p class="note"><span class="label">説明</span>頑健で軽量な局所差分プライバシーのヒストグラム推定と、ドロップアウト攻撃の役割</p><p class="summary"><span class="label">要約</span>本論文は、悪意あるクライアントが出力を改ざんする問題に対し、平文評価の証明を用いて改ざんを選択的ドロップアウトに限定する、三メッセージの軽量な検証フレームワークを提案します。PI-RAPPOR と Hadamard Response の評価条件では、クライアントあたりの平均オンライン遅延は 500 ミリ秒未満です。また、誤差の上界も示し、クライアント側の暗号処理を必要としないサーバー側の一貫性チェックも提案しています。</p>
+<p class="authors">Haochen Sun, Jacob Imola, Xi He</p></article>
+<article class="item notable" id="d800420">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">IACR ePrint</span>
+<span class="cats">Attacks and cryptanalysis</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d800420" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://eprint.iacr.org/2026/2935" target="_blank" rel="noopener noreferrer nofollow">A Key Recovery Attack on TRIKE Based on Decoding Failures</a>  </h3>
+<p class="note"><span class="label">説明</span>復号失敗に基づく TRIKE への鍵回復攻撃</p><p class="summary"><span class="label">要約</span>TRIKE は中国の次世代商用暗号標準化プログラムに提出された符号ベースの鍵カプセル化方式です。本論文は、TRIKE で用いる QC-MDPC 符号に近符号語（near codeword）の現象があることを示し、それによる復号失敗率（DFR）の下界を与えています。さらに、この現象に起因する復号失敗を利用した鍵回復攻撃を提案し、小規模なパラメータ集合で攻撃手法と計算量の見積もりを検証しています。</p>
+<p class="why"><span class="label label-why">注目点</span>TRIKEのQC-MDPC符号に近符号現象が存在することを示し、復号失敗率の下界と、その失敗を利用した鍵回復攻撃を提案している。摘要では玩具パラメータでの検証結果が報告されている。</p><p class="authors">Alessandro Annechini, Alessandro Barenghi, Gerardo Pelosi</p></article>
+<article class="item notable" id="d727290">
+<div class="pick-badge" title="星は AI がタイトルと要旨から付けた大まかな評価です。新規性・根拠の強さ・影響範囲を採点し、1〜5 の星に換算しています。換算の基準は 2026 年 10 月に約 2 万本の論文で調整して固定し、毎月見直しています（比率を割り当てる方式ではありません）。調整時点では約 2% が 5 つ星、12% が 4 つ星でした。サイトでは 4〜5 つ星の論文だけを「注目」として示し、注目点を一言添えています。印がないことは論文の質が低いことを意味しません。全文は読んでおらず、注目点は著者が要旨で述べている内容を伝えるだけで、証明や実験が厳密・十分かどうかは評価しておらず、本サイトは検証していません。星は論文を選ぶ際の目安であり、質の評価として確定したものではありません。「公開リソース」は要旨にコード・データ・ツールの公開が明記されていることを示し、リンクが有効かどうかは確認していません。"><span class="stars" aria-label="4/5">★★★★☆</span> 注目</div>  <div class="meta">
+    <span class="source">arXiv</span>
+<span class="cats">cs.CR</span><time datetime="2026-11-19">2026年11月19日</time>
+<a class="permalink" href="../../../ja/go.html#d727290" title="固定リンク" aria-label="固定リンク">#</a>  </div>
+  <h3 class="orig" lang="en">
+<a href="https://arxiv.org/abs/2611.24586" target="_blank" rel="noopener noreferrer nofollow">Playing the SMR Game with Existential Honesty</a>  </h3>
+<p class="note"><span class="label">説明</span>存在的正直性を仮定した状態機械複製（SMR）ゲームの検討</p><p class="summary"><span class="label">要約</span>本論文は、正直な過半数のバリデータが存在しない状況で、状態機械複製プロトコルの安全性をどう保証するかを扱う。身元不明で常時オンラインの正直なフルノード一つを仮定し、クライアントが受け取った証明書をフルノードに中継して確定を待つ方式を提案する。これにより、バリデータの任意の戦略の下でも常に安全であることを示す。さらに、買収によるトランザクション検閲の程度を形式化して厳密に特徴づける。</p>
+<p class="why"><span class="label label-why">注目点</span>誠実なバリデータが存在しない合理的ビザンチン設定で、証明書の中継と誠実なフルノードを用いて常に安全な確定層を構築し、検閲のタイトな界を特徴づける。</p><p class="authors">Zeta Avarikioti, Odysseas Sofikitis, Christos Stefo</p></article>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <section class="risk-notice" aria-labelledby="risk-title">
+      <h2 id="risk-title">リスクに関する注意事項・免責事項</h2>
+      <ol>
+<li>本サイトの内容は、インターネット上の公開情報源（政府・規制当局のウェブサイト、論文プレプリントサーバー、技術コミュニティなど）からプログラムが自動で収集・整理したものです。情報の完全性、正確性、適時性および継続的な利用可能性は保証しません。元の情報源は予告なく変更・撤回・削除されることがあります。</li><li>各項目の説明、要約、星の評価および注目点は人工知能が自動生成したもので、人による個別の確認は行っていません。誤訳、欠落、古い情報や誤りを含む可能性があります。日付・比率・金額はプログラムで原文と照合していますが、誤りが残る可能性があります。</li><li>すべて原文および発行機関の正式な文書が優先します。翻訳と要約は参考情報であり、法的効力はありません。</li><li>本サイトは法律、税務、会計、投資その他の専門的助言ではなく、暗号資産を含むいかなる資産の売買の申込み、勧誘または推奨でもありません。判断の前に必ず資格のある専門家にご相談ください。</li><li>暗号資産は価格変動が非常に大きく、元本のすべてを失うおそれがあります。規制は国・地域によって異なり頻繁に変わるため、関連する行為が一部の地域で制限または違法となる場合があります。</li><li>星の評価は論文のタイトルと要旨のみに基づく大まかな判断であり、論文の質、結論の正しさまたは著者を評価するものではありません。</li><li>本サイトは掲載している政府機関、規制当局、論文の著者および第三者のウェブサイトとは一切関係がありません。外部リンク先の内容はその運営者の責任であり、著作権・商標権は各権利者に帰属します。</li><li>本サイトは現状のまま提供され、内容は予告なく更新・訂正・削除されることがあります。本サイトの情報の利用または依拠により生じたいかなる直接的・間接的損害についても、一切の責任を負いません。</li>      </ol>
+    </section>
+    <p class="muted">Thank you to arXiv for use of its open access interoperability.</p>
+    <p class="muted">要約の更新 2026年11月28日 · <a href="../../../ja/sources.html">情報源と収録範囲</a></p>
+    <p class="muted contact">翻訳・分類・日付・リンクの誤りやご意見は、こちらまでお知らせください： <a href="mailto:contact@ditinglab.org">contact@ditinglab.org</a></p>
+  </div>
+</footer>
+</body>
+</html>
